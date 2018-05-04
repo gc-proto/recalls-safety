@@ -1,0 +1,34 @@
+.legend {
+	padding-left: 50px;
+}
+div.manubar{
+	padding-top:10px;
+}
+
+.nat-link {
+	background-color:#CCC;
+	padding: 10px 0px 10px 0px;
+}
+
+.nat-link p{
+	margin-bottom: 0px;
+}
+
+.nat-container-1{
+	background-color:#EEE;
+}
+
+
+.tip {
+    background-color:white;
+    border:1px solid gray;
+    position:absolute;
+    left:0px;
+    top:0px;
+    visibility: hidden;
+    
+    -moz-box-shadow: 2px 2px 3px #000;
+	-webkit-box-shadow: 2px 2px 3px #000;
+	box-shadow: 2px 2px 3px #000;
+
+}
