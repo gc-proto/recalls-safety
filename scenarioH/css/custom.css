@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+h1 {
+
+	font-size: 34px !important;
+	font-weight: 700 !important;
+	font-family: 'Open Sans', sans-serif; !important;
+
+}
+
+
+h2 {
+
+	font-size: 29px !important;
+	font-weight: 700 !important;
+	font-family: 'Open Sans', sans-serif; !important;
+	padding-bottom: 10px !important;
+}
+
+
+h3 {
+
+	font-size: 22px !important;
+	font-weight: 700 !important;
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+
+h4 {
+
+	font-size: 19px !important;
+	font-weight: 700 !important;
+font-family: 'Open Sans', sans-serif;
+}
+
+
+
+h5 {
+
+	font-size: 17px !important;
+	font-weight: 700 !important;
+font-family: 'Open Sans', sans-serif;
+}
+
+
+body, header, nav#wb-bc {
+	
+	
+	background-color: white !important;
+	font-family: 'Open Sans', sans-serif;
+	
+	}
+
+	
+	
+
+@media screen and (max-width: 991px) {
+
+h1 {
+		font-size: 30px !important;
+
+	}
+
+}
+
+
+/* On this page, reducing size as an h2*/
+.smh3 {
+
+	font-size: 22px !important;
+	font-weight: 700 !important;
+	margin-bottom: 0px !important;
+
+}
+
+ul.menu li {
+
+	font-size: 16px !important;
+	line-height: 22px !important;
+}
+
+p, ul, li {
+
+
+	font-size: 19px !important;
+	font-family: 'Open Sans', sans-serif; !important;
+      font-weight: 400 !important;
+      -webkit-font-smoothing:antialiased;
+
+	 line-height: 27px !important;
+
+
+}
+
+td {
+	
+	font-size: 19px !important;
+	font-family: 'Open Sans', sans-serif; !important;
+	
+}
+
+caption, th {
+	
+	font-size: 17px !important;
+	font-family: 'Open Sans', sans-serif; !important;
+	
+}
+
+/* controls bullet spacing */
+
+.bullet {
+	
+	padding-top: 3px !important;	
+	padding-bottom: 3px !important;	
+	
+}
+
+/* font size in li of breadcrumb */
+
+.cust-breadcrumb {
+
+	font-size: 15px !important;
+
+}
+
+
+/* removing padding that pushes content down a lot */
+.breadcrumb {
+
+	margin-bottom: -10px !important;
+	padding-top: 2px !important;
+}
+
+
+
+
+.list-group-item {
+	
+	
+background-color: #F8F8F8;
+	
+	}
+
+/* menu items */
+
+.cust-small   {
+
+	margin-top: -3px !important;
+	font-size: 16px !important;
+	
+
+
+}
+
+/* for the active menu item color */
+
+.cust-active   {
+
+	background-color: #4d4d4d !important;
+	border-color: #8f8f8f  !important;
+
+}
+
+.ch5 { 
+
+	font-size: 18px !important;
+
+}
