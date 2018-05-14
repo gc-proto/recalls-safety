@@ -160,71 +160,6 @@ button#wb-srch-sub a {
 
 </style>
 
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-    
-	
-	
-
-	var id = getUrlParameter('id'); // (gets me URL parameters)
-	var lang = getUrlParameter('lang'); // (gets me URL parameters)
-	
-	
-	// get the URL aprameters for ID and Lang then return API JSON
-	
-	var jsonfromhc = getRecall(id, lang);
-	console.log(id);
-	console.log(lang);
-	console.log(jsonfromhc);
-	
-	
-	
-	
-	
-});
-
-function getRecall(id, lang) {
-    var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
-    var uri = base + '/api/' + id + '/' + lang;
-	
-			
-			 
-	
-    $.ajax({
-        url:uri,
-        type:'GET',
-        Accept:"application/json",
-        dataType: 'json',
-        success:function(data){
-            console.log(data.title);
-			console.log(data);
-			
-			//use ids to modify page
-			$("#toptitle").text(data.title);
-			$("#toptitle").text(data.title);
-			
-        },
-        error:function(error){
-        },
-    });
-    return;
-};		
-
-var getUrlParameter = function getUrlParameter(sParam) {
-    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-        sURLVariables = sPageURL.split('&'),
-        sParameterName,
-        i;
-
-    for (i = 0; i < sURLVariables.length; i++) {
-        sParameterName = sURLVariables[i].split('=');
-
-        if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : sParameterName[1];
-        }
-    }
-};
-</script>
 
 <div class="form-group">
 <label for="wb-srch-q" class="wb-inv">Search website</label>
@@ -319,6 +254,72 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 <main role="main" property="mainContentOfPage" class="container gc-advnc-srvc">
 
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+    
+	
+	
+
+	var id = getUrlParameter('id'); // (gets me URL parameters)
+	var lang = getUrlParameter('lang'); // (gets me URL parameters)
+	
+	
+	// get the URL aprameters for ID and Lang then return API JSON
+	
+	var jsonfromhc = getRecall(id, lang);
+	console.log(id);
+	console.log(lang);
+	console.log(jsonfromhc);
+	
+	
+	
+	
+	
+});
+
+function getRecall(id, lang) {
+    var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
+    var uri = base + '/api/' + id + '/' + lang;
+	
+			
+			 
+	
+    $.ajax({
+        url:uri,
+        type:'GET',
+        Accept:"application/json",
+        dataType: 'json',
+        success:function(data){
+            console.log(data.title);
+			console.log(data);
+			
+			//use ids to modify page
+			$("#toptitle").text(data.title);
+			$("#toptitle").text(data.title);
+			
+        },
+        error:function(error){
+        },
+    });
+    return;
+};		
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};
+</script>
+
 
 <div class="recall-super-title" style="overflow: hidden;">
 		<div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
@@ -378,7 +379,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 </section>
 	
 		
-<div class="mwsgeneric-base-html parbase section">
+<div><div class="mwsgeneric-base-html parbase section">
 
 
 <script>
