@@ -46,6 +46,8 @@
 </style>
 
 
+<script src="vue-bootstrap-table.js"></script>
+
 <main role="main" property="mainContentOfPage" class="container">
 
 <h1 property="name" id="wb-cont" class="h2">Test 1 - Find products</h1>
@@ -57,6 +59,69 @@
 <p>Check the name of your product, its UPC and its "Best before date" to see if you are affected. </p>
 
 
+	<input type="search" class="light-table-filter" data-table="order-table" placeholder="Filtrer" /> <a class="button"><i class="fa fa-exclamation-circle"></i> Report Error</a>
+	<section class="table-box">
+		<table class="order-table">
+			<thead>
+				<tr>
+					<th>Brand</th>
+            <th>Product</th>
+	    <th>Size</th>  
+            <th>UPC</th>
+            <th>Best before</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+      <td>Culinary Creations Gourmet</td>
+      <td>Beef & Cheddar Onion Bun</td>
+		<td>190 g</td>
+	    <td>89069180979</td>
+      <td>April 16, 2018</br> April 23, 2018</td>
+      
+    </tr>
+    
+    <tr>
+      <td>Culinary Creations Gourmet</td>
+      <td>Roast Beef Sandwich</td>
+	    <td>155 g</td>
+	     <td>689069180931</td>
+      <td>April 16, 2018</br>April 23, 2018</td>
+     
+    </tr>
+    
+    <tr>
+      <td>Culinary Creations Gourmet</td>
+	    <td>Beef & Swiss Submarine ½</td>
+	    <td>250 g</td>
+	    <td>89069180979</td>
+      <td>April 16, 2018 </br>April 17, 2018</br>April 18, 2018</br>April 21, 2018</br>April 23, 2018</br>April 24, 2018</td>
+      
+    </tr>
+    
+    <tr>
+      <td>Culinary Creations Gourmet</td>
+      <td>Beef & Swiss Submarine Long</td>
+	    <td>250 g</td>
+	     <td>689069180979</td>
+      <td>April 17, 2018</br>April 21, 2018</td>
+     
+    </tr>
+    
+    <tr>
+      <td>Denny's Express</td>
+      <td>Beef & Swiss Submarine</td>
+	    <td>250 g</td>
+	     <td>776393400030</td>
+      <td>Julian date 0718</td>
+     
+    </tr>
+				</tbody>
+				</table>
+				</div>
+
+	
+	
 <div class="table-responsive transparency-tbl" data-wb-tables="{ &quot;ordering&quot; : false , &quot;paging&quot; : false }">           
   <table class="table table-bordered">
    <caption class="text-left">Producs affected</caption>
