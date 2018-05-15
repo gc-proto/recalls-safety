@@ -32,7 +32,6 @@ table td {
 table th {
   font-size: .85em;
   letter-spacing: .1em;
-  text-transform: uppercase;
 }
 
 @media screen and (max-width: 600px) {
@@ -76,7 +75,6 @@ table th {
     content: attr(data-label);
     float: left;
     font-weight: bold;
-    text-transform: uppercase;
   }
 
   table td:last-child {
