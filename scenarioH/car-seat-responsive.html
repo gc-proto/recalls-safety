@@ -27,6 +27,17 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <![endif]-->
 
 <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
+	script src="js/jquery.min.js"></script>
+    <link rel="stylesheet"
+
+    href="css/jquery.dataTables.min.css"></style>
+    <script type="text/javascript"
+
+    src="js/jquery.dataTables.min.js"></script>
+                                <script type="text/javascript"
+
+    src="js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
 <link rel="stylesheet" href="css/test-tables-alain.css" />
 	
@@ -347,7 +358,7 @@ $(function() {
 		<section>
 					<h2 class="h3">Are you affected?</h2>
 				<p>The following models are affected by this recall:</p>
-	<table>
+	 <table id="carseat">
         <thead>
       <tr>
           <th scope="col">Product</th>
@@ -373,7 +384,12 @@ $(function() {
               </tr>
           </tbody>
   </table>
-
+<script>
+          $(document).ready(function () {
+              $.noConflict();
+              var table = $('#carseat').DataTable();
+          });
+      </script>
 			
 	<img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2016//assets/ra-56686-03_s_fs_3_20160115-202855_16_en.jpg" />			
 	
