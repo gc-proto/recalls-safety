@@ -26,7 +26,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 <![endif]-->
 
-<noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
+<link href="css/bootstrap.min.css" rel="stylesheet">
 	 <script src="js/jquery.min.js"></script>
     <link rel="stylesheet"
 
@@ -358,7 +358,7 @@ $(function() {
 		<section>
 					<h2 class="h3">Are you affected?</h2>
 				<p>The following models are affected by this recall:</p>
-	 <table id="carseat">
+	 <table id="myTable">
         <thead>
       <tr>
           <th scope="col">Product</th>
@@ -387,7 +387,7 @@ $(function() {
 <script>
           $(document).ready(function () {
               $.noConflict();
-              var table = $('#carseat').DataTable();
+              var table = $('#myTable').DataTable();
           });
       </script>
 			
