@@ -1,53 +1,15 @@
- <!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
-<html class="no-js" lang="en" dir="ltr">
-<!--<![endif]--><head>
-<!--"https://gc-proto.github.io/ei/ei-critically-ill-children/eligibility.html" -->
-<meta charset="utf-8">
-<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
-wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-<title>BRITAX B-SAFE 35 recall - Issue with the handle</title>
-<meta content="width=device-width,initial-scale=1" name="viewport">
-<!-- Meta data -->
-<meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
-<!-- Meta data-->
-<!--[if gte IE 9 | !IE ]><!-->
-<link href="../GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="../GCWeb/css/theme.min.css">
-<link rel="stylesheet" href="../css/custom.css">
-<!--<![endif]-->
-<!--[if lt IE 9]>
-<link href="../GCWeb/assets/favicon.ico" rel="shortcut icon" />
-
-<link rel="stylesheet" href="../GCWeb/css/ie8-theme.min.css" />
-<script src="../wet-boew/js/ie8-wet-boew.min.js"></script>
-<![endif]-->
-<!--[if lte IE 9]>
-
-
-<![endif]-->
-
-<link href="css/bootstrap.min.css" rel="stylesheet">
-   <script src="js/jquery.min.js"></script>
-    <link rel="stylesheet"
-
-    href="css/jquery.dataTables.min.css"></style>
-    <script type="text/javascript"
-
-    src="js/jquery.dataTables.min.js"></script>
-                                <script type="text/javascript"
+ pt type="text/javascript"
 
     src="js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
 <link rel="stylesheet" href="css/test-tables-alain.css" />
-
+	
 <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
 <script>dataLayer1 = [];</script>
 <!-- End Google Tag Manager -->
 <style>
-
 p, li {max-width: 65em;}
-
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -87,66 +49,48 @@ p, li {max-width: 65em;}
 <form action="../search-results.html" method="get" name="cse-search-box" role="search" class="form-inline">
 
   <style>
-
   button#wb-srch-sub a:visited {
-
   color: white !important;
-
-
   }
-
-
   button#wb-srch-sub a {
-
   color: white !important;
-
-
   }
-
 .carousel-indicators {
 	bottom: -40px!important;
 }
-
 .carousel-indicators .active {
 	background-color: #000000!important;
 }
-
 .carousel-indicators li {
 	border: 1px solid #968989!important;
 }
-
-
+	
 .carousel-control {
 	outline: 0!important;
     color: #fff!important;
     text-decoration: none!important;
     opacity: .9!important;
 }
-
-
+	
+	
 <!--make .carousel-control match the stats of hover:-->
-
 .followus {
 	background-size: 15px 15px !important;
 }
-
 .facebook {
 	background-size: 15px 15px !important;
 }
-
 .icon.facebook {
-	background-size: 15px 15px !important;
+	background-size: 15px 15px !important;	
 }
-
 .twitter {
 	background-size: 15px 15px !important;
 }
-
 .icon.twitter {
-	background-size: 15px 15px !important;
+	background-size: 15px 15px !important;	
 }
-
-
+  
+  
   </style>
 
 <div class="form-group">
@@ -199,45 +143,41 @@ p, li {max-width: 65em;}
 
 
 <style>
-
 .gc-stp-stp {
 	margin-bottom: 0;
 }
-
 </style>
 
 
 <main role="main" property="mainContentOfPage" class="container">
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-
-
-
-
+    
+	
+	
 	var id = getUrlParameter('id'); // (gets me URL parameters)
 	var lang = getUrlParameter('lang'); // (gets me URL parameters)
-
-
+	
+	
 	// get the URL aprameters for ID and Lang then return API JSON
-
+	
 	var jsonfromhc = getRecall(id, lang);
 	console.log(id);
 	console.log(lang);
 	console.log(jsonfromhc);
-
-
-
-
-
+	
+	
+	
+	
+	
 });
-
 function getRecall(id, lang) {
     var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
     var uri = base + '/api/' + id + '/' + lang;
-
-
-
-
+	
+			
+			 
+	
     $.ajax({
         url:uri,
         type:'GET',
@@ -246,40 +186,37 @@ function getRecall(id, lang) {
         success:function(data){
             console.log(data.title);
 			console.log(data);
-
+			
 			//use ids to modify page
 			$("#toptitle").text(data.title);
 			$("#toptitle").text(data.title);
-
+			
         },
         error:function(error){
         },
     });
     return;
-};
-
+};		
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
         sParameterName,
         i;
-
     for (i = 0; i < sURLVariables.length; i++) {
         sParameterName = sURLVariables[i].split('=');
-
         if (sParameterName[0] === sParam) {
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
     }
 };
 </script>
-
+	
 	<div class="recall-super-title" style="overflow: hidden;">
 		<div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
 			<a href="#">Car seats</a>
-		</div>
-
-
+		</div>	
+		
+		
 		<section class="followus mrgn-bttm-md" style="
 		padding-top: 0px;
 		margin-bottom: 0px;
@@ -319,22 +256,22 @@ var getUrlParameter = function getUrlParameter(sParam) {
 			</ul>
 		</section>
 	</div>
-
-
+		
+		
     <h1 property="name" id="toptitle" style="margin-top: 5px;">BRITAX B-SAFE 35 recall - Issue with the handle</h1>
     <p><a href="">Britax</a></p>
     <p><strong>Recall date: January 21, 2016</strong></p>
-
-
+	
+	
 	<h2 class="h3">Description</h2>
-				<p>This recall involves the carry handle on certain B-Safe 35 and B-Safe 35/B-Agile Travel Systems manufactured between October 1, 2014 and July 1, 2015.</p>
-	<p>The infant car seat carry handle can develop cracks and break allowing the seat to fall unexpectedly, posing a risk of injury to the infant.</p>
-
+				<p>This recall involves the carry handle on certain B-Safe 35 and B-Safe 35/B-Agile Travel Systems manufactured between October 1, 2014 and July 1, 2015.</p>	
+	<p>The infant car seat carry handle can develop cracks and break allowing the seat to fall unexpectedly, posing a risk of injury to the infant.</p>	
+	
 
 </section>
-
+		
 		</div>
-
+		
 <div><div class="mwsgeneric-base-html parbase section">
 
 
@@ -369,15 +306,15 @@ $(function() {
     <tbody>
      <tr>
         <td data-label="Product">B-Safe 35</td>
-        <td data-label="Model number">E9LV13F</br>E9LV15M</br>E9LV15P</br>
+        <td data-label="Model number">E9LV13F</br>E9LV15M</br>E9LV15P</br>     
         </td>
         <td data-label="Manufacture date">October 1, 2014 (2014/10/01) through July 1, 2015 (2015/07/01)
 </td>
               </tr>
-
+              
             <tr>
         <td data-label="Product">B-Safe 35/B-Agile Travel System</td>
-        <td data-label="Model number">E9LV13F</br>E9LV15M</br>E9LV15P</br>
+        <td data-label="Model number">E9LV13F</br>E9LV15M</br>E9LV15P</br>  
         </td>
         <td data-label="Manufacture date">October 1, 2014 (2014/10/01) through July 1, 2015 (2015/07/01)
 </td>
@@ -396,17 +333,10 @@ $(function() {
 
 
 	<a class="wb-lbx" href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2016//assets/ra-56686-03_s_fs_3_20160115-202855_16_en.jpg" title="Image of manufacture date">
-<<<<<<< HEAD
-			<img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2016//assets/ra-56686-03_s_fs_3_20160115-202855_16_en.jpg" alt="Image of manufacture date" />
-		</a>
-
-
-=======
 			<img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2016//assets/ra-56686-03_s_fs_3_20160115-202855_16_en.jpg" alt="Image of manufacture date" class="img-responsive" />
 		</a>		
 			
 	
->>>>>>> fd659d189f993546aef1459c57addd8b2248a481
 			<h3 class="h4">Related recalls</h3>
  <ul>
       <li><a href="hhttp://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2016/56686r-eng.php">Britax Child Safety, Inc. recalls B-Ready Stroller and B-Ready Top Seats (2016-01-21)</a></li>
@@ -424,12 +354,6 @@ $(function() {
 
 			<h2 class="h3">What you should do</h2>
 			<p>Consumers should not lift or carry the car seat by the handle until the repair is installed. All consumers who have registered their product with Britax will automatically receive a free repair kit. To verify registration or to receive a repair kit, consumers can visit <a href="http://www.bsafe35recall.com/">Britax recall page</a>. Consumers can continue to safely use the car seat when secured in a vehicle or on a stroller.</p>
-<<<<<<< HEAD
-<a class="wb-lbx" href="http://www.tc.gc.ca/media/images/roadsafety/britax-b-safe-35-1.png" title="How to carry the car seat until it is repaired">
-			<img src="http://www.tc.gc.ca/media/images/roadsafety/britax-b-safe-35-1.png" alt="Until it is repaired, don't hold the seat by the handle." />
-		</a>
-
-=======
 			
 <a class="wb-lbx" href="./images/britax-b-safe-35-1.png" title="How to carry the car seat until it is repaired">
 			<img src="./images/britax-b-safe-35-1.png" alt="Until it is repaired, don't hold the seat by the handle." class="img-responsive" />
@@ -438,41 +362,41 @@ $(function() {
 			<img src="./images/britax-b-safe-35-2.png" alt="Until it is repaired, don't hold the seat by the handle." class="img-responsive" />
 			
 		</a>		
->>>>>>> fd659d189f993546aef1459c57addd8b2248a481
 
+	
 			<!-- include expand collapses for addition sections, such as for specialised audiences or background information-->
 			<h2 class="h3">Additional information</h2>
 			<section>
-
+				
 		<details><summary class="text-primary">Details</summary>
 		<dl class="dlSide width65 " id="awr_details_header_container">
-
+		 
 			<dt class=" paddingNone">Starting date:</dt>
-			<dd class="width45 paddingNone">January 21, 2016</dd>
-
+			<dd class="width45 paddingNone">January 21, 2016</dd>				
+		 
 			<dt class=" paddingNone">Posting date:</dt>
-			<dd class="width45 paddingNone">January 21, 2016</dd>
-
+			<dd class="width45 paddingNone">January 21, 2016</dd>				
+		 
 			<dt class=" paddingNone">Type of communication:</dt>
-			<dd class="width45 paddingNone">Consumer Product Recall</dd>
-
+			<dd class="width45 paddingNone">Consumer Product Recall</dd>				
+		 
 			<dt class=" paddingNone">Subcategory:</dt>
-			<dd class="width45 paddingNone">Children's Products</dd>
-
+			<dd class="width45 paddingNone">Children's Products</dd>				
+		 
 			<dt class=" paddingNone">Source of recall:</dt>
-			<dd class="width45 paddingNone">Health Canada</dd>
-
+			<dd class="width45 paddingNone">Health Canada</dd>				
+		 
 			<dt class=" paddingNone">Issue:</dt>
-			<dd class="width45 paddingNone">Fall Hazard</dd>
-
+			<dd class="width45 paddingNone">Fall Hazard</dd>				
+		 
 			<dt class=" paddingNone">Audience:</dt>
-			<dd class="width45 paddingNone">General Public</dd>
-
+			<dd class="width45 paddingNone">General Public</dd>				
+		 
 			<dt class=" paddingNone">Identification number:</dt>
-			<dd class="width45 paddingNone">RA-56686</dd>
-			</dl>
-
-
+			<dd class="width45 paddingNone">RA-56686</dd>				
+			</dl>	
+			
+				
 <h3 class="h4">Number sold</h3>
 	<p>Approximately 3,900 seats were sold in Canada and about 71,000 were distributed in the United States.</p>
 			<h3 class="h4">Time period sold</h3>
@@ -494,7 +418,7 @@ $(function() {
 <p>
  Health Canada would like to remind Canadians to report any health or safety incidents related to the use of this product or any other consumer product or cosmetic by <a href="http://www.hc-sc.gc.ca/cps-spc/advisories-avis/incident/index-eng.php">filling out the Consumer Product Incident Report Form</a>.</p>
 <p>
- This recall is also posted on the <a href="http://globalrecalls.oecd.org/">OECD Global Portal on Product Recalls website</a>. You can visit this site for more information on other international consumer product recalls.</p>
+ This recall is also posted on the <a href="http://globalrecalls.oecd.org/">OECD Global Portal on Product Recalls website</a>. You can visit this site for more information on other international consumer product recalls.</p>	
 
 				</details>
 			</section><!-- END h3 -->
@@ -503,11 +427,11 @@ $(function() {
 			<h2 class="h3">Subscribe for alerts</h2>
 			<a href="" class="btn btn-default">Choose how to follow recalls</a>
 		</section>
-
+		
 		<section>
-
-
-
+		
+		
+		
 		<h2>Report your issue or a related product</h2>
 		<details>
     <summary class="text-primary">Report incident</summary>
@@ -515,7 +439,7 @@ $(function() {
                      <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="submitter_personName" name="submitter_personName" ng-model="submitter.personName" required="" placeholder="Name" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.personName, 'submitter_personName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                      </textarea>
                       <div class="panel panel-default visible-print">
                          <div class="panel-body">
-                              <p id="submitter_personName_txt" class="visible-print ng-binding"></p>
+                              <p id="submitter_personName_txt" class="visible-print ng-binding"></p>                              
                          </div>
                      </div>
                 </div>
@@ -524,19 +448,19 @@ $(function() {
                      <textarea class="form-control word-wrap hidden-print emailValidation required_group ng-pristine ng-untouched ng-valid ng-valid-maxlength" msd-elastic="" id="submitter_email" name="submitter_email" ng-model="submitter.email" placeholder="email@example.com" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.email, 'submitter_email')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;">                     </textarea>
                		 <div class="panel panel-default visible-print">
                           <div class="panel-body">
-                              	<p id="submitter_email_txt" class="visible-print ng-binding"></p>
+                              	<p id="submitter_email_txt" class="visible-print ng-binding"></p> 
                           </div>
                    	 </div>
                 </div>
 
-<div class="form-group"><label for="affectedPerson_incidentExperiencedDate_0" class="required" aria-required="true"><span class="field-name">Date of the Incident </span><span class="datepicker-format">(<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> <strong class="required" aria-required="true">(required)</strong> </label>
+<div class="form-group"><label for="affectedPerson_incidentExperiencedDate_0" class="required" aria-required="true"><span class="field-name">Date of the Incident </span><span class="datepicker-format">(<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> <strong class="required" aria-required="true">(required)</strong> </label>                                     
                                      <input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="affectedPerson_incidentExperiencedDate_0" name="affectedPerson_incidentExperiencedDate_0" ng-model="affectedPerson.incidentExperiencedDate" hcform-datepicker="" type="date" data-rule-dateiso="true" required="" onkeypress="return noEnter(event)" aria-required="true">
                                 </div>
 
 <div class="row">
                             <div class="col-md-6 pull-left">
                                 <div class="form-group"><label for="affectedPerson_lkpIncidentTypeId_0" class="required" aria-required="true"><span class="field-name">Incident Type</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpIncidentTypeId_0" name="affectedPerson_lkpIncidentTypeId_0" ng-model="affectedPerson.lkpIncidentTypeId" ng-options="obj.id as obj.name for obj in lstIncidentType" ng-change="populateObjectPropertyByValue(affectedPerson.lkpIncidentTypeId, 'submission.lkpCaseSubtypeId', $index)" required="" aria-required="true"><option value="" class="">Select Incident Type</option><option value="0" label="Death">Death</option><option value="1" label="Serious Injury">Serious Injury</option><option value="2" label="Injury">Injury</option><option value="3" label="Product Defect">Product Defect</option><option value="4" label="Incorrect/Insufficient Information">Incorrect/Insufficient Information</option><option value="5" label="Recall">Recall</option><option value="6" label="Property Damage">Property Damage</option><option value="7" label="Incident, No Injury">Incident, No Injury</option><option value="8" label="Other">Other</option></select>
+                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpIncidentTypeId_0" name="affectedPerson_lkpIncidentTypeId_0" ng-model="affectedPerson.lkpIncidentTypeId" ng-options="obj.id as obj.name for obj in lstIncidentType" ng-change="populateObjectPropertyByValue(affectedPerson.lkpIncidentTypeId, 'submission.lkpCaseSubtypeId', $index)" required="" aria-required="true"><option value="" class="">Select Incident Type</option><option value="0" label="Death">Death</option><option value="1" label="Serious Injury">Serious Injury</option><option value="2" label="Injury">Injury</option><option value="3" label="Product Defect">Product Defect</option><option value="4" label="Incorrect/Insufficient Information">Incorrect/Insufficient Information</option><option value="5" label="Recall">Recall</option><option value="6" label="Property Damage">Property Damage</option><option value="7" label="Incident, No Injury">Incident, No Injury</option><option value="8" label="Other">Other</option></select>                                     
                                 </div>
                             </div>
                             <div class="col-md-6 pull-right">
@@ -547,24 +471,24 @@ $(function() {
                         </div>
 
 <div class="form-group"><label for="affectedPerson_lkpTreatmentTypeId_0" class="required" aria-required="true"><span class="field-name">Treatment</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpTreatmentTypeId_0" name="affectedPerson_lkpTreatmentTypeId_0" ng-model="affectedPerson.lkpTreatmentTypeId" ng-options="obj.id as obj.name for obj in lstTreatment" required="" aria-required="true"><option value="" class="">Select Treatment</option><option value="0" label="None">None</option><option value="1" label="First Aid">First Aid</option><option value="2" label="Provincial Health Care Info Service">Provincial Health Care Info Service</option><option value="3" label="Poison Control Centre">Poison Control Centre</option><option value="4" label="Family Doctor">Family Doctor</option><option value="5" label="Hospital-Emergency Room">Hospital-Emergency Room</option><option value="6" label="Hospital-Other">Hospital-Other</option><option value="7" label="Other Medical Professional">Other Medical Professional</option><option value="8" label="Other">Other</option><option value="9" label="Unknown">Unknown</option></select>
+                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpTreatmentTypeId_0" name="affectedPerson_lkpTreatmentTypeId_0" ng-model="affectedPerson.lkpTreatmentTypeId" ng-options="obj.id as obj.name for obj in lstTreatment" required="" aria-required="true"><option value="" class="">Select Treatment</option><option value="0" label="None">None</option><option value="1" label="First Aid">First Aid</option><option value="2" label="Provincial Health Care Info Service">Provincial Health Care Info Service</option><option value="3" label="Poison Control Centre">Poison Control Centre</option><option value="4" label="Family Doctor">Family Doctor</option><option value="5" label="Hospital-Emergency Room">Hospital-Emergency Room</option><option value="6" label="Hospital-Other">Hospital-Other</option><option value="7" label="Other Medical Professional">Other Medical Professional</option><option value="8" label="Other">Other</option><option value="9" label="Unknown">Unknown</option></select>                                   
                                 </div>
 
-<div class="form-group"><label for="incident_incidentDescription" class="required" aria-required="true"><span class="field-name">Describe the Incident</span> <strong class="required" aria-required="true">(required)</strong> </label><br>
-                         <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">2000</span></small></div>
+<div class="form-group"><label for="incident_incidentDescription" class="required" aria-required="true"><span class="field-name">Describe the Incident</span> <strong class="required" aria-required="true">(required)</strong> </label><br>                       
+                         <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">2000</span></small></div>                       
                          <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="incident_incidentDescription" name="incident_incidentDescription" ng-model="incident.incidentDescription" ng-trim="false" placeholder="Describe the Incident" required="" aria-multiline="true" rows="5" cols="150" maxlength="2000" ng-change="copyText(incident.incidentDescription, 'incident_incidentDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                         </textarea>
                          <div class="panel panel-default visible-print">
-                             <div class="panel-body">
-                                  <p id="incident_incidentDescription_txt" class="visible-print ng-binding"></p>
+                             <div class="panel-body"> 
+                                  <p id="incident_incidentDescription_txt" class="visible-print ng-binding"></p>                               	 
                              </div>
-                   	     </div>
+                   	     </div>                       
                     </div>
 
 <div class="form-group"><label for="product_productBrandName" class="required" aria-required="true"><span class="field-name">Product Brand and Name</span> <strong class="required" aria-required="true">(required)</strong> </label>
                          <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="product_productBrandName" name="product_productBrandName" ng-model="product.productBrandName" required="" placeholder="Product Brand and Name" rows="1" cols="60" maxlength="100" ng-change="copyText(product.productBrandName, 'product_productBrandName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                         </textarea>
                          <div class="panel panel-default visible-print">
                              <div class="panel-body">
-                                  <p id="product_productBrandName_txt" class="visible-print ng-binding"></p>
+                                  <p id="product_productBrandName_txt" class="visible-print ng-binding"></p>                              	  
                              </div>
                    	     </div>
                     </div>
@@ -574,23 +498,23 @@ $(function() {
                            <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="product_productDescription" name="product_productDescription" ng-model="product.productDescription" ng-trim="false" required="" placeholder="Product description" rows="5" cols="150" maxlength="1500" ng-change="copyText(product.productDescription, 'product_productDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                           </textarea>
                            <div class="panel panel-default visible-print">
                                 <div class="panel-body">
-                              	     <p id="product_productDescription_txt" class="visible-print ng-binding"></p>
+                              	     <p id="product_productDescription_txt" class="visible-print ng-binding"></p>  
                                 </div>
-                   	       </div>
+                   	       </div>                       
                       </div>
 
 <div class="form-group"><label for="whereGotPrdct_lkpContactContextId" class="required" aria-required="true"><span class="field-name">From whom did you get the product</span><br><strong class="required" aria-required="true">(required when this section is completed)</strong> </label>
                          <select class="form-control ng-pristine ng-untouched ng-valid" id="whereGotPrdct_lkpContactContextId" name="whereGotPrdct_lkpContactContextId" ng-model="whereGotPrdct.lkpContactContextId">
                                  <option value="">Select From whom did you get the product</option>
                                  <!-- ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52401" class="ng-binding ng-scope">Gift</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52400" class="ng-binding ng-scope">Promotional Item</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52397" class="ng-binding ng-scope">Purchased New</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52399" class="ng-binding ng-scope">Purchased Used From Person e.g. Yard Sale</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52398" class="ng-binding ng-scope">Purchased Used From Retailer</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52402" class="ng-binding ng-scope">Other</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer -->
-                         </select>
+                         </select>                          
                     </div>
 
 <div id="submit" col-md-3="" pull-left="">
 	        <input type="submit" ng-disabled="isAutoFill" value="Proceed to Submit" class="btn btn-primary">
 	    </div>
 </details>
-
+			
 
 </div>
 
