@@ -74,6 +74,24 @@ p, li {max-width: 65em;}
 .gc-stp-stp {
 	margin-bottom: 0;
 }
+
+@media (min-width:768px) {
+	.col-sm-push-4 {
+		width:66%;
+	}
+	#recalls-filter-button {
+		display: none;
+	}
+	#recalls-search-box {
+		max-width: 410px;
+	}
+}
+
+@media (max-width:992px) {
+	#sort-by-box {
+		margin-top: 20px; 
+	}
+
 </style>
 
 
@@ -92,60 +110,104 @@ p, li {max-width: 65em;}
       
 	  
 	  <!-- search --> 
+	  <form action="search" method="GET">
+		<input type="hidden" name="lang" value="en">
+		<input type="hidden" name="type" value="all">
+		<input type="hidden" name="year" value="0">
+		<input type="hidden" name="departmentid" value="0">
+		<input type="hidden" name="subjectid" value="0">
+		<input type="hidden" name="start" value="1">
+	  </form>
 	  
-	  
-	  <div id="btngrp-recalls-search-label" ><label>Search</label>
-		<div class="input-group">
-			<input type="text" class="form-control" id="btngrp-recalls-search" placeholder="Search recalls" />
-			<span class="input-group-btn">
-			 <div class="reacalls-search-button">
-			  <button type="submit" class="btn btn-primary form-submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-			</div>
-			</span>
-		  </div>
+	 <div id="btngrp-recalls-search-label"><label style="float: left;">Search</label>
+		<div class="input-group" id="recalls-search-box" style="
+			clear: both;
+			height: 37px;
+			padding: 0px 0px 0px 12px;
+			font-size: 16px;
+			line-height: 1.4375;
+			color: #888;
+			background-color: #fff;
+			background-image: none;
+			border: 3px solid #335075;
+			border-radius: 4px;
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+			margin-left: auto;
+			width: calc(100% - 94px);
+			padding-top: 5px;
+			padding-bottom: 4px;
+			display: flex;
+			float: left;
+		">
+
+
+
+		<input type="text" class="" id="btngrp-recalls-search" placeholder="Search recalls" style="border: none;box-shadow: none;float: left; width: 100%;">
+    	<button type="submit" style="float:left;background: none!important;border: none!important;border-left: #cbbebe 1px solid!important;padding-left: 8px!important; color: black;">Find
+		</button></div>
+
+		<div style="float:right;">
+			<button class="btn btn-primary" type="button" id="recalls-filter-button">
+				<span class="glyphicon glyphicon-th-list"></span>
+				<span class=""> Filter</span>
+			</button>
+		</div>
+
       </div>
-      
+	  
+	  
+      <div id="sort-by-box" style="float: right; display:flex; margin-bottom: 20px; align-items: baseline;">
 	  <label class="control-label" for="edit-sort-by">Sort by</label>
-		<select class="form-control">
+		<select class="form-control" style="float:right; margin-left: 10px;">
 			<option>Date</option>
 			<option>Relevance</option>
 		</select>
-	  
+	  </div>
 	  
 	  
       
         <div class="view-content">
 <!-- results here - placeholder from australia-->
+  
+<div class="row">
+    <div class="col-xs-12 decorated-content">  
+                    
+        <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 16px;">Recall title</a></h3>  
+		<div class="" style="float:right; margin-top:10px;"><span class="field-content">25 Jun 2009</span></div>  		
+        <div class="" style="display:block; clear:both; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1;"><span class="field-content" style="font-size: 14px;"></div></div>
+		
+  </div>
+  
+  
   <div class="row">
     <div class="col-xs-12 decorated-content">  
-        <div class=""><span class="field-content">25 Jun 2009</span></div>              
-        <h3 class=""><a href="">Recall title</a></h3>              
-        <div class=""><span class="field-content">Recall description</div></div>
+                    
+        <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 16px;">Recall title</a></h3>  
+		<div class="" style="float:right; margin-top:10px;"><span class="field-content">25 Jun 2009</span></div>  		
+        <div class="" style="display:block; clear:both; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1;"><span class="field-content" style="font-size: 14px;"></div></div>
   </div>
   <div class="row">
     <div class="col-xs-12 decorated-content">  
-        <div class=""><span class="field-content">25 Jun 2009</span></div>              
-        <h3 class=""><a href="">Recall title</a></h3>              
-        <div class=""><span class="field-content">Recall description</div></div>
+                    
+        <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 16px;">Recall title</a></h3>  
+		<div class="" style="float:right; margin-top:10px;"><span class="field-content">25 Jun 2009</span></div>  		
+        <div class="" style="display:block; clear:both; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1;"><span class="field-content" style="font-size: 14px;"></div></div>
   </div>
   <div class="row">
     <div class="col-xs-12 decorated-content">  
-        <div class=""><span class="field-content">25 Jun 2009</span></div>              
-        <h3 class=""><a href="">Recall title</a></h3>              
-        <div class=""><span class="field-content">Recall description</div></div>
+                    
+        <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 16px;">Recall title</a></h3>  
+		<div class="" style="float:right; margin-top:10px;"><span class="field-content">25 Jun 2009</span></div>  		
+        <div class="" style="display:block; clear:both; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1;"><span class="field-content" style="font-size: 14px;"></div></div>
   </div>
   <div class="row">
     <div class="col-xs-12 decorated-content">  
-        <div class=""><span class="field-content">25 Jun 2009</span></div>              
-        <h3 class=""><a href="">Recall title</a></h3>              
-        <div class=""><span class="field-content">Recall description</div></div>
+                    
+        <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 16px;">Recall title</a></h3>  
+		<div class="" style="float:right; margin-top:10px;"><span class="field-content">25 Jun 2009</span></div>  		
+        <div class="" style="display:block; clear:both; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1;"><span class="field-content" style="font-size: 14px;"></div></div>
   </div>
-  <div class="row">
-    <div class="col-xs-12 decorated-content">  
-        <div class=""><span class="field-content">25 Jun 2009</span></div>              
-        <h3 class=""><a href="">Recall title</a></h3>              
-        <div class=""><span class="field-content">Recall description</div></div>
-  </div>
+  
 </div>
   
   
@@ -162,8 +224,46 @@ p, li {max-width: 65em;}
 		
           <!-- noindex -->
       <aside class="col-sm-4 col-sm-pull-8" role="complementary">
-      
+
+
+
+<div>
+
+<details class="mrgn-tp-lg" open="">
+                    <summary class="panel-heading"><strong>Filters</strong></summary>
+                    <div class="panel-body">
+                         <div data-ajax-replace="ajax/notice.html" class="wb-init wb-data-ajax-replace-inited" id="wb-auto-1"></div>
+
+                              <!-- Org list -->
+                              <ul class="list-unstyled lst-spcd">
+                                   <li><strong><a href="option1.html"><i class="glyphicon glyphicon-ok mrgn-rght-sm"></i>All categories</a></strong></li>
+                                   <li><a href="atssc.html">Consumer products</a></li><li>
+                                   </li><li><a href="acoa.html">Vehicles</a></li><li>
+                                   </li><li><a href="cbsa.html">Food</a></li><li>
+                                   </li><li><a href="ceria.html">Health products</a></li><li>
+
+                              </li></ul>
+                              <!-- Org list end -->
+
+
+
+
+                    </div>
+               </details>
+
+
+
           
+
+    </div>
+	
+	
+	
+
+
+
+      
+         <!-- 
 
 		  <h2>Product Category</h2>
 
@@ -173,7 +273,7 @@ p, li {max-width: 65em;}
 	</ul>  
 	</div>
 
-</section> <!-- /.block -->
+</section>
 <section id="block-facetapi-y91zi3cq9cyqzsm8mjxic2bfd1gzszvg" class="block block-facetapi clearfix">
 
 
@@ -183,7 +283,7 @@ p, li {max-width: 65em;}
     <ul>
 		<li>Filter here</li>
 	</ul>   
-</div>
+</div>-->
 
 </section> <!-- /.block -->
         </div>
