@@ -101,15 +101,15 @@ p, li {max-width: 65em;}
 	border: 1px solid #968989!important;
 }
 
-	
+
 .carousel-control {
 	outline: 0!important;
     color: #fff!important;
     text-decoration: none!important;
     opacity: .9!important;
 }
-	
-	
+
+
 <!--make .carousel-control match the stats of hover:-->
 
 .followus {
@@ -121,7 +121,7 @@ p, li {max-width: 65em;}
 }
 
 .icon.facebook {
-	background-size: 15px 15px !important;	
+	background-size: 15px 15px !important;
 }
 
 .twitter {
@@ -129,10 +129,14 @@ p, li {max-width: 65em;}
 }
 
 .icon.twitter {
-	background-size: 15px 15px !important;	
+	background-size: 15px 15px !important;
 }
-  
-  
+
+@media (min-width:768px) {
+  .owl-container {
+    width:50%;
+  }
+}
   </style>
 
 <div class="form-group">
@@ -174,34 +178,34 @@ p, li {max-width: 65em;}
 <main role="main" property="mainContentOfPage" class="container">
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-    
-	
-	
+
+
+
 
 	var id = getUrlParameter('id'); // (gets me URL parameters)
 	var lang = getUrlParameter('lang'); // (gets me URL parameters)
-	
-	
+
+
 	// get the URL aprameters for ID and Lang then return API JSON
-	
+
 	var jsonfromhc = getRecall(id, lang);
 	console.log(id);
 	console.log(lang);
 	console.log(jsonfromhc);
-	
-	
-	
-	
-	
+
+
+
+
+
 });
 
 function getRecall(id, lang) {
     var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
     var uri = base + '/api/' + id + '/' + lang;
-	
-			
-			 
-	
+
+
+
+
     $.ajax({
         url:uri,
         type:'GET',
@@ -210,17 +214,17 @@ function getRecall(id, lang) {
         success:function(data){
             console.log(data.title);
 			console.log(data);
-			
+
 			//use ids to modify page
 			$("#toptitle").text(data.title);
 			$("#toptitle").text(data.title);
-			
+
         },
         error:function(error){
         },
     });
     return;
-};		
+};
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -237,13 +241,13 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 </script>
-	
+
 	<div class="recall-super-title" style="overflow: hidden;">
 		<div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
 			<a href="#">Children's products</a>
-		</div>	
-		
-		
+		</div>
+
+
 		<section class="followus mrgn-bttm-md" style="
 		padding-top: 0px;
 		margin-bottom: 0px;
@@ -283,15 +287,15 @@ var getUrlParameter = function getUrlParameter(sParam) {
 			</ul>
 		</section>
 	</div>
-		
-		
+
+
     <h1 property="name" id="toptitle" style="margin-top: 5px;">Skip Hop recalls Tuo Convertible High Chairs</h1>
     <p><a href="">Skip Hop</a></p>
     <p><strong>Recall date: January 9, 2018</strong></p>
-	
-	
+
+
 	<h2 class="h3">Description</h2>
-				<p>This recall only involves units with a limited series of date codes, <strong>sold between December 2016 and September 2017</strong>.</p>	
+				<p>This recall only involves units with a limited series of date codes, <strong>sold between December 2016 and September 2017</strong>.</p>
 
 <p>Date codes: </p>
 <ul>
@@ -300,14 +304,14 @@ var getUrlParameter = function getUrlParameter(sParam) {
 <li>HH3/2017</li>
 <li>HH4/2017</li>
 	</ul>
-	
+
 </section>
-		
+
 		</div>
-		
+
 <div><div class="mwsgeneric-base-html parbase section">
 
-
+<div class="owl-container">
 <script>
 $(function() {
   $('.owl-carousel').owlCarousel({
@@ -323,12 +327,13 @@ $(function() {
   <div class="item"><img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2018/assets//RA-65634-02_s_fs_3_20180108-210743_12_en.jpg" /></div>
 
 </div>
+</div>
 <div class="row">
 	<div class="col-md-8">
 		<section>
 					<h2 class="h3">Are you affected?</h2>
 				<p>This recall involves the charcoal colored Tuo Convertible High Chair, which can be converted into a toddler chair. The <strong>only</strong> highchairs involved in this recall are the ones <strong>sold from December 2016 to September 2017</strong> in Canada and the United States</p>
-	
+
 	 <p>They have style numbers of 304200 and 304200-CN with these date codes on the back of the chair:</p>
         <ul>
         <li>HH102016</li>
@@ -336,12 +341,12 @@ $(function() {
         <li>HH3/2017</li>
         <li>HH4/2017</li>
 		</ul>
- <p> The highchairs have a reversible seat pad, removable tray, 5-point harness, beechwood footrest and legs. Other chairs are not involved.</p>     
+ <p> The highchairs have a reversible seat pad, removable tray, 5-point harness, beechwood footrest and legs. Other chairs are not involved.</p>
 
-<p> Other chairs are not affected.</p>  
-	
+<p> Other chairs are not affected.</p>
+
 	<p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.), to make sure your product is not affected.</p>
-	
+
 	 <form id="someId">
 <div class="input-group">
                 <input name="srch-term" class="form-control" type="text">
@@ -351,8 +356,8 @@ $(function() {
 </div>
 </form>
 
-	
-			
+
+
 			<h2 class="h3">Issue </h2>
 			<p>The front legs on the highchair can detach from the seat, posing a fall and injury hazard to children.</p>
       <p>As of January 9, 2018, the company has received no reports of detached legs in Canada. In the United States, the company has received 2 reports of bruising.</p>
@@ -363,44 +368,44 @@ $(function() {
 <p>For more information, consumers can contact Skip Hop by telephone toll-free at 1-888-282-4674 from 9 a.m. to 5 p.m. ET Monday through Friday, by <a href="mailto:recall@skiphop.com">email&nbsp; </a> or <a href="http://www.skiphoprecall.com">online </a> and click on Product Recalls at the bottom of the page under Shopping With Us for more information.</p>
 
 			<!-- include expand collapses for addition sections, such as for specialised audiences or background information-->
-			
+
 			<h2 class="h3">Related recalls</h2>
  <ul>
-        
+
 <li><a href="http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2017/64614r-eng.php">Skip Hop recalls Nightlight Soother Adapters (2017-09-28)</a></li>
 <li><a href="http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2018/66064r-eng.php">Graco Children's Products Inc. recalls Graco Table2Table 6-in-1 Highchairs (2018-03-01)</a></li>
- 
+
 </ul>
-			
+
 			<h2 class="h3">Background and media enquiries</h2>
 			<section>
-				
+
 		<details><summary class="text-primary">Details</summary>
 				<dl class="dlSide width65 " id="awr_details_header_container">
-		 
+
 			<dt class=" paddingNone">Starting date:</dt>
-			<dd class="width45 paddingNone">January 9, 2018</dd>				
-		 
+			<dd class="width45 paddingNone">January 9, 2018</dd>
+
 			<dt class=" paddingNone">Posting date:</dt>
-			<dd class="width45 paddingNone">January 9, 2018</dd>				
-		 
+			<dd class="width45 paddingNone">January 9, 2018</dd>
+
 			<dt class=" paddingNone">Type of communication:</dt>
-			<dd class="width45 paddingNone">Consumer Product Recall</dd>				
-		 
+			<dd class="width45 paddingNone">Consumer Product Recall</dd>
+
 			<dt class=" paddingNone">Subcategory:</dt>
-			<dd class="width45 paddingNone">Children's Products</dd>				
-		 
+			<dd class="width45 paddingNone">Children's Products</dd>
+
 			<dt class=" paddingNone">Source of recall:</dt>
-			<dd class="width45 paddingNone">Health Canada</dd>				
-		 
+			<dd class="width45 paddingNone">Health Canada</dd>
+
 			<dt class=" paddingNone">Issue:</dt>
-			<dd class="width45 paddingNone">Fall Hazard</dd>				
-		 
+			<dd class="width45 paddingNone">Fall Hazard</dd>
+
 			<dt class=" paddingNone">Audience:</dt>
-			<dd class="width45 paddingNone">General Public</dd>				
-		 
+			<dd class="width45 paddingNone">General Public</dd>
+
 			<dt class=" paddingNone">Identification number:</dt>
-			<dd class="width45 paddingNone">RA-65634</dd>				
+			<dd class="width45 paddingNone">RA-65634</dd>
 			</dl>
 				</details>
 
@@ -418,11 +423,11 @@ Please note that the Canada Consumer Product Safety Act prohibits recalled produ
 			<h2 class="h3">Subscribe for alerts</h2>
 			<a href="" class="btn btn-default">Choose how to follow recalls</a>
 		</section>
-		
+
 		<section>
-		
-		
-		
+
+
+
 		<h2>Report your issue or a related product</h2>
 		<details>
     <summary class="text-primary">Report incident</summary>
@@ -430,7 +435,7 @@ Please note that the Canada Consumer Product Safety Act prohibits recalled produ
                      <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="submitter_personName" name="submitter_personName" ng-model="submitter.personName" required="" placeholder="Name" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.personName, 'submitter_personName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                      </textarea>
                       <div class="panel panel-default visible-print">
                          <div class="panel-body">
-                              <p id="submitter_personName_txt" class="visible-print ng-binding"></p>                              
+                              <p id="submitter_personName_txt" class="visible-print ng-binding"></p>
                          </div>
                      </div>
                 </div>
@@ -439,19 +444,19 @@ Please note that the Canada Consumer Product Safety Act prohibits recalled produ
                      <textarea class="form-control word-wrap hidden-print emailValidation required_group ng-pristine ng-untouched ng-valid ng-valid-maxlength" msd-elastic="" id="submitter_email" name="submitter_email" ng-model="submitter.email" placeholder="email@example.com" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.email, 'submitter_email')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;">                     </textarea>
                		 <div class="panel panel-default visible-print">
                           <div class="panel-body">
-                              	<p id="submitter_email_txt" class="visible-print ng-binding"></p> 
+                              	<p id="submitter_email_txt" class="visible-print ng-binding"></p>
                           </div>
                    	 </div>
                 </div>
 
-<div class="form-group"><label for="affectedPerson_incidentExperiencedDate_0" class="required" aria-required="true"><span class="field-name">Date of the Incident </span><span class="datepicker-format">(<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> <strong class="required" aria-required="true">(required)</strong> </label>                                     
+<div class="form-group"><label for="affectedPerson_incidentExperiencedDate_0" class="required" aria-required="true"><span class="field-name">Date of the Incident </span><span class="datepicker-format">(<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> <strong class="required" aria-required="true">(required)</strong> </label>
                                      <input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="affectedPerson_incidentExperiencedDate_0" name="affectedPerson_incidentExperiencedDate_0" ng-model="affectedPerson.incidentExperiencedDate" hcform-datepicker="" type="date" data-rule-dateiso="true" required="" onkeypress="return noEnter(event)" aria-required="true">
                                 </div>
 
 <div class="row">
                             <div class="col-md-6 pull-left">
                                 <div class="form-group"><label for="affectedPerson_lkpIncidentTypeId_0" class="required" aria-required="true"><span class="field-name">Incident Type</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpIncidentTypeId_0" name="affectedPerson_lkpIncidentTypeId_0" ng-model="affectedPerson.lkpIncidentTypeId" ng-options="obj.id as obj.name for obj in lstIncidentType" ng-change="populateObjectPropertyByValue(affectedPerson.lkpIncidentTypeId, 'submission.lkpCaseSubtypeId', $index)" required="" aria-required="true"><option value="" class="">Select Incident Type</option><option value="0" label="Death">Death</option><option value="1" label="Serious Injury">Serious Injury</option><option value="2" label="Injury">Injury</option><option value="3" label="Product Defect">Product Defect</option><option value="4" label="Incorrect/Insufficient Information">Incorrect/Insufficient Information</option><option value="5" label="Recall">Recall</option><option value="6" label="Property Damage">Property Damage</option><option value="7" label="Incident, No Injury">Incident, No Injury</option><option value="8" label="Other">Other</option></select>                                     
+                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpIncidentTypeId_0" name="affectedPerson_lkpIncidentTypeId_0" ng-model="affectedPerson.lkpIncidentTypeId" ng-options="obj.id as obj.name for obj in lstIncidentType" ng-change="populateObjectPropertyByValue(affectedPerson.lkpIncidentTypeId, 'submission.lkpCaseSubtypeId', $index)" required="" aria-required="true"><option value="" class="">Select Incident Type</option><option value="0" label="Death">Death</option><option value="1" label="Serious Injury">Serious Injury</option><option value="2" label="Injury">Injury</option><option value="3" label="Product Defect">Product Defect</option><option value="4" label="Incorrect/Insufficient Information">Incorrect/Insufficient Information</option><option value="5" label="Recall">Recall</option><option value="6" label="Property Damage">Property Damage</option><option value="7" label="Incident, No Injury">Incident, No Injury</option><option value="8" label="Other">Other</option></select>
                                 </div>
                             </div>
                             <div class="col-md-6 pull-right">
@@ -462,24 +467,24 @@ Please note that the Canada Consumer Product Safety Act prohibits recalled produ
                         </div>
 
 <div class="form-group"><label for="affectedPerson_lkpTreatmentTypeId_0" class="required" aria-required="true"><span class="field-name">Treatment</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpTreatmentTypeId_0" name="affectedPerson_lkpTreatmentTypeId_0" ng-model="affectedPerson.lkpTreatmentTypeId" ng-options="obj.id as obj.name for obj in lstTreatment" required="" aria-required="true"><option value="" class="">Select Treatment</option><option value="0" label="None">None</option><option value="1" label="First Aid">First Aid</option><option value="2" label="Provincial Health Care Info Service">Provincial Health Care Info Service</option><option value="3" label="Poison Control Centre">Poison Control Centre</option><option value="4" label="Family Doctor">Family Doctor</option><option value="5" label="Hospital-Emergency Room">Hospital-Emergency Room</option><option value="6" label="Hospital-Other">Hospital-Other</option><option value="7" label="Other Medical Professional">Other Medical Professional</option><option value="8" label="Other">Other</option><option value="9" label="Unknown">Unknown</option></select>                                   
+                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpTreatmentTypeId_0" name="affectedPerson_lkpTreatmentTypeId_0" ng-model="affectedPerson.lkpTreatmentTypeId" ng-options="obj.id as obj.name for obj in lstTreatment" required="" aria-required="true"><option value="" class="">Select Treatment</option><option value="0" label="None">None</option><option value="1" label="First Aid">First Aid</option><option value="2" label="Provincial Health Care Info Service">Provincial Health Care Info Service</option><option value="3" label="Poison Control Centre">Poison Control Centre</option><option value="4" label="Family Doctor">Family Doctor</option><option value="5" label="Hospital-Emergency Room">Hospital-Emergency Room</option><option value="6" label="Hospital-Other">Hospital-Other</option><option value="7" label="Other Medical Professional">Other Medical Professional</option><option value="8" label="Other">Other</option><option value="9" label="Unknown">Unknown</option></select>
                                 </div>
 
-<div class="form-group"><label for="incident_incidentDescription" class="required" aria-required="true"><span class="field-name">Describe the Incident</span> <strong class="required" aria-required="true">(required)</strong> </label><br>                       
-                         <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">2000</span></small></div>                       
+<div class="form-group"><label for="incident_incidentDescription" class="required" aria-required="true"><span class="field-name">Describe the Incident</span> <strong class="required" aria-required="true">(required)</strong> </label><br>
+                         <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">2000</span></small></div>
                          <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="incident_incidentDescription" name="incident_incidentDescription" ng-model="incident.incidentDescription" ng-trim="false" placeholder="Describe the Incident" required="" aria-multiline="true" rows="5" cols="150" maxlength="2000" ng-change="copyText(incident.incidentDescription, 'incident_incidentDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                         </textarea>
                          <div class="panel panel-default visible-print">
-                             <div class="panel-body"> 
-                                  <p id="incident_incidentDescription_txt" class="visible-print ng-binding"></p>                               	 
+                             <div class="panel-body">
+                                  <p id="incident_incidentDescription_txt" class="visible-print ng-binding"></p>
                              </div>
-                   	     </div>                       
+                   	     </div>
                     </div>
 
 <div class="form-group"><label for="product_productBrandName" class="required" aria-required="true"><span class="field-name">Product Brand and Name</span> <strong class="required" aria-required="true">(required)</strong> </label>
                          <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="product_productBrandName" name="product_productBrandName" ng-model="product.productBrandName" required="" placeholder="Product Brand and Name" rows="1" cols="60" maxlength="100" ng-change="copyText(product.productBrandName, 'product_productBrandName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                         </textarea>
                          <div class="panel panel-default visible-print">
                              <div class="panel-body">
-                                  <p id="product_productBrandName_txt" class="visible-print ng-binding"></p>                              	  
+                                  <p id="product_productBrandName_txt" class="visible-print ng-binding"></p>
                              </div>
                    	     </div>
                     </div>
@@ -489,23 +494,23 @@ Please note that the Canada Consumer Product Safety Act prohibits recalled produ
                            <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="product_productDescription" name="product_productDescription" ng-model="product.productDescription" ng-trim="false" required="" placeholder="Product description" rows="5" cols="150" maxlength="1500" ng-change="copyText(product.productDescription, 'product_productDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                           </textarea>
                            <div class="panel panel-default visible-print">
                                 <div class="panel-body">
-                              	     <p id="product_productDescription_txt" class="visible-print ng-binding"></p>  
+                              	     <p id="product_productDescription_txt" class="visible-print ng-binding"></p>
                                 </div>
-                   	       </div>                       
+                   	       </div>
                       </div>
 
 <div class="form-group"><label for="whereGotPrdct_lkpContactContextId" class="required" aria-required="true"><span class="field-name">From whom did you get the product</span><br><strong class="required" aria-required="true">(required when this section is completed)</strong> </label>
                          <select class="form-control ng-pristine ng-untouched ng-valid" id="whereGotPrdct_lkpContactContextId" name="whereGotPrdct_lkpContactContextId" ng-model="whereGotPrdct.lkpContactContextId">
                                  <option value="">Select From whom did you get the product</option>
                                  <!-- ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52401" class="ng-binding ng-scope">Gift</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52400" class="ng-binding ng-scope">Promotional Item</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52397" class="ng-binding ng-scope">Purchased New</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52399" class="ng-binding ng-scope">Purchased Used From Person e.g. Yard Sale</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52398" class="ng-binding ng-scope">Purchased Used From Retailer</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52402" class="ng-binding ng-scope">Other</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer -->
-                         </select>                          
+                         </select>
                     </div>
 
 <div id="submit" col-md-3="" pull-left="">
 	        <input type="submit" ng-disabled="isAutoFill" value="Proceed to Submit" class="btn btn-primary">
 	    </div>
 </details>
-			
+
 
 </div>
 

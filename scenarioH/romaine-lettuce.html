@@ -102,15 +102,15 @@ p, li {max-width: 65em;}
 	border: 1px solid #968989!important;
 }
 
-	
+
 .carousel-control {
 	outline: 0!important;
     color: #fff!important;
     text-decoration: none!important;
     opacity: .9!important;
 }
-	
-	
+
+
 <!--make .carousel-control match the stats of hover:-->
 
 .followus {
@@ -122,7 +122,7 @@ p, li {max-width: 65em;}
 }
 
 .icon.facebook {
-	background-size: 15px 15px !important;	
+	background-size: 15px 15px !important;
 }
 
 .twitter {
@@ -130,10 +130,14 @@ p, li {max-width: 65em;}
 }
 
 .icon.twitter {
-	background-size: 15px 15px !important;	
+	background-size: 15px 15px !important;
 }
-  
-  
+
+@media (min-width:768px) {
+  .owl-container {
+    width:50%;
+  }
+}
   </style>
 
 <div class="form-group">
@@ -175,34 +179,34 @@ p, li {max-width: 65em;}
 <main role="main" property="mainContentOfPage" class="container">
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-    
-	
-	
+
+
+
 
 	var id = getUrlParameter('id'); // (gets me URL parameters)
 	var lang = getUrlParameter('lang'); // (gets me URL parameters)
-	
-	
+
+
 	// get the URL aprameters for ID and Lang then return API JSON
-	
+
 	var jsonfromhc = getRecall(id, lang);
 	console.log(id);
 	console.log(lang);
 	console.log(jsonfromhc);
-	
-	
-	
-	
-	
+
+
+
+
+
 });
 
 function getRecall(id, lang) {
     var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
     var uri = base + '/api/' + id + '/' + lang;
-	
-			
-			 
-	
+
+
+
+
     $.ajax({
         url:uri,
         type:'GET',
@@ -211,17 +215,17 @@ function getRecall(id, lang) {
         success:function(data){
             console.log(data.title);
 			console.log(data);
-			
+
 			//use ids to modify page
 			$("#toptitle").text(data.title);
 			$("#toptitle").text(data.title);
-			
+
         },
         error:function(error){
         },
     });
     return;
-};		
+};
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -238,13 +242,13 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 </script>
-	
+
 	<div class="recall-super-title" style="overflow: hidden;">
 		<div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
 			<a href="#">Food</a>
-		</div>	
-		
-		
+		</div>
+
+
 		<section class="followus mrgn-bttm-md" style="
 		padding-top: 0px;
 		margin-bottom: 0px;
@@ -284,22 +288,22 @@ var getUrlParameter = function getUrlParameter(sParam) {
 			</ul>
 		</section>
 	</div>
-		
-		
+
+
     <h1 property="name" id="toptitle" style="margin-top: 5px;">Romain lettuce - E. coli - CLOSED</h1>
-    
+
 	<p><strong>Date:</strong> February 9, 2018</p>
 
 	<h2 class="h3">Description</h2>
-				<p>There was an outbreadk of E. Coli infections in Canada in Nocvember and December 2017. The infection is now over. 
-</p>	
+				<p>There was an outbreadk of E. Coli infections in Canada in Nocvember and December 2017. The infection is now over.
+</p>
 </section>
-		
+
 		</div>
-		
+
 <div><div class="mwsgeneric-base-html parbase section">
 
-
+<div class="owl-container">
 <script>
 $(function() {
   $('.owl-carousel').owlCarousel({
@@ -314,22 +318,22 @@ $(function() {
   <div class="item"><img src="https://www.canada.ca/en/public-health/services/public-health-notices/2017/public-health-notice-outbreak-e-coli-infections-linked-romaine-lettuce/_jcr_content/par/mwscolumns/colpar-2/mwsadaptiveimage/image.img.jpg/1513096479741.jpg" /></div>
 
 
-
+</div>
 </div>
 <div class="row">
 	<div class="col-md-8">
 		<section>
 					<h2 class="h3">February 9, 2018 – Final Update - Outbreak over</h2>
 				<p>This is the final update for this outbreak. The outbreak investigation has been closed. No additional cases have been reported since the last update. The United States Centers for Disease Control and Prevention has also indicated that their outbreak appears to be over.</p>
-	   
+
  <h3>Why should you take note?</h3>
 <p>The Public Health Agency of Canada collaborated with provincial public health partners, the Canadian Food Inspection Agency and Health Canada to investigate an outbreak of Escherichia coli O157, commonly called E. coli. The outbreak involved five eastern provinces. Based on the investigation findings during the outbreak, exposure to romaine lettuce was identified as the source of the outbreak, but the cause of contamination was not identified. No individuals have had illness onset dates beyond December 12, 2017. As a result, the outbreak appears to be over, and the investigation has been closed. The risk to Canadians is low.</p>
 div class="mwsbodytext text parbase section">
-    
 
-    
+
+
         <p>Although the outbreak appears to be over, the Public Health Agency of Canada advises Canadians to always follow safe food handling tips for preparing lettuce. Individuals in Ontario, Quebec, New Brunswick, Nova Scotia, and Newfoundland and Labrador <strong>are no longer advised</strong> to consider consuming other types of lettuce, instead of romaine lettuce.</p>
-	   
+
 <h3>How does lettuce become contaminated with E. coli?</h3>
 <p>E. coli are bacteria that live naturally in the intestines of cattle, poultry and other animals. A common source of E. coli illness is raw fruits and vegetables that have come in contact with feces from infected animals. Leafy greens, such as lettuce, can become contaminated in the field by soil, contaminated water, animals or improperly composted manure. Lettuce can also be contaminated by bacteria during and after harvest from handling, storing and transporting the produce. Contamination in lettuce is also possible at the grocery store, in the refrigerator, or from counters and cutting boards through cross-contamination with harmful bacteria from raw meat, poultry or seafood. Most E. coli strains are harmless to humans, but some varieties cause illness.</p>
 <h3>Investigation summary</h3>
@@ -388,7 +392,7 @@ Media Relations<br>
 Call toll-free: 1-866-225-0709<br>
 Email: <a href="mailto:info@hc-sc.gc.ca">info@hc-sc.gc.ca</a></p>
 
-    
+
 
 
 						<h2 class="h3">Similar recalls</h2>
@@ -402,7 +406,7 @@ Email: <a href="mailto:info@hc-sc.gc.ca">info@hc-sc.gc.ca</a></p>
 			<!-- include expand collapses for addition sections, such as for specialised audiences or background information-->
 			<h2 class="h3">Background and previous updates</h2>
 			<section>
-				
+
 
 
 				<details><summary class="text-primary">Background</summary>
@@ -413,14 +417,14 @@ Email: <a href="mailto:info@hc-sc.gc.ca">info@hc-sc.gc.ca</a></p>
 
 
 				</details>
-			
+
 			<details><summary class="text-primary">January 10, 2018</summary>
 				<p>This notice is being updated to reflect that the outbreak appears to be over. The risk to Canadians has returned to low and the Public Health Agency of Canada is no longer advising individuals in affected provinces to consider consuming other types of lettuce, instead of romaine lettuce.
 </p>
 
 	<p>The CFIA is verifying that industry is removing recalled product from the marketplace.</p>
 
-				
+
 				<h3>Why should you take note?</h3>
 <p>The Public Health Agency of Canada is collaborating with provincial public health partners, the Canadian Food Inspection Agency and Health Canada to investigate an outbreak of Escherichia coli O157, commonly called E.&nbsp;coli. The outbreak involves five eastern provinces. Based on the investigation findings to date, exposure to romaine lettuce has been identified as the source of the outbreak, but the cause of contamination has not been identified. No individuals have had illness onset dates beyond December 12, 2017. As a result, the outbreak appears to be over, and the risk to Canadians has returned to low.</p>
 <p>The Canadian Food Inspection Agency has completed its food safety investigation. All samples tested were negative for E. coli O157.</p>
@@ -490,7 +494,7 @@ Email: <a href="mailto:info@hc-sc.gc.ca">info@hc-sc.gc.ca</a></p>
 				<p>This notice is being updated to include 1 additional case that has been reported in the outbreak. There are now a total of 41 cases of E. coli O157 under investigation. There appears to be an ongoing risk of E. coli infections associated with the consumption of romaine lettuce in Canada’s eastern provinces. The United States Centers for Disease Control and Prevention has issued a&nbsp;<a href="https://www.cdc.gov/media/releases/2017/s1228-e-coli-outbreak.html">media statement</a> regarding a multistate outbreak of E. coli infections that appear to be genetically related to the outbreak in Canada.<br>
 </p>
 
-    
+
     <h3>Why should you take note?</h3>
 <p>The Public Health Agency of Canada is collaborating with provincial public health partners, the Canadian Food Inspection Agency and Health Canada to investigate an outbreak of Escherichia coli O157, commonly called E.&nbsp;coli. The outbreak involves five eastern provinces. Based on the investigation findings to date, exposure to romaine lettuce has been identified as the source of the outbreak, but the cause of contamination has not been identified. The outbreak appears to be ongoing, as illnesses linked to romaine lettuce continue to be reported to the Public Health Agency of Canada. These illnesses indicate that contaminated romaine lettuce may still be on the market (including in restaurants, grocery stores and any establishments that serve food). At this time, the investigation evidence suggests that there continues to be a risk of E. coli infections associated with the consumption of romaine lettuce.</p>
 <p>Because of the ongoing risk in eastern Canada, the Public Health Agency of Canada is advising individuals in Ontario, Quebec, New Brunswick, Nova Scotia, and Newfoundland and Labrador <strong>to consider consuming other types of lettuce, instead of romaine lettuce</strong>, until more is known about the outbreak and the cause of contamination.</p>
@@ -587,7 +591,7 @@ Media Relations<br>
 
 				</div>
 				</details>
-	
+
 	<details><summary class="text-primary">December 21, 2017</summary>
 				<div class="">
 	<p>This notice is being updated to include 10 additional cases that have been reported in the outbreak. There are now a total of 40 cases of E. coli O157 under investigation. There appears to be an ongoing risk of E. coli infections associated with the consumption of romaine lettuce. Individuals in Ontario, Quebec, New Brunswick, Nova Scotia, and Newfoundland and Labrador are advised to consider consuming other types of lettuce, instead of romaine lettuce, until more is known about the outbreak and the cause of contamination.</p>
@@ -595,7 +599,7 @@ Media Relations<br>
 
 
 
-    
+
     <h3>Why should you take note?</h3>
 
 <p>The Public Health Agency of Canada is collaborating with provincial public health partners, the Canadian Food Inspection Agency and Health Canada to investigate an outbreak of Escherichia coli O157, commonly called E.&nbsp;coli. The outbreak involves five eastern provinces. Based on the investigation findings to date, exposure to romaine lettuce has been identified as the source of the outbreak, but the cause of contamination has not been identified. The outbreak appears to be ongoing, as illnesses linked to romaine lettuce continue to be reported to the Public Health Agency of Canada. These illnesses indicate that contaminated romaine lettuce may still be on the market (including in restaurants, grocery stores and any establishments that serve food). At this time, the investigation evidence suggests that there continues to be a risk of E. coli infections associated with the consumption of romaine lettuce.</p>
@@ -659,11 +663,11 @@ Media Relations<br>
 <h3>What is the Government of Canada doing?</h3>
 
   <p>The Government of Canada is committed to food safety. The Public Health Agency of Canada leads the human health investigation into an outbreak and is in regular contact with its federal and provincial partners to monitor the situation and to collaborate on steps to address the outbreak.</p>
-  
+
   <p>Health Canada undertakes food-related health risk assessments to determine whether the presence of a certain substance or microorganism poses a health risk to consumers.</p>
-  
+
   <p>The Canadian Food Inspection Agency conducts food safety investigations into the possible food source of an outbreak.</p>
-  
+
   <p>The Government of Canada will continue to update Canadians as new information related to this investigation becomes available.</p>
 
 <h3>Additional information</h3>
@@ -690,14 +694,14 @@ Media Relations<br>
 
 				</div>
 				</details>
-	
+
 	<details><summary class="text-primary">December 14, 2017</summary>
 				<div class="">
-			
+
 	<p>This notice is being updated to include additional provinces, Ontario and Nova Scotia, which have reported illnesses linked to this outbreak. Since the original notice was issued, there are nine additional cases of E. coli that have been added to the outbreak investigation. There are now a total of 30 cases of E. coli O157 under investigation. One individual has died.</p>
 
 
-    
+
     <h3>Why should you take note?</h3>
 
 <p>The Public Health Agency of Canada is collaborating with provincial public health partners, the Canadian Food Inspection Agency and Health Canada to investigate an outbreak of Escherichia coli O157, commonly called E.&nbsp;coli. The outbreak involves five provinces and is linked to romaine lettuce. At this time, there are no product recalls associated with this outbreak. The outbreak investigation is ongoing, and this public health notice will be updated on a regular basis as the investigation evolves.</p>
@@ -783,8 +787,8 @@ Media Relations<br>
 
 				</div>
 				</details>
-	
-	
+
+
 
 <details><summary class="text-primary">December 11, 2017 – Original</summary>
 				<div class="">
@@ -874,7 +878,7 @@ Media Relations<br>
 
 				</div>
 				</details>
-	
+
 
 			</section><!-- END h3 -->
 
@@ -882,10 +886,10 @@ Media Relations<br>
 			<h2 class="h3">Subscribe for alerts</h2>
 			<a href="" class="btn btn-default">Choose how to follow recalls</a>
 		</section>
-		
+
 		<section>
-		
-		
+
+
 		<h2>Report your issue or a related product</h2>
 		<details>
     <summary class="text-primary">Report incident</summary>
@@ -893,7 +897,7 @@ Media Relations<br>
                      <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="submitter_personName" name="submitter_personName" ng-model="submitter.personName" required="" placeholder="Name" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.personName, 'submitter_personName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                      </textarea>
                       <div class="panel panel-default visible-print">
                          <div class="panel-body">
-                              <p id="submitter_personName_txt" class="visible-print ng-binding"></p>                              
+                              <p id="submitter_personName_txt" class="visible-print ng-binding"></p>
                          </div>
                      </div>
                 </div>
@@ -902,19 +906,19 @@ Media Relations<br>
                      <textarea class="form-control word-wrap hidden-print emailValidation required_group ng-pristine ng-untouched ng-valid ng-valid-maxlength" msd-elastic="" id="submitter_email" name="submitter_email" ng-model="submitter.email" placeholder="email@example.com" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.email, 'submitter_email')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;">                     </textarea>
                		 <div class="panel panel-default visible-print">
                           <div class="panel-body">
-                              	<p id="submitter_email_txt" class="visible-print ng-binding"></p> 
+                              	<p id="submitter_email_txt" class="visible-print ng-binding"></p>
                           </div>
                    	 </div>
                 </div>
 
-<div class="form-group"><label for="affectedPerson_incidentExperiencedDate_0" class="required" aria-required="true"><span class="field-name">Date of the Incident </span><span class="datepicker-format">(<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> <strong class="required" aria-required="true">(required)</strong> </label>                                     
+<div class="form-group"><label for="affectedPerson_incidentExperiencedDate_0" class="required" aria-required="true"><span class="field-name">Date of the Incident </span><span class="datepicker-format">(<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> <strong class="required" aria-required="true">(required)</strong> </label>
                                      <input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="affectedPerson_incidentExperiencedDate_0" name="affectedPerson_incidentExperiencedDate_0" ng-model="affectedPerson.incidentExperiencedDate" hcform-datepicker="" type="date" data-rule-dateiso="true" required="" onkeypress="return noEnter(event)" aria-required="true">
                                 </div>
 
 <div class="row">
                             <div class="col-md-6 pull-left">
                                 <div class="form-group"><label for="affectedPerson_lkpIncidentTypeId_0" class="required" aria-required="true"><span class="field-name">Incident Type</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpIncidentTypeId_0" name="affectedPerson_lkpIncidentTypeId_0" ng-model="affectedPerson.lkpIncidentTypeId" ng-options="obj.id as obj.name for obj in lstIncidentType" ng-change="populateObjectPropertyByValue(affectedPerson.lkpIncidentTypeId, 'submission.lkpCaseSubtypeId', $index)" required="" aria-required="true"><option value="" class="">Select Incident Type</option><option value="0" label="Death">Death</option><option value="1" label="Serious Injury">Serious Injury</option><option value="2" label="Injury">Injury</option><option value="3" label="Product Defect">Product Defect</option><option value="4" label="Incorrect/Insufficient Information">Incorrect/Insufficient Information</option><option value="5" label="Recall">Recall</option><option value="6" label="Property Damage">Property Damage</option><option value="7" label="Incident, No Injury">Incident, No Injury</option><option value="8" label="Other">Other</option></select>                                     
+                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpIncidentTypeId_0" name="affectedPerson_lkpIncidentTypeId_0" ng-model="affectedPerson.lkpIncidentTypeId" ng-options="obj.id as obj.name for obj in lstIncidentType" ng-change="populateObjectPropertyByValue(affectedPerson.lkpIncidentTypeId, 'submission.lkpCaseSubtypeId', $index)" required="" aria-required="true"><option value="" class="">Select Incident Type</option><option value="0" label="Death">Death</option><option value="1" label="Serious Injury">Serious Injury</option><option value="2" label="Injury">Injury</option><option value="3" label="Product Defect">Product Defect</option><option value="4" label="Incorrect/Insufficient Information">Incorrect/Insufficient Information</option><option value="5" label="Recall">Recall</option><option value="6" label="Property Damage">Property Damage</option><option value="7" label="Incident, No Injury">Incident, No Injury</option><option value="8" label="Other">Other</option></select>
                                 </div>
                             </div>
                             <div class="col-md-6 pull-right">
@@ -925,24 +929,24 @@ Media Relations<br>
                         </div>
 
 <div class="form-group"><label for="affectedPerson_lkpTreatmentTypeId_0" class="required" aria-required="true"><span class="field-name">Treatment</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpTreatmentTypeId_0" name="affectedPerson_lkpTreatmentTypeId_0" ng-model="affectedPerson.lkpTreatmentTypeId" ng-options="obj.id as obj.name for obj in lstTreatment" required="" aria-required="true"><option value="" class="">Select Treatment</option><option value="0" label="None">None</option><option value="1" label="First Aid">First Aid</option><option value="2" label="Provincial Health Care Info Service">Provincial Health Care Info Service</option><option value="3" label="Poison Control Centre">Poison Control Centre</option><option value="4" label="Family Doctor">Family Doctor</option><option value="5" label="Hospital-Emergency Room">Hospital-Emergency Room</option><option value="6" label="Hospital-Other">Hospital-Other</option><option value="7" label="Other Medical Professional">Other Medical Professional</option><option value="8" label="Other">Other</option><option value="9" label="Unknown">Unknown</option></select>                                   
+                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpTreatmentTypeId_0" name="affectedPerson_lkpTreatmentTypeId_0" ng-model="affectedPerson.lkpTreatmentTypeId" ng-options="obj.id as obj.name for obj in lstTreatment" required="" aria-required="true"><option value="" class="">Select Treatment</option><option value="0" label="None">None</option><option value="1" label="First Aid">First Aid</option><option value="2" label="Provincial Health Care Info Service">Provincial Health Care Info Service</option><option value="3" label="Poison Control Centre">Poison Control Centre</option><option value="4" label="Family Doctor">Family Doctor</option><option value="5" label="Hospital-Emergency Room">Hospital-Emergency Room</option><option value="6" label="Hospital-Other">Hospital-Other</option><option value="7" label="Other Medical Professional">Other Medical Professional</option><option value="8" label="Other">Other</option><option value="9" label="Unknown">Unknown</option></select>
                                 </div>
 
-<div class="form-group"><label for="incident_incidentDescription" class="required" aria-required="true"><span class="field-name">Describe the Incident</span> <strong class="required" aria-required="true">(required)</strong> </label><br>                       
-                         <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">2000</span></small></div>                       
+<div class="form-group"><label for="incident_incidentDescription" class="required" aria-required="true"><span class="field-name">Describe the Incident</span> <strong class="required" aria-required="true">(required)</strong> </label><br>
+                         <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">2000</span></small></div>
                          <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="incident_incidentDescription" name="incident_incidentDescription" ng-model="incident.incidentDescription" ng-trim="false" placeholder="Describe the Incident" required="" aria-multiline="true" rows="5" cols="150" maxlength="2000" ng-change="copyText(incident.incidentDescription, 'incident_incidentDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                         </textarea>
                          <div class="panel panel-default visible-print">
-                             <div class="panel-body"> 
-                                  <p id="incident_incidentDescription_txt" class="visible-print ng-binding"></p>                               	 
+                             <div class="panel-body">
+                                  <p id="incident_incidentDescription_txt" class="visible-print ng-binding"></p>
                              </div>
-                   	     </div>                       
+                   	     </div>
                     </div>
 
 <div class="form-group"><label for="product_productBrandName" class="required" aria-required="true"><span class="field-name">Product Brand and Name</span> <strong class="required" aria-required="true">(required)</strong> </label>
                          <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="product_productBrandName" name="product_productBrandName" ng-model="product.productBrandName" required="" placeholder="Product Brand and Name" rows="1" cols="60" maxlength="100" ng-change="copyText(product.productBrandName, 'product_productBrandName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                         </textarea>
                          <div class="panel panel-default visible-print">
                              <div class="panel-body">
-                                  <p id="product_productBrandName_txt" class="visible-print ng-binding"></p>                              	  
+                                  <p id="product_productBrandName_txt" class="visible-print ng-binding"></p>
                              </div>
                    	     </div>
                     </div>
@@ -952,23 +956,23 @@ Media Relations<br>
                            <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="product_productDescription" name="product_productDescription" ng-model="product.productDescription" ng-trim="false" required="" placeholder="Product description" rows="5" cols="150" maxlength="1500" ng-change="copyText(product.productDescription, 'product_productDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                           </textarea>
                            <div class="panel panel-default visible-print">
                                 <div class="panel-body">
-                              	     <p id="product_productDescription_txt" class="visible-print ng-binding"></p>  
+                              	     <p id="product_productDescription_txt" class="visible-print ng-binding"></p>
                                 </div>
-                   	       </div>                       
+                   	       </div>
                       </div>
 
 <div class="form-group"><label for="whereGotPrdct_lkpContactContextId" class="required" aria-required="true"><span class="field-name">From whom did you get the product</span><br><strong class="required" aria-required="true">(required when this section is completed)</strong> </label>
                          <select class="form-control ng-pristine ng-untouched ng-valid" id="whereGotPrdct_lkpContactContextId" name="whereGotPrdct_lkpContactContextId" ng-model="whereGotPrdct.lkpContactContextId">
                                  <option value="">Select From whom did you get the product</option>
                                  <!-- ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52401" class="ng-binding ng-scope">Gift</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52400" class="ng-binding ng-scope">Promotional Item</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52397" class="ng-binding ng-scope">Purchased New</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52399" class="ng-binding ng-scope">Purchased Used From Person e.g. Yard Sale</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52398" class="ng-binding ng-scope">Purchased Used From Retailer</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52402" class="ng-binding ng-scope">Other</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer -->
-                         </select>                          
+                         </select>
                     </div>
 
 <div id="submit" col-md-3="" pull-left="">
 	        <input type="submit" ng-disabled="isAutoFill" value="Proceed to Submit" class="btn btn-primary">
 	    </div>
 </details>
-			
+
 
 </div>
 
