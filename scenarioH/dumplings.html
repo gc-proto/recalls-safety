@@ -27,7 +27,20 @@ wet-boew.github.io/wet-foew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <![endif]-->
 
 <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
+  <script src="js/jquery.min.js"></script>
+   <link rel="stylesheet"
+
+   href="css/jquery.dataTables.min.css"></style>
+   <script type="text/javascript"
+
+   src="js/jquery.dataTables.min.js"></script>
+                               <script type="text/javascript"
+
+   src="js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="css/test-tables-alain.css" />
+
 <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
 <script>dataLayer1 = [];</script>
 <!-- End Google Tag Manager -->
@@ -315,8 +328,8 @@ $(function() {
 });
 </script>
 <div class="owl-carousel" style-"max-width: 200px;">
-  <div class="item"><img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets//20180410a_1523370991542_eng.jpg" /></div>
-  <div class="item"><img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets//20180410b_1523370992088_eng.jpg" /></div>
+  <div class="item"><img src="images/dumplings-img1.jpg" /></div>
+  <div class="item"><img src="images/dumplings-img2.jpg" /></div>
 
 </div>
 </div>
@@ -325,29 +338,34 @@ $(function() {
 		<section>
 					<h2 class="h3">Affected products</h2>
 				<p>Check the UPC code on your product. </p>
-				<ul class="list-unstyled">
-					<li>
-						<details open="open">
-							<summary class="text-primary">
-Fish and Shrimp Dumplings</summary>
+        <table id="myTable">
+        <thead>
+        <tr>
+         <th scope="col">Brand name</th>
+         <th scope="col">Common name</th>
+         <th scope="col">Size</th>
+         <th scope="col">UPC</th>
+         <th scope="col">Code on product</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+         <td data-label="Brand name">Liao Bu De</td>
+         <td data-label="Common name">Fish and Shrimp Dumplings</td>
+         <td data-label="Size">230 g</td>
+         <td data-label="UPC">6 953640 000623</td>
+         <td data-label="Code on product">All lot codes where egg is not declared on the label</td>
+        </tr>
+        </tbody>
+        </table>
 
-								<li><strong>Size:</strong>
-								<ul>
-									<li>230 g</li>
-								</ul>
-							</li>
-								 <li><strong>UPC</strong>
-								  <ul>
-								 <li>6 953640 000623</li>
-							 </ul>
-               <li><strong>Code on product</strong>
-								<ul>
-									<li>All lot codes where egg is not declared on the label</li>
-								</ul>
-							</li>
-					</details>
-					</li>
-          </ul>
+        <script>
+        $(document).ready(function () {
+           $.noConflict();
+           var table = $('#myTable').DataTable();
+        });
+        </script>
+
 
 	<p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.) or look for related recalls to make sure your product is not affected.</p>
 
@@ -653,7 +671,7 @@ Fish and Shrimp Dumplings</summary>
 </div>
 </footer>
 <!--[if gte IE 9 | !IE ]><!-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
 <script src="../wet-boew/js/wet-boew.min.js"></script>
 <script src="dist/jquery.js"></script>
 <script src="dist/owl.carousel.min.js"></script>
