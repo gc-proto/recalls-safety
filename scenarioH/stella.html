@@ -27,7 +27,21 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <![endif]-->
 
 <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
+  <script src="js/jquery.min.js"></script>
+   <link rel="stylesheet"
+
+   href="css/jquery.dataTables.min.css"></style>
+   <script type="text/javascript"
+
+   src="js/jquery.dataTables.min.js"></script>
+                               <script type="text/javascript"
+
+   src="js/bootstrap.min.js"></script>
+
 <link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="css/test-tables-alain.css" />
+
+
 <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
 <script>dataLayer1 = [];</script>
 <!-- End Google Tag Manager -->
@@ -133,7 +147,7 @@ p, li {max-width: 65em;}
 	background-size: 15px 15px !important;
 }
 
-@media (min-width:768px) {
+@media (min-width:768px){
   .owl-container {
     width:50%;
   }
@@ -316,7 +330,7 @@ $(function() {
 });
 </script>
 <div class="owl-carousel" style-"max-width: 200px;">
-  <div class="item"><img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets//20180402a_1522708491403_eng.jpg" /></div>
+  <div class="item"><img src="images/stella-img1.jpg" /></div>
 
 
 </div>
@@ -326,7 +340,8 @@ $(function() {
 		<section>
 					<h2 class="h3">Affected products</h2>
 				<p>Check the best before date on your bottle, and then look at the time stamp.</p>
-			<script>
+
+      <script>
 $(function() {
   $('.owl-carousel').owlCarousel({
     margin: 20,
@@ -338,233 +353,93 @@ $(function() {
 </script>
 <div class="owl-carousel" style-"max-width: 200px;">
 
-  <div class="item"><img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets//20180402b_1522708491808_eng.jpg" /></div>
- <div class="item"><img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets//20180402c_1522708492198_eng.jpg" /></div>
- <div class="item"><img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets//20180402d_1522708492573_eng.jpg" /></div>
- <div class="item"><img src="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets/20180402e_1522708493119_eng.jpg" /></div>
+  <div class="item"><img src="images/stella-img2.jpg" /></div>
+ <div class="item"><img src="images/stella-img3.png" /></div>
+ <div class="item"><img src="images/stella-img4.png" /></div>
+ <div class="item"><img src="images/stella-img5.png" /></div>
 
 
 </div>
 
-<ul class="list-unstyled">
-					<li>
-						<details>
-							<summary class="text-primary">
-Best before date: 20/02/2018</summary>
+<table id="myTable">
+<thead>
+<tr>
+ <th scope="col">Best before date</th>
+ <th scope="col">Package code</th>
+ <th scope="col">Time Stamp</th>
+ </tr>
+</thead>
+<tbody>
+<tr>
+ <td data-label="Best before date">20/02/2018</td>
+ <td data-label="Package code">49</td>
+ <td data-label="Time Stamp">Between 00:00 and 06:00</td>
+</tr>
+<tr>
+ <td data-label="Best before date">25/04/2018</td>
+ <td data-label="Package code">49</td>
+ <td data-label="Time Stamp">Between 17:00 and 23:59</td>
+</tr>
+<tr>
+ <td data-label="Best before date">26/04/2018</td>
+ <td data-label="Package code">49</td>
+ <td data-label="Time Stamp">Between 00:00 and 04:00</td>
+</tr>
+<tr>
+ <td data-label="Best before date">20/5/2018</td>
+ <td data-label="Package code">49</td>
+ <td data-label="Time Stamp">Between 08:00 and 23:59</td>
+</tr>
+<tr>
+ <td data-label="Best before date">21/5/2018</td>
+ <td data-label="Package code">49</td>
+ <td data-label="Time Stamp">Between 00:00 and 01:00</td>
+</tr>
+<tr>
+ <td data-label="Best before date">7/6/2018</td>
+ <td data-label="Package code">49, 52</td>
+ <td data-label="Time Stamp">Between 22:00 and 23:59</td>
+</tr>
+<tr>
+ <td data-label="Best before date">8/6/2018</td>
+ <td data-label="Package code">49</td>
+ <td data-label="Time Stamp">Between 00:00 and 13:00</td>
+</tr>
+<tr>
+ <td data-label="Best before date">8/6/2018</td>
+ <td data-label="Package code">52</td>
+ <td data-label="Time Stamp">Between 00:00 and 07:00</td>
+</tr>
+<tr>
+ <td data-label="Best before date">13/09/2018</td>
+ <td data-label="Package code">55</td>
+ <td data-label="Time Stamp">Between 21:00 and 23:59</td>
+</tr>
+<tr>
+ <td data-label="Best before date">14/09/2018</td>
+ <td data-label="Package code">55</td>
+ <td data-label="Time Stamp">Between 00:00 and 22:00</td>
+</tr>
+<tr>
+ <td data-label="Best before date">25/09/2018</td>
+ <td data-label="Package code">52</td>
+ <td data-label="Time Stamp">Between 12:00 and 23:59</td>
+</tr>
+<tr>
+ <td data-label="Best before date">26/09/2018</td>
+ <td data-label="Package code">52</td>
+ <td data-label="Time Stamp">Between 00:00 and 23:59</td>
+</tr>
+</tbody>
+</table>
 
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>49</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 00:00 and 06:00</li>
-							 </ul>
-					</details>
-					</li>
+<script>
+$(document).ready(function () {
+   $.noConflict();
+   var table = $('#myTable').DataTable();
+});
+</script>
 
-					<li>
-						<details>
-							<summary class="text-primary">
-Best before date: 25/04/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>49</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 17:00 and 23:59</li>
-							 </ul>
-					</details>
-					</li>
-
-					<li>
-						<details>
-							<summary class="text-primary">
-Best before date: 26/04/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>49</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 00:00 and 04:00</li>
-							 </ul>
-					</details>
-					</li>
-
-
-					<li>
-						<details>
-							<summary class="text-primary">
-Best before date: 20/5/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>49</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 08:00 and 23:59</li>
-							 </ul>
-					</details>
-					</li>
-
-
-					<li>
-						<details>
-							<summary class="text-primary">
-Best before date: 21/5/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>49</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 00:00 and 01:00</li>
-							 </ul>
-					</details>
-					</li>
-
-          <li>
-						<details>
-							<summary class="text-primary">
-Best before date: 7/6/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>49, 52</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 22:00 and 23:59</li>
-							 </ul>
-					</details>
-					</li>
-
-        <li>
-						<details>
-							<summary class="text-primary">
-Best before date:  8/6/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>49</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 00:00 and 13:00</li>
-							 </ul>
-					</details>
-					</li>
-
-          <li>
-						<details>
-							<summary class="text-primary">
-Best before date:  8/6/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>52</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 00:00 and 07:00</li>
-							 </ul>
-					</details>
-					</li>
-
-          <li>
-						<details>
-							<summary class="text-primary">
-Best before date:  13/09/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>55</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 21:00 and 23:59</li>
-							 </ul>
-					</details>
-					</li>
-
-
-             <li>
-						<details>
-							<summary class="text-primary">
-Best before date:  14/09/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>55</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 00:00 and 22:00</li>
-							 </ul>
-					</details>
-					</li>
-
-          <li>
-						<details>
-							<summary class="text-primary">
-Best before date: 25/09/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>52</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 12:00 and 23:59</li>
-							 </ul>
-					</details>
-					</li>
-
-          <li>
-						<details>
-							<summary class="text-primary">
-Best before date: 26/09/2018
-</summary>
-
-								<li><strong>Package code:</strong>
-								<ul>
-									<li>52</li>
-								</ul>
-							</li>
-								 <li><strong>Time Stamp</strong>
-								  <ul>
-								 <li>Between 00:00 and 23:59</li>
-							 </ul>
-					</details>
-					</li>
-				</ul>
 
 	<p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.), to make sure your product is not affected.</p>
 
@@ -870,7 +745,7 @@ Best before date: 26/09/2018
 </div>
 </footer>
 <!--[if gte IE 9 | !IE ]><!-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
 <script src="../wet-boew/js/wet-boew.min.js"></script>
 <script src="dist/jquery.js"></script>
 <script src="dist/owl.carousel.min.js"></script>
