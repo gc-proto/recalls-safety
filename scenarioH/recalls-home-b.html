@@ -153,17 +153,8 @@ p, li {max-width: 65em;}
 
     </div>
 
-
-      <div id="sort-by-box" style="float: right; display:flex; margin-bottom: 20px; align-items: baseline;">
-			  <label class="control-label" for="edit-sort-by">Sort by</label>
-				<select class="form-control" style="float:right; margin-left: 10px;">
-					<option>Date</option>
-					<option>Relevance</option>
-				</select>
-		  </div>
-
           <!--Cascading picklists - FieldFlow? -->
-          <div class="wb-frmvld" style="clear:both;">
+          <div class="wb-frmvld" style="clear:both; padding-top:10px;">
         	 <form method="get">
 
         		<!--Question 1-->
@@ -175,77 +166,41 @@ p, li {max-width: 65em;}
               "defaultselectedlabel":"All recalls (106)",
         			"default": { "action": "addClass", "source":"#question1,#question1button,#question2button,#question2abutton,#question3buttona,#question3buttonb,#question3buttonc,#question4buttona,#question4buttonb,#question4buttonc,#question2,#question2a,#question3,#question4,#result1,#result2,#result3,#result4,#result5,#result6", "class": "hidden" }
         			}'>
-        			<p>See results and filters for:</p>
+        			<p>See recalls and filters for:</p>
         			<ul>
-        				<li data-wb-fieldflow='{"action": "append", "source":"#food-1"}'>Food (53)</li> <!--result-->
+        				<li data-wb-fieldflow='{"action": "removeClass", "source":"#food-1", "class":"hidden"}'>Food (53)</li> <!--result-->
         				<li data-wb-fieldflow='{"action": "append", "source":"#vehicles-1"}'>Vehicles (n)</li>
                 <li data-wb-fieldflow='{"action": "append", "source":"#consumer-1"}'>Consumer products (n)</li>
                 <li data-wb-fieldflow='{"action": "append", "source":"#health-1"}'>Health products (n)</li>
         			</ul>
         		</div>
-
+          </form>
+        </div>
 
           <!--Food-1 filter-->
-      		<div id="food-1" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"defaultselectedlabel":"All recalls (106)", "noreqlabel": true, "isoptional": true }'>
-      			<div class="wb-fieldflow-header">
-      				<p class="wb-fieldflow-label">Expiry date</p>
-
+      		<div id="food-1" class="hidden">
                 <!--Should we display the first filter as tabs?-->
                 <!--expiry date isn't a fieldflow input, just get another input - perhaps all the filters beyond the first are form fields?-->
-
-
-      			</div>
-      			<ul>
-      				<li data-wb-fieldflow='[
-      					{ "action": "removeClass", "source":".toggle1", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#result1", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#question2button", "class": "hidden" }
-      				]'>real property</li>
-      				<li data-wb-fieldflow='[
-      					{ "action": "removeClass", "source":".toggle2", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#result2", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#question2button", "class": "hidden" }
-      				]'>health care services</li>
-      				<li data-wb-fieldflow='[
-      					{ "action": "removeClass", "source":".toggle3", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#result3", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#question2button", "class": "hidden" }
-      				]'>educational services</li>
-      				<li data-wb-fieldflow='[
-      					{ "action": "removeClass", "source":".toggle4", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#result4", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#question2button", "class": "hidden" }
-      				]'>child and personal care services</li>
-      				<li data-wb-fieldflow='[
-      					{ "action": "removeClass", "source":".toggle5", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#result5", "class": "hidden", "live": true },
-      					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
-      				]'>legal aid services</li>
-      				<li data-wb-fieldflow='[
-      					{ "action": "removeClass", "source":".toggle6", "class": "hidden", "live": true },
-      					{ "action": "removeClass", "source":"#result6", "class": "hidden", "live": true },
-      					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
-      				]'>financial services</li>
-      				<li data-wb-fieldflow='[
-      					{ "action": "addClass", "source":"#result1", "class": "hidden" },
-      					{ "action": "addClass", "source":"#result2", "class": "hidden" },
-      					{ "action": "addClass", "source":"#result3", "class": "hidden" },
-      					{ "action": "addClass", "source":"#result4", "class": "hidden" },
-      					{ "action": "addClass", "source":"#result5", "class": "hidden" },
-      					{ "action": "addClass", "source":"#result6", "class": "hidden" },
-      					{ "action": "append", "source":"#question2a" },
-      					{ "action": "addClass", "source":"#question2button", "class": "hidden" }
-      				]'>other goods and services</li>
-      			</ul>
+              <div class="form-group">
+              	<label for="expirydate">Expiry on package<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
+              	<input class="form-control" type="date" id="enddate" name="expirydate" min="2000-03-27" max="2220-05-23" />
+              </div>
 
       		</div>
-        </form>
-       </div>
 
 
-       <div id="submit-button" style="margin-bottom:20px;">
+
+       <div id="submit-button" style="margin-bottom:20px; float:left;">
 			     <a href="findout-exempt-en.html" class="btn btn-primary">Filter results</a>
 		   </div>
+
+       <div id="sort-by-box" style="float: right; display:flex; margin-top: 0px; align-items: baseline;">
+ 			  <label class="control-label" for="edit-sort-by">Sort by</label>
+ 				<select class="form-control" style="float:right; margin-left: 10px;">
+ 					<option>Date</option>
+ 					<option>Relevance</option>
+ 				</select>
+ 		  </div>
 
 			<!--add tabs for the main categories here - how does this interact with the filters?-->
 
