@@ -144,36 +144,14 @@ p, li {max-width: 65em;}
 	  </form>
 
 
-		<section class="wb-inview show-none bar-demo" data-inview="top-bar">
-		 <div id="btngrp-recalls-search-label"><label style="float: left;">Search</label>
-			<div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 3px solid #335075;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto;width: calc(100% - 94px);padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
+	 <div id="btngrp-recalls-search-label"><label style="float: left;">Search</label>
+		<div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 3px solid #335075;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto; width:100%;padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
 
 
-			<input type="text" class="" id="btngrp-recalls-search" placeholder="Search recalls" style="border: none;box-shadow: none;float: left; width: 100%;">
-	    	<button type="submit" style="float:left;background: none!important;border: none!important;border-left: #cbbebe 1px solid!important;padding-left: 8px!important; color: black;">Find</button></div>
+		<input type="text" class="" id="btngrp-recalls-search" placeholder="Search recalls" style="border: none;box-shadow: none;float: left; width: 100%;">
+    	<button type="submit" style="float:left;background: none!important;border: none!important;border-left: #cbbebe 1px solid!important;padding-left: 8px!important; color: black;">Find</button></div>
 
-			<div style="float:right;">
-				<button class="btn btn-primary" type="button" id="recalls-filter-button">
-					<span class="glyphicon glyphicon-th-list"></span>
-					<span class=""> Filter</span>
-				</button>
-			</div>
-
-      </div>
-			<p style="color:#f9f9f9;">required for fixed div for some reason...</p>
-		</section>
-
-			<section id="top-bar" class="wb-overlay modal-content overlay-def wb-bar-t" style="padding-top:3px;padding-bottom:3px;background-color:#f9f9f9;">
-				<header>
-					<div style="float:right;">
-						<button class="btn btn-primary" type="button" id="recalls-filter-button">
-							<span class="glyphicon glyphicon-th-list"></span>
-							<span class=""> Filter</span>
-						</button>
-					</div>
-				</header>
-			</section>
-
+    </div>
 
 
       <div id="sort-by-box" style="float: right; display:flex; margin-bottom: 20px; align-items: baseline;">
@@ -184,9 +162,93 @@ p, li {max-width: 65em;}
 				</select>
 		  </div>
 
+          <!--Cascading picklists - FieldFlow? -->
+          <div class="wb-frmvld" style="clear:both;">
+        	 <form method="get">
+
+        		<!--Question 1-->
+        		<div id="filter-1" class="wb-fieldflow" data-wb-fieldflow='{
+        			"noForm": true,
+        			"base": { "live": true },
+        			"noreqlabel": true,
+              "isoptional": true,
+              "defaultselectedlabel":"All recalls (106)",
+        			"default": { "action": "addClass", "source":"#question1,#question1button,#question2button,#question2abutton,#question3buttona,#question3buttonb,#question3buttonc,#question4buttona,#question4buttonb,#question4buttonc,#question2,#question2a,#question3,#question4,#result1,#result2,#result3,#result4,#result5,#result6", "class": "hidden" }
+        			}'>
+        			<p>See results and filters for:</p>
+        			<ul>
+        				<li data-wb-fieldflow='{"action": "append", "source":"#food-1"}'>Food (53)</li> <!--result-->
+        				<li data-wb-fieldflow='{"action": "append", "source":"#vehicles-1"}'>Vehicles (n)</li>
+                <li data-wb-fieldflow='{"action": "append", "source":"#consumer-1"}'>Consumer products (n)</li>
+                <li data-wb-fieldflow='{"action": "append", "source":"#health-1"}'>Health products (n)</li>
+        			</ul>
+        		</div>
+
+
+          <!--Food-1 filter-->
+      		<div id="food-1" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"defaultselectedlabel":"All recalls (106)", "noreqlabel": true, "isoptional": true }'>
+      			<div class="wb-fieldflow-header">
+      				<p class="wb-fieldflow-label">Expiry date</p>
+
+                <!--Should we display the first filter as tabs?-->
+                <!--expiry date isn't a fieldflow input, just get another input - perhaps all the filters beyond the first are form fields?-->
+
+
+      			</div>
+      			<ul>
+      				<li data-wb-fieldflow='[
+      					{ "action": "removeClass", "source":".toggle1", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#result1", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#question2button", "class": "hidden" }
+      				]'>real property</li>
+      				<li data-wb-fieldflow='[
+      					{ "action": "removeClass", "source":".toggle2", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#result2", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#question2button", "class": "hidden" }
+      				]'>health care services</li>
+      				<li data-wb-fieldflow='[
+      					{ "action": "removeClass", "source":".toggle3", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#result3", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#question2button", "class": "hidden" }
+      				]'>educational services</li>
+      				<li data-wb-fieldflow='[
+      					{ "action": "removeClass", "source":".toggle4", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#result4", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#question2button", "class": "hidden" }
+      				]'>child and personal care services</li>
+      				<li data-wb-fieldflow='[
+      					{ "action": "removeClass", "source":".toggle5", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#result5", "class": "hidden", "live": true },
+      					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
+      				]'>legal aid services</li>
+      				<li data-wb-fieldflow='[
+      					{ "action": "removeClass", "source":".toggle6", "class": "hidden", "live": true },
+      					{ "action": "removeClass", "source":"#result6", "class": "hidden", "live": true },
+      					{"action": "removeClass", "source":"#question2button", "class": "hidden"}
+      				]'>financial services</li>
+      				<li data-wb-fieldflow='[
+      					{ "action": "addClass", "source":"#result1", "class": "hidden" },
+      					{ "action": "addClass", "source":"#result2", "class": "hidden" },
+      					{ "action": "addClass", "source":"#result3", "class": "hidden" },
+      					{ "action": "addClass", "source":"#result4", "class": "hidden" },
+      					{ "action": "addClass", "source":"#result5", "class": "hidden" },
+      					{ "action": "addClass", "source":"#result6", "class": "hidden" },
+      					{ "action": "append", "source":"#question2a" },
+      					{ "action": "addClass", "source":"#question2button", "class": "hidden" }
+      				]'>other goods and services</li>
+      			</ul>
+
+      		</div>
+        </form>
+       </div>
+
+
+       <div id="submit-button" style="margin-bottom:20px;">
+			     <a href="findout-exempt-en.html" class="btn btn-primary">Filter results</a>
+		   </div>
 
 			<!--add tabs for the main categories here - how does this interact with the filters?-->
-			
+
 
         <div class="view-content">
 <!-- results here - placeholder from australia-->
