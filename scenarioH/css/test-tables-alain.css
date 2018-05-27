@@ -18,7 +18,7 @@ table caption {
 }
 
 table tr {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   padding: .35em;
 }
@@ -40,7 +40,7 @@ table th {
   }
 
   table caption {
-    font-size: 1.3em;
+    font-size: .85em;
   }
 
   table thead {
@@ -73,11 +73,30 @@ table th {
     content: attr(aria-label);
     */
     content: attr(data-label);
-    float: left;
     font-weight: bold;
-  }
+    float: left;
+}
 
   table td:last-child {
     border-bottom: 0;
   }
+}
+
+tr.d0 th {
+  font-size: .8em;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  color: black;
+}
+
+tr.d1 td {
+  font-size: .8em;
+	background-color: #F5F5F5;
+  color: black;
+}
+
+tr.d2 td {
+  font-size: .8em;
+	background-color: #FFFFFF;
+  color: black;
 }
