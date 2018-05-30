@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-<title id="page-title">Buckley's Night Time - Defective seals</title>
+<title id="page-title"></title>
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <!-- Meta data -->
 <meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
@@ -236,12 +236,13 @@ function getRecall(id, lang) {
              descriptionText = this.text;
              //remove the date???
            } else if (this.panelName === "cms_who_what_consumer") {
-             $("#whattodo").append(this.text.replace(/(?:\r\n|\r|\n)/g, "<br />"));
+             $("#whattodo").append(this.text.substring(1, this.text.length - 2).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />"));
            }
          });
            //use ids to modify page
            console.log(data.title);
            $("#toptitle").append(data.title);
+           $("#page-title").text(data.title + " - Canada.ca");
            console.log(data.panels[0].text);
            $("#category-tag").append(data.panels[0].text.substr(data.panels[0].text.indexOf("Category")+14,data.panels[0].text.indexOf("<",data.panels[0].text.indexOf("Category")+14)-(data.panels[0].text.indexOf("Category")+14)));
 
@@ -331,7 +332,7 @@ function getRecall(id, lang) {
            if (descriptionText === "") {
              descriptionText = products["0"].text.substr(products["0"].text.indexOf("Product description:")+25, (products["0"].text.indexOf("Hazard identified:")-8) - (products["0"].text.indexOf("Product description:")+25));
            }
-           $("#description").append(descriptionText.replace(/(?:\r\n|\r|\n)/g, "<br />"));
+           $("#description").append(descriptionText.substring(1, descriptionText.length - 2).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />"));
 
            //are you affected?
            if (products.length > 1) {
@@ -382,8 +383,13 @@ UPC:</b> 85886000170<BR/>"
              var tableHead = products["0"].text.split('<b>');
              $.each(tableHead, function(name) {
                if (tableHead[name] !== "") {
-                 $("#affected").append('<h3>' + tableHead[name].substr(0, tableHead[name].indexOf("<")-1).replace(/(?:\r\n|\r|\n)/g, "<br />") + '</h3>');
-                 $("#affected").append('<p>' + tableHead[name].substr(tableHead[name].indexOf("<")+4, tableHead[name].length - tableHead[name].indexOf("<")+4).replace(/(?:\r\n|\r|\n)/g, "<br />") + '</p>');
+                 $("#affected").append('<h3>' + tableHead[name].substr(0, tableHead[name].indexOf("<")-1).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />") + '</h3>');
+                 console.log($.trim(tableHead[name].substr(tableHead[name].indexOf("<")+4, 1)));
+                 if ($.trim(tableHead[name].substr(tableHead[name].indexOf("<")+4, 1)) === "<") { ///[\r\n|\r|\n]/
+                   $("#affected").append('<p>' + $.trim(tableHead[name].substr(tableHead[name].indexOf("<")+9, tableHead[name].length - tableHead[name].indexOf("<")+7)).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />") + '</p>');
+                 } else {
+                   $("#affected").append('<p>' + $.trim(tableHead[name].substr(tableHead[name].indexOf("<")+5, tableHead[name].length - tableHead[name].indexOf("<")+3)).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />") + '</p>');
+                 }
                }
              });
            }
@@ -489,7 +495,7 @@ function makeTable() {
 <p id="whattodo"></p>
 
      <!-- include expand collapses for addition sections, such as for specialised audiences or background information-->
-     
+
 
    <section>
      <h2 class="h3">Subscribe for alerts</h2>
