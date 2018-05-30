@@ -5,9 +5,15 @@
 <!--[if gt IE 8]><!--><html class="no-js" lang="en" dir="ltr"><!--<![endif]--><head>
                                 <meta charset="utf-8">
                                 <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-								<title>Table examples</title>
+								<title>Table example</title>
                                 <meta content="width=device-width,initial-scale=1" name="viewport">
                                 <!-- Meta data-->
+                                <!--[if gte IE 9 | !IE ]><!-->
+                                <link href="../GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
+                                <link rel="stylesheet" href="../GCWeb/css/theme.min.css">
+                                <link rel="stylesheet" href="./css/custom.css">
+                                <!--<![endif]-->
+
                                 <!-- Load closure template scripts -->
                                 <script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_25/cdts/compiled/soyutils.js"></script>
                                 <script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_25/cdts/compiled/wet-en.js"></script>
@@ -31,10 +37,24 @@
 
 
 
+                                <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
+                                  <script src="js/jquery.min.js"></script>
+                                   <link rel="stylesheet"
+
+                                   href="css/jquery.dataTables.min.css"></style>
+                                   <script type="text/javascript"
+
+                                   src="js/jquery.dataTables.min.js"></script>
+                                                               <script type="text/javascript"
+
+                                   src="js/bootstrap.min.js"></script>
+
+                                   <link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
+                                   <link rel="stylesheet" href="css/custom.css" />
+                                   <link rel="stylesheet" href="css/test-tables-alain.css" />
 
 
-<link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
-<link rel="stylesheet" href="css/test-tables-alain.css" />
+
 
 
 <meta charset="utf-8">
@@ -180,15 +200,6 @@
 
 
 
-    <nav role="navigation" id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2><div style="background-color: #335075; min-height: 55px;"></div><div class="container"><div class="row"><ol class="breadcrumb">
-<ol class="breadcrumb" style="background: #80808066;">
-	<a href="#" class="recalls-breadcrumb" style="color: #000000; text-decoration: none;">
-    <img src="https://png.icons8.com/material/50/000000/back.png" width="15" height="15" style="vertical-align: middle;">
-    Search context</a>
-</ol>
-
-</ol></div></div></nav>
-
 
 
 
@@ -218,53 +229,106 @@
 
 
 
-	<h1 property="name" id="toptitle" style="margin-top: 5px;">Table examples</h1>
+	<h1>Table examples</h1>
 
 
 
 <div><div class="mwsgeneric-base-html parbase section">
 
+<h2>Simple responsive table with search</h2>
 
-
-  <table>
-    <caption>Simple responsive table</caption>
+  <table id="myTable">
     <thead>
-      <tr>
-        <th scope="col"> Brand</th>
-        <th scope="col">Product</th>
-        <th scope="col">UPC code</th>
-        <th scope="col">Best before</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="d1">
-        <td data-label="Brand">Culinary Creations Gourmet</td>
-        <td data-label="Product">Beef & Cheddar Onion Bun</td>
-        <td data-label="UPC">89069180979</td>
-        <td data-label="Best before">APR-16<br>April 23, 2018</td>
-      </tr>
-      <tr>
-        <td scope="row" data-label="Brand">Culinary Creations Gourmet</td>
-        <td data-label="Product">Roast Beef Sandwich</td>
-        <td data-label="UPC">689069180931</td>
-        <td data-label="Best before">APR-16<br>April 23, 2018</td>
-      </tr>
-      <tr class="d1">
-        <td scope="row" data-label="Brand">Culinary Creations Gourmet</td>
-        <td data-label="Product">Beef & Swiss Submarine ½</td>
-        <td data-label="UPC">89069180979</td>
-        <td data-label="Best before">April 16, 2018<br>April 17, 2018<br>April 18, 2018<br>April 21, 2018<br>April 23, 2018<br>April 24, 2018</td>
-      </tr>
-      <tr>
-        <td scope="row" data-label="Brand">Culinary Creations Gourmet</td>
-        <td data-label="Product">Beef & Swiss Submarine Long</td>
-        <td data-label="UPC">689069180979</td>
-        <td data-label="Best before">APR-17<br>April 21, 2018</td>
-      </tr>
-    </tbody>
-  </table>
+          <tr class="d2">
+            <th scope="col">Brand</th>
+            <th scope="col">Product</th>
+            <th scope="col">UPC Code</th>
+            <th scope="col">Best before</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="d1">
+            <td data-label="Brand" class="d0">Culinary Creations Gourmet</td>
+            <td data-label="Product">Beef & Cheddar Onion Bun</td>
+            <td data-label="UPC">89069180979</td>
+            <td data-label="Best before">APR-16<br>April 16, 2018</td>
+          </tr>
+          <tr class="d2">
+            <td scope="row" data-label="Brand">Culinary Creations Gourmet</td>
+            <td data-label="Product">Roast Beef Sandwich</td>
+            <td data-label="UPC">689069180931</td>
+            <td data-label="Best before">APR-17<br>April 17, 2018</td>
+          </tr>
+          <tr class="d1">
+            <td scope="row" data-label="Brand">Culinary Creations Gourmet</td>
+            <td data-label="Product">Beef & Swiss Submarine ½</td>
+            <td data-label="UPC">89069180979</td>
+            <td data-label="Best before">April 16, 2018<br>April 17, 2018<br>April 18, 2018<br>April 21, 2018<br>April 23, 2018<br>April 24, 2018</td>
+          </tr>
+          <tr class="d2">
+            <td scope="row" data-label="Brand">Culinary Creations Gourmet</td>
+            <td data-label="Product">Beef & Swiss Submarine Long</td>
+            <td data-label="UPC">689069180979</td>
+            <td data-label="Best before">APR-21<br>April 21, 2018</td>
+          </tr>
+          <tr class="d1">
+            <td data-label="Brand">illy</td>
+            <td data-label="Product">Coffee Beans – Dark Roast</td>
+            <td data-label="UPC Code">7 33411 07721 6</td>
+            <td data-label="Best before">10/2019<br>11/2019</td>
+          </tr>
+          <tr class="d2">
+            <td data-label="Brand">illy</td>
+            <td data-label="Product">	Coffee Beans – Medium Roast</td>
+            <td data-label="UPC Code">7 33411 00009 2</td>
+            <td data-label="Best before">10/2019<br>11/2019</td>
+          </tr>
+          <tr class="d1">
+            <td data-label="Brand">Greenbelt Microgreens</td>
+            <td data-label="Product">Arugula Microgreens</td>
+            <td data-label="UPC Code">8 90082 00012 4</td>
+            <td data-label="Best before">26/04/18<br>30/04/18<br>03/05/18*</td>
+          </tr>
+          <tr class="d2">
+            <td data-label="Brand">Greenbelt Microgreens</td>
+            <td data-label="Product">Arugula Microgreens</td>
+            <td data-label="UPC Code">8 90082 00013 1</td>
+            <td data-label="Best before">30/04/18<br>03/05/18*</td>
+          </tr>
+          <tr class="d1">
+            <td data-label="Brand">Greenbelt Microgreens</td>
+            <td data-label="Product">Broccoli Microgreens</td>
+            <td data-label="UPC Code">A8 90082 00016 2</td>
+            <td data-label="Best before">26/04/18<br>30/04/18<br>03/05/18*</td>
+          </tr>
 
+            <tr class="d2">
+            <td data-label="Brand">Greenbelt Microgreens</td>
+            <td data-label="Product">Broccoli Microgreens</td>
+            <td data-label="UPC Code">8 90082 00017 9</td>
+            <td data-label="Best before">30/04/18</td>
+          </tr>
+          <tr class="d1">
+            <td data-label="Brand">Greenbelt Microgreens</td>
+            <td data-label="Product">Fresh Microgreen Mix</td>
+            <td data-label="UPC Code">8 90082 00041 4</td>
+            <td data-label="Best before">26/04/18<br>30/04/18<br>03/05/18*</td>
+          </tr>
+          <tr class="d2">
+            <td data-label="Brand">Greenbelt Microgreens</td>
+            <td data-label="Product">Fresh Microgreen Mix</td>
+            <td data-label="UPC Code">8 90082 00080 3</td>
+            <td data-label="Best before">30/04/18<br>03/05/18*</td>
+          </tr>
+        </tbody>
+      </table>
 
+      <script>
+          $(document).ready(function () {
+              $.noConflict();
+              var table = $('#myTable').DataTable();
+          });
+      </script>
 
 
 </div>
