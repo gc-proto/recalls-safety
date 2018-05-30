@@ -221,6 +221,7 @@ function getRecall(id, lang) {
          console.log(data);
          productsCount = 0;
          descriptionText = "";
+         var imagePan = [];
          //set panels...
          $.each(data.panels, function() {
            //get image array
@@ -248,7 +249,6 @@ function getRecall(id, lang) {
            $("#page-title").text(data.title + " - Canada.ca");
            console.log(data.panels[0].text);
            $("#category-tag").append(data.panels[0].text.substr(data.panels[0].text.indexOf("Category")+14,data.panels[0].text.indexOf("<",data.panels[0].text.indexOf("Category")+14)-(data.panels[0].text.indexOf("Category")+14)));
-
 
 
            //if "brand name" section in product array, use threatening
@@ -312,7 +312,6 @@ function getRecall(id, lang) {
            }
 
            //Add carousel if > 1 image, else just image
-           console.log(imagePan["0"].fullUrl);
            if (imagePan["0"] != null) {
              /*if (imagePan["1"] != null) {
                //$("#carousel-images").data('owlCarousel').destroy()
@@ -331,15 +330,19 @@ function getRecall(id, lang) {
             //initializeOwlCarousel();
 
            //description
-           console.log(descriptionText === "");
-           if (descriptionText === "") {
+           console.log(descriptionText === "" && products["0"].text.substring(0, 1) != "<");
+           console.log(products["0"].text != null);
+           if (descriptionText === "" && products["0"].text.substring(0, 1) != "<") {
              descriptionText = products["0"].text.substr(products["0"].text.indexOf("Product description:")+25, (products["0"].text.indexOf("Hazard identified:")-8) - (products["0"].text.indexOf("Product description:")+25));
+           } else if (descriptionText === "") {
+             //no description
+             $("#descriptionheader").remove();
            }
            console.log($.trim(descriptionText.substring(0, 1)));
            if ($.trim(descriptionText.substring(0, 1)) === "<") {
              $("#description").append($.trim(descriptionText.substring(descriptionText.indexOf(">", descriptionText.indexOf(">") + 1) + 1, descriptionText.length - descriptionText.indexOf(">", descriptionText.indexOf(">") + 1))));
            } else {
-             $("#description").append($.trim(descriptionText.substring(1, descriptionText.length - 2)));
+             $("#description").append($.trim(descriptionText));
            }
            //are you affected?
            if (products.length > 1) {
@@ -354,6 +357,7 @@ UPC:</b> 85886000170<BR/>"
 */
 
              //for each <b> in product_1
+             console.log(products);
              var tableHead = products["0"].text.split('<b>');
              productTable = '<p>Look up your serial number to see if your product is affected:</p><table id="myTable" text-align=Top><thead><tr>';
              $.each(tableHead, function(index) {
@@ -390,10 +394,16 @@ UPC:</b> 85886000170<BR/>"
              var tableHead = products["0"].text.split('<b>');
              $.each(tableHead, function(name) {
                if (tableHead[name] !== "") {
+                 console.log(tableHead[name]);
                  $("#affected").append('<h3>' + tableHead[name].substr(0, tableHead[name].indexOf("<")-1).replace(/[\r\n|\r|\n]+/g, "<br /><br />") + '</h3>');
                  console.log($.trim(tableHead[name].substr(tableHead[name].indexOf("<")+4, 1)));
                  if ($.trim(tableHead[name].substr(tableHead[name].indexOf("<")+4, 1)) === "<") { ///[\r\n|\r|\n]/
                    $("#affected").append('<p>' + $.trim(tableHead[name].substr(tableHead[name].indexOf("<")+9, tableHead[name].length - tableHead[name].indexOf("<")+7)).replace(/[\r\n|\r|\n]+/g, "<br /><br />") + '</p>');
+                 } else if (tableHead[name].indexOf("<table>") > -1) {
+                   //add mobile table headings
+                   tableHead[name] = tableHead[name].replace("<table>", "<div>").replace("</table>", "</div>")
+
+                   $("#affected").append('<p>' + $.trim(tableHead[name].substr(tableHead[name].indexOf("<")+5, tableHead[name].length - tableHead[name].indexOf("<")+3)) + '</p>');
                  } else {
                    $("#affected").append('<p>' + $.trim(tableHead[name].substr(tableHead[name].indexOf("<")+5, tableHead[name].length - tableHead[name].indexOf("<")+3)).replace(/[\r\n|\r|\n]+/g, "<br /><br />") + '</p>');
                  }
@@ -467,7 +477,7 @@ function makeTable() {
    <p id="recall-date"><strong></strong></p>
 
 
- <h2 class="h3">Description</h2>
+ <h2 class="h3" id="descriptionheader">Description</h2>
        <p id="description"></p>
 
 
