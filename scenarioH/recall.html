@@ -236,7 +236,7 @@ function getRecall(id, lang) {
              descriptionText = this.text;
              //remove the date???
            } else if (this.panelName === "cms_who_what_consumer") {
-             $("#whattodo").append(this.text.substring(1, this.text.length - 2).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />"));
+             $("#whattodo").append(this.text.substring(1, this.text.length - 2).replace(/[\r\n|\r|\n]+/g, "<br /><br />"));
            }
          });
            //use ids to modify page
@@ -332,7 +332,7 @@ function getRecall(id, lang) {
            if (descriptionText === "") {
              descriptionText = products["0"].text.substr(products["0"].text.indexOf("Product description:")+25, (products["0"].text.indexOf("Hazard identified:")-8) - (products["0"].text.indexOf("Product description:")+25));
            }
-           $("#description").append(descriptionText.substring(1, descriptionText.length - 2).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />"));
+           $("#description").append(descriptionText.substring(1, descriptionText.length - 2).replace(/[\r\n|\r|\n]+/g, "<br /><br />"));
 
            //are you affected?
            if (products.length > 1) {
@@ -383,12 +383,12 @@ UPC:</b> 85886000170<BR/>"
              var tableHead = products["0"].text.split('<b>');
              $.each(tableHead, function(name) {
                if (tableHead[name] !== "") {
-                 $("#affected").append('<h3>' + tableHead[name].substr(0, tableHead[name].indexOf("<")-1).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />") + '</h3>');
+                 $("#affected").append('<h3>' + tableHead[name].substr(0, tableHead[name].indexOf("<")-1).replace(/[\r\n|\r|\n]+/g, "<br /><br />") + '</h3>');
                  console.log($.trim(tableHead[name].substr(tableHead[name].indexOf("<")+4, 1)));
                  if ($.trim(tableHead[name].substr(tableHead[name].indexOf("<")+4, 1)) === "<") { ///[\r\n|\r|\n]/
-                   $("#affected").append('<p>' + $.trim(tableHead[name].substr(tableHead[name].indexOf("<")+9, tableHead[name].length - tableHead[name].indexOf("<")+7)).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />") + '</p>');
+                   $("#affected").append('<p>' + $.trim(tableHead[name].substr(tableHead[name].indexOf("<")+9, tableHead[name].length - tableHead[name].indexOf("<")+7)).replace(/[\r\n|\r|\n]+/g, "<br /><br />") + '</p>');
                  } else {
-                   $("#affected").append('<p>' + $.trim(tableHead[name].substr(tableHead[name].indexOf("<")+5, tableHead[name].length - tableHead[name].indexOf("<")+3)).replace(/[(\r\n|\r|\n)]+/g, "<br /><br />") + '</p>');
+                   $("#affected").append('<p>' + $.trim(tableHead[name].substr(tableHead[name].indexOf("<")+5, tableHead[name].length - tableHead[name].indexOf("<")+3)).replace(/[\r\n|\r|\n]+/g, "<br /><br />") + '</p>');
                  }
                }
              });
