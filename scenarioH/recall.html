@@ -236,7 +236,10 @@ function getRecall(id, lang) {
              descriptionText = this.text;
              //remove the date???
            } else if (this.panelName === "cms_who_what_consumer") {
-             $("#whattodo").append(this.text.substring(1, this.text.length - 2).replace(/[\r\n|\r|\n]+/g, "<br /><br />"));
+             $("#whattodo").append($.trim(this.text.substring(1, this.text.length - 2)).replace(/[\r\n|\r|\n]+/g, "<br /><br />"));
+           } else if (this.panelName === "cms_reason_reason_recall") {
+             console.log(this.text);
+             descriptionText = this.text;
            }
          });
            //use ids to modify page
@@ -332,8 +335,12 @@ function getRecall(id, lang) {
            if (descriptionText === "") {
              descriptionText = products["0"].text.substr(products["0"].text.indexOf("Product description:")+25, (products["0"].text.indexOf("Hazard identified:")-8) - (products["0"].text.indexOf("Product description:")+25));
            }
-           $("#description").append(descriptionText.substring(1, descriptionText.length - 2).replace(/[\r\n|\r|\n]+/g, "<br /><br />"));
-
+           console.log($.trim(descriptionText.substring(0, 1)));
+           if ($.trim(descriptionText.substring(0, 1)) === "<") {
+             $("#description").append($.trim(descriptionText.substring(descriptionText.indexOf(">", descriptionText.indexOf(">") + 1) + 1, descriptionText.length - descriptionText.indexOf(">", descriptionText.indexOf(">") + 1))));
+           } else {
+             $("#description").append($.trim(descriptionText.substring(1, descriptionText.length - 2)));
+           }
            //are you affected?
            if (products.length > 1) {
              //many products - make table
