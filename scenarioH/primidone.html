@@ -315,8 +315,9 @@ $(function() {
              </table>
 
              <script>
-               $('#myTable').dataTable( {
-               "dom": '<"wrapper"fitlp>'
+                 $(document).ready(function () {
+                     $.noConflict();
+                     var table = $('#myTable').DataTable();
                  });
              </script>
 
