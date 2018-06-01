@@ -13,7 +13,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="../GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="../GCWeb/css/theme.min.css">
-<link rel="stylesheet" href="./css/custom.css">
+<link rel="stylesheet" href="css/custom.css">
 <!--<![endif]-->
 <!--[if lt IE 9]>
 <link href="../GCWeb/assets/favicon.ico" rel="shortcut icon" />
@@ -79,9 +79,9 @@ p, li {max-width: 65em;}
 </section>
 <div class="row">
 <div class="brand col-xs-8 col-sm-9 col-md-6">
-<a href="https://www.canada.ca/en.html"><object type="image/svg+xml" tabindex="-1" data="../GCWeb/assets/sig-blk-en.svg"></object><span class="wb-inv"> Government of Canada</span></a>
+<a href="https://www.canada.ca/en.html"><object type="image/svg+xml" tabindex="-1" data="../GCWeb/assets/wmms-blk-en.svg"></object><span class="wb-inv"> Government of Canada</span></a>
 </div>
-<section id="wb-srch" class="col-xs-6 text-right visible-md visible-lg">
+<section id="wb-srch" class="hidden col-xs-6 text-right visible-md visible-lg">
 <h2>Search</h2>
 
 
@@ -143,7 +143,12 @@ p, li {max-width: 65em;}
 	background-size: 15px 15px !important;
 }
 
-.icon.twitter {
+@media (max-width:440px) {
+  .recall-share {
+      margin-top: 10px;
+      float: left!important;
+  }
+}.icon.twitter {
 	background-size: 15px 15px !important;
 }
 
@@ -171,7 +176,7 @@ p, li {max-width: 65em;}
 </div>
 <nav role="navigation" id="wb-bc" property="breadcrumb">
 <h2>You are here:</h2>
-	<div style="background-color: #335075; min-height: 55px;"></div>
+	<div style="background-color: #335075; min-height: 10px;"></div>
 <div class="container">
 <div class="row">
 </div>
@@ -263,44 +268,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 		</div>
 
 
-		<section class="followus mrgn-bttm-md" style="
-		padding-top: 0px;
-		margin-bottom: 0px;
-		padding-bottom: 0px;
-		float: right;
-		margin-top: 10px;
-		">
-			<a href="">Share:</a>
-			<ul>
-				<li style="
-					margin-top: 0px;
-					margin-bottom: 0px;
-				"><a rel="external" class="facebook gl-follow" href="https://www.facebook.com/EnvironmentandNaturalResourcesinCanada/" style="
-					padding-left: 2px;
-					padding-right: 15px;
-					border-top-width: 1px;
-					border-right-width: 1px;
-					border-bottom-width: 1px;
-					border-left-width: 1px;
-					padding-top: 2px;
-					padding-bottom: 2px;
-				"><span class="wb-inv">Facebook</span></a></li>
-							<li style="
-					margin-top: 0px;
-					margin-bottom: 0px;
-				"><a rel="external" class="twitter gl-follow" href="https://twitter.com/environmentca" style="
-					padding-left: 2px;
-					padding-right: 15px;
-					border-top-width: 1px;
-					border-right-width: 1px;
-					border-bottom-width: 1px;
-					border-left-width: 1px;
-					padding-top: 2px;
-					padding-bottom: 2px;
-				"><span class="wb-inv">Twitter</span></a></li>
 
-			</ul>
-		</section>
 	</div>
 
 
@@ -323,7 +291,7 @@ http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets//2
 <li><strong>Issue:</strong> Possible Listeria contaminations</li>
 <li><strong>What to do:</strong> Don't eat affected product - throw it out or return it to the store</li>
 	</ul>
-	
+
 <div class="owl-container">
 <script>
 $(function() {
@@ -336,19 +304,18 @@ $(function() {
 });
 </script>
 <div class="owl-carousel" style-"max-width: 200px;">
-  <div class="item"><img src="images/beef-gourmet-img1.jpg" /></div>
-  <div class="item"><img src="images/beef-gourmet-img2.jpg" /></div>
+    <div class="item"><img src="images/beef-gourmet-img2.jpg" /></div>
  <div class="item"><img src="images/beef-gourmet-img3.jpg" /></div>
  <div class="item"><img src="images/beef-gourmet-img4.jpg" /></div>
-
+<div class="item"><img src="images/beef-gourmet-img1.jpg" /></div>
 
 </div>
 </div>
 <div class="row">
 	<div class="col-md-8">
 		<section>
-			
-			<h2>Are you affected?</h2>
+
+			<h2>Affected products</h2>
 				<p>Check the name of your product, its UPC and its "Best before date" to see if your product is affected by this recall. </p>
         <table id="myTable">
         <thead>
@@ -358,6 +325,8 @@ $(function() {
          <th scope="col">Size</th>
          <th scope="col">Code(s) on product</th>
          <th scope="col">UPC</th>
+         <th scope="col" class="hidden-lg hidden-md hidden-sm hidden-xs">keywords</th>
+
         </tr>
         </thead>
         <tbody>
@@ -369,6 +338,7 @@ $(function() {
          <br>April 16, 2018
          <br>April 23, 2018</td>
          <td data-label="UPC">6 89069 18065 6</td>
+        <th class="hidden-lg hidden-md hidden-sm hidden-xs">689069180656 8906918065</th>
 
         </tr>
         <tr class="d2">
@@ -379,6 +349,7 @@ $(function() {
           <br>April 16, 2018
           <br>April 23, 2018</td>
           <td data-label="UPC">6 89069 18093 1</td>
+          <th class="hidden-lg hidden-md hidden-sm hidden-xs">689069180931 8906918093</th>
         </tr>
         <tr class="d1">
           <td data-label="Brand name">Culinary Creations Gourmet</td>
@@ -392,6 +363,7 @@ $(function() {
           <br>April 23, 2018
           <br>April 24, 2018</td>
           <td data-label="UPC">6 89069 18097 9</td>
+          <th class="hidden-lg hidden-md hidden-sm hidden-xs">689069180979 8906918097</th>
         </tr>
         <tr class="d2">
           <td data-label="Brand name">Culinary Creations Gourmet</td>
@@ -401,6 +373,7 @@ $(function() {
           <br>April 17, 2018
           <br>April 21, 2018</td>
           <td data-label="UPC">6 89069 18097 9</td>
+            <th class="hidden-lg hidden-md hidden-sm hidden-xs">689069180979 8906918097</th>
         </tr>
         <tr class="d1">
           <td data-label="Brand name">Denny's Express</td>
@@ -408,6 +381,7 @@ $(function() {
           <td data-label="Size">250 g</td>
           <td data-label="Code(s) on product">0718</td>
           <td data-label="UPC">7 76393 40003 0</td>
+            <th class="hidden-lg hidden-md hidden-sm hidden-xs">776393400030 7639340003</th>
         </tr>
         </tbody>
         </table>
@@ -432,15 +406,7 @@ $(function() {
 </form>
 
 
-		<h2>Related recalls</h2>
- <ul>
-
-<li><a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/66554r-eng.php">Culinary Creations Gourmet brand & Denny's Express brand roast beef-containing sandwiches recalled due to Listeria monocytogenes (2018-04-18)</a></li>
-
-</ul>
-
-
-			<h2>The problem </h2>
+			<h2>Issue</h2>
 			<p>R.T. Fresh Prepared Foods Inc. is recalling Culinary Creations Gourmet brand & Denny's Express brand roast beef-containing sandwiches from the marketplace due to possible Listeria monocytogenes contamination.</p>
 	<p>Food contaminated with Listeria monocytogenes may not look or smell spoiled but can still make you sick. Infection from Listeria can be deadly.</p>
 
@@ -452,7 +418,8 @@ $(function() {
 	<h2>Similar recalls</h2>
  <ul>
 
-<li><a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/66528r-eng.php">Roast beef products recalled by Erie Meat Products Ltd. due to Listeria monocytogenes (2018-04-17)</a></li>
+<li><a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/66554r-eng.php">Culinary Creations Gourmet brand & Denny's Express brand roast beef-containing sandwiches recalled due to Listeria monocytogenes (2018-04-18)</a></li>
+	 <li><a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/66528r-eng.php">Roast beef products recalled by Erie Meat Products Ltd. due to Listeria monocytogenes (2018-04-17)</a></li>
 <li><a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/66550r-eng.php">Fresh 2 Go brand Roast Beef Paninis recalled due to Listeria monocytogenes (2018-04-18)</a></li>
 
 </ul>
@@ -530,10 +497,30 @@ $(function() {
 
 			</section><!-- END h3 -->
 
-		<section>
-			<h2>Subscribe for alerts</h2>
-			<a href="" class="btn btn-default">Choose how to follow recalls</a>
-		</section>
+      <hr style="size: 20px; border-top-width: 5px;" />
+
+         <section style="float: left;">
+           <a href="" class="btn btn-default">Subscribe for recall alerts</a>
+         </section>
+
+         <section class="followus mrgn-bttm-md recall-share" style="padding-top: 10px; padding-bottom: 0px; float: right;">
+           <a href="">Share this recall:</a>
+           <ul>
+             <li style="margin-top: 0px; margin-bottom: 0px;">
+               <img src="http://backgroundcheckall.com/wp-content/uploads/2017/12/white-email-icon-transparent-background-3.png"/ style="max-width:20px; padding-bottom: 5px;">
+             </li>
+             <li style="margin-top: 0px; margin-bottom: 0px;">
+               <a rel="external" class="facebook gl-follow" href="" style="padding-left: 2px; padding-right: 15px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; padding-top: 2px; padding-bottom: 2px;">
+                 <span class="wb-inv">Facebook</span>
+               </a>
+             </li>
+             <li style="margin-top: 0px; margin-bottom: 0px;">
+               <a rel="external" class="twitter gl-follow" href="" style="padding-left: 2px;padding-right: 15px;border-top-width: 1px;border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;padding-top: 2px;padding-bottom: 2px;">
+             <span class="wb-inv">Twitter</span></a></li>
+           </ul>
+         </section>
+
+      <hr style="clear: both; border-bottom: 5px solid #eee; border-top: none; padding-bottom:10px;" />
 
 		<section>
 
