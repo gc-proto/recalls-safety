@@ -153,11 +153,21 @@ p, li {max-width: 65em;}
 
     </div>
 
+
+		<div class="visible-xs" style="clear: both; padding-top: 5px;">
+			<div class="row">
+				<ul class="toc lst-spcd col-md-12" style="display:flex; white-space: nowrap;">
+					<li><a class="" style="font-size:14px; margin-left:6px; border: 1px solid #335075; border-bottom: none; padding: 5px 5px 0px 5px;" href="">Food (53)</a></li>
+					<li ><a class="" style="font-size:14px; margin-left:6px; border: 1px solid #335075; border-bottom: none; padding: 5px 5px 0px 5px;" href="">Vehicles (n)</a></li>
+					<li ><a class="" style="font-size:14px; margin-left:6px; border: 1px solid #335075; border-bottom: none; padding: 5px 5px 0px 5px;" href="">Health (n)</a></li>
+					<li stle><a class="" style="font-size:14px; margin-left:6px; border: 1px solid #335075; border-bottom: none; padding: 5px 5px 0px 5px;" href="">Products (n)</a></li>
+				</ul>
+			</div>
+		</div>
           <!--Cascading picklists - FieldFlow? -->
-          <div class="wb-frmvld" style="clear:both; padding-top:10px;">
+          <!--<div class="wb-frmvld" style="clear:both; padding-top:10px;">
         	 <form method="get">
 
-        		<!--Question 1-->
         		<div id="filter-1" class="wb-fieldflow" data-wb-fieldflow='{
         			"noForm": true,
         			"base": { "live": true },
@@ -168,7 +178,7 @@ p, li {max-width: 65em;}
         			}'>
         			<p>See recalls and filters for:</p>
         			<ul>
-        				<li data-wb-fieldflow='{"action": "removeClass", "source":"#food-1", "class":"hidden"}'>Food (53)</li> <!--result-->
+        				<li data-wb-fieldflow='{"action": "removeClass", "source":"#food-1", "class":"hidden"}'>Food (53)</li>
         				<li data-wb-fieldflow='{"action": "append", "source":"#vehicles-1"}'>Vehicles (n)</li>
                 <li data-wb-fieldflow='{"action": "append", "source":"#consumer-1"}'>Consumer products (n)</li>
                 <li data-wb-fieldflow='{"action": "append", "source":"#health-1"}'>Health products (n)</li>
@@ -177,22 +187,19 @@ p, li {max-width: 65em;}
           </form>
         </div>
 
-          <!--Food-1 filter-->
       		<div id="food-1" class="hidden">
-                <!--Should we display the first filter as tabs?-->
-                <!--expiry date isn't a fieldflow input, just get another input - perhaps all the filters beyond the first are form fields?-->
-              <div class="form-group">
+                              <div class="form-group">
               	<label for="expirydate">Expiry on package<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
               	<input class="form-control" type="date" id="enddate" name="expirydate" min="2000-03-27" max="2220-05-23" />
               </div>
 
-      		</div>
+      		</div>-->
 
 
 
-       <div id="submit-button" style="margin-bottom:20px; float:left;">
+       <!--<div id="submit-button" style="margin-bottom:20px; float:left;">
 			     <a href="findout-exempt-en.html" class="btn btn-primary">Filter results</a>
-		   </div>
+		   </div>-->
 
        <div id="sort-by-box" style="float: right; display:flex; margin-top: 0px; align-items: baseline;">
  			  <label class="control-label" for="edit-sort-by">Sort by</label>
@@ -268,7 +275,7 @@ p, li {max-width: 65em;}
 
 <div>
 
-<details class="mrgn-tp-lg" open="">
+<details class="mrgn-tp-lg hidden-xs" open="">
                     <summary class="panel-heading"><strong>Filters</strong></summary>
                     <div class="panel-body">
                          <div data-ajax-replace="ajax/notice.html" class="wb-init wb-data-ajax-replace-inited" id="wb-auto-1"></div>
@@ -276,10 +283,10 @@ p, li {max-width: 65em;}
                               <!-- Org list -->
                               <ul class="list-unstyled lst-spcd">
                                    <li><strong><a href="option1.html"><i class="glyphicon glyphicon-ok mrgn-rght-sm"></i>All categories</a></strong></li>
-                                   <li><a href="atssc.html">Consumer products</a></li><li>
-                                   </li><li><a href="acoa.html">Vehicles</a></li><li>
-                                   </li><li><a href="cbsa.html">Food</a></li><li>
-                                   </li><li><a href="ceria.html">Health products</a></li><li>
+                                   <li><a href="atssc.html">Food (53)</a></li><li>
+                                   </li><li><a href="acoa.html">Vehicles (n)</a></li><li>
+                                   </li><li><a href="cbsa.html">Health (n)</a></li><li>
+                                   </li><li><a href="ceria.html">Products (n)</a></li><li>
 
                               </li></ul>
                               <!-- Org list end -->
