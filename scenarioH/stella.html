@@ -17,13 +17,10 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <!--<![endif]-->
 <!--[if lt IE 9]>
 <link href="../GCWeb/assets/favicon.ico" rel="shortcut icon" />
-
 <link rel="stylesheet" href="../GCWeb/css/ie8-theme.min.css" />
 <script src="../wet-boew/js/ie8-wet-boew.min.js"></script>
 <![endif]-->
 <!--[if lte IE 9]>
-
-
 <![endif]-->
 
 <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
@@ -47,9 +44,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <script>dataLayer1 = [];</script>
 <!-- End Google Tag Manager -->
 <style>
-
 p, li {max-width: 65em;}
-
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -89,61 +84,40 @@ p, li {max-width: 65em;}
 <form action="../search-results.html" method="get" name="cse-search-box" role="search" class="form-inline">
 
   <style>
-
   button#wb-srch-sub a:visited {
-
   color: white !important;
-
-
   }
-
-
   button#wb-srch-sub a {
-
   color: white !important;
-
-
   }
-
 .carousel-indicators {
 	bottom: -40px!important;
 }
-
 .carousel-indicators .active {
 	background-color: #000000!important;
 }
-
 .carousel-indicators li {
 	border: 1px solid #968989!important;
 }
-
-
 .carousel-control {
 	outline: 0!important;
     color: #fff!important;
     text-decoration: none!important;
     opacity: .9!important;
 }
-
-
 <!--make .carousel-control match the stats of hover:-->
-
 .followus {
 	background-size: 15px 15px !important;
 }
-
 .facebook {
 	background-size: 15px 15px !important;
 }
-
 .icon.facebook {
 	background-size: 15px 15px !important;
 }
-
 .twitter {
 	background-size: 15px 15px !important;
 }
-
 @media (max-width:440px) {
   .recall-share {
       margin-top: 10px;
@@ -152,7 +126,6 @@ p, li {max-width: 65em;}
 }.icon.twitter {
 	background-size: 15px 15px !important;
 }
-
 @media (min-width:768px){
   .owl-container {
     width:50%;
@@ -188,45 +161,26 @@ p, li {max-width: 65em;}
 
 
 <style>
-
 .gc-stp-stp {
 	margin-bottom: 0;
 }
-
 </style>
 
 
 <main role="main" property="mainContentOfPage" class="container">
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-
-
-
-
 	var id = getUrlParameter('id'); // (gets me URL parameters)
 	var lang = getUrlParameter('lang'); // (gets me URL parameters)
-
-
 	// get the URL aprameters for ID and Lang then return API JSON
-
 	var jsonfromhc = getRecall(id, lang);
 	console.log(id);
 	console.log(lang);
 	console.log(jsonfromhc);
-
-
-
-
-
 });
-
 function getRecall(id, lang) {
     var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
     var uri = base + '/api/' + id + '/' + lang;
-
-
-
-
     $.ajax({
         url:uri,
         type:'GET',
@@ -235,27 +189,22 @@ function getRecall(id, lang) {
         success:function(data){
             console.log(data.title);
 			console.log(data);
-
 			//use ids to modify page
 			$("#toptitle").text(data.title);
 			$("#toptitle").text(data.title);
-
         },
         error:function(error){
         },
     });
     return;
 };
-
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
         sParameterName,
         i;
-
     for (i = 0; i < sURLVariables.length; i++) {
         sParameterName = sURLVariables[i].split('=');
-
         if (sParameterName[0] === sParam) {
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
@@ -299,6 +248,26 @@ var getUrlParameter = function getUrlParameter(sParam) {
 		<section>
 					<h2>Affected products</h2>
 				<p>Check the best before date on your bottle, and then look at the time stamp.</p>
+</div>
+</div>
+<div><div class="mwsgeneric-base-html parbase section">
+<div class="owl-container">
+<script>
+$(function() {
+  $('.owl-carousel').owlCarousel({
+    margin: 20,
+    loop: true,
+    items: 1,
+    stagePadding: 50
+  });
+});
+</script>
+<div class="owl-carousel" style-"max-width: 200px;">
+ <div class="item"><img src="images/stella-img2.jpg" /></div>
+ <div class="item"><img src="images/stella-img3.png" /></div>
+ <div class="item"><img src="images/stella-img4.png" /></div>
+ <div class="item"><img src="images/stella-img5.png" /></div>
+
 </div>
 </div>
 <div class="row">
@@ -396,26 +365,7 @@ $(document).ready(function () {
 });
 </script>
 
-<div><div class="mwsgeneric-base-html parbase section">
-<div class="owl-container">
-<script>
-$(function() {
-  $('.owl-carousel').owlCarousel({
-    margin: 20,
-    loop: true,
-    items: 1,
-    stagePadding: 50
-  });
-});
-</script>
-<div class="owl-carousel" style-"max-width: 200px;">
- <div class="item"><img src="images/stella-img2.jpg" /></div>
- <div class="item"><img src="images/stella-img3.png" /></div>
- <div class="item"><img src="images/stella-img4.png" /></div>
- <div class="item"><img src="images/stella-img5.png" /></div>
 
-</div>
-</div>
 	<p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.), to make sure your product is not affected.</p>
 
 	 <form id="someId">
