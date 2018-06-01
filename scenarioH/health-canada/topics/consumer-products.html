@@ -164,7 +164,7 @@
 
         <div class="brand col-xs-8 col-sm-9 col-md-6">
             <a href="https://canada.ca/en.html">
-                <object type="image/svg+xml" tabindex="-1" data="https://canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"></object>
+                <object type="image/svg+xml" tabindex="-1" role="img" data="../../../GCWeb/assets/wmms-blk.svg" aria-label="Government of Canada"></object>
                 <span class="wb-inv">Government of Canada</span>
             </a>
         </div>
@@ -173,8 +173,53 @@
         <section id="wb-srch" class="col-xs-6 text-right visible-md visible-lg">
             <h2 class="wb-inv">Search</h2>
 
+						<style>
+							@media screen and (max-width: 737px) {
+								.mobile-breadcrumb {
+									background: #f3f3f3;
+								}
+/*								.hide-breadcrumb-parents-mobile {
+									visibility: hidden;
+								}*/
+								#wb-bc li:before {
+								    color: #333;
+								    content: "<";
+								    font-family: "Glyphicons Halflings";
+								    font-size: 1.5em;
+								}
+							}
+							@media screen and (min-width: 737px) {
+								.no-break-breadcrumb {
+									display: inline-block!important;
+								}
+							}
+						</style>
+
 <form action="https://canada.ca/en/sr/srb.html" method="get" name="cse-search-box" role="search" class="form-inline">
 <div class="form-group">
+	<!--Dropdown addition-->
+     <select class="form-control button" style="margin-right:-4px; background-color:rgb(255, 255, 255); color: rgb(0, 0, 0); height: 37px; border-radius:0px;border-top-left-radius: 5px; border-bottom-left-radius: 5px;" id="form-select-md">
+         <option value="">All</option>
+         <option value="">Jobs</option>
+         <option value="">Immigration</option>
+         <option value="">Travel</option>
+         <option value="">Business</option>
+         <option value="">Benefits</option>
+         <option value="">Health</option>
+         <option value="">Taxes</option>
+         <option value="">Environment</option>
+         <option value="">Defence</option>
+         <option value="">Culture</option>
+         <option value="">Policing</option>
+         <option value="">Transport</option>
+         <option value="">The world</option>
+         <option value="">Money</option>
+         <option value="">Science</option>
+       </select>
+	                         <!--Dropdown addition-->
+
+
+
 <label for="wb-srch-q" class="wb-inv">Search website</label>
 <input name="cdn" value="canada" type="hidden"/>
 <input name="st" value="s" type="hidden"/>
@@ -937,10 +982,10 @@
 
 
 
-    <nav role="navigation" id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2><div class="container"><div class="row"><ol class="breadcrumb">
-<li><a href='https://canada.ca/en.html'>Home</a></li>
-<li><a href='../../services/health.html'>Health</a></li>
-<li><a href='../../services/health/product-safety.html'>Product safety</a></li>
+    <nav role="navigation" id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2><div class="container mobile-breadcrumb"><div class="row"><ol class="breadcrumb">
+<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href='https://canada.ca/en.html'>Home</a></li>
+<li class="visible-md visible-lg no-break-breadcrumb cust-breadcrumb"><a href='../../services/health.html'>Health</a></li>
+<li class="cust-breadcrumb"><a href='../../services/health/product-safety.html'>Product safety</a></li>
 </ol></div></div></nav>
 
 
