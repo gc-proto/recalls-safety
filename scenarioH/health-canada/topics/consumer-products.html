@@ -174,16 +174,17 @@
             <h2 class="wb-inv">Search</h2>
 
 						<style>
-							@media screen and (max-width: 737px) {
+
 								.mobile-breadcrumb {
 									background: #f3f3f3;
 								}
 /*								.hide-breadcrumb-parents-mobile {
 									visibility: hidden;
 								}*/
+							@media screen and (max-width: 737px) {
 								#wb-bc li:before {
 								    color: #333;
-								    content: "<";
+								    content: "<"!important;
 								    font-family: "Glyphicons Halflings";
 								    font-size: 1.5em;
 								}
@@ -193,6 +194,51 @@
 									display: inline-block!important;
 								}
 							}
+							#wb-sm-new .menu {
+								display: table;
+								margin-bottom: 0;
+								width: 100%; }
+								#wb-sm-new .menu .active,
+								#wb-sm-new .menu .selected,
+								#wb-sm-new .menu > li {
+									display: table-cell;
+									float: none; }
+							#wb-sm-new .sm.open li {
+								background: #e0e0e0;
+								border-bottom: 2px solid RGB(255, 255, 255); }
+							}
+								#wb-sm .sm.open li a,
+								#wb-sm .sm.open li summary {
+									padding: 2px 5px;
+									text-shadow: none; }
+
+							/*#wb-sm {
+							  background: #335075; }
+							  #wb-sm .sm.open {
+							    background: #ccc;
+							    border-bottom: 5px solid #243850; }
+							    #wb-sm .sm.open li a,
+							    #wb-sm .sm.open li summary {
+							      color: #444;
+							      padding: 5px 10px;
+							      text-shadow: none; }
+							      #wb-sm .sm.open li a:hover, #wb-sm .sm.open li a:focus, #wb-sm .sm.open li a:active,
+							      #wb-sm .sm.open li summary:hover,
+							      #wb-sm .sm.open li summary:focus,
+							      #wb-sm .sm.open li summary:active {
+							        background: #243850;
+							        color: #fff; }
+							    #wb-sm .sm.open .slflnk a {
+							      background: #bbb; }
+							  #wb-sm .sm .row {
+							    background: transparent; }
+							    #wb-sm .sm .row a {
+							      color: #6e6e6e; }
+
+							.wb-disable #wb-sm .nvbar {
+							  display: block !important; }*/
+
+
 						</style>
 
 <form action="https://canada.ca/en/sr/srb.html" method="get" name="cse-search-box" role="search" class="form-inline">
@@ -212,7 +258,7 @@
          <option value="">Culture</option>
          <option value="">Policing</option>
          <option value="">Transport</option>
-         <option value="">The world</option>
+         <option value="">International</option>
          <option value="">Money</option>
          <option value="">Science</option>
        </select>
@@ -228,7 +274,7 @@
 <input name="st1rt" value="1" type="hidden"/>
 <input name="s5bm3ts21rch" value="x" type="hidden"/>
 
-	<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="27" maxlength="150" placeholder="Search Canada.ca"/>
+	<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="27" maxlength="150" placeholder="Search"/>
 
 
 <input type="hidden" name="_charset_" value="UTF-8"/>
@@ -266,7 +312,7 @@
 </div>
 
 
-<nav role="navigation" id="wb-sm" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" typeof="SiteNavigationElement">
+<nav role="navigation" id="wb-sm-new" class="wb-menu visible-md visible-lg" data-trgt="mb-pnl" typeof="SiteNavigationElement">
          <div class="pnl-strt container nvbar">
         <h2 class="wb-inv">Topics menu</h2>
         <div class="row">
