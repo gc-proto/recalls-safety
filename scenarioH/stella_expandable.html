@@ -246,79 +246,225 @@ var getUrlParameter = function getUrlParameter(sParam) {
 <img src="https://gc-proto.github.io/recalls-safety/scenarioH/images/stella-img2.jpg" alt="Image of Stella Artois" class="img-responsive" />
 	
 
-<section>
-			<!--Wizard embed-->
-			<p>Answer the following questions to find out if your bottel is affected.</p>
-			<!-- This embed code may be restricted to use on a single domain, see documentation at: https://help.surveygizmo.com/help/iframe-embed#limit-permitted-domains-for-embeds -->
-			<div class="wb-frmvld"> 
-			  <form method="get">
-
-				<!-- Illness wizard Q1 -->
-				<div id="question-1" class="wb-fieldflow" data-wb-fieldflow='{
-							"renderas":"radio", 
-							"noForm": true,
-							"base": { "live": true },
-											"default": { "action": "addClass", "source":"#result1,#result2,"class": "hidden" }
-					}'>
-				  <p>Select the date on your time stamp:</p>
-				  <ul>
-					<li data-wb-fieldflow='{"action": "append", "source": "#question-2"}'>20/02/18</li>
-					<li data-wb-fieldflow='{"action": "append", "source": "#question-3"}'>25/04/18</li>
-          <li data-wb-fieldflow='{"action": "append", "source": "#question-4"}'>26/04/18</li>
-          <li data-wb-fieldflow='{"action": "append", "source": "#question-5"}'>20/05/18</li>
-          <li data-wb-fieldflow='{"action": "append", "source": "#question-6"}'>21/05/18</li>
-          <li data-wb-fieldflow='{"action": "append", "source": "#question-7"}'>07/06/18</li>
-          <li data-wb-fieldflow='{"action": "append", "source": "#question-8"}'>08/06/18</li>
-          <li data-wb-fieldflow='{"action": "append", "source": "#question-9"}'>13/09/18</li>
-          <li data-wb-fieldflow='{"action": "append", "source": "#question-10"}'>14/09/18</li>
-          <li data-wb-fieldflow='{"action": "append", "source": "#question-11}'>25/09/18</li>
-          <li data-wb-fieldflow='{"action": "append", "source": "#question-12"}'>26/09/18</li>
-					<li data-wb-fieldflow='{"action": "removeClass", "class": "hidden", "source": "#result1"}'>None of the above</li>  
-				  </ul>
-				</div>
-
-				<!-- Question 2 -->
-				<div id="question-2" class="hidden wb-fieldflow-sub" data-wb-fieldflow='{"renderas":"radio"}'>
-				  <p>Select the package code on your label:</p>
-				  <ul>
-					<li data-wb-fieldflow='{"action": "append", "source": "#question-3"}'>49</li>
-					<li data-wb-fieldflow='{"action": "removeClass", "class": "hidden", "source": "#result1"}'>Other</li>
-          </ul>
-				</div>
+<ul class="list-unstyled">
+					<li>
+						<details>
+							<summary class="text-primary">	
+Best before date: 20/02/2018</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>49</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 00:00 and 06:00</li>
+							 </ul>
+					</details>
+					</li>
+          
+					<li>
+						<details>
+							<summary class="text-primary">	
+Best before date: 25/04/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>49</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 17:00 and 23:59</li>
+							 </ul>
+					</details>
+					</li>
+          
+					<li>
+						<details>
+							<summary class="text-primary">	
+Best before date: 26/04/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>49</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 00:00 and 04:00</li>
+							 </ul>
+					</details>
+					</li>
+          
+					
+					<li>
+						<details>
+							<summary class="text-primary">	
+Best before date: 20/5/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>49</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 08:00 and 23:59</li>
+							 </ul>
+					</details>
+					</li>
+          
+					
+					<li>
+						<details>
+							<summary class="text-primary">	
+Best before date: 21/5/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>49</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 00:00 and 01:00</li>
+							 </ul>
+					</details>
+					</li>
+          
+          <li>
+						<details>
+							<summary class="text-primary">	
+Best before date: 7/6/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>49, 52</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 22:00 and 23:59</li>
+							 </ul>
+					</details>
+					</li>
         
-        <!-- Question 3 -->
-				<div id="question-3" class="hidden wb-fieldflow-sub" data-wb-fieldflow='{"renderas":"radio"}'>
-				  <p>Is the time stamp on your bottle betwen 00:00 and 06:00 (note that the is in a 24-hour format)?</p>
-				  <ul>
-					<li data-wb-fieldflow='{"action": "removeClass", "class": "hidden", "source": "#result2"}'>Yes</li>
-          <li data-wb-fieldflow='{"action": "removeClass", "class": "hidden", "source": "#result1"}'>No</li>
-          </ul>
-				</div>
-        
-        <!--Result-->
-			<div id="result1" class="hidden">
-				<section class="panel panel-default">
-				  <header class="panel-heading">
-					<h2 class="panel-title">Service initiation</h2>
-				  </header>
-				  <div class="panel-body">
-					<p>Based on the information you entered, your bottle is <strong>not</strong> safe to consume. Throw it out or return it to the store.</p>
-				   </div>
-				</section>
-			</div>
-				  
-				  
-			<div id="result2" class="hidden">
-				<section class="panel panel-default">
-				  <header class="panel-heading">
-					<h2 class="panel-title">Safe to consume/h2>
-				  </header>
-				  <div class="panel-body">
-					<p>Based on the information you entered, your bottle is safe to consume.</p>
-
-				   </div>
-				</section>
-			</div>
+        <li>
+						<details>
+							<summary class="text-primary">	
+Best before date:  8/6/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>49</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 00:00 and 13:00</li>
+							 </ul>
+					</details>
+					</li>
+          
+          <li>
+						<details>
+							<summary class="text-primary">	
+Best before date:  8/6/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>52</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 00:00 and 07:00</li>
+							 </ul>
+					</details>
+					</li>
+          
+          <li>
+						<details>
+							<summary class="text-primary">	
+Best before date:  13/09/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>55</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 21:00 and 23:59</li>
+							 </ul>
+					</details>
+					</li>
+          
+          
+             <li>
+						<details>
+							<summary class="text-primary">	
+Best before date:  14/09/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>55</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 00:00 and 22:00</li>
+							 </ul>
+					</details>
+					</li>
+          
+          <li>
+						<details>
+							<summary class="text-primary">	
+Best before date: 25/09/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>52</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 12:00 and 23:59</li>
+							 </ul>
+					</details>
+					</li>
+          
+          <li>
+						<details>
+							<summary class="text-primary">	
+Best before date: 26/09/2018
+</summary>
+						
+								<li><strong>Package code:</strong> 
+								<ul>
+									<li>52</li>
+								</ul>
+							</li>
+								 <li><strong>Time Stamp</strong>
+								  <ul>  
+								 <li>Between 00:00 and 23:59</li>
+							 </ul>
+					</details>
+					</li>
+				</ul>
 
 
 
