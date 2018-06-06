@@ -1164,28 +1164,15 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
              <p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.) or look for related recalls to make sure your product is not affected.</p>
 
-<form name="cse-search-box" method="GET" action="?" id="cse-search-box">
-    <input type="hidden" name="st" value="s" />
-	<input type="hidden" name="s5bm3ts21rch" value="x" />
-	<input type="hidden" name="num" value="10" />
-
-	<input type="hidden" name="st1rt" value="0" />
-	<input type="hidden" name="langs" value="eng" />
-	<input type="hidden" name="cdn" value="rasf" />
-	
-
-
-<div id="btngrp-recalls-search-label">
-   <label style="float: left;">Search</label>
-   <div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 3px solid #335075;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto; width:100%;padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
-      <input type="search" class="" id="box-search-input-lw" name="q" placeholder="Search product code" style="border: none;box-shadow: none;float: left; width: 100%;">
-      <button class="btn btn-primary" type="submit">Find</button>
-   </div>
-</div>
-
-</form>
-
-              	<h2>Issue</h2>
+                <form id="someId">
+             <div class="input-group">
+                             <input name="srch-term" class="form-control" type="text">
+                             <div class="input-group-btn">
+                                             <button class="btn btn-primary" type="submit">Find</button>
+                             </div>
+             </div>
+             </form>
+	<h2>Issue</h2>
 <p>Seals of affected lots may be defective and fall into bottles leading to a potential choking hazard.
 </p>
 
