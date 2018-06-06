@@ -98,15 +98,12 @@ p, li {max-width: 65em;}
 .carousel-indicators li {
  border: 1px solid #968989!important;
 }
-
 .carousel-control {
  outline: 0!important;
    color: #fff!important;
    text-decoration: none!important;
    opacity: .9!important;
 }
-
-
 <!--make .carousel-control match the stats of hover:-->
 .followus {
  background-size: 15px 15px !important;
@@ -123,9 +120,6 @@ p, li {max-width: 65em;}
 .icon.twitter {
  background-size: 15px 15px !important;
 }
-
-
-
  </style>
 
 <div class="form-group">
@@ -159,52 +153,34 @@ p, li {max-width: 65em;}
 .gc-stp-stp {
  margin-bottom: 0;
 }
-
 @media (min-width:768px) {
 	.owl-container {
 		width:50%;
 	}
 }
-
 @media (max-width:440px) {
   .recall-share {
       margin-top: 10px;
       float: left!important;
   }
 }
-
 </style>
 
 
 <main role="main" property="mainContentOfPage" class="container">
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-
-
-
  var id = getUrlParameter('id'); // (gets me URL parameters)
  var lang = getUrlParameter('lang'); // (gets me URL parameters)
-
-
  // get the URL aprameters for ID and Lang then return API JSON
-
  var jsonfromhc = getRecall(id, lang);
  console.log(id);
  console.log(lang);
  console.log(jsonfromhc);
-
-
-
-
-
 });
 function getRecall(id, lang) {
    var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
    var uri = base + '/api/' + id + '/' + lang;
-
-
-
-
    $.ajax({
        url:uri,
        type:'GET',
@@ -213,11 +189,9 @@ function getRecall(id, lang) {
        success:function(data){
            console.log(data.title);
      console.log(data);
-
      //use ids to modify page
      $("#toptitle").text(data.title);
      $("#toptitle").text(data.title);
-
        },
        error:function(error){
        },
