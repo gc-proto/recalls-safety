@@ -277,12 +277,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
  <div class="col-md-8">
    <section>
          <h2>Affected products</h2>
-
-<ul class="list-unstyled">
-					<li>
-						<details>
-							<summary class="text-primary">Buckley's Night Time</summary>
-
+<p>Look up your serial number to see if your product is affected:</p>
 	   <table id="myTable" text-align=Top>
            <thead>
                  <tr class="d2">
@@ -359,33 +354,9 @@ var getUrlParameter = function getUrlParameter(sParam) {
                        6M101729
 </td>
                </tr>
-                 </tbody>
-             </table>
+                 
 
-             <script>
-                 $(document).ready(function () {
-                     $.noConflict();
-                     var table = $('#myTable').DataTable();
-                 });
-             </script>
-
-
-       </details>
-					</li>
-          
-        <li>
-						<details>
-							<summary class="text-primary">Buckley's Original</summary>
-              
-              <table id="myTable2" text-align=Top>
-           <thead>
-                 <tr>
-                   <th scope="col">Product</th>
-                               <th scope="col">Lot or serial number</th>
-                 </tr>
-               </thead>
-               <tbody>
-                 <tr valign="top">
+                    <tr valign="top">
                    <td data-label="Product">Buckley's Original Mixture</td>
                         <td data-label="Lot or serial number">
                          6D98791
@@ -714,7 +685,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
              <script>
                  $(document).ready(function () {
                      $.noConflict();
-                     var table = $('#myTable2').DataTable();
+                     var table = $('#myTable').DataTable();
                  });
              </script>
 
