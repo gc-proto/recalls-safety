@@ -1164,14 +1164,21 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
              <p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.) or look for related recalls to make sure your product is not affected.</p>
 
-                <form id="someId">
-             <div class="input-group">
-                             <input name="srch-term" class="form-control" type="text">
-                             <div class="input-group-btn">
-                                             <button class="btn btn-primary" type="submit">Find</button>
-                             </div>
-             </div>
-             </form>
+                <form action="https://search-recherche.gc.ca/rGsPreview/s_r" method="get" role="search" class="form-inline">
+   <input name="st" value="s" type="hidden">
+   <input name="num" value="10" type="hidden">
+   <input name="s5bm3ts21rch" value="x" type="hidden">
+   <input name="st1rt" value="0" type="hidden">
+   <input name="langs" value="eng" type="hidden">
+   <input name="cdn" value="rasf" type="hidden">
+   <div class="form-group">
+      <label for="wb-srch-q">Search your product code</label>
+      <input id="wb-srch-q" class="form-control" name="q" value="" size="27" maxlength="150" type="search">
+   </div>
+   <button type="submit" id="wb-srch-sub" class="btn btn-default">Find
+   </button>
+</form>
+
 	<h2>Issue</h2>
 <p>Seals of affected lots may be defective and fall into bottles leading to a potential choking hazard.
 </p>
