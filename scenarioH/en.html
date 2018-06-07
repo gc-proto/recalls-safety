@@ -101,6 +101,48 @@
 <!--[if lte IE 9]></select><![endif]-->
 </datalist>
 </div>
+
+<style>
+
+								.mobile-breadcrumb {
+									background: #f3f3f3;
+								}
+
+							@media screen and (max-width: 737px) {
+								#wb-bc li:before {
+								    color: #333;
+								    content: "<"!important;
+								    font-family: "Glyphicons Halflings";
+								    font-size: 1.5em;
+								}
+							}
+							@media screen and (min-width: 737px) {
+								.no-break-breadcrumb {
+									display: inline-block!important;
+								}
+							}
+							#wb-sm-new .menu {
+								display: table;
+								margin-bottom: 0;
+								width: 100%; }
+								#wb-sm-new .menu .active,
+								#wb-sm-new .menu .selected,
+								#wb-sm-new .menu > li {
+									display: table-cell;
+									float: none; }
+							#wb-sm-new .sm.open li {
+								background: #e0e0e0;
+								border-bottom: 2px solid RGB(255, 255, 255); }
+							}
+								#wb-sm .sm.open li a,
+								#wb-sm .sm.open li summary {
+									padding: 2px 5px;
+									text-shadow: none; }
+
+
+						</style>
+
+
 <div class="form-group submit">
 
 
@@ -112,9 +154,9 @@
 </section>
 </div>
 </div>
-<nav role="navigation" id="wb-sm" data-ajax-replace="./ajax/sitemenu-en.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
+<nav role="navigation" id="wb-sm-new" data-ajax-replace="./ajax/sitemenu-en.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
 <div class="container nvbar">
-<h2>Topics menu</h2>
+<h2 class="wb-inv">Topics menu</h2>
 <div class="row">
 <ul class="list-inline menu">
 <li><a href="http://www.esdc.gc.ca/en/jobs/index.page">Jobs</a></li>
