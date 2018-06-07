@@ -33,8 +33,9 @@
 
 
 
-<link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
-<link rel="stylesheet" href="css/test-tables-alain.css" />
+      <link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
+      <link rel="stylesheet" href="css/custom.css" />
+      <link rel="stylesheet" href="css/test-tables-alain.css" />
 
 
 <meta charset="utf-8">
@@ -218,7 +219,7 @@
 
 
 
-	<h1 property="name" id="toptitle" style="margin-top: 5px;">Table examples</h1>
+	<h1 property="name" id="toptitle">Table examples</h1>
 
 
 
@@ -226,10 +227,10 @@
 
 
 
-  <table>
+  <table id="myTable">
     <caption>Simple responsive table</caption>
     <thead>
-      <tr>
+      <tr class="d2">
         <th scope="col"> Brand</th>
         <th scope="col">Product</th>
         <th scope="col">UPC code</th>
@@ -243,7 +244,7 @@
         <td data-label="UPC">89069180979</td>
         <td data-label="Best before">APR-16<br>April 23, 2018</td>
       </tr>
-      <tr>
+      <tr class="d2">
         <td scope="row" data-label="Brand">Culinary Creations Gourmet</td>
         <td data-label="Product">Roast Beef Sandwich</td>
         <td data-label="UPC">689069180931</td>
@@ -255,7 +256,7 @@
         <td data-label="UPC">89069180979</td>
         <td data-label="Best before">April 16, 2018<br>April 17, 2018<br>April 18, 2018<br>April 21, 2018<br>April 23, 2018<br>April 24, 2018</td>
       </tr>
-      <tr>
+      <tr class="d2">
         <td scope="row" data-label="Brand">Culinary Creations Gourmet</td>
         <td data-label="Product">Beef & Swiss Submarine Long</td>
         <td data-label="UPC">689069180979</td>
@@ -264,7 +265,12 @@
     </tbody>
   </table>
 
-
+  <script>
+  $(document).ready(function () {
+     $.noConflict();
+     var table = $('#myTable').DataTable();
+  });
+  </script>
 
 
 </div>
