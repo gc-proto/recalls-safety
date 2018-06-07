@@ -262,16 +262,18 @@ var getUrlParameter = function getUrlParameter(sParam) {
 <div><div class="mwsgeneric-base-html parbase section">
 
 <div class="owl-container">
-<script>
-$(function() {
- $('.owl-carousel').owlCarousel({
-   margin: 20,
-   loop: true,
-   items: 1,
-   stagePadding: 50
- });
-});
-</script>
+  <script>
+
+  $.noConflict();
+  jQuery(function() {
+   jQuery('.owl-carousel').owlCarousel({
+     margin: 20,
+     loop: true,
+     items: 1,
+     stagePadding: 50
+  });
+  });
+  </script>
 <div class="owl-carousel" style-"max-width: 200px;">
    <div class="item"><img src="images/primidone_image1.png" /></div>
  <div class="item"><img src="images/primidone_image2.png" /></div>
