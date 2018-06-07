@@ -365,10 +365,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
       </table>
 
       <script>
-      $(document).ready(function () {
-         $.noConflict();
-         var table = $('#myTable').DataTable();
-      });
+        $.noConflict();
+        $('#myTable').dataTable( {
+        "dom": '<"wrapper"fitlp>'
+         });
       </script>
 
 						<h2>Issue</h2>
