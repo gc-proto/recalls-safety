@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
 wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-<title>Primidone - Presence of lead</title>
+<title>Buckley's Syrup - Defective seals</title>
 <meta content="width=device-width,initial-scale=1" name="viewport">
 <!-- Meta data -->
 <meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
@@ -98,15 +98,12 @@ p, li {max-width: 65em;}
 .carousel-indicators li {
  border: 1px solid #968989!important;
 }
-
 .carousel-control {
  outline: 0!important;
    color: #fff!important;
    text-decoration: none!important;
    opacity: .9!important;
 }
-
-
 <!--make .carousel-control match the stats of hover:-->
 .followus {
  background-size: 15px 15px !important;
@@ -120,19 +117,8 @@ p, li {max-width: 65em;}
 .twitter {
  background-size: 15px 15px !important;
 }
-@media (max-width:440px) {
-  .recall-share {
-      margin-top: 10px;
-      float: left!important;
-  }
-}.icon.twitter {
+.icon.twitter {
  background-size: 15px 15px !important;
-}
-
-@media (min-width:768px) {
-	.owl-container {
-		width:50%;
-	}
 }
  </style>
 
@@ -167,38 +153,34 @@ p, li {max-width: 65em;}
 .gc-stp-stp {
  margin-bottom: 0;
 }
+@media (min-width:768px) {
+	.owl-container {
+		width:50%;
+	}
+}
+@media (max-width:440px) {
+  .recall-share {
+      margin-top: 10px;
+      float: left!important;
+  }
+}
 </style>
 
 
 <main role="main" property="mainContentOfPage" class="container">
 <script>
 document.addEventListener("DOMContentLoaded", function(){
-
-
-
  var id = getUrlParameter('id'); // (gets me URL parameters)
  var lang = getUrlParameter('lang'); // (gets me URL parameters)
-
-
  // get the URL aprameters for ID and Lang then return API JSON
-
  var jsonfromhc = getRecall(id, lang);
  console.log(id);
  console.log(lang);
  console.log(jsonfromhc);
-
-
-
-
-
 });
 function getRecall(id, lang) {
    var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
    var uri = base + '/api/' + id + '/' + lang;
-
-
-
-
    $.ajax({
        url:uri,
        type:'GET',
@@ -207,11 +189,9 @@ function getRecall(id, lang) {
        success:function(data){
            console.log(data.title);
      console.log(data);
-
      //use ids to modify page
      $("#toptitle").text(data.title);
      $("#toptitle").text(data.title);
-
        },
        error:function(error){
        },
@@ -242,16 +222,18 @@ var getUrlParameter = function getUrlParameter(sParam) {
  </div>
 <div>
 <section>
-   <h1 property="name" id="toptitle" style="margin-top: 5px;">Primidone - Presence of lead</h1>
-   <p><a href="">AA Pharma Inc</a></p>
-   <p><strong>Recall date: April 6, 2018</strong></p>
+   <h1>Buckley's syrup - Defective seals</h1>
+   <p><a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=buckley%27s">Buckley's</a></p>
+   <p><strong>Recall date: March 8, 2017</strong></p>
 
 
- 	<h2>Summary</h2>
+	<h2>Summary</h2>
 	<ul>
-<li><strong>Product:</strong> Primidone </li>
-<li><strong>Issue:</strong> High levels of lead</li>
-<li><strong>What to do:</strong> Return the product to your pharmacy as soon as possible if you have product from the affected lots</li>
+<li><strong>Product:</strong> Buckley's Night Time, Original Mixture, Complete, Cough Chest Congestion, and Cough, Mucus & Phlegm</li>
+<li><strong>Issue:</strong> Defective seals, potential choking</li>
+<li><strong>What to do:</strong> Throw out your bottle if it's in the list of affected products
+
+</li>
 	</ul>
 
 
@@ -261,57 +243,914 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 <div><div class="mwsgeneric-base-html parbase section">
 
-<div class="owl-container">
-<script>
-$(function() {
- $('.owl-carousel').owlCarousel({
-   margin: 20,
-   loop: true,
-   items: 1,
-   stagePadding: 50
- });
-});
-</script>
-<div class="owl-carousel" style-"max-width: 200px;">
-   <div class="item"><img src="images/primidone_image1.png" /></div>
- <div class="item"><img src="images/primidone_image2.png" /></div>
+	<img src="https://gc-proto.github.io/recalls-safety/scenarioH/images/buckley_s_night_time_480x480.jpg" alt="Image of Buckley's Night Time" class="img-responsive" />
+		</a>
 
-</div>
 </div>
 <div class="row">
  <div class="col-md-8">
    <section>
          <h2>Affected products</h2>
-   <p>Only these lots are affected by this issue: </p>
-         <table id="myTable">
+<p>Look up your serial number to see if your product is affected:</p>
+	   <table id="myTable">
            <thead>
                  <tr class="d2">
                    <th scope="col">Product</th>
-                   <th scope="col">Strength</th>
-                   <th scope="col">DIN</th>
-                   <th scope="col">Size/Format</th>
-                   <th scope="col">Lot Number</th>
-                   <th scope="col">Expiry</th>
+                                 <th scope="col">Lot or serial number</th>
                  </tr>
                </thead>
                <tbody>
-                 <tr class="d1">
-                   <td data-label="Product">Primidone</td>
-                   <td data-label="Strength">125 mg</td>
-                   <td data-label="DIN">00399310</td>
-                   <td data-label="Size/Format">100 tablets</td>
-                   <td data-label="Lot Number">MT4040</td>
-                   <td data-label="Expiry">05/2021</td>
+                 <tr valign="top" class="d1">
+                   <td data-label="Product">Buckley's Night Time Mixture</td>
+                              <td data-label="Lot or serial number">
+                         5F94479
+</td>
                  </tr>
-                 <tr class="d2">
-                   <td data-label="Product">Primidone</td>
-                   <td data-label="Strength">250 mg</td>
-                   <td data-label="DIN">00396761</td>
-                   <td data-label="Size/Format">100 tablets</td>
-                   <td data-label="Lot Number">MM3274</td>
-                   <td data-label="Expiry">10/2020</td>
+                 <tr valign="top" class="d2">
+                   <td data-label="Product">Buckley's Night Time Mixture</td>
+                                   <td data-label="Lot or serial number">
+                         5F94460
+                  </td>
                  </tr>
-               </tbody>
+               </tr>
+               <tr valign="top" class="d1">
+                 <td data-label="Product">Buckley's Night Time Mixture</td>
+                      <td data-label="Lot or serial number">
+                       5H95575
+                </td>
+               </tr>
+               <tr valign="top" class="d2">
+                 <td data-label="Product">Buckley's Night Time Mixture</td>
+                 <td data-label="Lot or serial number">
+                       5J95736
+</td>
+               </tr>
+               <tr valign="top" class="d1">
+                 <td data-label="Product">Buckley's Night Time Mixture</td>
+                      <td data-label="Lot or serial number">
+                       5H95704
+</td>
+               </tr>
+               <tr valign="top" class="d2">
+                 <td data-label="Product">Buckley's Night Time Mixture</td>
+                      <td data-label="Lot or serial number">
+                       5M96808
+</td>
+               </tr>
+               <tr valign="top" class="d1">
+                 <td data-label="Product">Buckley's Night Time Mixture</td>
+                 <td data-label="Lot or serial number">
+                       6B97737
+
+</td>
+               </tr>
+               <tr valign="top" class="d2">
+                 <td data-label="Product">Buckley's Night Time Mixture</td>
+                 <td data-label="Lot or serial number">
+                       6K101094
+</td>
+               </tr>
+               <tr valign="top" class="d1">
+                 <td data-label="Product">Buckley's Night Time Mixture</td>
+                 <td data-label="Lot or serial number">
+                       6D98855
+</td>
+               </tr>
+               <tr valign="top" class="d2">
+                 <td data-label="Product">Buckley's Night Time Mixture</td>
+                 <td data-label="Lot or serial number">
+                       6H100299
+</td>
+               </tr>
+               <tr valign="top" class="d1">
+                 <td data-label="Product">Buckley's Night Time Mixture</td>
+                 <td data-label="Lot or serial number">
+                       6M101729
+</td>
+               </tr>
+                 
+
+                    <tr valign="top">
+                   <td data-label="Product">Buckley's Original Mixture</td>
+                        <td data-label="Lot or serial number">
+                         6D98791
+                  </td>
+                 </tr>
+                 <tr valign="top">
+                   <td data-label="Product">Buckley's Original Mixture</td>
+                   <td data-label="Lot or serial number">
+                         6D98815
+                  </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                      <td data-label="Lot or serial number">
+                       6D98796
+                </td>
+               </tr>
+               <tr valign="top" "left">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       6K101039
+                 </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       6L101500
+                 </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       7A101945
+                 </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       7A101946
+
+                 </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       7B102397
+                 </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       5E93972
+                 </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       5E93986
+                 </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       5E94018
+                 </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       5E93969
+                 </td>
+               </tr>
+               <tr valign="top">
+                 <td data-label="Product">Buckley's Original Mixture</td>
+                 <td data-label="Lot or serial number">
+                       5E93986R
+                </td>
+               </tr>
+             </tr>
+             <tr valign="top">
+               <td data-label="Product">Buckley's Original Mixture</td>
+               <td data-label="Lot or serial number">
+                     5H95572
+              </td>
+             </tr>
+             <tr valign="top" "left">
+               <td data-label="Product">Buckley's Original Mixture</td>
+               <td data-label="Lot or serial number">
+                     5H95573
+               </td>
+             </tr>
+             <tr valign="top">
+               <td data-label="Product">Buckley's Original Mixture</td>
+               <td data-label="Lot or serial number">
+                     5H95576
+               </td>
+             </tr>
+             <tr valign="top">
+               <td data-label="Product">Buckley's Original Mixture</td>
+               <td data-label="Lot or serial number">
+                     5H95641
+               </td>
+             </tr>
+             <tr valign="top">
+               <td data-label="Product">Buckley's Original Mixture</td>
+               <td data-label="Lot or serial number">
+                     5H95654
+               </td>
+             </tr>
+             <tr valign="top">
+               <td data-label="Product">Buckley's Original Mixture</td>
+               <td data-label="Lot or serial number">
+                     5M96806
+               </td>
+             </tr>
+             <tr valign="top">
+               <td data-label="Product">Buckley's Original Mixture</td>
+               <td data-label="Lot or serial number">
+                     6A97466
+               </td>
+             </tr>
+             <tr valign="top">
+               <td data-label="Product">Buckley's Original Mixture</td>
+               <td data-label="Lot or serial number">
+                     6A97537
+               </td>
+             </tr>
+             <tr valign="top">
+               <td data-label="Product">Buckley's Original Mixture</td>
+               <td data-label="Lot or serial number">
+                     6A97470
+               </td>
+             </tr>
+           </tr>
+           <tr valign="top">
+             <td data-label="Product">Buckley's Original Mixture</td>
+             <td data-label="Lot or serial number">
+                      6A97543
+             </td>
+           </tr>
+         </tr>
+         <tr valign="top">
+           <td data-label="Product">Buckley's Original Mixture</td>
+           <td data-label="Lot or serial number">
+                 6A97465
+           </td>
+         </tr>
+       </tr>
+       <tr valign="top">
+         <td data-label="Product">Buckley's Original Mixture</td>
+         <td data-label="Lot or serial number">
+               6A97387
+         </td>
+       </tr>
+       </tr>
+       <tr valign="top">
+         <td data-label="Product">Buckley's Original Mixture</td>
+         <td data-label="Lot or serial number">
+               6C97986
+         </td>
+      </tr>
+      </tr>
+      <tr valign="top">
+       <td data-label="Product">Buckley's Original Mixture</td>
+       <td data-label="Lot or serial number">
+             6C98046
+       </td>
+     </tr>
+    </tr>
+    <tr valign="top">
+     <td data-label="Product">Buckley's Original Mixture</td>
+     <td data-label="Lot or serial number">
+           6C98000
+     </td>
+    </tr>
+    </tr>
+    <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+            6C98047
+    </td>
+  </tr>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6A97368
+    </td>
+  </tr>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6D98882
+    </td>
+  </tr>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6D98900
+    </td>
+  </tr>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6D98929
+    </td>
+  </tr>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6F99313
+    </td>
+  </tr>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6F99323
+    </td>
+  </tr>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6F99324
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6H100208
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6J100392
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6J100394
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6H100204
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6K100947
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6K101013
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6K101010
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6K101015
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6M101709
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6M101648
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6M101666
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          6M101710
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          7B102383
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          7B102384
+    </td>
+  </tr>
+  <tr valign="top">
+    <td data-label="Product">Buckley's Original Mixture</td>
+    <td data-label="Lot or serial number">
+          7B102386
+    </td>
+  </tr>
+
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">
+          5D93819
+    </td>
+  </tr>
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">
+5D93819
+</td>
+  </tr>	   
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+5D93785
+</td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+	5D93334
+</td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">
+5D93567
+</td>
+  </tr>
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">
+5D93576
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+5E94197
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">
+5E94210
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+5E94173
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+5F94599
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+5F94564
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+5G210
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+5G210A
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+5G211
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6A97534
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6B97748
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6B97757
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6B97806
+</td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6C98214
+ </td>
+  </tr>  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6E98944
+ </td>
+  </tr>  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">
+
+6E98964
+ </td>
+  </tr>	  	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6G99627
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6G99628
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6H100298
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6J100808
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6J100809
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6K101194
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6K101213
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6K101234
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6L101281
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6B97618
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6B97646
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6B97647
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6E98965
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6F99306
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6E99288
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6F99587
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6F99582
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6G99653
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6G99654
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6H100245
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6H100287
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6J100419
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6J100420
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6J100493
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6J100484
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6J100683
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6J100684
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6J100748
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6L101501
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+6L101524
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+7A102176
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+7A102236
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+7A102237
+ </td>
+  </tr>	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Complete</td>
+    <td data-label="Lot or serial number">	    
+7A102310
+ </td>
+  </tr>	    
+
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">	    
+6D98670
+ </td>
+  </tr>	 
+
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">   
+6D98689
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">
+6D98690
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">
+6E99239
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">
+6L101317
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">
+7A102312
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">	    
+6A97514
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">
+6D98505
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">	    
+6E99295
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">	    
+6E99238
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">	    
+6K100837
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Chest Congestion</td>
+    <td data-label="Lot or serial number">	    
+6L101282
+</td>
+  </tr>	 
+
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6E99130
+</td>
+  </tr>	 
+
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">
+6E99152
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6E99206
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6E99225
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6G99728
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6J100806
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+7A102000
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+7A102314
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6B97736
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6D98464
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6G100077
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6G100078
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6K100913
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+6K100906
+</td>
+  </tr>	 	    
+<tr valign="top">
+    <td data-label="Product">Buckley's Cough Cough, Mucus & Phlegm</td>
+    <td data-label="Lot or serial number">	    
+7A102156
+</td>
+  </tr>	 	    
+                 </tbody>
              </table>
 
              <script>
@@ -321,7 +1160,9 @@ $(function() {
                  });
              </script>
 
-<p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.) to make sure your product is not affected.</p>
+</details>
+
+             <p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.) to make sure your product is not affected.</p>
 
                <form action="https://search-recherche.gc.ca/rGsPreview/s_r" method="get" role="search" class="form-inline">
 	
@@ -339,75 +1180,81 @@ $(function() {
  </div>
 </form>
 
-         <h2>Issue</h2>
-         <p>AA Pharma Inc. is voluntarily recalling 2 lots of Primidone tablets because they contain high levels of lead. </p>
-         <p>Primidone is a prescription anti-epileptic drug used to control seizures. Lead is a heavy metal and can pose serious health risks when too much is ingested, particularly by children, and pregnant and breastfeeding women.</p>
+	<h2>Issue</h2>
+<p>Seals of affected lots may be defective and fall into bottles leading to a potential choking hazard.
+</p>
 
-         <h2>What you should do</h2>
-         <ul>
-             <li>Return the product to your pharmacy for replacement as soon as possible if you have product from the affected lots. If you cannot identify the product lot or are unsure, contact your pharmacist or return the product to your pharmacy.</li>
-             <li>Do not stop taking Primidone without talking to your doctor. Stopping Primidone suddenly can cause serious problems, including seizures that may not stop.</li>
-             <li>Consult with your health care professional if you have taken these tablets and have health concerns.</li>
+   <h2>What you should do</h2>
+<p>Throw out your bottle if it is in the list of affected products. </p>
 
-         </ul>
-<h2>Similar recalls</h2>
-        <ul>
-             <li><a href="http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2018/66458r-eng.php">
-Primidone Tablet</a></li>
+     <!-- include expand collapses for addition sections, such as for specialised audiences or background information-->
 
-         </ul>
-         <!-- include expand collapses for addition sections, such as for specialised audiences or background information-->
-         <h2>Additional information</h2>
-         <section>
 
-       <details><summary class="text-primary">Details</summary>
-       <dl class="dlSide width65 " id="awr_details_header_container">
 
-         <dt class=" paddingNone">Starting date:</dt>
-         <dd class="width45 paddingNone">April 6, 2018</dd>
+	 <h2>Similar recalls</h2>
+<ul>
+	<li><a href="http://patlaj.com/recalls-safety/scenarioH/recall.html?id=57866&lang=en">Stodal Cough and Cold (2016-03-24)</a></li>
+	<li><a href="http://patlaj.com/recalls-safety/scenarioH/recall.html?id=23769&lang=en">Jack and Jill Cough Syrup (2013-03-18)</a></li>
+	
+</ul>
 
-         <dt class=" paddingNone">Type of communication:</dt>
-         <dd class="width45 paddingNone">Advisory</dd>
+	<h2>Additional information</h2>
+     <section>
 
-         <dt class=" paddingNone">Subcategory:</dt>
-         <dd class="width45 paddingNone">Drugs</dd>
+   <details><summary class="text-primary">Details</summary>
+<dl class="dlSide width65 " id="awr_details_header_container">
 
-         <dt class=" paddingNone">Source of recall:</dt>
-         <dd class="width45 paddingNone">Health Canada</dd>
+			<dt class=" paddingNone">Starting date:</dt>
+			<dd class="width45 paddingNone">March 8, 2017</dd>
 
-         <dt class=" paddingNone">Issue:</dt>
-         <dd class="width45 paddingNone">Important Safety Information</dd>
+			<dt class=" paddingNone">Posting date:</dt>
+			<dd class="width45 paddingNone">March 13, 2017</dd>
 
-         <dt class=" paddingNone">Audience:</dt>
-         <dd class="width45 paddingNone">General Public</dd>
+			<dt class=" paddingNone">Type of communication:</dt>
+			<dd class="width45 paddingNone">Drug Recall</dd>
 
-         <dt class=" paddingNone">Identification number:</dt>
-         <dd class="width45 paddingNone">RA-66430</dd>
-         </dl>
+			<dt class=" paddingNone">Subcategory:</dt>
+			<dd class="width45 paddingNone">Drugs</dd>
 
+			<dt class=" paddingNone">Hazard classification:</dt>
+			<dd class="width45 paddingNone">Type II</dd>
+
+			<dt class=" paddingNone">Source of recall:</dt>
+			<dd class="width45 paddingNone">Health Canada</dd>
+
+			<dt class=" paddingNone">Issue:</dt>
+			<dd class="width45 paddingNone">Product Safety</dd>
+
+			<dt class=" paddingNone">Audience:</dt>
+			<dd class="width45 paddingNone">General Public, Healthcare Professionals, Hospitals</dd>
+
+			<dt class=" paddingNone">Identification number:</dt>
+			<dd class="width45 paddingNone">RA-62592</dd>
+			</dl>
+</details>
+	     <details><summary class="text-primary">Recalling firm</summary>
+     <p>GlaxoSmithKline Consumer Healthcare Inc.</br>
+ 7333 Mississauga Road</br>
+ Mississauga </br>
+ L5N 6L4</br>
+ Ontario</br>
+ CANADA</br>
+ </p>
+
+</details>
+
+<details><summary class="text-primary">Marketing authorization holder</summary>
+       <div class="">
+       <p>The Buckley's Company (wholly owned subsidiary of GlaxoSmithKline Consumer Health Care Inc.)</br>
+7333 Mississauga Road</br>
+Mississauga</br>
+L5N 6L4</br>
+Ontario</br>
+CANADA</br>
+</p>
+
+       </div>
        </details>
-
-           <details><summary class="text-primary">Additional information for pharmacies</summary>
-           <ul>
-             <li>Retail and hospital pharmacies that have dispensed these products are being asked by the company to contact individuals who have received the impacted lots and to recover units from the impacted lot for return. The company has sent a notice to wholesalers and distributors to communicate the recall and advise on what to do.</li>
-             <li>Pharmacies may contact AA Pharma Inc. via Stericycle at 1-888-228-5053 for further information on the recall.</li>
-           </ul>
-
-           </details>
-
-           <details><summary class="text-primary">What Health Canada is doing</summary>
-           <p>Health Canada is monitoring the company’s recall. Should additional safety information be identified, Health Canada will take appropriate action and inform Canadians.</p>
-
-           </details>
-
-           <details><summary class="text-primary">Information on lead poisoning</summary>
-           <p><strong>Lead</strong> consumed in excessive amounts poses serious health risks because it may accumulate in vital organs of the body. Toxic effects include miscarriage and other reproductive effects, kidney and brain damage, abdominal pain, anemia, loss of appetite, constipation, fatigue, sleeplessness, irritability, headache, changes in blood pressure, weakness, concentration problems, weight loss, and dizziness. Children, and pregnant and breastfeeding women are the most susceptible to the toxic effects.</p>
-             </details>
-
-<details><summary class="text-primary">Contact information</summary>
-              <p>Contact AA Pharma Inc. via Stericycle by calling 1-888-228-5053 or by email at <a href="mailto:AAPharma7068@stericycle.com">AAPharma7068@stericycle.com</a> if you have questions about this recall.</p>
-
-           </details>
      </section><!-- END h3 -->
 
      <hr style="size: 20px; border-top-width: 5px;" />

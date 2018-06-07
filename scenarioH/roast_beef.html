@@ -273,7 +273,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 
     <h1>Culinary Creations & Denny's roastbeef sandwiches - Listeria</h1>
-	<p><a href="">Culinary Creations</a>, <a href="">Denny's</a></p>
+	<p><a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=Culinary+Creations">Culinary Creations</a>, <a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=Denny%27s">Denny's</a></p>
 
 	<p><strong>Recall date:</strong> April 10, 2018</p>
 <div><div class="mwsgeneric-base-html parbase section">
@@ -336,7 +336,13 @@ $(function() {
          <td data-label="Size">190 g</td>
          <td data-label="Code(s) on product">Best Before
          <br>April 16, 2018
-         <br>April 23, 2018</td>
+         <br>April 23, 2018
+	<br>April 24, 2018
+		<br>April 30, 2018
+		<br>May 1, 2018
+		<br>May 2, 2018
+		<br>May 8, 2018
+		<br>May 17, 2018</td>
          <td data-label="UPC">6 89069 18065 6</td>
         <th class="hidden-lg hidden-md hidden-sm hidden-xs">689069180656 8906918065</th>
 
@@ -347,7 +353,10 @@ $(function() {
           <td data-label="Size">155 g</td>
           <td data-label="Code(s) on product">Best Before
           <br>April 16, 2018
-          <br>April 23, 2018</td>
+          <br>April 23, 2018
+	  <br>April 30, 2018
+	<br>May 8, 2018
+		<br>May 16, 2018</td>
           <td data-label="UPC">6 89069 18093 1</td>
           <th class="hidden-lg hidden-md hidden-sm hidden-xs">689069180931 8906918093</th>
         </tr>
@@ -361,7 +370,14 @@ $(function() {
           <br>April 18, 2018
           <br>April 21, 2018
           <br>April 23, 2018
-          <br>April 24, 2018</td>
+          <br>April 24, 2018
+	  <br>April 30, 2018
+	  <br>May 2, 2018
+	  <br>May 7, 2018
+	  <br>May 8, 2018
+	  <br>May 14, 2018
+	  <br>May 15, 2018
+	   <br>May 17, 2018</td>
           <td data-label="UPC">6 89069 18097 9</td>
           <th class="hidden-lg hidden-md hidden-sm hidden-xs">689069180979 8906918097</th>
         </tr>
@@ -371,7 +387,10 @@ $(function() {
           <td data-label="Size">250 g</td>
           <td data-label="Code(s) on product">Best Before
           <br>April 17, 2018
-          <br>April 21, 2018</td>
+          <br>April 21, 2018
+	  <br>April 30, 2018
+	  <br>May 7, 2018
+	  <br>May 15, 2018</td>
           <td data-label="UPC">6 89069 18097 9</td>
             <th class="hidden-lg hidden-md hidden-sm hidden-xs">689069180979 8906918097</th>
         </tr>
@@ -379,7 +398,7 @@ $(function() {
           <td data-label="Brand name">Denny's Express</td>
           <td data-label="Common name">Beef & Swiss Submarine</td>
           <td data-label="Size">250 g</td>
-          <td data-label="Code(s) on product">0718</td>
+          <td data-label="Code(s) on product">0718 <br>0998</td>
           <td data-label="UPC">7 76393 40003 0</td>
             <th class="hidden-lg hidden-md hidden-sm hidden-xs">776393400030 7639340003</th>
         </tr>
@@ -394,15 +413,22 @@ $(function() {
         </script>
 
 
-	<p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.) or look for related recalls to make sure your product is not affected.</p>
+	 <p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.) to make sure your product is not affected.</p>
 
-	 <form id="someId">
-<div class="input-group">
-                <input name="srch-term" class="form-control" type="text">
-                <div class="input-group-btn">
-                                <button class="btn btn-primary" type="submit">Find</button>
-                </div>
-</div>
+               <form action="https://search-recherche.gc.ca/rGsPreview/s_r" method="get" role="search" class="form-inline">
+	
+   <input name="st" value="s" type="hidden">
+   <input name="num" value="10" type="hidden">
+   <input name="s5bm3ts21rch" value="x" type="hidden">
+   <input name="st1rt" value="0" type="hidden">
+   <input name="langs" value="eng" type="hidden">
+   <input name="cdn" value="rasf" type="hidden">
+   <div class="input-group" style="width:100%">
+      <input type="text" id="wb-srch-q" class="form-control" name="q" value="" maxlength="150" type="search" placeholder="Enter product code" />
+<span class="input-group-btn">
+      <button type="submit" id="wb-srch-sub" class="btn btn-primary">Find
+   </button></span>
+ </div>
 </form>
 
 
@@ -418,9 +444,8 @@ $(function() {
 	<h2>Similar recalls</h2>
  <ul>
 
-<li><a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/66554r-eng.php">Culinary Creations Gourmet brand & Denny's Express brand roast beef-containing sandwiches recalled due to Listeria monocytogenes (2018-04-18)</a></li>
-	 <li><a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/66528r-eng.php">Roast beef products recalled by Erie Meat Products Ltd. due to Listeria monocytogenes (2018-04-17)</a></li>
-<li><a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/66550r-eng.php">Fresh 2 Go brand Roast Beef Paninis recalled due to Listeria monocytogenes (2018-04-18)</a></li>
+<li><a href="http://patlaj.com/recalls-safety/scenarioH/recall.html?id=66528&lang=en">Roast beef products recalled by Erie Meat Products Ltd. due to Listeria monocytogenes (2018-04-17)</a></li>
+<li><a href="http://patlaj.com/recalls-safety/scenarioH/recall.html?id=66550&lang=en">Fresh 2 Go brand Roast Beef Paninis recalled due to Listeria monocytogenes (2018-04-18)</a></li>
 
 </ul>
 
