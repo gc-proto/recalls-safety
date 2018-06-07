@@ -27,19 +27,6 @@ wet-boew.github.io/wet-foew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <![endif]-->
 
 
-
-<noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
-  <script src="js/jquery.min.js"></script>
-   <link rel="stylesheet"
-
-   href="css/jquery.dataTables.min.css"></style>
-   <script type="text/javascript"
-
-   src="js/jquery.dataTables.min.js"></script>
-                               <script type="text/javascript"
-
-   src="js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
 <link rel="stylesheet" href="css/custom.css" />
 <link rel="stylesheet" href="css/test-tables-alain.css" />
@@ -337,9 +324,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
        </table>
 
        <script>
-         $('#myTable').dataTable( {
-         "dom": '<"wrapper"fitlp>'
-          });
+       $(document).ready(function () {
+          $.noConflict();
+          var table = $('#myTable').DataTable();
+       });
        </script>
 
 
