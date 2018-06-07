@@ -315,16 +315,16 @@ $(function() {
              </table>
 
              <script>
-                 $(document).ready(function () {
-                     $.noConflict();
-                     var table = $('#myTable').DataTable();
-                 });
+               $.noConflict();
+               $('#myTable').dataTable( {
+               "dom": '<"wrapper"fitlp>'
+                });
              </script>
 
 <p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.) to make sure your product is not affected.</p>
 
                <form action="https://search-recherche.gc.ca/rGsPreview/s_r" method="get" role="search" class="form-inline">
-	
+
    <input name="st" value="s" type="hidden">
    <input name="num" value="10" type="hidden">
    <input name="s5bm3ts21rch" value="x" type="hidden">
