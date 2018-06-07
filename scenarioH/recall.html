@@ -300,21 +300,27 @@ function getRecall(id, lang) {
 
 
            //Start date
-           console.log(Date(data.start_date));
+           //console.log(data.start_date.getFullYear()); //1527552000 1526601600
            console.log(Date(data.start_date).indexOf("201") + 1);
            // date if true
-           console.log((Date(data.start_date).substr(4, Date(data.start_date).indexOf("201")-5) + ", " + Date(data.start_date).substr(Date(data.start_date).indexOf("201"), 4)));
+           console.log((Date(data.start_date).substr(4, Date(data.date_published).indexOf("201")-5) + ", " + Date(data.date_published).substr(Date(data.date_published).indexOf("201"), 4)));
            // date if not true
-           console.log((Date(data.start_date).substr(4, Date(data.start_date).indexOf("200")-5) + ", " + Date(data.start_date).substr(Date(data.start_date).indexOf("200"), 4)));
+           console.log((Date(data.start_date).substr(4, Date(data.date_published).indexOf("200")-5) + ", " + Date(data.date_published).substr(Date(data.date_published).indexOf("200"), 4)));
            //console.log(data.panels[4].data["0"] != null);
 
-           if (Date(data.start_date).indexOf("201") >0) {
-             $("#recall-date").text(Date(data.start_date).substr(4, Date(data.start_date).indexOf("201")-5) + ", " + Date(data.start_date).substr(Date(data.start_date).indexOf("201"), 4));
-           } else if (Date(data.start_date).indexOf("200") >0) {
-             $("#recall-date").text(Date(data.start_date).substr(4, Date(data.start_date).indexOf("200")-5) + ", " + Date(data.start_date).substr(Date(data.start_date).indexOf("200"), 4));
-           } else if (Date(data.start_date).indexOf("199") >0) {
-             $("#recall-date").text(Date(data.start_date).substr(4, Date(data.start_date).indexOf("199")-5) + ", " + Date(data.start_date).substr(Date(data.start_date).indexOf("199"), 4));
-           }
+
+           const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+           var startdate = new Date(data.start_date * 1000);
+           console.log(startdate.getFullYear());
+           console.log(monthNames[startdate.getMonth()]);
+           displaydate = monthNames[startdate.getMonth()] + " " + startdate.getDate() + ", " + startdate.getFullYear();
+           //if (Date(data.date_published).indexOf("201") >0) {
+            $("#recall-date").text(displaydate);
+           /*} else if (Date(data.date_published).indexOf("200") >0) {
+             $("#recall-date").text(Date(data.date_published).substr(4, Date(data.date_published).indexOf("200")-5) + ", " + Date(data.date_published).substr(Date(data.date_published).indexOf("200"), 4));
+           } else if (Date(data.date_published).indexOf("199") >0) {
+             $("#recall-date").text(Date(data.date_published).substr(4, Date(data.date_published).indexOf("199")-5) + ", " + Date(data.date_published).substr(Date(data.date_published).indexOf("199"), 4));
+           }*/
 
            //Add carousel if > 1 image, else just image
            if (imagePan["0"] != null) {
@@ -486,16 +492,7 @@ function makeTable() {
 	   <div id="affected"></div>
 
 
-             <p>If you don't find your product in that list, search for your product code (UPC, SKU, DIN, etc.) or look for related recalls to make sure your product is not affected.</p>
-
-                <form id="someId">
-             <div class="input-group">
-                             <input name="srch-term" class="form-control" type="text">
-                             <div class="input-group-btn">
-                                             <button class="btn btn-primary" type="submit">Find</button>
-                             </div>
-             </div>
-             </form>
+             
 
 
 <h2 class="h3">What you should do</h2>
