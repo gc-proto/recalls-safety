@@ -30,8 +30,8 @@ wet-boew.github.io/wet-foew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
   <script src="js/jquery.min.js"></script>
-   <link rel="stylesheet"
 
+   <link rel="stylesheet"
    href="css/jquery.dataTables.min.css"></style>
    <script type="text/javascript"
 
@@ -40,9 +40,12 @@ wet-boew.github.io/wet-foew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
    src="js/bootstrap.min.js"></script>
 
+
 <link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
 <link rel="stylesheet" href="css/custom.css" />
 <link rel="stylesheet" href="css/test-tables-alain.css" />
+
+
 
 <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
 <script>dataLayer1 = [];</script>
@@ -291,14 +294,20 @@ var getUrlParameter = function getUrlParameter(sParam) {
 <div><div class="mwsgeneric-base-html parbase section">
 
 <div class="owl-container">
+
+
+
+
 <script>
-$(function() {
- $('.owl-carousel').owlCarousel({
+
+$.noConflict();
+jQuery(function() {
+ jQuery('.owl-carousel').owlCarousel({
    margin: 20,
    loop: true,
    items: 1,
    stagePadding: 50
- });
+});
 });
 </script>
 <div class="owl-carousel" style-"max-width: 200px;">
@@ -335,10 +344,9 @@ $(function() {
        </table>
 
        <script>
-       $(document).ready(function () {
-          $.noConflict();
-          var table = $('#myTable').DataTable();
-       });
+         $('#myTable').dataTable( {
+         "dom": '<"wrapper"fitlp>'
+          });
        </script>
 
 
