@@ -7,7 +7,10 @@ This prototyping space will hold exploratory versions of Recalls and search/filt
 This page of links to ideas we are exploring will eventually link to scenarios for the test participants: 
 * https://gc-proto.github.io/recalls-safety/scenarioH/template_links.html
 
-See Australia's Recalls site for an example of a terrific search-filtering system with simplified templates for the recalls: 
+Scenario links for Validation participants: 
+* https://gc-proto.github.io/recalls-safety/ut-en.html
+
+See Australia's Recalls site for the model we are working towards (with some improvements!) of a search-filtering system with simplified templates for the recalls: 
 
 * https://www.productsafety.gov.au/recalls/browse-all-recalls
 
