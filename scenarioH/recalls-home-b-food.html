@@ -159,10 +159,10 @@ p, li {max-width: 65em;}
     	<button type="submit" style="float:left;background: none!important;border: none!important;border-left: #cbbebe 1px solid!important;padding-left: 8px!important; color: black;">Find</button></div>
 
     </div>
-    <div class="visible-xs" style="clear: both; padding-top: 5px;">
+    <div class="" style="clear: both; padding-top: 5px;">
       <div class="row">
         <ul class="toc lst-spcd col-md-12" style="display:flex; white-space: nowrap;">
-          <li><a id="food-link" href="recalls-home-b-food" style="font-size:14px; margin-left:0px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Food</a> |</li>
+          <li><a id="food-link" href="recalls-home-b-food.html" style="font-size:14px; margin-left:0px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Food</a> |</li>
           <li ><a id="vehicles-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Vehicles" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Vehicles</a> |</li>
           <li ><a id="medical-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Health+products" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Health</a> |</li>
           <li stle><a id="products-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Consumer+products" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Products</a></li>
@@ -185,7 +185,7 @@ p, li {max-width: 65em;}
 						<div class="panel-body">
 							<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
 								<label for="Item">Allergens <i>(xx)</i></label>
-                <a href="recalls-home-b-allergens">allergens mockup</a>
+                <a href="recalls-home-b-allergens.html">allergens mockup</a>
 								<br />
 								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
 								<label for="Item">Tampering <i>(xx)</i></label>
@@ -362,81 +362,21 @@ function closeNav() {
 <div>
 <h6 class="mrgn-tp-lg hidden-xs">&#9776; Filter by</h6>
 
-<details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Food <i>(xx)</i></summary>
+<details class="mrgn-tp-lg hidden-xs" open><summary class="text-primary">Food <i>(xx)</i></summary>
 	<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		<label for="Item">Food Subcategory <i>(xx)</i></label>
-		<br />
-		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		<label for="Item">Food Subcategory <i>(xx)</i></label>
-		<br />
-		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		<label for="Item">Food Subcategory <i>(xx)</i></label>
-		<br />
-		<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-		<label for="Item">Affects children, pregnant or breast feeding women <i>(xx)</i></label>
+  <label for="Item">Allergens <i>(xx)</i></label>
+  <a href="recalls-home-b-allergens.html">allergens mockup</a>
+  <br />
+  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+  <label for="Item">Tampering <i>(xx)</i></label>
+  <br />
+  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+  <label for="Item">Chemicals <i>(xx)</i></label>
+  <br />
+  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
+  <label for="Item">Microbiological <i>(xx)</i></label>
  </details>
 
-
- <details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Vehicles <i>(xx)</i></summary>
-	 <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		 <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-		 <br />
-		 <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		 <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-		 <br />
-		 <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		 <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-		 <br />
-		 <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-		 <label for="Item">Affects children, pregnant or breast feeding women <i>(xx)</i></label>
-		 <div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 1px solid #DCDCDC;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto; width:100%;padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
-
-
-		 <input type="text" class="" id="btngrp-recalls-search" placeholder="Search makes or brand" style="border: none;box-shadow: none;float: left; width: 100%;">
-			 </div>
-	</details>
-
-	<details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Health <i>(xx)</i></summary>
-		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-			<label for="Item">Health Subcategory <i>(xx)</i></label>
-			<br />
-			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-			<label for="Item">Health Subcategory <i>(xx)</i></label>
-			<br />
-			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-			<label for="Item">Health Subcategory <i>(xx)</i></label>
-			<br />
-			<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-			<label for="Item">Affects children, pregnant or breast feeding women <i>(xx)</i></label>
-	 </details>
-
-	 <details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Consumer Products <i>(xx)</i></summary>
- 		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">Products Subcategory <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">Products Subcategory <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">Products Subcategory <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
- 			<label for="Item">Affects children, pregnant or breast feeding women <i>(xx)</i></label>
- 	 </details>
-
-	 <details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Year <i>(xx)</i></summary>
- 		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">2018 <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">2017 <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">2016 <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
- 			<label for="Item">2015 <i>(xx)</i></label>
- 	 </details>
 
 
 
