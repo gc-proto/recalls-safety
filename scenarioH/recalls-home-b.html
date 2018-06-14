@@ -119,8 +119,18 @@ p, li {max-width: 65em;}
 
 
 <main role="main" property="mainContentOfPage" class="container">
+	<script>
+	document.addEventListener("DOMContentLoaded", function(){
+	 var query = getUrlParameter('q'); // (gets me URL parameters)
 
-	<h1 class="page-header" style="margin-top:0px">Recalls and safety alerts</h1>
+	 // get the URL aprameters for ID and Lang then return API JSON
+	 console.log(query);
+
+	 /* */
+
+ });</script>
+
+	<h1 class="page-header">Recalls and safety alerts</h1>
 
   <div class="content">
 
@@ -157,10 +167,10 @@ p, li {max-width: 65em;}
 		<div class="visible-xs" style="clear: both; padding-top: 5px;">
 			<div class="row">
 				<ul class="toc lst-spcd col-md-12" style="display:flex; white-space: nowrap;">
-					<li><a class="" style="font-size:14px; margin-left:0px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Food (53)</a></li>
-					<li ><a class="" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Vehicles (n)</a></li>
-					<li ><a class="" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Health (n)</a></li>
-					<li stle><a class="" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Products (n)</a></li>
+					<li><a id="food-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=&fq_pcat=Food" style="font-size:14px; margin-left:0px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Food</a> |</li>
+					<li ><a id="vehicles-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Vehicles" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Vehicles</a> |</li>
+					<li ><a id="medical-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Health+products" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Health</a> |</li>
+					<li stle><a id="products-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Consumer+products" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Products</a></li>
 				</ul>
 			</div>
 		</div>
