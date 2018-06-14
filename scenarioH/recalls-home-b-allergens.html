@@ -119,14 +119,6 @@ p, li {max-width: 65em;}
 	}
 }
 
-@media (max-width:526px) {
-	.leftonmobile {
-		margin-top: 10px;
-    float: left!important;
-	}
-}
-
-
 .overlay-def .mfp-close {
     color: #000;
 }
@@ -136,7 +128,7 @@ p, li {max-width: 65em;}
 
 <main role="main" property="mainContentOfPage" class="container">
 
-	<h1 class="page-header" >Recalls and safety alerts</h1>
+	<h1 class="page-header">Recalls and safety alerts</h1>
 
   <div class="content">
 
@@ -166,181 +158,86 @@ p, li {max-width: 65em;}
 		<input type="text" class="" id="btngrp-recalls-search" placeholder="Search all recalls" style="border: none;box-shadow: none;float: left; width: 100%;">
     	<button type="submit" style="float:left;background: none!important;border: none!important;border-left: #cbbebe 1px solid!important;padding-left: 8px!important; color: black;">Find</button></div>
 
-      <div class="visible-xs" style="clear: both; padding-top: 5px;">
-        <h5><span style="cursor:pointer" onclick="openNav()">Food</span> | <span style="cursor:pointer" onclick="openNav2()">Vehicles</span> | <span style="cursor:pointer" onclick="openNav3()">Health</span> | <span style="cursor:pointer" onclick="openNav4()">Consumer Products</span></h5>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default overlay" id="myNav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h6 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Food
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Food Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Food Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Food Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" valign="top"/>
-                  <label for="Item">Affects children, pregnant <br>or breast feeding women <i>(xx)</i></label>
-            </div>
-            </div>
-          </div>
-          <div class="panel panel-default overlay" id="myNav2">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Vehicles
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-                  <label for="Item">Affects children, pregnant <br>or breast feeding women <i>(xx)</i></label><br>
-                  <div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 1px solid #DCDCDC;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto; width:100%;padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
-
-
-                  <input type="text" class="" id="btngrp-recalls-search" placeholder="Search makes or brand" style="border: none;box-shadow: none;float: left; width: 100%;">
-                    </div>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default overlay" id="myNav3">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingThree">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Health
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Health Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Health Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Health Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-                  <label for="Item">Affects children, pregnant <br>or breast feeding women <i>(xx)</i></label>
-              </div>
-            </div>
-
-          </div>
-          <div class="panel panel-default overlay" id="myNav4">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingFour">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  Consumer products
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Consumer Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Consumer Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Consumer Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-                  <label for="Item">Affects children, pregnant <br>or breast feeding women <i>(xx)</i></label>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default overlay" id="myNav5">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingFive">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Year
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">2018 <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">2017 <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">2016 <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-                  <label for="Item">2015 <i>(xx)</i></label>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="visible-xs" style="clear: both; padding-top: 5px;">
+      <div class="row">
+        <ul class="toc lst-spcd col-md-12" style="display:flex; white-space: nowrap;">
+          <li><a id="food-link" href="recalls-home-b-food" style="font-size:14px; margin-left:0px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Food</a> |</li>
+          <li ><a id="vehicles-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Vehicles" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Vehicles</a> |</li>
+          <li ><a id="medical-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Health+products" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Health</a> |</li>
+          <li stle><a id="products-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Consumer+products" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Products</a></li>
+        </ul>
       </div>
+    </div>
 
-      <script>
-      function openNav() {
-          document.getElementById("myNav").style.height = "100%";
-      }
+		<div class="visible-xs" style="clear: both; padding-top: 5px;">
 
-      function closeNav() {
-          document.getElementById("myNav").style.height = "0%";
-      }
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+								Food
+							</a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+              <a href="recalls-home-b-food.html" style="font-size:20px;">< Allergens</a><br />
+              <p>_________________</p>
+							<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
 
-      function openNav2() {
-          document.getElementById("myNav2").style.height = "100%";
-      }
+                <label for="Item">Undeclared eggs <i>(xx)</i></label>
+								<br />
+								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+								<label for="Item">Undeclared peanuts <i>(xx)</i></label>
+								<br />
+								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+								<label for="Item">Undeclared wheat <i>(xx)</i></label>
+								<br />
+								<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
+								<label for="Item">Other <i>(xx)</i></label>
+					</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingFive">
+						<h4 class="panel-title">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+								Year
+							</a>
+						</h4>
+					</div>
+					<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+						<div class="panel-body">
+							<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+								<label for="Item">2018 <i>(xx)</i></label>
+								<br />
+								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+								<label for="Item">2017 <i>(xx)</i></label>
+								<br />
+								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+								<label for="Item">2016 <i>(xx)</i></label>
+								<br />
+								<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
+								<label for="Item">2015 <i>(xx)</i></label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<script>
+/* Open when someone clicks on the span element */
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
 
-      function closeNav2() {
-          document.getElementById("myNav2").style.height = "0%";
-      }
-      function openNav3() {
-          document.getElementById("myNav3").style.height = "100%";
-      }
-
-      function closeNav3() {
-          document.getElementById("myNav3").style.height = "0%";
-      }
-      function openNav4() {
-          document.getElementById("myNav4").style.height = "100%";
-      }
-
-      function closeNav4() {
-          document.getElementById("myNav4").style.height = "0%";
-      }
-      function openNav5() {
-          document.getElementById("myNav5").style.height = "100%";
-      }
-
-      function closeNav5() {
-          document.getElementById("myNav5").style.height = "0%";
-      }
-      </script>
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
           <!--Cascading picklists - FieldFlow? -->
           <!--<div class="wb-frmvld" style="clear:both; padding-top:10px;">
         	 <form method="get">
@@ -441,7 +338,7 @@ p, li {max-width: 65em;}
 					 </li>
 				 </ul>
 			 </section>
-		<section class="followus mrgn-bttm-md recall-share leftonmobile" style="padding-top: 10px; padding-bottom: 10px; float: right; border-radius:5px;">
+		<section class="followus mrgn-bttm-md recall-share" style="padding-top: 10px; padding-bottom: 10px; float: right; border-radius:5px;">
 		     <a href="" style="text-decoration:none;">Follow recalls on social media:</a>
 		     <ul>
 		       <li style="margin-top: 0px; margin-bottom: 0px;">
