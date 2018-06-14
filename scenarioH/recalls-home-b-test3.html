@@ -119,6 +119,14 @@ p, li {max-width: 65em;}
 	}
 }
 
+@media (max-width:526px) {
+	.leftonmobile {
+		margin-top: 10px;
+    float: left!important;
+	}
+}
+
+
 .overlay-def .mfp-close {
     color: #000;
 }
@@ -159,8 +167,7 @@ p, li {max-width: 65em;}
     	<button type="submit" style="float:left;background: none!important;border: none!important;border-left: #cbbebe 1px solid!important;padding-left: 8px!important; color: black;">Find</button></div>
 
       <div class="visible-xs" style="clear: both; padding-top: 5px;">
-        <h4>&#9776; Filter by</h4>
-        <h5><span style="cursor:pointer" onclick="openNav()">Food</span> | <span style="cursor:pointer" onclick="openNav2()">Vehicles</span> | <span style="cursor:pointer" onclick="openNav3()">Health</span> | </h5><h5><span style="cursor:pointer" onclick="openNav4()">Consumer Products</span> | <span style="cursor:pointer" onclick="openNav5()">Years</span></h5>
+        <h5><span style="cursor:pointer" onclick="openNav()">Food</span> | <span style="cursor:pointer" onclick="openNav2()">Vehicles</span> | <span style="cursor:pointer" onclick="openNav3()">Health</span> | <span style="cursor:pointer" onclick="openNav4()">Consumer Products</span></h5>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <div class="panel panel-default overlay" id="myNav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -434,7 +441,7 @@ p, li {max-width: 65em;}
 					 </li>
 				 </ul>
 			 </section>
-		<section class="followus mrgn-bttm-md recall-share" style="padding-top: 10px; padding-bottom: 10px; float: right; border-radius:5px;">
+		<section class="followus mrgn-bttm-md recall-share leftonmobile" style="padding-top: 10px; padding-bottom: 10px; float: right; border-radius:5px;">
 		     <a href="" style="text-decoration:none;">Follow recalls on social media:</a>
 		     <ul>
 		       <li style="margin-top: 0px; margin-bottom: 0px;">
