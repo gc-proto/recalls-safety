@@ -186,7 +186,6 @@ document.addEventListener("DOMContentLoaded", function(){
  var id = getUrlParameter('id'); // (gets me URL parameters)
  var lang = getUrlParameter('lang'); // (gets me URL parameters)
 
-
  // get the URL aprameters for ID and Lang then return API JSON
 
  var jsonfromhc = getRecall(id, lang);
@@ -253,7 +252,24 @@ function getRecall(id, lang) {
            $("#toptitle").append(data.title);
            $("#page-title").text(data.title + " - Canada.ca");
            console.log(data.panels[0].text);
-           $("#category-tag").append(data.panels[0].text.substr(data.panels[0].text.indexOf("Category")+14,data.panels[0].text.indexOf("<",data.panels[0].text.indexOf("Category")+14)-(data.panels[0].text.indexOf("Category")+14)));
+           console.log("hi");
+           categoryname = data.panels[0].text.substr(data.panels[0].text.indexOf("Category")+14,data.panels[0].text.indexOf("<",data.panels[0].text.indexOf("Category")+14)-(data.panels[0].text.indexOf("Category")+14));
+           console.log(categoryname);
+           if (categoryname.substr(0, 8) === "Allergen") {
+             //Subcategory
+
+           } elseif (categoryname.substr(0, 15) === "Microbiological") {
+
+           }
+
+           //figure out if this is the category or subcategory - table match?
+           //if left allergen parse out allergen and Undecalred + eggs, Subcategory
+           //if left microbiological, parse out microbiological and Subcategory
+           //string = replace " " with +
+//add chevron
+
+
+           $("#category-tag").append();
 
 
            //if "brand name" section in product array, use threatening
@@ -355,7 +371,7 @@ function getRecall(id, lang) {
            } else {
              $("#description").append($.trim(descriptionText));
            }
-           //are you affected?
+
            if (products.length > 1) {
              //many products - make table
 
@@ -488,11 +504,11 @@ function makeTable() {
 <div class="row">
  <div class="col-md-8">
    <section>
-         <h2 class="h3">Are you affected?</h2>
+         <h2 class="h3">Affected products</h2>
 	   <div id="affected"></div>
 
 
-             
+
 
 
 <h2 class="h3">What you should do</h2>
@@ -505,7 +521,7 @@ function makeTable() {
      <a href="" class="btn btn-default">Subscribe for recall alerts</a>
    </section>
 
-   <section class="followus mrgn-bttm-md recall-share" style="padding-top: 10px; padding-bottom: 0px; float: right;">
+   <section class="followus mrgn-bttm-md recall-share" style="padding-top: 5px; padding-bottom: 5px; float: right;">
      <a href="">Share this recall:</a>
      <ul>
        <li style="margin-top: 0px; margin-bottom: 0px;">
