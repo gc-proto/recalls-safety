@@ -251,17 +251,30 @@ function getRecall(id, lang) {
            console.log(data.title);
            $("#toptitle").append(data.title);
            $("#page-title").text(data.title + " - Canada.ca");
-           console.log(data.panels[0].text);
-           console.log("hi");
+
            categoryname = data.panels[0].text.substr(data.panels[0].text.indexOf("Category")+14,data.panels[0].text.indexOf("<",data.panels[0].text.indexOf("Category")+14)-(data.panels[0].text.indexOf("Category")+14));
+
+             //if 2 category names, make 2 tags, with comma separation
+           var categories = categoryname.split(', ');
+           var categoryout = '<span style="text-decoration:none;">ᐸ </span>';
            console.log(categoryname);
-           if (categoryname.substr(0, 8) === "Allergen") {
-             //Subcategory
-
-           } elseif (categoryname.substr(0, 15) === "Microbiological") {
-
-           }
-
+           $.each(categories, function() {
+             if (this.substr(0, 8) === "Allergen") {
+               //Subcategory
+               categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=*&fq_scat=Undeclared+' + this.substr(11, this.length-11).toLowerCase() + '">Undeclared ' + this.substr(11, this.length-11).toLowerCase() + '</a><span style="text-decoration:none;">, </span>';
+             } else if (this.substr(0, 15) === "Microbiological") {
+               if (this.indexOf("E. coli") > 1) {
+                 categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=*&fq_scat=E.%20coli">E. Coli</a><span style="text-decoration:none;">, </span>';
+               } else {
+                 categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=*&fq_scat=' + this.substr(18, this.length-18) + '">' + this.substr(18, this.length-18) + '</a><span style="text-decoration:none;">, </span>';
+               }
+             } else {
+               categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=*&fq_cat=' + categoryname + '">' + categoryname + '</a><span style="text-decoration:none;">, </span>';
+             }
+           });
+           categoryout = categoryout.substr(0, categoryout.length-45);
+           console.log(categoryout);
+           $("#category-tag").append(categoryout);
            //figure out if this is the category or subcategory - table match?
            //if left allergen parse out allergen and Undecalred + eggs, Subcategory
            //if left microbiological, parse out microbiological and Subcategory
@@ -269,7 +282,7 @@ function getRecall(id, lang) {
 //add chevron
 
 
-           $("#category-tag").append();
+
 
 
            //if "brand name" section in product array, use threatening
@@ -479,7 +492,7 @@ function makeTable() {
 
  <div class="recall-super-title" style="overflow: hidden;">
    <div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
-     <a id="category-tag" href="#"></a>
+     <div id="category-tag"></div>
    </div>
  </div>
 <div>
