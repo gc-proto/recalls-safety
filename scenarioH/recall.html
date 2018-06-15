@@ -275,15 +275,7 @@ function getRecall(id, lang) {
            categoryout = categoryout.substr(0, categoryout.length-45);
            console.log(categoryout);
            $("#category-tag").append(categoryout);
-           //figure out if this is the category or subcategory - table match?
-           //if left allergen parse out allergen and Undecalred + eggs, Subcategory
-           //if left microbiological, parse out microbiological and Subcategory
-           //string = replace " " with +
-//add chevron
-
-
-
-
+           //add the car subcategories to the if clauses...
 
            //if "brand name" section in product array, use threatening
            //else "companies" else "distributors"
@@ -291,6 +283,10 @@ function getRecall(id, lang) {
            console.log(products);
            brandCount = 0;
            var brands = [];
+
+           //Do the brand labels here match the search filter brands?
+           //Do a similar search string replacement as in the categories
+
 
             $.each(products, function() {
               console.log(this.text.indexOf("Distributor"));
