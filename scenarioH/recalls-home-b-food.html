@@ -222,6 +222,7 @@ p, li {max-width: 65em;}
 						</div>
 					</div>
 				</div>
+        <button type="reset" class="btn btn-default" style="float:right;margin-top:5px; width:200px;">Clear all <strong>X</strong></button>
 			</div>
 		</div>
 </div>
@@ -362,22 +363,58 @@ function closeNav() {
 <div>
 <h6 class="mrgn-tp-lg hidden-xs">&#9776; Filter by</h6>
 
-<details class="mrgn-tp-lg hidden-xs" open><summary class="text-primary">Food <i>(xx)</i></summary>
-	<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-  <label for="Item">Allergens <i>(xx)</i></label>
-  <a href="recalls-home-b-allergens.html">allergens mockup</a>
-  <br />
-  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-  <label for="Item">Tampering <i>(xx)</i></label>
-  <br />
-  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-  <label for="Item">Chemicals <i>(xx)</i></label>
-  <br />
-  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-  <label for="Item">Microbiological <i>(xx)</i></label>
- </details>
-
-
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Food
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">Allergens <i>(xx)</i></label>
+          <a href="recalls-home-b-allergens.html">allergens mockup</a>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">Tampering <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">Chemicals <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
+          <label for="Item">Microbiological <i>(xx)</i></label>
+    </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Year
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="panel-body">
+        <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">2018 <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">2017 <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">2016 <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
+          <label for="Item">2015 <i>(xx)</i></label>
+      </div>
+    </div>
+  </div>
+  <button type="reset" class="btn btn-default" style="float:right;margin-top:5px; width:200px;">Clear all <strong>X</strong></button>
+</div>
 
 
 
