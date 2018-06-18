@@ -1,0 +1,15 @@
+{
+	"@context":{
+		"dc": "http://purl.org/dc/terms/",
+		"suggestions": {
+			"@id": "http://www.w3.org/2001/XMLSchema#string",
+			"@container": "@list"
+		}
+	},
+	"@language": "en",
+	"dc:title": "Recalls and safety alert search terms",
+	"dc:modified": "2018-06-18",
+	"suggestions": ["represent a client",
+"payroll deductions online calculator",
+"Temporary foreign worker hiring"]
+}
