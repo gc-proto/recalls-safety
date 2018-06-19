@@ -497,6 +497,98 @@ http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets//2
 
 			</section><!-- END h3 -->
 
+      <section>
+
+
+
+      <h2>Tell us about side effects, injuries and other safety concerns</h2>
+      <details>
+      <summary class="text-primary">Report an incident</summary>
+  <div class="form-group"><label for="submitter_personName" class="required" aria-required="true"><span class="field-name">Name (first name and last name)</span> <strong class="required" aria-required="true">(required)</strong> </label>
+                       <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="submitter_personName" name="submitter_personName" ng-model="submitter.personName" required="" placeholder="Name" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.personName, 'submitter_personName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                      </textarea>
+                        <div class="panel panel-default visible-print">
+                           <div class="panel-body">
+                                <p id="submitter_personName_txt" class="visible-print ng-binding"></p>
+                           </div>
+                       </div>
+                  </div>
+
+  <div class="form-group"><label for="submitter_email" class="required" aria-required="true"><span class="field-name">Email</span><br> <strong class="required" aria-required="true">(Email OR Telephone is required)</strong>, both are preferred </label>
+                       <textarea class="form-control word-wrap hidden-print emailValidation required_group ng-pristine ng-untouched ng-valid ng-valid-maxlength" msd-elastic="" id="submitter_email" name="submitter_email" ng-model="submitter.email" placeholder="email@example.com" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.email, 'submitter_email')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;">                     </textarea>
+                     <div class="panel panel-default visible-print">
+                            <div class="panel-body">
+                                  <p id="submitter_email_txt" class="visible-print ng-binding"></p>
+                            </div>
+                       </div>
+                  </div>
+
+  <div class="form-group"><label for="affectedPerson_incidentExperiencedDate_0" class="required" aria-required="true"><span class="field-name">Date of the Incident </span><span class="datepicker-format">(<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> <strong class="required" aria-required="true">(required)</strong> </label>
+                                       <input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="affectedPerson_incidentExperiencedDate_0" name="affectedPerson_incidentExperiencedDate_0" ng-model="affectedPerson.incidentExperiencedDate" hcform-datepicker="" type="date" data-rule-dateiso="true" required="" onkeypress="return noEnter(event)" aria-required="true">
+                                  </div>
+
+  <div class="row">
+                              <div class="col-md-6 pull-left">
+                                  <div class="form-group"><label for="affectedPerson_lkpIncidentTypeId_0" class="required" aria-required="true"><span class="field-name">Incident Type</span> <strong class="required" aria-required="true">(required)</strong> </label>
+                                       <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpIncidentTypeId_0" name="affectedPerson_lkpIncidentTypeId_0" ng-model="affectedPerson.lkpIncidentTypeId" ng-options="obj.id as obj.name for obj in lstIncidentType" ng-change="populateObjectPropertyByValue(affectedPerson.lkpIncidentTypeId, 'submission.lkpCaseSubtypeId', $index)" required="" aria-required="true"><option value="" class="">Select Incident Type</option><option value="0" label="Death">Death</option><option value="1" label="Serious Injury">Serious Injury</option><option value="2" label="Injury">Injury</option><option value="3" label="Product Defect">Product Defect</option><option value="4" label="Incorrect/Insufficient Information">Incorrect/Insufficient Information</option><option value="5" label="Recall">Recall</option><option value="6" label="Property Damage">Property Damage</option><option value="7" label="Incident, No Injury">Incident, No Injury</option><option value="8" label="Other">Other</option></select>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 pull-right">
+                                  <div class="form-group"><label for="affectedPerson_lkpInjuryTypeId_0" class="required" aria-required="true"><span class="field-name">Injury Type</span> <strong class="required" aria-required="true">(required)</strong> </label>
+                                       <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpInjuryTypeId_0" name="affectedPerson_lkpInjuryTypeId_0" ng-model="affectedPerson.lkpInjuryTypeId" ng-options="obj.id as obj.name for obj in lstInjury" required="" aria-required="true"><option value="" class="">Select Injury Type</option><option value="0" label="No Injury">No Injury</option><option value="1" label="Amputation">Amputation</option><option value="2" label="Bruise/Abrasion/Contusion/Pinching">Bruise/Abrasion/Contusion/Pinching</option><option value="3" label="Burn/Scald">Burn/Scald</option><option value="4" label="Choking">Choking</option><option value="5" label="Concussion">Concussion</option><option value="6" label="Cut/Laceration">Cut/Laceration</option><option value="7" label="Dislocation">Dislocation</option><option value="8" label="Drowning">Drowning</option><option value="9" label="Electric Shock">Electric Shock</option><option value="10" label="Fracture">Fracture</option><option value="11" label="Inflammation/Irritation/Dermatitis">Inflammation/Irritation/Dermatitis</option><option value="12" label="Ingested Object">Ingested Object</option><option value="13" label="Internal Organ Injury">Internal Organ Injury</option><option value="14" label="Piercing/puncturing/penetration">Piercing/puncturing/penetration</option><option value="15" label="Poisoning">Poisoning</option><option value="16" label="Strain / Sprain">Strain / Sprain</option><option value="17" label="Strangulation">Strangulation</option><option value="18" label="Suffocation">Suffocation</option><option value="19" label="Other/Not Stated">Other/Not Stated</option></select>
+                                  </div>
+                              </div>
+                          </div>
+
+  <div class="form-group"><label for="affectedPerson_lkpTreatmentTypeId_0" class="required" aria-required="true"><span class="field-name">Treatment</span> <strong class="required" aria-required="true">(required)</strong> </label>
+                                       <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpTreatmentTypeId_0" name="affectedPerson_lkpTreatmentTypeId_0" ng-model="affectedPerson.lkpTreatmentTypeId" ng-options="obj.id as obj.name for obj in lstTreatment" required="" aria-required="true"><option value="" class="">Select Treatment</option><option value="0" label="None">None</option><option value="1" label="First Aid">First Aid</option><option value="2" label="Provincial Health Care Info Service">Provincial Health Care Info Service</option><option value="3" label="Poison Control Centre">Poison Control Centre</option><option value="4" label="Family Doctor">Family Doctor</option><option value="5" label="Hospital-Emergency Room">Hospital-Emergency Room</option><option value="6" label="Hospital-Other">Hospital-Other</option><option value="7" label="Other Medical Professional">Other Medical Professional</option><option value="8" label="Other">Other</option><option value="9" label="Unknown">Unknown</option></select>
+                                  </div>
+
+  <div class="form-group"><label for="incident_incidentDescription" class="required" aria-required="true"><span class="field-name">Describe the Incident</span> <strong class="required" aria-required="true">(required)</strong> </label><br>
+                           <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">2000</span></small></div>
+                           <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="incident_incidentDescription" name="incident_incidentDescription" ng-model="incident.incidentDescription" ng-trim="false" placeholder="Describe the Incident" required="" aria-multiline="true" rows="5" cols="150" maxlength="2000" ng-change="copyText(incident.incidentDescription, 'incident_incidentDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                         </textarea>
+                           <div class="panel panel-default visible-print">
+                               <div class="panel-body">
+                                    <p id="incident_incidentDescription_txt" class="visible-print ng-binding"></p>
+                               </div>
+                           </div>
+                      </div>
+
+  <div class="form-group"><label for="product_productBrandName" class="required" aria-required="true"><span class="field-name">Product Brand and Name</span> <strong class="required" aria-required="true">(required)</strong> </label>
+                           <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="product_productBrandName" name="product_productBrandName" ng-model="product.productBrandName" required="" placeholder="Product Brand and Name" rows="1" cols="60" maxlength="100" ng-change="copyText(product.productBrandName, 'product_productBrandName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                         </textarea>
+                           <div class="panel panel-default visible-print">
+                               <div class="panel-body">
+                                    <p id="product_productBrandName_txt" class="visible-print ng-binding"></p>
+                               </div>
+                           </div>
+                      </div>
+
+  <div class="form-group"><label for="product_productDescription" class="required" aria-required="true"><span class="field-name">Product Description (for example: colour, packaging, warnings on the label)</span> <strong class="required" aria-required="true">(required)</strong> </label><br>
+                             <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">1500</span></small></div>
+                             <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="product_productDescription" name="product_productDescription" ng-model="product.productDescription" ng-trim="false" required="" placeholder="Product description" rows="5" cols="150" maxlength="1500" ng-change="copyText(product.productDescription, 'product_productDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                           </textarea>
+                             <div class="panel panel-default visible-print">
+                                  <div class="panel-body">
+                                       <p id="product_productDescription_txt" class="visible-print ng-binding"></p>
+                                  </div>
+                             </div>
+                        </div>
+
+  <div class="form-group"><label for="whereGotPrdct_lkpContactContextId" class="required" aria-required="true"><span class="field-name">From whom did you get the product</span><br><strong class="required" aria-required="true">(required when this section is completed)</strong> </label>
+                           <select class="form-control ng-pristine ng-untouched ng-valid" id="whereGotPrdct_lkpContactContextId" name="whereGotPrdct_lkpContactContextId" ng-model="whereGotPrdct.lkpContactContextId">
+                                   <option value="">Select From whom did you get the product</option>
+                                   <!-- ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52401" class="ng-binding ng-scope">Gift</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52400" class="ng-binding ng-scope">Promotional Item</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52397" class="ng-binding ng-scope">Purchased New</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52399" class="ng-binding ng-scope">Purchased Used From Person e.g. Yard Sale</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52398" class="ng-binding ng-scope">Purchased Used From Retailer</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52402" class="ng-binding ng-scope">Other</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer -->
+                           </select>
+                      </div>
+
+  <div id="submit" col-md-3="" pull-left="">
+            <input type="submit" ng-disabled="isAutoFill" value="Proceed to Submit" class="btn btn-primary">
+        </div>
+  </details>
+
+
+  </div>
+
+  </div>
+
       <hr style="size: 20px; border-top-width: 5px;" />
 
          <section style="float: left;">
@@ -525,93 +617,7 @@ http://healthycanadians.gc.ca/recall-alert-rappel-avis/inspection/2018/assets//2
 		<section>
 
 
-		<h2>Report your issue or a related product</h2>
-		<details>
-    <summary class="text-primary">Report incident</summary>
-<div class="form-group"><label for="submitter_personName" class="required" aria-required="true"><span class="field-name">Name (first name and last name)</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                     <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="submitter_personName" name="submitter_personName" ng-model="submitter.personName" required="" placeholder="Name" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.personName, 'submitter_personName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                      </textarea>
-                      <div class="panel panel-default visible-print">
-                         <div class="panel-body">
-                              <p id="submitter_personName_txt" class="visible-print ng-binding"></p>
-                         </div>
-                     </div>
-                </div>
 
-<div class="form-group"><label for="submitter_email" class="required" aria-required="true"><span class="field-name">Email</span><br> <strong class="required" aria-required="true">(Email OR Telephone is required)</strong>, both are preferred </label>
-                     <textarea class="form-control word-wrap hidden-print emailValidation required_group ng-pristine ng-untouched ng-valid ng-valid-maxlength" msd-elastic="" id="submitter_email" name="submitter_email" ng-model="submitter.email" placeholder="email@example.com" rows="1" cols="60" maxlength="50" ng-change="copyText(submitter.email, 'submitter_email')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;">                     </textarea>
-               		 <div class="panel panel-default visible-print">
-                          <div class="panel-body">
-                              	<p id="submitter_email_txt" class="visible-print ng-binding"></p>
-                          </div>
-                   	 </div>
-                </div>
-
-<div class="form-group"><label for="affectedPerson_incidentExperiencedDate_0" class="required" aria-required="true"><span class="field-name">Date of the Incident </span><span class="datepicker-format">(<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="affectedPerson_incidentExperiencedDate_0" name="affectedPerson_incidentExperiencedDate_0" ng-model="affectedPerson.incidentExperiencedDate" hcform-datepicker="" type="date" data-rule-dateiso="true" required="" onkeypress="return noEnter(event)" aria-required="true">
-                                </div>
-
-<div class="row">
-                            <div class="col-md-6 pull-left">
-                                <div class="form-group"><label for="affectedPerson_lkpIncidentTypeId_0" class="required" aria-required="true"><span class="field-name">Incident Type</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpIncidentTypeId_0" name="affectedPerson_lkpIncidentTypeId_0" ng-model="affectedPerson.lkpIncidentTypeId" ng-options="obj.id as obj.name for obj in lstIncidentType" ng-change="populateObjectPropertyByValue(affectedPerson.lkpIncidentTypeId, 'submission.lkpCaseSubtypeId', $index)" required="" aria-required="true"><option value="" class="">Select Incident Type</option><option value="0" label="Death">Death</option><option value="1" label="Serious Injury">Serious Injury</option><option value="2" label="Injury">Injury</option><option value="3" label="Product Defect">Product Defect</option><option value="4" label="Incorrect/Insufficient Information">Incorrect/Insufficient Information</option><option value="5" label="Recall">Recall</option><option value="6" label="Property Damage">Property Damage</option><option value="7" label="Incident, No Injury">Incident, No Injury</option><option value="8" label="Other">Other</option></select>
-                                </div>
-                            </div>
-                            <div class="col-md-6 pull-right">
-                                <div class="form-group"><label for="affectedPerson_lkpInjuryTypeId_0" class="required" aria-required="true"><span class="field-name">Injury Type</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpInjuryTypeId_0" name="affectedPerson_lkpInjuryTypeId_0" ng-model="affectedPerson.lkpInjuryTypeId" ng-options="obj.id as obj.name for obj in lstInjury" required="" aria-required="true"><option value="" class="">Select Injury Type</option><option value="0" label="No Injury">No Injury</option><option value="1" label="Amputation">Amputation</option><option value="2" label="Bruise/Abrasion/Contusion/Pinching">Bruise/Abrasion/Contusion/Pinching</option><option value="3" label="Burn/Scald">Burn/Scald</option><option value="4" label="Choking">Choking</option><option value="5" label="Concussion">Concussion</option><option value="6" label="Cut/Laceration">Cut/Laceration</option><option value="7" label="Dislocation">Dislocation</option><option value="8" label="Drowning">Drowning</option><option value="9" label="Electric Shock">Electric Shock</option><option value="10" label="Fracture">Fracture</option><option value="11" label="Inflammation/Irritation/Dermatitis">Inflammation/Irritation/Dermatitis</option><option value="12" label="Ingested Object">Ingested Object</option><option value="13" label="Internal Organ Injury">Internal Organ Injury</option><option value="14" label="Piercing/puncturing/penetration">Piercing/puncturing/penetration</option><option value="15" label="Poisoning">Poisoning</option><option value="16" label="Strain / Sprain">Strain / Sprain</option><option value="17" label="Strangulation">Strangulation</option><option value="18" label="Suffocation">Suffocation</option><option value="19" label="Other/Not Stated">Other/Not Stated</option></select>
-                                </div>
-                            </div>
-                        </div>
-
-<div class="form-group"><label for="affectedPerson_lkpTreatmentTypeId_0" class="required" aria-required="true"><span class="field-name">Treatment</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                                     <select class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" id="affectedPerson_lkpTreatmentTypeId_0" name="affectedPerson_lkpTreatmentTypeId_0" ng-model="affectedPerson.lkpTreatmentTypeId" ng-options="obj.id as obj.name for obj in lstTreatment" required="" aria-required="true"><option value="" class="">Select Treatment</option><option value="0" label="None">None</option><option value="1" label="First Aid">First Aid</option><option value="2" label="Provincial Health Care Info Service">Provincial Health Care Info Service</option><option value="3" label="Poison Control Centre">Poison Control Centre</option><option value="4" label="Family Doctor">Family Doctor</option><option value="5" label="Hospital-Emergency Room">Hospital-Emergency Room</option><option value="6" label="Hospital-Other">Hospital-Other</option><option value="7" label="Other Medical Professional">Other Medical Professional</option><option value="8" label="Other">Other</option><option value="9" label="Unknown">Unknown</option></select>
-                                </div>
-
-<div class="form-group"><label for="incident_incidentDescription" class="required" aria-required="true"><span class="field-name">Describe the Incident</span> <strong class="required" aria-required="true">(required)</strong> </label><br>
-                         <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">2000</span></small></div>
-                         <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="incident_incidentDescription" name="incident_incidentDescription" ng-model="incident.incidentDescription" ng-trim="false" placeholder="Describe the Incident" required="" aria-multiline="true" rows="5" cols="150" maxlength="2000" ng-change="copyText(incident.incidentDescription, 'incident_incidentDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                         </textarea>
-                         <div class="panel panel-default visible-print">
-                             <div class="panel-body">
-                                  <p id="incident_incidentDescription_txt" class="visible-print ng-binding"></p>
-                             </div>
-                   	     </div>
-                    </div>
-
-<div class="form-group"><label for="product_productBrandName" class="required" aria-required="true"><span class="field-name">Product Brand and Name</span> <strong class="required" aria-required="true">(required)</strong> </label>
-                         <textarea class="form-control word-wrap hidden-print ng-pristine ng-invalid ng-invalid-required ng-valid-maxlength ng-touched" msd-elastic="" id="product_productBrandName" name="product_productBrandName" ng-model="product.productBrandName" required="" placeholder="Product Brand and Name" rows="1" cols="60" maxlength="100" ng-change="copyText(product.productBrandName, 'product_productBrandName')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 36px;" aria-required="true">                         </textarea>
-                         <div class="panel panel-default visible-print">
-                             <div class="panel-body">
-                                  <p id="product_productBrandName_txt" class="visible-print ng-binding"></p>
-                             </div>
-                   	     </div>
-                    </div>
-
-<div class="form-group"><label for="product_productDescription" class="required" aria-required="true"><span class="field-name">Product Description (for example: colour, packaging, warnings on the label)</span> <strong class="required" aria-required="true">(required)</strong> </label><br>
-                           <div id="characterRemaining"><small>Characters remaining: <span class="ng-binding">1500</span></small></div>
-                           <textarea class="form-control word-wrap hidden-print ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" msd-elastic="" id="product_productDescription" name="product_productDescription" ng-model="product.productDescription" ng-trim="false" required="" placeholder="Product description" rows="5" cols="150" maxlength="1500" ng-change="copyText(product.productDescription, 'product_productDescription')" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 126px;" aria-required="true">                           </textarea>
-                           <div class="panel panel-default visible-print">
-                                <div class="panel-body">
-                              	     <p id="product_productDescription_txt" class="visible-print ng-binding"></p>
-                                </div>
-                   	       </div>
-                      </div>
-
-<div class="form-group"><label for="whereGotPrdct_lkpContactContextId" class="required" aria-required="true"><span class="field-name">From whom did you get the product</span><br><strong class="required" aria-required="true">(required when this section is completed)</strong> </label>
-                         <select class="form-control ng-pristine ng-untouched ng-valid" id="whereGotPrdct_lkpContactContextId" name="whereGotPrdct_lkpContactContextId" ng-model="whereGotPrdct.lkpContactContextId">
-                                 <option value="">Select From whom did you get the product</option>
-                                 <!-- ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52401" class="ng-binding ng-scope">Gift</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52400" class="ng-binding ng-scope">Promotional Item</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52397" class="ng-binding ng-scope">Purchased New</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52399" class="ng-binding ng-scope">Purchased Used From Person e.g. Yard Sale</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52398" class="ng-binding ng-scope">Purchased Used From Retailer</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer --><option ng-repeat="obj in lstPrdctFrmWhmConsumer" value="52402" class="ng-binding ng-scope">Other</option><!-- end ngRepeat: obj in lstPrdctFrmWhmConsumer -->
-                         </select>
-                    </div>
-
-<div id="submit" col-md-3="" pull-left="">
-	        <input type="submit" ng-disabled="isAutoFill" value="Proceed to Submit" class="btn btn-primary">
-	    </div>
-</details>
-
-
-</div>
-
-</div>
         <div class="row pagedetails">
 
     <details class="brdr-0 col-sm-6 col-lg-4 mrgn-tp-sm">
