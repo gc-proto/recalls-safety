@@ -1,0 +1,9 @@
+[
+  { "value":"car seats",
+    "filtdisp": "Car seats",
+    "url": "http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Vehicles&dspl=scat&fq_cat=Car%20seats"
+  },
+  { "value":"Car seats",
+    "autodisp": "Car seats"
+  }
+]

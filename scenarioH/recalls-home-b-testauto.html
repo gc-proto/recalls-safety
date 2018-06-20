@@ -139,10 +139,19 @@ p, li {max-width: 65em;}
 jQuery(function(){
 
   jQuery('#autocomplete-demo').autocomplete({
-      source: [
-          { value:"car seats", filtdisp: "Car seats", url: 'http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Vehicles&dspl=scat&fq_cat=Car%20seats' },
-					{ value:"Car seats", autodisp: "Car seats" }
-				],
+      source: function (request, response) {
+        	$.ajax({
+						url: "js/recalls-autocomplete-datasource.json",
+						dataType: "jsonp",
+						data: {
+							q: request.term
+						},
+						success: function( data ) {
+							response( data );
+						}
+					});
+        },
+				minLength: 1,
 				select: function (event, ui) {
 					if (typeof ui.item.filtdisp != "undefined") {
 						//if url, then go to it
