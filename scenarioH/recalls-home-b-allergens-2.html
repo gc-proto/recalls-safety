@@ -12,12 +12,11 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <!-- Meta data-->
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+	<script src="js/jquery-1.11.1.min.js"></script>
 <link href="../GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="../GCWeb/css/theme.min.css">
 <link rel="stylesheet" href="css/custom.css">
-<link type="text/css" rel="stylesheet" hr­ef="css/autocomplete.css"/>
-<script sr­c="js/autocomplete.js"></script>
 
 <!--<![endif]-->
 <!--[if lt IE 9]>
@@ -40,7 +39,7 @@ src="js/bootstrap.min.js"></script>
 <style>
 p, li {max-width: 65em;}
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 
@@ -49,6 +48,11 @@ p, li {max-width: 65em;}
 
 
 
+
+<!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
+<noscript><iframe title="Google Tag Manager" src="//www.googletagmanager.com/ns.html?id=GTM-TLGQ9K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer1'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer1','GTM-TLGQ9K');</script>
+<!-- End Google Tag Manager -->
 <ul id="wb-tphp">
 <li class="wb-slc">
 <a class="wb-sl" href="#wb-cont">Skip to main content</a>
@@ -115,14 +119,6 @@ p, li {max-width: 65em;}
 	}
 }
 
-@media (max-width:526px) {
-	.leftonmobile {
-		margin-top: 10px;
-    float: left!important;
-	}
-}
-
-
 .overlay-def .mfp-close {
     color: #000;
 }
@@ -131,55 +127,8 @@ p, li {max-width: 65em;}
 
 
 <main role="main" property="mainContentOfPage" class="container">
-  <link rel="stylesheet" href="css/autocomplete.css">
 
-
-
-<script>
-jQuery(function(){
-
-  jQuery('#autocomplete-demo').autocomplete({
-      source: [
-          { value:"car seats", filtdisp: "Car seats", url: 'http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Vehicles&dspl=scat&fq_cat=Car%20seats' },
-					{ value:"Car seats", autodisp: "Car seats" }
-				],
-				select: function (event, ui) {
-					if (typeof ui.item.filtdisp != "undefined") {
-						//if url, then go to it
-						window.location = ui.item.url; // dynamically generate URL string based on current value?
-					} else {
-						//if no url, dynamically generate based on current filters + new q
-						//edit this to get currently applied URL params
-						window.location = 'http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_pcat=Food%20and%20allergies&q=' + ui.item.autodisp;
-					}
-					$("#autocomplete-demo").val(ui.item.value);
-          return false;
-        }
-  }).autocomplete("instance")._renderItem = function(ul, item) {
-			if (typeof item.filtdisp != "undefined") {
-				return $("<li class='each'>")
-	        .append("<div class='acItem'><span style='margin-left:-30px;' src='images/filter-icon.svg'>filter by <span style='font-weight: bold;' class='autofilter-display'>" + item.filtdisp + "</span>")
-	        .appendTo(ul);
-			} else if (typeof item.autodisp != "undefined") {
-				return $("<li class='each'>")
-					.append("<div class='acItem'><img style='max-width:20px; margin-top: -3px; margin-left:-30px; margin-right: 5px;' src='images/search-icon.png'><span class='autoquery-display'>" + item.autodisp + "</span>")
-	        .appendTo(ul);
-			}
-	};
-	jQuery.ui.autocomplete.prototype._resizeMenu = function () {
-	  var ul = this.menu.element;
-	  ul.outerWidth(this.element.outerWidth());
-	}
-});
-
-//For actual implementation, try to add https://stackoverflow.com/questions/2435964/how-can-i-custom-format-the-autocomplete-plug-in-results but highlighting non-typed text, to highligh differences
-//See https://baymard.com/blog/autocomplete-design for a good article on autocomplete designs
-
-
-  </script>
-
-
-	<h1 class="page-header">Recalls and safety alerts</h1>
+	<h1 class="page-header" style="margin-bottom:0px;">Recalls and safety alerts</h1>
 
   <div class="content">
 
@@ -205,184 +154,87 @@ jQuery(function(){
 	 <div id="btngrp-recalls-search-label"><label style="float: left;"><h2>Search</h2></label>
 		<div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 1px solid #335075;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto; width:100%;padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
 
-		<input type="text" id="autocomplete-demo" style="border: none;box-shadow: none;float: left; width: 100%;">
+
+		<input type="text" class="" id="btngrp-recalls-search" placeholder="Search all recalls" style="border: none;box-shadow: none;float: left; width: 100%;">
     	<button type="submit" style="float:left;background: none!important;border: none!important;border-left: #cbbebe 1px solid!important;padding-left: 8px!important; color: black;">Find</button></div>
 
-      <div class="visible-xs" style="clear: both; padding-top: 5px;">
-        <h5><span style="cursor:pointer" onclick="openNav()">Food</span> | <span style="cursor:pointer" onclick="openNav2()">Vehicles</span> | <span style="cursor:pointer" onclick="openNav3()">Health</span> | <span style="cursor:pointer" onclick="openNav4()">Consumer Products</span></h5>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default overlay" id="myNav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h6 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Food
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Food Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Food Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Food Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" valign="top"/>
-                  <label for="Item">Affects children, pregnant <br>or breast feeding women <i>(xx)</i></label>
-            </div>
-            </div>
-          </div>
-          <div class="panel panel-default overlay" id="myNav2">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Vehicles
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-                  <label for="Item">Affects children, pregnant <br>or breast feeding women <i>(xx)</i></label><br>
-                  <div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 1px solid #DCDCDC;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto; width:100%;padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
-
-
-                  <input type="text" class="" id="btngrp-recalls-search" placeholder="Search makes or brand" style="border: none;box-shadow: none;float: left; width: 100%;">
-                    </div>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default overlay" id="myNav3">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingThree">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Health
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Health Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Health Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Health Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-                  <label for="Item">Affects children, pregnant <br>or breast feeding women <i>(xx)</i></label>
-              </div>
-            </div>
-
-          </div>
-          <div class="panel panel-default overlay" id="myNav4">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav4()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingFour">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  Consumer products
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Consumer Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Consumer Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">Consumer Subcategory <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-                  <label for="Item">Affects children, pregnant <br>or breast feeding women <i>(xx)</i></label>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default overlay" id="myNav5">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav5()">&times;</a>
-            <div class="panel-heading" role="tab" id="headingFive">
-              <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                  Year
-                </a>
-              </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
-              <div class="panel-body">
-                <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">2018 <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">2017 <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-                  <label for="Item">2016 <i>(xx)</i></label>
-                  <br />
-                  <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-                  <label for="Item">2015 <i>(xx)</i></label>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="" style="clear: both; padding-top: 5px;">
+      <div class="row">
+        <ul class="toc lst-spcd col-md-12" style="display:flex; white-space: nowrap;">
+          <li><a id="food-link" href="recalls-home-b-food.html" style="font-size:14px; margin-left:0px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Food</a> |</li>
+          <li ><a id="vehicles-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Vehicles" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Vehicles</a> |</li>
+          <li ><a id="medical-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Health+products" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Health</a> |</li>
+          <li stle><a id="products-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Consumer+products" style="font-size:14px; margin-left:2px; /*border: 1px solid #335075; border-bottom: none;*/ padding: 2px 2px 0px 2px;" href="">Products</a></li>
+        </ul>
       </div>
+    </div>
 
-      <script>
-      function openNav() {
-          document.getElementById("myNav").style.height = "100%";
-      }
+		<div class="visible-xs" style="clear: both; padding-top: 5px;">
 
-      function closeNav() {
-          document.getElementById("myNav").style.height = "0%";
-      }
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+								Food
+							</a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">
+              <a href="recalls-home-b-food.html" style="font-size:20px;"><img src="https://png.icons8.com/metro/1600/checkmark.png" style="max-width:20px;" />Allergens <span style="font-size:10px;">(use checkmark styles you have)</span></a><br />
+                <a style="margin-left:32px;" href="">Undeclared eggs <i>(xx)</i></a>
+								<br />
+								<a style="margin-left:32px;" href=""><img src="https://png.icons8.com/metro/1600/checkmark.png" style="max-width:15px;" />Undeclared peanuts <i>(xx)</i></a>
+								<br />
+								<a style="margin-left:32px;" href="">Undeclared wheat <i>(xx)</i></a>
+								<br />
+								<a style="margin-left:32px;" href="">Other <i>(xx)</i></a>
+                <br />
+                <div style="margin-top: 10px;"><a style="margin-left: 32px; font-size:16px;" href="">Show more</i></a></div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingFive">
+						<h4 class="panel-title">
+							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+								Year
+							</a>
+						</h4>
+					</div>
+					<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+						<div class="panel-body">
+							<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+								<label for="Item">2018 <i>(xx)</i></label>
+								<br />
+								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+								<label for="Item">2017 <i>(xx)</i></label>
+								<br />
+								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+								<label for="Item">2016 <i>(xx)</i></label>
+								<br />
+								<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
+								<label for="Item">2015 <i>(xx)</i></label>
+						</div>
+					</div>
+				</div>
+        <a class="btn btn-default" style="float:right;margin-top:5px; width:200px;" href="recalls-home-b.html">Clear all <strong>X</strong></a>
+			</div>
 
-      function openNav2() {
-          document.getElementById("myNav2").style.height = "100%";
-      }
+		</div>
+</div>
+<script>
+/* Open when someone clicks on the span element */
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
 
-      function closeNav2() {
-          document.getElementById("myNav2").style.height = "0%";
-      }
-      function openNav3() {
-          document.getElementById("myNav3").style.height = "100%";
-      }
-
-      function closeNav3() {
-          document.getElementById("myNav3").style.height = "0%";
-      }
-      function openNav4() {
-          document.getElementById("myNav4").style.height = "100%";
-      }
-
-      function closeNav4() {
-          document.getElementById("myNav4").style.height = "0%";
-      }
-      function openNav5() {
-          document.getElementById("myNav5").style.height = "100%";
-      }
-
-      function closeNav5() {
-          document.getElementById("myNav5").style.height = "0%";
-      }
-      </script>
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
           <!--Cascading picklists - FieldFlow? -->
           <!--<div class="wb-frmvld" style="clear:both; padding-top:10px;">
         	 <form method="get">
@@ -483,7 +335,7 @@ jQuery(function(){
 					 </li>
 				 </ul>
 			 </section>
-		<section class="followus mrgn-bttm-md recall-share leftonmobile" style="padding-top: 10px; padding-bottom: 10px; float: right; border-radius:5px;">
+		<section class="followus mrgn-bttm-md recall-share" style="padding-top: 10px; padding-bottom: 10px; float: right; border-radius:5px;">
 		     <a href="" style="text-decoration:none;">Follow recalls on social media:</a>
 		     <ul>
 		       <li style="margin-top: 0px; margin-bottom: 0px;">
@@ -509,84 +361,60 @@ jQuery(function(){
 <div>
 <h6 class="mrgn-tp-lg hidden-xs">&#9776; Filter by</h6>
 
-<details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Food <i>(xx)</i></summary>
-	<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		<label for="Item">Food Subcategory <i>(xx)</i></label>
-		<br />
-		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		<label for="Item">Food Subcategory <i>(xx)</i></label>
-		<br />
-		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		<label for="Item">Food Subcategory <i>(xx)</i></label>
-		<br />
-		<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-		<label for="Item">Affects children, pregnant or breast feeding women <i>(xx)</i></label>
- </details>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Food
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <a href="recalls-home-b-food.html" style="font-size:20px;">< Allergens</a><br />
+        <p>_________________</p>
+        <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
 
-
- <details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Vehicles <i>(xx)</i></summary>
-	 <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		 <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-		 <br />
-		 <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		 <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-		 <br />
-		 <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-		 <label for="Item">Vehicles Subcategory <i>(xx)</i></label>
-		 <br />
-		 <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-		 <label for="Item">Affects children, pregnant or breast feeding women <i>(xx)</i></label>
-		 <div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 1px solid #DCDCDC;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto; width:100%;padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
-
-
-		 <input type="text" class="" id="btngrp-recalls-search" placeholder="Search makes or brand" style="border: none;box-shadow: none;float: left; width: 100%;">
-			 </div>
-	</details>
-
-	<details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Health <i>(xx)</i></summary>
-		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-			<label for="Item">Health Subcategory <i>(xx)</i></label>
-			<br />
-			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-			<label for="Item">Health Subcategory <i>(xx)</i></label>
-			<br />
-			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-			<label for="Item">Health Subcategory <i>(xx)</i></label>
-			<br />
-			<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-			<label for="Item">Affects children, pregnant or breast feeding women <i>(xx)</i></label>
-	 </details>
-
-	 <details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Consumer Products <i>(xx)</i></summary>
- 		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">Products Subcategory <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">Products Subcategory <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">Products Subcategory <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
- 			<label for="Item">Affects children, pregnant or breast feeding women <i>(xx)</i></label>
- 	 </details>
-
-	 <details class="mrgn-tp-lg hidden-xs"><summary class="text-primary">Year <i>(xx)</i></summary>
- 		<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">2018 <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">2017 <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
- 			<label for="Item">2016 <i>(xx)</i></label>
- 			<br />
- 			<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
- 			<label for="Item">2015 <i>(xx)</i></label>
- 	 </details>
-
-
-
+          <label for="Item">Undeclared eggs <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">Undeclared peanuts <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">Undeclared wheat <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
+          <label for="Item">Other <i>(xx)</i></label>
+    </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFive">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Year
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="panel-body">
+        <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">2018 <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">2017 <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+          <label for="Item">2016 <i>(xx)</i></label>
+          <br />
+          <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
+          <label for="Item">2015 <i>(xx)</i></label>
+      </div>
+    </div>
+  </div>
+  <a class="btn btn-default" style="float:right;margin-top:5px; width:200px;" href="recalls-home-b.html">Clear all <strong>X</strong></a>
+</div>
 
 
 
@@ -752,14 +580,13 @@ jQuery(function(){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
 <script src="dist/owl.carousel.min.js"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/deps/jquery.magnific-popup.min.js"></script>
+<script src="https://github.com/wet-boew/wet-boew/blob/master/src/plugins/data-inview/demo/data-inview.js"></script>
 <!--<![endif]-->
 <!--[if lt IE 9]>
 <script src="../wet-boew/js/ie8-wet-boew2.min.js"></script>
 <![endif]-->
 <script src="../GCWeb/js/theme.min.js"></script>
-
+<script src="http://www.cic.gc.ca/js/wb-fieldflow.min.js"></script>
 </body>
 </html>
