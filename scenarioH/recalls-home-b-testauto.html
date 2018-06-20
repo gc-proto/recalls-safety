@@ -158,7 +158,14 @@ jQuery(function(){
 							q: request.term
 						},
 						success: function( data ) {
-							response( data );
+							response( $.map(data, function(item){
+								return {
+									value: item.value,
+									filtdisp: item.filtdisp,
+									url: item.url,
+									autodisp: item.autodisp
+								};
+							}));
 						}
 					});
         },
