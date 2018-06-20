@@ -138,11 +138,22 @@ p, li {max-width: 65em;}
 <script>
 jQuery(function(){
 
+
+	//get URL for query searches
+	var pageurl = window.location.href;
+	//remove 'q=x' from URL and add at end
+	if (pageurl.indexOf("&q=") > 0) {
+		pageurl = pageurl.substr(0, pageurl.indexOf("&q=") - 1) + pageurl.substr(pageurl.indexOf("&"), pageurl.indexOf("&q=")+1, pageurl.length - pageurl.indexOf("&"), pageurl.indexOf("&q=")+2) + "&q=";
+	} else {
+		pageurl = pageurl + "&q="
+	}
+	console.log(pageurl);
+
   jQuery('#autocomplete-demo').autocomplete({
       source: function (request, response) {
         	$.ajax({
 						url: "js/recalls-autocomplete-datasource.json",
-						dataType: "jsonp",
+						dataType: "json",
 						data: {
 							q: request.term
 						},
@@ -151,7 +162,6 @@ jQuery(function(){
 						}
 					});
         },
-				minLength: 1,
 				select: function (event, ui) {
 					if (typeof ui.item.filtdisp != "undefined") {
 						//if url, then go to it
@@ -159,7 +169,8 @@ jQuery(function(){
 					} else {
 						//if no url, dynamically generate based on current filters + new q
 						//edit this to get currently applied URL params
-						window.location = 'http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_pcat=Food%20and%20allergies&q=' + ui.item.autodisp;
+
+						window.location = pageurl + ui.item.autodisp;
 					}
 					$("#autocomplete-demo").val(ui.item.value);
           return false;
