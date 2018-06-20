@@ -152,10 +152,10 @@ jQuery(function(){
   jQuery('#autocomplete-demo').autocomplete({
       source: function (request, response) {
         	$.ajax({
-						url: "js/recalls-autocomplete-datasource.json",
+						url: "https://gc-proto.github.io/recalls-safety/scenarioH/js/recalls-autocomplete-datasource.json",
 						dataType: "json",
 						data: {
-							q: request.term
+							searchText: request.term
 						},
 						success: function( data ) {
 							response( $.map(data, function(item){
