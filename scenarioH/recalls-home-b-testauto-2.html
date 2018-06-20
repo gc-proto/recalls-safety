@@ -162,12 +162,12 @@ jQuery(function(){
   }).autocomplete("instance")._renderItem = function(ul, item) {
 			if (typeof item.filtdisp != "undefined") {
 				return $("<li class='each'>")
-	        .append("<div class='acItem'><img style='max-width:20px; margin-top: -3px; margin-left:-30px;' src='images/filter-icon.svg'>in <span style='font-weight: bold;' class='autofilter-display'>" +
+	        .append("<div class='acItem'>view category: <span style='font-weight: bold;' class='autofilter-display'>" +
 	            item.filtdisp + "</span>")
 	        .appendTo(ul);
 			} else if (typeof item.autodisp != "undefined") {
 				return $("<li class='each'>")
-					.append("<div class='acItem'><img style='max-width:20px; margin-top: -3px; margin-left:-30px;' src='images/search-icon.png'><span class='autoquery-display'>" +
+					.append("<div class='acItem'><span class='autoquery-display'>" +
 	            item.autodisp + "</span>")
 	        .appendTo(ul);
 			}
