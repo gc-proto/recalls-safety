@@ -247,6 +247,7 @@ background-color: #F8F8F8;
 .nowrap  {
   -webkit-flex-wrap: nowrap;
   flex-wrap: nowrap;
+	display:inline-block;
 }
 
 .wrap    {
