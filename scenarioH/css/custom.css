@@ -254,7 +254,7 @@ background-color: #F8F8F8;
   flex-wrap: wrap;
 }
 .wrap li {
-  background: white;
+  color: white;
 }
 
 .wrap-reverse         {
