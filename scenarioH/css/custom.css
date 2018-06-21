@@ -275,5 +275,31 @@ background-color: #F8F8F8;
   color: white;
   font-weight: bold;
   font-size: 2em;
+
+
   text-align: center;
+}
+
+#food-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
+}
+
+#vehicles-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
+}
+
+#medical-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
+}
+
+#products-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
 }
