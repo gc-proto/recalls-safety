@@ -133,31 +133,77 @@ p, li {max-width: 65em;}
 <main role="main" property="mainContentOfPage" class="container">
   <link rel="stylesheet" href="css/autocomplete.css">
 
+
+
 <script>
 jQuery(function(){
 
+
+	//get URL for query searches
+	var pageurl = window.location.href;
+	//remove 'q=x' from URL and add at end
+	if (pageurl.indexOf("&q=") > 0) {
+		pageurl = pageurl.substr(0, pageurl.indexOf("&", pageurl.indexOf("&q=") + 1) - 1) + pageurl.substr(pageurl.indexOf("&", pageurl.indexOf("&q=")+1), pageurl.length - pageurl.indexOf("&", pageurl.indexOf("&q=")+1)) + "q=";
+	} else {
+		pageurl = pageurl + "&q="
+	}
+	console.log(pageurl);
+
   jQuery('#autocomplete-demo').autocomplete({
-      source: ["ActionScript",
-          "Bootstrap",
-          "C",
-          "C++",
-          "Ecommerce",
-          "Jquery",
-          "Groovy",
-          "Java",
-          "JavaScript",
-          "Lua",
-          "Perl",
-          "Ruby",
-          "Scala",
-          "Swing",
-          "XHTML"]
-  });
+      source: function (request, response) {
+        	$.ajax({
+						url: "https://gc-proto.github.io/recalls-safety/scenarioH/js/recalls-autocomplete-datasource.json",
+						dataType: "json",
+						data: {
+							searchText: request.term
+						},
+						success: function( data ) {
+							response( $.map(data, function(item){
+								return {
+									value: item.value,
+									filtdisp: item.filtdisp,
+									url: item.url,
+									autodisp: item.autodisp
+								};
+							}));
+						}
+					});
+        },
+				select: function (event, ui) {
+					if (typeof ui.item.filtdisp != "undefined") {
+						//if url, then go to it
+						window.location = ui.item.url; // dynamically generate URL string based on current value?
+					} else {
+						//if no url, dynamically generate based on current filters + new q
+						//edit this to get currently applied URL params
 
+						window.location = pageurl + ui.item.autodisp;
+					}
+					$("#autocomplete-demo").val(ui.item.value);
+          return false;
+        }
+  }).autocomplete("instance")._renderItem = function(ul, item) {
+			if (typeof item.filtdisp != "undefined") {
+				return $("<li class='each'>")
+	        .append("<div class='acItem'><span style='margin-left:-30px;' src='images/filter-icon.svg'>filter by <span style='font-weight: bold;' class='autofilter-display'>" + item.filtdisp + "</span>")
+	        .appendTo(ul);
+			} else if (typeof item.autodisp != "undefined") {
+				return $("<li class='each'>")
+					.append("<div class='acItem'><img style='max-width:20px; margin-top: -3px; margin-left:-30px; margin-right: 5px;' src='images/search-icon.png'><span class='autoquery-display'>" + item.autodisp + "</span>")
+	        .appendTo(ul);
+			}
+	};
+	jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+	  var ul = this.menu.element;
+	  ul.outerWidth(this.element.outerWidth());
+	}
 });
-  </script>
 
-  <input type="text" id="autocomplete-demo" placeholder="autocomplete-demo" style="border: none;box-shadow: none;float: left; width: 100%;">
+//For actual implementation, try to add https://stackoverflow.com/questions/2435964/how-can-i-custom-format-the-autocomplete-plug-in-results but highlighting non-typed text, to highligh differences
+//See https://baymard.com/blog/autocomplete-design for a good article on autocomplete designs
+
+
+  </script>
 
 
 	<h1 class="page-header">Recalls and safety alerts</h1>
@@ -186,8 +232,7 @@ jQuery(function(){
 	 <div id="btngrp-recalls-search-label"><label style="float: left;"><h2>Search</h2></label>
 		<div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 1px solid #335075;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto; width:100%;padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
 
-
-		<input type="text" class="" id="btngrp-recalls-search" placeholder="Search all recalls" style="border: none;box-shadow: none;float: left; width: 100%;">
+		<input type="text" id="autocomplete-demo" style="border: none;box-shadow: none;float: left; width: 100%;">
     	<button type="submit" style="float:left;background: none!important;border: none!important;border-left: #cbbebe 1px solid!important;padding-left: 8px!important; color: black;">Find</button></div>
 
       <div class="visible-xs" style="clear: both; padding-top: 5px;">

@@ -1,0 +1,37 @@
+#input {
+    border-radius: 0px;
+    background: #4a4a4a;
+    color: #96f226;
+    border: 1px solid #454545;
+    height: 0 0 30px;
+}
+/*.ui-tooltip {
+    background: #4a4a4a;
+    color: #96f226;
+    border: 2px solid #454545;
+    border-radius: 0px;
+    box-shadow: 0 0
+}*/
+.ui-autocomplete {
+    background: #ffffff;
+    border-radius: 0px;
+    border: 1px black solid;
+    list-style: none;
+}
+.ui-autocomplete.source:hover {
+    background: #454545;
+}
+
+.ui-menu .ui-menu-item a{
+    background:#FFFF;
+    border-top:0.5px solid black;
+    height:10px;
+    font-size:8px;
+    width: 50%;
+    list-style: none;
+}
+
+.ui-menu .ui-menu-item li{
+    list-style: none;
+
+}
