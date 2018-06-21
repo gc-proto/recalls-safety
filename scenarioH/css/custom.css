@@ -233,7 +233,7 @@ background-color: #F8F8F8;
 }
 
 .flex-container {
-  margin: 10px;
+  margin: 0px;
   list-style: none;
   -ms-box-orient: horizontal;
   display: -webkit-box;
