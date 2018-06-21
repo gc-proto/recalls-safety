@@ -69,7 +69,7 @@
   { "value":"Undeclared gluten", "filtdisp":"Undeclared gluten", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20gluten&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
   { "value":"Undeclared milk", "filtdisp":"Undeclared milk", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20milk&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
   { "value":"Undeclared egg", "filtdisp":"Undeclared egg", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20egg&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
-  { "value":"almonella", "filtdisp":"almonella", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Salmonella&fq_pcat=Food%20and%20allergies&fq_cat=Microbiological"},
+  { "value":"Salmonella", "filtdisp":"Salmonella", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Salmonella&fq_pcat=Food%20and%20allergies&fq_cat=Microbiological"},
   { "value":"Undeclared tree nut", "filtdisp":"Undeclared tree nut", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20tree%20nut&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
   { "value":"E. coli", "filtdisp":"E. coli", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=E.%20coli&fq_pcat=Food%20and%20allergies&fq_cat=Microbiological"},
   { "value":"Clostridium botulinum", "filtdisp":"Clostridium botulinum", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Clostridium%20botulinum&fq_pcat=Food%20and%20allergies&fq_cat=Microbiological"},
@@ -81,7 +81,7 @@
   { "value":"Undeclared mustard", "filtdisp":"Undeclared mustard", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20mustard&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
   { "value":"Undeclared sulphites", "filtdisp":"Undeclared sulphites", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20sulphites&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
   { "value":"Undeclared sesame seeds", "filtdisp":"Undeclared sesame seeds", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20sesame%20seeds&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
-  { "value":"taphylococcus aureus", "filtdisp":"taphylococcus aureus", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Staphylococcus%20aureus&fq_pcat=Food%20and%20allergies&fq_cat=Microbiological"},
+  { "value":"Staphylococcus aureus", "filtdisp":"Staphylococcus aureus", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Staphylococcus%20aureus&fq_pcat=Food%20and%20allergies&fq_cat=Microbiological"},
   { "value":"Undeclared coconut", "filtdisp":"Undeclared coconut", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20coconut&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"}
   { "value":"BRITAX", "filtdisp":"BRITAX", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=mdl&fq_pcat=Vehicles&fq_mk_nm=BRITAX"},
   { "value":"HONDA", "filtdisp":"HONDA", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=mdl&fq_pcat=Vehicles&fq_mk_nm=HONDA"},
@@ -165,6 +165,18 @@
   { "value":"boyau toilette", "autodisp":"boyau toilette"},
   { "value":"bandelette boston", "autodisp":"bandelette boston"},
   { "value":"Hewlett-Packard", "autodisp":"Hewlett-Packard"},
-  { "value":"Living lettuce", "autodisp":"Living lettuce"}
+  { "value":"Living lettuce", "autodisp":"Living lettuce"},
+  { "value":"peanuts", "filtdisp":"Undeclared peanut", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20peanut&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared gluten", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20gluten&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared milk", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20milk&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared egg", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20egg&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared tree nut", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20tree%20nut&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared peanut", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20peanut&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared wheat", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20wheat&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared soy", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20soy&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared mustard", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20mustard&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared sulphites", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20sulphites&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared sesame seeds", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20sesame%20seeds&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"},
+  { "value":"Allergy", "filtdisp":"Undeclared coconut", "url":"http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_scat=Undeclared%20coconut&fq_pcat=Food%20and%20allergies&fq_cat=Food%20allergies"}
 
 ]
