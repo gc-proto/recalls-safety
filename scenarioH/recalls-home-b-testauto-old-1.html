@@ -138,75 +138,39 @@ p, li {max-width: 65em;}
 <script>
 jQuery(function(){
 
-
-
-
-
-
-	//get URL for query searches var pageurl = window.location.href;
-	//remove 'q=x' from URL and add at end
-	if (pageurl.indexOf("&q=") > 0) {
-		if (pageurl.indexOf("&", pageurl.indexOf("&q=") + 1) > 0) {
-			pageurl = pageurl.substr(0, pageurl.indexOf("&", pageurl.indexOf("&q=") + 1) - 1) + pageurl.substr(pageurl.indexOf("&", pageurl.indexOf("&q=")+1), pageurl.length - pageurl.indexOf("&", pageurl.indexOf("&q=")+1)) + "&q=";
-		} else {
-			pageurl = pageurl.substr(0, pageurl.indexOf("&q=")) + "&q=";
-		}
-	} else {
-		pageurl = pageurl + "&q=" }
-		console.log(pageurl);
-
-
-
-
-	jQuery('#autocomplete-demo').autocomplete({
-			source: function (request, response) {
-					$.ajax({
-						url: "https://gc-proto.github.io/recalls-safety/scenarioH/js/recalls-autocomplete-datasource.json",
-						dataType: "json", // grep tips at https://stackoverflow.com/questions/22565550/jquery-ui-autocomplete-json-data-parse
-						success: function( data ) { response( $.map(data, function(item){
-							// Test if it's a valid item
-							if ( item.value.indexOf(request.term) !== -1 ) { return {
-								value: item.value,
-								filtdisp: item.filtdisp,
-								url: item.url,
-								autodisp: item.autodisp };
-							} else {
-								return false;
-							}
-						}));
+  jQuery('#autocomplete-demo').autocomplete({
+      source: [
+          { value:"car seats", filtdisp: "Car seats", url: 'http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Vehicles&dspl=scat&fq_cat=Car%20seats' },
+					{ value:"Car seats", autodisp: "Car seats" }
+				],
+				select: function (event, ui) {
+					if (typeof ui.item.filtdisp != "undefined") {
+						//if url, then go to it
+						window.location = ui.item.url; // dynamically generate URL string based on current value?
+					} else {
+						//if no url, dynamically generate based on current filters + new q
+						//edit this to get currently applied URL params
+						window.location = 'http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&dspl=cat&fq_pcat=Food%20and%20allergies&q=' + ui.item.autodisp;
 					}
-				});
-			},
-			select: function (event, ui) {
-				if (typeof ui.item.filtdisp != "undefined") {
-					//if url, then go to it
-					window.location = ui.item.url;
-					// dynamically generate URL string based on current value?
-				} else {
-					//if no url, dynamically generate based on current filters + new q
-					//edit this to get currently applied URL params
-					window.location = pageurl + ui.item.autodisp;
-				}
-				$("#autocomplete-demo").val(ui.item.value);
-				return false;
-			}
-		}).autocomplete("instance")._renderItem = function(ul, item) {
+					$("#autocomplete-demo").val(ui.item.value);
+          return false;
+        }
+  }).autocomplete("instance")._renderItem = function(ul, item) {
 			if (typeof item.filtdisp != "undefined") {
 				return $("<li class='each'>")
-				.append("<div class='acItem'><span style='margin-left:-30px;' src='images/filter-icon.svg'>filter by <span style='font-weight: bold;' class='autofilter-display'>" + item.filtdisp + "</span>")
-				.appendTo(ul);
+	        .append("<div class='acItem'><span style='margin-left:-30px;' src='images/filter-icon.svg'>filter by <span style='font-weight: bold;' class='autofilter-display'>" + item.filtdisp + "</span>")
+	        .appendTo(ul);
 			} else if (typeof item.autodisp != "undefined") {
 				return $("<li class='each'>")
-				.append("<div class='acItem'><img style='max-width:20px; margin-top: -3px; margin-left:-30px; margin-right: 5px;' src='images/search-icon.png'><span class='autoquery-display'>" + item.autodisp + "</span>")
-				.appendTo(ul);
+					.append("<div class='acItem'><img style='max-width:20px; margin-top: -3px; margin-left:-30px; margin-right: 5px;' src='images/search-icon.png'><span class='autoquery-display'>" + item.autodisp + "</span>")
+	        .appendTo(ul);
 			}
-		};
-		jQuery.ui.autocomplete.prototype._resizeMenu = function () {
-			var ul = this.menu.element;
-			ul.outerWidth(this.element.outerWidth());
-		}
-	});
-
+	};
+	jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+	  var ul = this.menu.element;
+	  ul.outerWidth(this.element.outerWidth());
+	}
+});
 
 //For actual implementation, try to add https://stackoverflow.com/questions/2435964/how-can-i-custom-format-the-autocomplete-plug-in-results but highlighting non-typed text, to highligh differences
 //See https://baymard.com/blog/autocomplete-design for a good article on autocomplete designs
