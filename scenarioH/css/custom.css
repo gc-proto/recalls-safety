@@ -253,7 +253,9 @@ background-color: #F8F8F8;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-
+.wrap li {
+  background: white;
+}
 
 .wrap-reverse         {
   -webkit-flex-wrap: wrap-reverse;
