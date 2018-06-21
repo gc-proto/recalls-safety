@@ -233,10 +233,9 @@ background-color: #F8F8F8;
 }
 
 .flex-container {
-  padding: 0;
+  padding: 2px;
   margin: 0;
   list-style: none;
-  border: 1px solid silver;
   -ms-box-orient: horizontal;
   display: -webkit-box;
   display: -moz-box;
