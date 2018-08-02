@@ -6,10 +6,13 @@ This repo holds a prototyped version of a new Mobile-1st design for Recalls and 
 
 The design in Mobile 1st because the vast majority of people visiting recalls, particularly food recalls (89% mobile in June 2018) are viewing the web pages on their mobile phone. The search and filtering design is specificially designed to support using filters and search from a phone, while still keeping search results close by on the page. 
 
-To try out the new site, use the Scenario links for Validation participants: 
+Try out the new search site: 
+* http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&&
+
+The prototyped home page and other direct link used by participants in the study: 
 * https://gc-proto.github.io/recalls-safety/ut-en.html
 
-Use these links to get directly to recall page scenarios for the test participants: 
+These links help you skip directly to particular prototyped recall pages: 
 * https://gc-proto.github.io/recalls-safety/scenarioH/template_links.html
 
 See Australia's Recalls site for a model of a search-filtering system with simplified templates for the recalls. We refined this model to better support search and filtering on a mobile phone:
