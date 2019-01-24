@@ -18,4 +18,4 @@ These links help you skip directly to particular prototyped recall pages:
 See Australia's Recalls site for a model of a search-filtering system with simplified templates for the recalls. We refined this model to better support search and filtering on a mobile phone:
 * https://www.productsafety.gov.au/recalls/browse-all-recalls
 
-Contact @lisafast to join us or post an issue with a question
+Contact @lisavation to join us or post an issue with a question
