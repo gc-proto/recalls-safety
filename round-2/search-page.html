@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 
+<!--
   DOCUMENTATION:
   ==============
   - Look for comments "EMBED" for pieces of that page
@@ -9,10 +9,46 @@
   - IDs starting with "template-" represent code that will be copied
     via javascript to populate the page.
   -->
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Test Search Page</title>
+  <!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]-->
+  <!--[if gt IE 8]><!--><html class="no-js" lang="en" dir="ltr"><!--<![endif]-->
+  	<head>
+  		<meta charset="utf-8">
+  		<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
+  		<title>What to do if you're having pay issues - Canada.ca</title>
+  		<meta content="width=device-width,initial-scale=1" name="viewport">
+  		<!-- Meta data -->
+  		<!-- Meta data-->
+  		<!-- Load closure template scripts -->
+  		<script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_30/cdts/compiled/soyutils.js"></script>
+  		<script type="text/javascript" src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v4_0_30/cdts/compiled/wet-en.js"></script>
+
+  		<!-- Write closure template -->
+  		<script type="text/javascript">
+  			document.write(wet.builder.refTop({
+  			}));
+  		</script>
+  	</head>
+  	<body vocab="http://schema.org/" typeof="WebPage">
+  		<div id="def-top">
+  		</div>
+  		<!-- Write closure template -->
+  		<script type="text/javascript">
+  			var defTop = document.getElementById("def-top");
+  			defTop.outerHTML = wet.builder.top({
+  				lngLinks: [{
+  					lang: "fr",
+  					href: "#",
+  					text: "Français"
+  				}],
+  				breadcrumbs: [{
+  					title: "Home",
+  					href: "https://www.canada.ca/en.html"
+  				}],
+  				search: true,
+  				siteMenu: true,
+  				showPreContent: true
+  			});
+  </script>
 <style>
 .active {
   font-weight: bold;
@@ -23,9 +59,9 @@
 <!-- ↓ ↓ EMBED ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -->
 
 <!--
-  NOTE: Ideally you would want the API_URL variable to be configurable 
+  NOTE: Ideally you would want the API_URL variable to be configurable
   in Drupal, but for now it does not matter much if it is hard-coded here.
-  Just update them to use appropriate values if need be.  
+  Just update them to use appropriate values if need be.
   -->
 <script type="text/javascript">
   const API_URL = 'https://tbs.norconex.com/api';
@@ -36,8 +72,8 @@
   var RECALL_TYPES = [];
 </script>
 <!--
-  If the WET template you will be using already has JQuery loaded, you can 
-  ignore the following script include: 
+  If the WET template you will be using already has JQuery loaded, you can
+  ignore the following script include:
  -->
 <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -48,6 +84,9 @@
 
 </head>
 <body>
+
+  <main role="main" property="mainContentOfPage" class="container">
+
 
 <h1>Embeddable HTML search page</h1>
 <p style="color: red;">View the HTML source for how to integrate.</p>
@@ -65,7 +104,7 @@
 <hr>
 
 <div id="noResults" style="display:none;">
-  No recalls matching your search criteria were found. 
+  No recalls matching your search criteria were found.
 </div>
 
 <div id="searchResponse" style="display:none;">
@@ -127,22 +166,22 @@
 
     <!-- The following are for Vehicles only: -->
     <div class="recall-vehicle">
-    
+
       <dt>Make</dt>
       <dd class="recall-make">Honda</dd>
-  
+
       <dt>Model</dt>
       <dd class="recall-model">Civic</dd>
-  
+
       <dt>Year</dt>
       <dd class="recall-years">2000</dd>
-  
+
       <dt>Number Affected</dt>
       <dd class="recall-numberAffected">666</dd>
-  
+
       <dt>System Type</dt>
       <dd class="recall-systemType">System</dd>
-  
+
       <dt>Notification Type</dt>
       <dd class="recall-notificationType ">Notif</dd>
 
@@ -153,14 +192,14 @@
            recall-url
            recall-id
            recall-recallNo
-          
+
       -->
 
   </dl>
   <hr>
 </div>
 
-<a id="template-pagination-link" href="#" class="recall-page-link" 
+<a id="template-pagination-link" href="#" class="recall-page-link"
    style="display: none; padding: 0px 3px;">7</a>
 
 <li id="template-facet-entry" style="display: none;">
@@ -181,8 +220,8 @@ function showAjaxError(jqXHR, text, errorThrown) {
     // Format this how you want or maybe display a generic error msg instead:
     $("#error").html(
         "<b>jqXHR:</b> " + JSON.stringify(jqXHR) + "<br>"
-      + "<b>text:</b> " + JSON.stringify(text) + "<br>"        
-      + "<b>errorThrown:</b> " + JSON.stringify(errorThrown)        
+      + "<b>text:</b> " + JSON.stringify(text) + "<br>"
+      + "<b>errorThrown:</b> " + JSON.stringify(errorThrown)
     );
     $('#error').show();
 }
@@ -216,7 +255,7 @@ function updateSearchResults(data) {
         setHtml($el, '.recall-id', recall.id);
         setHtml($el, '.recall-recallNo', recall.recallNo);
         setHtml($el, '.recall-alertType', recall.alertType);
-        
+
         if ('vehicles' === recall.type) {
             setHtml($el, '.recall-make', recall.make);
             setHtml($el, '.recall-model', recall.model);
@@ -228,7 +267,7 @@ function updateSearchResults(data) {
         } else {
             $searchResults.find('.recall-vehicle').hide();
         }
-        
+
         $searchResults.append($el);
         $el.show();
     });
@@ -258,7 +297,7 @@ function updateSearchSpellCheck(data) {
             CURRENT_PAGE = 1;
             $('#terms').val(data.spellCheck.query);
             search();
-            return false;                
+            return false;
         });
         $('#searchSpellCheck').show();
     }
@@ -273,7 +312,7 @@ function updateSearchFacets(data) {
             var $facetEntry = clone('#template-facet-entry');
             $facetEntry.find('.recall-facet-label').text(value.name);
             $facetEntry.find('.recall-facet-count').text(value.count);
-            
+
             $link = $facetEntry.find('.recall-facet-link');
             if (RECALL_TYPES.includes(value.name)) {
                 $link.addClass('active');
@@ -283,12 +322,12 @@ function updateSearchFacets(data) {
                 if (RECALL_TYPES.includes(value.name)) {
                     RECALL_TYPES.splice(RECALL_TYPES.indexOf(value.name), 1);
                 } else {
-                    RECALL_TYPES.push(value.name); 
+                    RECALL_TYPES.push(value.name);
                 }
                 search();
                 return false;
             });
-            
+
             $searchFacetType.append($facetEntry);
             $facetEntry.show();
         });
@@ -306,11 +345,11 @@ function updateSearchPagination(data) {
     var prev = Math.max(1, CURRENT_PAGE - 1);
     var $prevLink = $('#searchPagination .recall-pagination-prev');
     updateSearchPaginationLink($prevLink, prev);
-    
+
     var next = Math.min(numOfPageLinks, CURRENT_PAGE + 1);
     var $nextLink = $('#searchPagination .recall-pagination-next');
     updateSearchPaginationLink($nextLink, next);
-    
+
     for (var i = first; i <= last; i++) {
         var $link = clone('#template-pagination-link');
         $link.text(i);
@@ -420,5 +459,34 @@ $(document).ready(function () {
 </script>
 <pre id="debug"></pre>
 
+<div id="def-preFooter">
+</div>
+<!-- Write closure template -->
+<script type="text/javascript">
+	var defPreFooter = document.getElementById("def-preFooter");
+	defPreFooter.outerHTML = wet.builder.preFooter({
+		dateModified: "April 1, 2019",
+		showPostContent: true,
+		showFeedback: true,
+		showShare: true
+	});
+</script>
+		</main>
+		<div id="def-footer">
+
+		</div>
+		<!-- Write closure template -->
+		<script type="text/javascript">
+			var defFooter = document.getElementById("def-footer");
+			defFooter.outerHTML = wet.builder.footer({
+				showFooter: true,
+				showFeatures: true
+			});
+		</script>
+		<!-- Write closure template -->
+		<script type="text/javascript">
+			document.write(wet.builder.refFooter({
+			}));
+		</script>
 </body>
 </html>
