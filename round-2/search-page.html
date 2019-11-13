@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!-- 
+  DOCUMENTATION:
+  ==============
+  - Look for comments "EMBED" for pieces of that page
+    you can cut-n-paste in your Drupal page (or anywhere else).
+  - You can change the HTML, but keep the "id" attributes and custom classes
+    since JavaScript references them.
+  - IDs starting with "template-" represent code that will be copied
+    via javascript to populate the page.
+  -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Test Search Page</title>
+<style>
+.active {
+  font-weight: bold;
+  color: green;
+}
+</style>
+
+<!-- ↓ ↓ EMBED ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -->
+
+<!--
+  NOTE: Ideally you would want the API_URL variable to be configurable 
+  in Drupal, but for now it does not matter much if it is hard-coded here.
+  Just update them to use appropriate values if need be.  
+  -->
+<script type="text/javascript">
+  const API_URL = 'https://tbs.norconex.com/api';
+  //const API_URL = 'http://localhost:9191/api';
+  const MAX_DOCS_PER_PAGE = 10;
+  const MAX_PAGINATION_LINKS = 7;
+  var CURRENT_PAGE = 1;
+  var RECALL_TYPES = [];
+</script>
+<!--
+  If the WET template you will be using already has JQuery loaded, you can 
+  ignore the following script include: 
+ -->
+<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+<!-- ↑ ↑ EMBED ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -->
+
+</head>
+<body>
+
+<h1>Embeddable HTML search page</h1>
+<p style="color: red;">View the HTML source for how to integrate.</p>
+
+
+<!-- ↓ ↓ EMBED ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -->
+
+<form id="searchForm" action="#">
+  <input id="terms" name="terms" type="text" placeholder="Search for recalls...">
+  <button type="submit">Search</button>
+  <div id="searchSpellCheck" style="display: none;">Did you mean: <a href="#">blah</a></div>
+  <div id="error" style="display: none;"></div>
+</form>
+
+<hr>
+
+<div id="noResults" style="display:none;">
+  No recalls matching your search criteria were found. 
+</div>
+
+<div id="searchResponse" style="display:none;">
+
+  <div id="searchHeading">
+    <strong>
+      <span class="recall-showing">
+        Showing <span class="recall-from">1</span>
+        to <span class="recall-to">10</span> of
+      </span>
+      <span class="recall-found">66</span> recall(s) found.
+    </strong>
+  </div>
+
+  <hr>
+
+  <div id="searchFacets">
+    Types:
+    <ul class="recall-facet-type">
+      <!-- "template-facet-entry" gets added here. -->
+    </ul>
+  </div>
+
+  <hr>
+
+  <div id="searchResults" style="margin: 10px 0px;">
+    <!-- "template-recall" gets added here. -->
+  </div>
+
+  <div id="searchPagination">
+    <a href="#" class="recall-pagination-prev">Previous</a>
+    <span id="searchPageLinks">
+      <!-- "template-page-link" gets added here. -->
+    </span>
+    <a href="#" class="recall-pagination-next">Next</a>
+  </div>
+
+</div>
+
+<!-- TEMPLATES: -->
+
+<div id="template-recall" class="recall" style="display: none;">
+  <a href="#" class="recall-link">
+    <span class="recall-title">Title</span>
+  </a>
+  <p class="recall-summary">Generated summary</p>
+  <dl>
+    <dt>Type</dt>
+    <dd class="recall-type">food</dd>
+
+    <dt>Date</dt>
+    <dd class="recall-date">1534-05-10</dd>
+
+    <dt>Department</dt>
+    <dd class="recall-department">Canadian Food Inspection Agency</dd>
+
+    <dt>Alert Type</dt>
+    <dd class="recall-alertType">Recall</dd>
+
+    <!-- The following are for Vehicles only: -->
+    <div class="recall-vehicle">
+    
+      <dt>Make</dt>
+      <dd class="recall-make">Honda</dd>
+  
+      <dt>Model</dt>
+      <dd class="recall-model">Civic</dd>
+  
+      <dt>Year</dt>
+      <dd class="recall-years">2000</dd>
+  
+      <dt>Number Affected</dt>
+      <dd class="recall-numberAffected">666</dd>
+  
+      <dt>System Type</dt>
+      <dd class="recall-systemType">System</dd>
+  
+      <dt>Notification Type</dt>
+      <dd class="recall-notificationType ">Notif</dd>
+
+    </div>
+
+    <!-- The following class/values are also available:
+
+           recall-url
+           recall-id
+           recall-recallNo
+          
+      -->
+
+  </dl>
+  <hr>
+</div>
+
+<a id="template-pagination-link" href="#" class="recall-page-link" 
+   style="display: none; padding: 0px 3px;">7</a>
+
+<li id="template-facet-entry" style="display: none;">
+  <a class="recall-facet-link" href="#">
+    <span class="recall-facet-label">Honda Civic</span>
+    (<span class="recall-facet-count">66</span>)
+  </a>
+</li>
+
+
+<script type="text/javascript">
+
+function clearAjaxError() {
+    $("#error").empty();
+    $("#error").hide();
+}
+function showAjaxError(jqXHR, text, errorThrown) {
+    // Format this how you want or maybe display a generic error msg instead:
+    $("#error").html(
+        "<b>jqXHR:</b> " + JSON.stringify(jqXHR) + "<br>"
+      + "<b>text:</b> " + JSON.stringify(text) + "<br>"        
+      + "<b>errorThrown:</b> " + JSON.stringify(errorThrown)        
+    );
+    $('#error').show();
+}
+function noResults(data) {
+    $('#noResults').show();
+    $('#searchResponse').hide();
+    updateSearchSpellCheck(data);
+}
+function updateResponse(data) {
+    $('#noResults').hide();
+    updateSearchHeading(data);
+    updateSearchResults(data);
+    updateSearchFacets(data);
+    updateSearchPagination(data);
+    updateSearchSpellCheck(data);
+    $('#searchResponse').show();
+}
+
+function updateSearchResults(data) {
+    $searchResults = $('#searchResults');
+    $searchResults.empty();
+    $.each(data.recalls.results, function(i, recall) {
+        var $el = clone('#template-recall');
+        $el.find('.recall-link').attr('href', recall.url);
+        setHtml($el, '.recall-title', recall.title);
+        setHtml($el, '.recall-summary', recall.description);
+        setHtml($el, '.recall-type', recall.type);
+        setHtml($el, '.recall-date', recall.date);
+        setHtml($el, '.recall-department', recall.department);
+        setHtml($el, '.recall-url', recall.url);
+        setHtml($el, '.recall-id', recall.id);
+        setHtml($el, '.recall-recallNo', recall.recallNo);
+        setHtml($el, '.recall-alertType', recall.alertType);
+        
+        if ('vehicles' === recall.type) {
+            setHtml($el, '.recall-make', recall.make);
+            setHtml($el, '.recall-model', recall.model);
+            setHtml($el, '.recall-years', recall.years);
+            setHtml($el, '.recall-numberAffected', recall.numberAffected);
+            setHtml($el, '.recall-systemType', recall.systemType);
+            setHtml($el, '.recall-notificationType', recall.notificationType);
+            $searchResults.find('.recall-vehicle').show();
+        } else {
+            $searchResults.find('.recall-vehicle').hide();
+        }
+        
+        $searchResults.append($el);
+        $el.show();
+    });
+}
+
+function updateSearchHeading(data) {
+    $searchHeading = $('#searchHeading');
+    if (data.recalls.numFound > MAX_DOCS_PER_PAGE) {
+        var from = ((CURRENT_PAGE - 1) * MAX_DOCS_PER_PAGE) + 1;
+        var to = from + Math.min(MAX_DOCS_PER_PAGE, data.recalls.results.length) - 1;
+        $searchHeading.find('.recall-from').text(from);
+        $searchHeading.find('.recall-to').text(to);
+        $searchHeading.find('.recall-showing').show();
+    } else {
+        $searchHeading.find('.recall-showing').hide();
+    }
+    $searchHeading.find('.recall-found').text(data.recalls.numFound);
+}
+
+function updateSearchSpellCheck(data) {
+    $('#searchSpellCheck').hide();
+    if (!data.spellCheck.empty) {
+        $link = $('#searchSpellCheck a');
+        $link.html(data.spellCheck.markup);
+        $link.off('click');
+        $link.click(function () {
+            CURRENT_PAGE = 1;
+            $('#terms').val(data.spellCheck.query);
+            search();
+            return false;                
+        });
+        $('#searchSpellCheck').show();
+    }
+}
+
+function updateSearchFacets(data) {
+    //TODO Will need to be updated if we return more facets
+    $searchFacetType =  $('#searchFacets .recall-facet-type');
+    $searchFacetType.empty();
+    if (!data.facets.empty) {
+        $.each(data.facets[0].values, function(i, value) {
+            var $facetEntry = clone('#template-facet-entry');
+            $facetEntry.find('.recall-facet-label').text(value.name);
+            $facetEntry.find('.recall-facet-count').text(value.count);
+            
+            $link = $facetEntry.find('.recall-facet-link');
+            if (RECALL_TYPES.includes(value.name)) {
+                $link.addClass('active');
+            }
+            $link.click(function() {
+                CURRENT_PAGE = 1;
+                if (RECALL_TYPES.includes(value.name)) {
+                    RECALL_TYPES.splice(RECALL_TYPES.indexOf(value.name), 1);
+                } else {
+                    RECALL_TYPES.push(value.name); 
+                }
+                search();
+                return false;
+            });
+            
+            $searchFacetType.append($facetEntry);
+            $facetEntry.show();
+        });
+    }
+}
+
+function updateSearchPagination(data) {
+    $searchPageLinks =  $('#searchPageLinks');
+    $searchPageLinks.empty();
+    var numOfPageLinks = Math.min(Math.ceil(
+            data.recalls.numFound / MAX_DOCS_PER_PAGE), MAX_PAGINATION_LINKS);
+    var first = Math.max(1, CURRENT_PAGE - Math.floor(numOfPageLinks / 2));
+    var last = Math.min(numOfPageLinks, first + numOfPageLinks - 1);
+
+    var prev = Math.max(1, CURRENT_PAGE - 1);
+    var $prevLink = $('#searchPagination .recall-pagination-prev');
+    updateSearchPaginationLink($prevLink, prev);
+    
+    var next = Math.min(numOfPageLinks, CURRENT_PAGE + 1);
+    var $nextLink = $('#searchPagination .recall-pagination-next');
+    updateSearchPaginationLink($nextLink, next);
+    
+    for (var i = first; i <= last; i++) {
+        var $link = clone('#template-pagination-link');
+        $link.text(i);
+        updateSearchPaginationLink($link, i);
+        $searchPageLinks.append($link);
+        $link.show();
+    }
+}
+function updateSearchPaginationLink($link, pageNumber) {
+    if (pageNumber == CURRENT_PAGE) {
+        $link.addClass('disabled');
+        $link.removeAttr('href');
+        if ($link.hasClass('recall-page-link')) {
+            $link.addClass('active');
+        }
+    } else {
+        $link.off('click');
+        $link.attr('href', '#');
+        $link.removeClass('disabled');
+        $link.click(function() {
+            CURRENT_PAGE = pageNumber;
+            search();
+            return false;
+        });
+    }
+}
+
+function setHtml($parent, childSelector, html) {
+    var $child = $parent.find(childSelector);
+    if ($child.length != 0) {
+        if (html) {
+            var h = html;
+            if (Array.isArray(h)) {
+                h = h.join(', ');
+            }
+            if (typeof h === 'string' || h instanceof String) {
+                h = h.replace(/&lt;(\/?mark)&gt;/g, '<$1>');
+            }
+            $child.html(h);
+        } else {
+            $child.remove();
+        }
+    }
+}
+
+function clone(selector) {
+    var $el = $(selector).clone();
+    $el.removeAttr('id');
+    return $el;
+}
+
+function search() {
+    $.ajax({
+        url: API_URL + '/search',
+        data: JSON.stringify({
+            'terms': $("#terms").val(),
+            'pageIndex': CURRENT_PAGE,
+            'docsPerPage': MAX_DOCS_PER_PAGE,
+            'recallTypes': RECALL_TYPES
+        }),
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        crossDomain: true,
+        type: "POST",
+        success: function (data) {
+            clearAjaxError();
+            if (!data.recalls || data.recalls.length == 0 || data.recalls.numFound == 0) {
+                noResults(data);
+            } else {
+                updateResponse(data);
+            }
+//            debug(data);
+        },
+        error: showAjaxError
+    });
+}
+
+$(document).ready(function () {
+    $('#searchForm').submit(function(e) {
+        e.preventDefault();
+        CURRENT_PAGE = 1;
+        search();
+        return false;
+    });
+});
+
+</script>
+
+<!-- ↑ ↑ EMBED ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -->
+
+<script type="text/javascript">
+var params = new window.URLSearchParams(window.location.search);
+function debug(json) {
+    $('#debug').text(JSON.stringify(json, null, 4));
+}
+// When debugging, below allows to pass the search term to the URL
+// and submit the form.  Useful for refreshing the page without
+// re-entering the value and pressing search over and over.
+$(document).ready(function () {
+    var terms = params.get('terms');
+    if (terms) {
+        $('#terms').val(terms);
+        $('#searchForm').submit();
+    }
+});
+
+</script>
+<pre id="debug"></pre>
+
+</body>
+</html>
