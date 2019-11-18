@@ -114,14 +114,14 @@
 <style>
 
 /* controlling results */
-div.recall dl {
+.recall dl {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     height: 5em;
 }
 
-div.recall dd, dt {
+.recall dd, dt {
     flex-basis: 70%;
 
 }
@@ -129,6 +129,10 @@ div.recall dd, dt {
 .recall-summary {
   font-size: 17px;
   line-height: 1.5em;
+}
+
+.recall h3 {
+  font-size: 20px
 }
 
 
@@ -221,6 +225,9 @@ div.recall dd, dt {
   <a href="#" class="recall-link">
     <h3 class="recall-title">Title</h3>
   </a>
+<!-- we could put the alert/department up here ... but
+  <label class="recall-alertType alert alert-warning">Recall</label>
+need a way to control the label warning/color -->
   <p class="recall-summary">Generated summary</p>
   <dl>
     <dt>Type</dt>
