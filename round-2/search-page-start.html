@@ -20,9 +20,9 @@
 }
 </style>
 <!-- <link rel="stylesheet"
- href="./bootstrap.css"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
- crossorigin="anonymous"> -->
+ crossorigin="anonymous">  -->
 <link rel="stylesheet" href="https://tbs.norconex.com/testbed/css/testbed.css">
 <!-- <link rel="stylesheet" href="https://tbs.norconex.com/testbed/css/jqcloud.min.css">
 <link rel="stylesheet" href="https://tbs.norconex.com/testbed/css/jquery.typeahead.min.css"> -->
@@ -60,10 +60,7 @@
 
 </head>
 
-
-
-
-<header class="navbar navbar-default" id="navbar" style="background-color: white !important;">
+<header class="navbar navbar-default" id="navbar">
   <div class="container" id="wb-bnr">
     <section class="text-right" id="wb-lng">
       <h2 class="wb-inv">Language selection
@@ -79,7 +76,7 @@
           </div>
           <div class="row">
             <div class="region region-banner">
-              <div class="row col-md-10">
+              <div class="pull-left row col-md-10">
                 <div class="brand col-xs-5 col-md-4"><a href=""> <img alt="Government of Canada" id="header-logo" src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" /> </a>
                 </div>
               </div>
@@ -98,6 +95,7 @@
   <main role="main" property="mainContentOfPage" class="container">
 
 <h1>Embeddable HTML search page</h1>
+<p style="color: red;">View the HTML source for how to integrate.</p>
 
 
 <!-- ↓ ↓ EMBED ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -->
@@ -110,63 +108,6 @@
 </form>
 
 <hr>
-
-<style>
-
-/* controlling results */
-div.recall dl {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 5em;
-}
-
-div.recall dd, dt {
-    flex-basis: 70%;
-
-}
-
-.recall-summary {
-  font-size: 17px;
-  line-height: 1.5em;
-}
-
-
-/* controls facets */
-
-.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-}
-
-.mb-3, .my-3 {
-    margin-bottom: 1rem!important;
-}
-
-.border-dark {
-    border-color: #343a40!important;
-}
-
-.card-header:first-child {
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
-}
-.card-header {
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0,0,0,.03);
-    border-bottom: 1px solid rgba(0,0,0,.125);
-}
-
-</style>
 
 <div id="noResults" style="display:none;">
   No recalls matching your search criteria were found.
@@ -186,22 +127,16 @@ div.recall dd, dt {
 
   <hr>
 
-  <div id="searchFacets" class="col-md-3">
-    <div class="card mb-3 facet-field border-dark">
-      <div class="card-header">
-
-        <h5 class="my-0 float-left">Recall type</h5>
-  </div>
+  <div id="searchFacets">
+    Types:
     <ul class="recall-facet-type">
       <!-- "template-facet-entry" gets added here. -->
     </ul>
-<!-- Jennifer's comment: does not yet seem to populate unique IDs per item making it possible to assign styles/icons to the recall facets -->
-  </div>
   </div>
 
   <hr>
 
-  <div id="searchResults" style="margin: 10px 0px;" class="col-md-9">
+  <div id="searchResults" style="margin: 10px 0px;">
     <!-- "template-recall" gets added here. -->
   </div>
 
@@ -219,12 +154,12 @@ div.recall dd, dt {
 
 <div id="template-recall" class="recall" style="display: none;">
   <a href="#" class="recall-link">
-    <h3 class="recall-title">Title</h3>
+    <span class="recall-title">Title</span>
   </a>
   <p class="recall-summary">Generated summary</p>
   <dl>
     <dt>Type</dt>
-    <dd class="recall-type">Food</dd>
+    <dd class="recall-type">food</dd>
 
     <dt>Date</dt>
     <dd class="recall-date">1534-05-10</dd>
