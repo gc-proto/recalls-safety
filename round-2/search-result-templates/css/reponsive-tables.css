@@ -1,0 +1,221 @@
+
+/* style lists inside the table */
+
+td ul li {
+ margin-left: -18px !important;
+ margin-top: 10px !important;
+}
+
+
+main table tbody {
+  font-size: 19px !important;
+  line-height: 1.4em !important;
+}
+
+
+
+
+.dataTables_wrapper {
+  margin-left: -1.1em !important;
+  margin-right: -1.1em !important;
+}
+
+.dataTables_filter, .dataTables_length {
+  margin-left: 1.1em !important;
+}
+
+
+body {
+/*  font-family: "Open Sans", sans-serif; */
+  line-height: 1.25;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: left;
+}
+
+table th {
+  font-size: 1em;
+/*  letter-spacing: .1em; */
+}
+
+@media screen and (max-width: 1200px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.1em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 1em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    font-weight: bold;
+    float: left;
+}
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+  .left-mobile {
+          text-align: left !important;
+          float:
+
+      }
+}
+
+tr.d0 th {
+  font-size: 1em;
+  font-weight: bold;
+  background-color: #FFFFFF;
+/*  color: black; */
+}
+
+tr.d1 td {
+  font-size: 1em;
+	background-color: #F5F5F5;
+/*   color: black; */
+}
+
+tr.d2 td {
+  font-size: 1em;
+	background-color: #FFFFFF;
+/*  color: black; */
+}
+
+
+#accordion .panel-heading { padding: 0;}
+#accordion .panel-title > a {
+	display: block;
+	padding: 0.4em 0.6em;
+    outline: none;
+    font-weight:bold;
+/*    font-family: "Open Sans", sans-serif; */
+    text-decoration: none;
+}
+
+#accordion .panel-title > a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::before  {
+    content:"\e113";
+    float: left;
+    font-family: 'Glyphicons Halflings';
+	  margin-right :1em;
+}
+#accordion .panel-title > a.accordion-toggle.collapsed::before, #accordion a.collapsed[data-toggle="collapse"]::before  {
+    content:"\e114";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(253,253,253);
+    background-color: rgba(253,253,253);
+    overflow-y: hidden;
+    transition: 0.3s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #4c4c4c;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #282323;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: -12px;
+    right: 10px;
+    font-size: 40px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
