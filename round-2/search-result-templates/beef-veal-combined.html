@@ -12,9 +12,9 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <!-- Meta data-->
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="../GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="../GCWeb/css/theme.min.css">
-<link rel="stylesheet" href="css/custom.css">
+<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
+<!-- <link rel="stylesheet" href="css/custom.css"> -->
 <!--<![endif]-->
 <!--[if lt IE 9]>
 <link href="../GCWeb/assets/favicon.ico" rel="shortcut icon" />
@@ -29,22 +29,70 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
    <link rel="stylesheet"
 
    href="css/jquery.dataTables.min.css"></style>
-   <script type="text/javascript"
-
-   src="js/jquery.dataTables.min.js"></script>
-                               <script type="text/javascript"
-
-   src="js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
    <link rel="stylesheet" href="dist/assets/owl.carousel.min.css" />
-   <link rel="stylesheet" href="css/custom.css" />
-   <link rel="stylesheet" href="css/test-tables-alain.css" />
+   <link rel="stylesheet" href="css/reponsive-tables.css" />
 
 <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
 <script>dataLayer1 = [];</script>
 <!-- End Google Tag Manager -->
 <style>
-p, li {max-width: 65em;}
+
+button#wb-srch-sub a:visited {
+color: white !important;
+}
+button#wb-srch-sub a {
+color: white !important;
+}
+.carousel-indicators {
+bottom: -40px!important;
+}
+.carousel-indicators .active {
+background-color: #000000!important;
+}
+.carousel-indicators li {
+border: 1px solid #968989!important;
+}
+.carousel-control {
+outline: 0!important;
+  color: #fff!important;
+  text-decoration: none!important;
+  opacity: .9!important;
+}
+/* <!--make .carousel-control match the stats of hover:--> */
+.followus {
+background-size: 15px 15px !important;
+}
+.facebook {
+background-size: 15px 15px !important;
+}
+.icon.facebook {
+background-size: 15px 15px !important;
+}
+.twitter {
+background-size: 15px 15px !important;
+}
+.icon.twitter {
+background-size: 15px 15px !important;
+}
+
+.gc-stp-stp {
+ margin-bottom: 0;
+}
+@media (min-width:768px) {
+	.owl-container {
+		width:50%;
+	}
+}
+@media (max-width:440px) {
+  .recall-share {
+      margin-top: 10px;
+      float: left!important;
+  }
+}
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -61,111 +109,111 @@ p, li {max-width: 65em;}
 <a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
 </li>
 </ul>
-<header role="banner">
-<div id="wb-bnr" class="container">
-<section id="wb-lng" class="visible-md visible-lg text-right">
-<h2 class="wb-inv">Language selection</h2>
-<div class="row">
-<div class="col-md-12">
-<ul class="list-inline margin-bottom-none">
-<li><a lang="fr" href="index-fr.html">Français</a></li>
-</ul>
-</div>
-</div>
+
+
+<header>
+	<div id="wb-bnr" class="container">
+
+		<section id="wb-lng" class="text-right">
+    <h2 class="wb-inv">Language selection</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-inline margin-bottom-none">
+                <li>
+                    <a lang="fr" href="/#">
+                        Fran&ccedil;ais
+
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
 </section>
-<div class="row">
-<div class="brand col-xs-8 col-sm-9 col-md-6">
-<a href="./en.html"><object type="image/svg+xml" tabindex="-1" data="../GCWeb/assets/wmms-blk.svg"></object><span class="wb-inv"> Government of Canada</span></a>
-</div>
-<section id="wb-srch" class="hidden col-xs-6 text-right visible-md visible-lg">
-<h2>Search</h2>
+		<div class="row">
+			<div class="brand col-xs-5 col-md-4" property="publisher" typeof="GovernmentOrganization">
+				<a href="/en.html" property="url">
+                    <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" alt="" property="logo">
+                    <span class="wb-inv" property="name"> Government of Canada</span>
+                </a>
+                <meta property="areaServed" typeof="Country" content="Canada"/>
+				<link property="logo" href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg"/>
+			</div>
+			<!-- <section id="wb-srch" class="col-lg-8 text-right">
+				<h2>Search</h2>
 
-
-<form action="../search-results.html" method="get" name="cse-search-box" role="search" class="form-inline">
-
- <style>
- button#wb-srch-sub a:visited {
- color: white !important;
- }
- button#wb-srch-sub a {
- color: white !important;
- }
-.carousel-indicators {
- bottom: -40px!important;
-}
-.carousel-indicators .active {
- background-color: #000000!important;
-}
-.carousel-indicators li {
- border: 1px solid #968989!important;
-}
-.carousel-control {
- outline: 0!important;
-   color: #fff!important;
-   text-decoration: none!important;
-   opacity: .9!important;
-}
-<!--make .carousel-control match the stats of hover:-->
-.followus {
- background-size: 15px 15px !important;
-}
-.facebook {
- background-size: 15px 15px !important;
-}
-.icon.facebook {
- background-size: 15px 15px !important;
-}
-.twitter {
- background-size: 15px 15px !important;
-}
-.icon.twitter {
- background-size: 15px 15px !important;
-}
- </style>
-
+<form action="/en/sr/srb.html" method="get" name="cse-search-box" role="search" class="form-inline">
 <div class="form-group">
-<label for="wb-srch-q" class="wb-inv">Search website</label>
-<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="27" maxlength="150" placeholder="Search Canada.ca">
+<label for="wb-srch-q" class="wb-inv">Search Canada.ca</label>
+<input name="cdn" value="canada" type="hidden"/>
+<input name="st" value="s" type="hidden"/>
+<input name="num" value="10" type="hidden"/>
+<input name="langs" value="en" type="hidden"/>
+<input name="st1rt" value="1" type="hidden"/>
+<input name="s5bm3ts21rch" value="x" type="hidden"/>
+
+	<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="q" type="search" value="" size="34" maxlength="170" placeholder="Search Canada.ca"/>
+
+
+<input type="hidden" name="_charset_" value="UTF-8"/>
+
 <datalist id="wb-srch-q-ac">
-<!--[if lte IE 9]><select><![endif]-->
-<!--[if lte IE 9]></select><![endif]-->
 </datalist>
 </div>
 <div class="form-group submit">
 <button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
 </div>
-</form>
-</section>
+</form> -->
+
+			</section>
+		</div>
+	</div>
+
+
+
+	<nav class="gcweb-v2 gcweb-menu" typeof="SiteNavigationElement"><div class="container">
+		<h2 class="wb-inv">Menu</h2>
+		<button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+		<ul role="menu" aria-orientation="vertical" data-ajax-replace="/content/dam/canada/sitemenu/sitemenu-v2-en.html">
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/jobs.html">Jobs and the workplace</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://travel.gc.ca/">Travel and tourism</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/business.html">Business and industry</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/health.html">Health</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="http://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/finance.html">Money and finances</a></li>
+			<li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/science.html">Science and innovation</a></li>
+		</ul>
+	</div></nav>
+
+
+		<nav id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2><div class="container"><ol class="breadcrumb">
+<!-- <li><a href='/en.html'>Home</a></li> -->
+<div class="recall-super-title row" style="overflow: hidden;">
+  <div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
+    <a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=*:*&fq_pcat=Health&dspl=scat&fq_cat=Drugs" class="cust-breadcrumb">ᐸ Drugs</a>
+  </div>
+
+
+
 </div>
-</div>
-<nav role="navigation" id="wb-bc" property="breadcrumb">
-<h2>You are here:</h2>
-	<div style="background-color: #335075; min-height: 10px;"></div>
-<div class="container">
-<div class="row">
-</div>
-</div>
-</nav>
+</ol></div></nav>
+
+
+
+
+	<div data-ajax-replace="/bin/canada/alert/messages.en.html" class="original"></div>
+
 </header>
 
-
-
-<style>
-.gc-stp-stp {
- margin-bottom: 0;
-}
-@media (min-width:768px) {
-	.owl-container {
-		width:50%;
-	}
-}
-@media (max-width:440px) {
-  .recall-share {
-      margin-top: 10px;
-      float: left!important;
-  }
-}
-</style>
 
 
 <main role="main" property="mainContentOfPage" class="container">
@@ -213,17 +261,11 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 </script>
 
- <div class="recall-super-title" style="overflow: hidden;">
-   <div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
-     <a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=*:*&fq_pcat=Health&dspl=scat&fq_cat=Drugs" class="cust-breadcrumb">ᐸ Drugs</a>
-   </div>
 
-
-
- </div>
 <div>
 <section>
    <h1>Buckley's syrup - Defective seals</h1>
+<div class="row col-md-8">
    <p><a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=&fq_cat=&fq_scat=&fq_y=&fq_mk_nm=&fq_achldwmn=&dspl=&q=Buckley%27s" style="text-decoration: underline !important;">Buckley's</a></p>
    <p><strong>Recall date: March 8, 2017</strong></p>
 
@@ -236,23 +278,24 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 </li>
 	</ul>
-
+</div>
 
 </section>
 
    </div>
 
-<div><div class="mwsgeneric-base-html parbase section">
+<div class="clearfix"></div>
 
 	<img src="https://gc-proto.github.io/recalls-safety/scenarioH/images/buckley_s_night_time_480x480.jpg" alt="Image of Buckley's Night Time" class="img-responsive" />
 		</a>
 
-</div>
+
 <div class="row">
  <div class="col-md-8">
    <section>
          <h2>Affected products</h2>
 <p>Look up your serial number to see if your product is affected:</p>
+
 	   <table id="myTable">
            <thead>
                  <tr class="d2">
@@ -839,7 +882,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
                 </tr>
              </tbody>
         </table>
-
              <script>
                $.noConflict();
                $('#myTable').dataTable( {
@@ -1131,45 +1173,91 @@ CANADA</br>
    </main>
 
 
-<footer role="contentinfo" id="wb-info">
-<nav role="navigation" class="container wb-navcurr">
-<h2 class="wb-inv">About government</h2>
-<ul class="list-unstyled colcount-sm-2 colcount-md-3">
-<li><a href="../contact.html">Contact employment insurance</a></li>
-<li><a href="https://www.canada.ca/en/government/dept.html">Departments and agencies</a></li>
-<li><a href="https://www.canada.ca/en/government/publicservice.html">Public service and military</a></li>
-<li><a href="http://news.gc.ca/">News</a></li>
-<li><a href="https://www.canada.ca/en/government/system/laws.html">Treaties, laws and regulations</a></li>
-<li><a href="https://www.canada.ca/en/transparency/reporting.html">Government-wide reporting</a></li>
-<li><a href="http://pm.gc.ca/eng">Prime Minister</a></li>
-<li><a href="https://www.canada.ca/en/government/system.html">How government works</a></li>
-<li><a href="http://open.canada.ca/en/">Open government</a></li>
-</ul>
-</nav>
-<div class="brand">
-<div class="container">
-<div class="row">
-<nav class="col-md-10 ftr-urlt-lnk">
-<h2 class="wb-inv">About this site</h2>
-<ul>
-<li><a href="https://www1.canada.ca/en/contact/feedback.html">Feedback</a></li>
-<li><a href="https://www.canada.ca/en/social.html">Social media</a></li>
-<li><a href="https://www.canada.ca/en/mobile.html">Mobile applications</a></li>
-<li><a href="https://www1.canada.ca/en/newsite.html">About Canada.ca</a></li>
-<li><a href="https://www.canada.ca/en/transparency/terms.html">Terms and conditions</a></li>
-<li><a href="https://www.canada.ca/en/transparency/privacy.html">Privacy</a></li>
-</ul>
-</nav>
-<div class="col-xs-6 visible-sm visible-xs tofpg">
-<a href="#wb-cont">Top of Page <span class="glyphicon glyphicon-chevron-up"></span></a>
-</div>
-<div class="col-xs-6 col-md-2 text-right">
-<object type="image/svg+xml" tabindex="-1" role="img" data="../GCWeb/assets/wmms-blk.svg" aria-label="Symbol of the Government of Canada"></object>
-</div>
-</div>
-</div>
-</div>
-</footer>
+
+          <div class="global-footer">
+      <footer id="wb-info">
+          <div class="landscape">
+          <nav class="container wb-navcurr">
+              <h2 class="wb-inv">About government</h2>
+              <ul class="list-unstyled colcount-sm-2 colcount-md-3">
+
+
+                           <li><a href="/en/contact.html">Contact us</a></li>
+
+
+
+
+                          <li><a href="/en/government/dept.html">Departments and agencies</a></li>
+
+
+
+
+                          <li><a href="/en/government/publicservice.html">Public service and military</a></li>
+
+
+
+
+                          <li><a href="/en/news.html">News</a></li>
+
+
+
+
+                          <li><a href="/en/government/system/laws.html">Treaties, laws and regulations</a></li>
+
+
+
+
+                          <li><a href="/en/transparency/reporting.html">Government-wide reporting</a></li>
+
+
+
+
+                          <li><a href="http://pm.gc.ca/en">Prime Minister</a></li>
+
+
+
+
+                          <li><a href="/en/government/system.html">About government</a></li>
+
+
+
+
+                          <li><a href="http://open.canada.ca/en">Open government</a></li>
+
+
+              </ul>
+          </nav>
+          </div>
+          <div class="brand">
+              <div class="container">
+                  <div class="row">
+                      <nav class="col-md-10 ftr-urlt-lnk">
+                          <h2 class="wb-inv">About this site</h2>
+                          <ul>
+
+                                      <li><a href="/en/social.html">Social media</a></li>
+
+                                      <li><a href="/en/mobile.html">Mobile applications</a></li>
+
+                                      <li><a href="/en/government/about.html">About Canada.ca</a></li>
+
+                                      <li><a href="/en/transparency/terms.html">Terms and conditions</a></li>
+
+                                      <li><a href="/en/transparency/privacy.html">Privacy</a></li>
+
+                          </ul>
+                      </nav>
+                      <div class="col-xs-6 visible-sm visible-xs tofpg">
+                          <a href="#wb-cont">Top of page <span class="glyphicon glyphicon-chevron-up"></span></a>
+                      </div>
+                      <div class="col-xs-6 col-md-2 text-right">
+                          <img src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" alt="Symbol of the Government of Canada"/>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </footer>
+
 <!--[if gte IE 9 | !IE ]><!-->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
 <script src="../wet-boew/js/wet-boew.min.js"></script>
