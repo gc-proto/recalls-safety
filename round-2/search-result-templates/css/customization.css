@@ -1,0 +1,70 @@
+button#wb-srch-sub a:visited {
+
+color: white !important;
+
+
+}
+
+
+button#wb-srch-sub a {
+
+color: white !important;
+
+
+}
+
+.gc-stp-stp {
+	margin-bottom: 0;
+}
+
+.carousel-indicators {
+bottom: -40px!important;
+}
+
+.carousel-indicators .active {
+background-color: #000000!important;
+}
+
+.carousel-indicators li {
+border: 1px solid #968989!important;
+}
+
+
+.carousel-control {
+outline: 0!important;
+  color: #fff!important;
+  text-decoration: none!important;
+  opacity: .9!important;
+}
+
+@media (min-width:768px) {
+.owl-container {
+  width:50%;
+}
+}
+/* <!--make .carousel-control match the stats of hover:--> */
+
+.followus {
+background-size: 15px 15px !important;
+}
+
+.facebook {
+background-size: 15px 15px !important;
+}
+
+.icon.facebook {
+background-size: 15px 15px !important;
+}
+
+.twitter {
+background-size: 15px 15px !important;
+}
+
+@media (max-width:440px) {
+.recall-share {
+    margin-top: 10px;
+    float: left!important;
+}
+}.icon.twitter {
+background-size: 15px 15px !important;
+}
