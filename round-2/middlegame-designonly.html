@@ -90,6 +90,11 @@
 </header>
 
 <style>
+
+.can-ca-form .checkbox-small {
+    margin-bottom: 18px !important;
+}
+
 .center-cropped {
   width: 300px;
   height: 150px;
@@ -97,6 +102,13 @@
   background-repeat: no-repeat;
   object-fit: none; /* Do not scale the image */
 }
+
+.search-facet {
+  border-bottom: solid #ccc 1px;
+  margin-bottom: 0px;
+  margin-top: 5px;"
+}
+
 
 @media screen and (max-width: 767px) {
 
@@ -116,8 +128,87 @@
 
   <div class="content">
 
-  <div class="row">
-    <section class="clearfix col-sm-push-4 col-sm-8">
+    <aside class="col-sm-12 col-md-4 row" role="complementary">
+
+    <div>
+    <h2 class="mrgn-tp-lg h6">&#9776; Filter by</h6>
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Food
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+      <a href="recalls-home-b-food.html" style="font-size:17px;"><i class="fas fa-chevron-left"></i>
+ Allergens</a>
+            <hr class="search-facet"/>
+            <div class="list-unstyled can-ca-form">
+
+                          <div class="checkbox checkbox-small">
+                            <input type="checkbox" id="undeclared-eggs">
+                            <label for="undeclared-eggs">Undeclared eggs&nbsp;&nbsp;</label><span class="recall-facet-count badge pull-right">111</span>
+                          </div>
+                          <div class="checkbox checkbox-small">
+                            <input type="checkbox" id="undeclared-peanuts">
+                            <label for="undeclared-peanuts">Undeclared peanuts&nbsp;&nbsp;</label><span class="recall-facet-count badge pull-right">235</span>
+                          </div>
+                          <div class="checkbox checkbox-small">
+                            <input type="checkbox" id="undeclared-wheat">
+                            <label for="undeclared-wheat">Undeclared wheat&nbsp;&nbsp;</label><span class="recall-facet-count badge pull-right">66</span>
+                          </div>
+                          <div class="checkbox checkbox-small">
+                            <input type="checkbox" id="undeclared-other">
+                            <label for="undeclared-other">Other&nbsp;&nbsp;</label><span class="recall-facet-count badge pull-right">136</span>
+                          </div>
+              </div>
+
+
+
+        </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingFive">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              Year
+            </a>
+          </h4>
+        </div>
+        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+          <div class="panel-body">
+            <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+              <label for="Item">2018 <i>(xx)</i></label>
+              <br />
+              <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+              <label for="Item">2017 <i>(xx)</i></label>
+              <br />
+              <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
+              <label for="Item">2016 <i>(xx)</i></label>
+              <br />
+              <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
+              <label for="Item">2015 <i>(xx)</i></label>
+          </div>
+        </div>
+      </div>
+      <a class="btn btn-default" style="float:right;margin-top:5px; width:200px;" href="recalls-home-b.html">Clear all <strong>X</strong></a>
+    </div>
+
+
+
+    </div>
+        </div>
+
+    </section> <!-- /.block -->
+            </div>
+</aside>
+
+    <section class="col-sm-12 col-md-8 pull-right">
 
 		<div class="view-filters">
          <div><div class="views-exposed-form accc-psa-search-styled-with-sort-by-overrides">
@@ -247,99 +338,19 @@ function closeNav() {
 
 
           <!-- noindex -->
-      <aside class="col-sm-4 col-sm-pull-8" role="complementary">
 
 
-
-<div>
-<h6 class="mrgn-tp-lg">&#9776; Filter by</h6>
-
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          Food
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        <a href="recalls-home-b-food.html" style="font-size:20px;">< Allergens</a><br />
-        <p>_________________</p>
-
-
-        <ul class="list-unstyled can-ca-form">
-
-                      <li class="checkbox checkbox-small">
-                        <input type="checkbox" id="undeclared-eggs">
-                        <label for="undeclared-eggs">Undeclared eggs&nbsp;&nbsp;<span class="recall-facet-count badge">111</span></label>
-                       </li>
-          </ul>
-
-
-        <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-
-          <label for="Item">Undeclared eggs <i>(xx)</i></label>
-          <br />
-          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-          <label for="Item">Undeclared peanuts <i>(xx)</i></label>
-          <br />
-          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-          <label for="Item">Undeclared wheat <i>(xx)</i></label>
-          <br />
-          <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-          <label for="Item">Other <i>(xx)</i></label>
-    </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingFive">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-          Year
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-      <div class="panel-body">
-        <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-          <label for="Item">2018 <i>(xx)</i></label>
-          <br />
-          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-          <label for="Item">2017 <i>(xx)</i></label>
-          <br />
-          <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-          <label for="Item">2016 <i>(xx)</i></label>
-          <br />
-          <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-          <label for="Item">2015 <i>(xx)</i></label>
-      </div>
-    </div>
-  </div>
-  <a class="btn btn-default" style="float:right;margin-top:5px; width:200px;" href="recalls-home-b.html">Clear all <strong>X</strong></a>
-</div>
-
-
-
-</div>
-    </div>
-
-
-
-
-
-
-
-
-
-</section> <!-- /.block -->
-        </div>
-      </aside>
       <!-- endnoindex -->
           </div>
 </div></p>
 </div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="clearfix"></div>
         <div class="row pagedetails">
 
     <details class="brdr-0 col-sm-6 col-lg-4 mrgn-tp-sm">
@@ -418,6 +429,7 @@ function closeNav() {
     </div>
 
 </div>
+
     </main>
 
 
