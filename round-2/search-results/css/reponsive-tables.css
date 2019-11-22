@@ -122,16 +122,25 @@ tr.d0 th {
 /*  color: black; */
 }
 
-tr.d1 td {
+/* tr.d1 td {
   font-size: 1em;
 	background-color: #F5F5F5;
-/*   color: black; */
+ color: black;
 }
 
 tr.d2 td {
   font-size: 1em;
 	background-color: #FFFFFF;
-/*  color: black; */
+ color: black;
+} */
+
+tr:nth-child(even) {
+  font-size: 1em;
+  background-color: #F5F5F5 !important;
+}
+tr:nth-child(odd) {
+  font-size: 1em;
+  background-color: #FFFFFF !important;
 }
 
 
