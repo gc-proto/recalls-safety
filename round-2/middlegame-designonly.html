@@ -13,6 +13,8 @@
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="./search-results/css/customization.css" rel="stylesheet">
+<link href="https://canada-ca.github.io/design-system-systeme-conception/src/custom-3.css" rel="stylesheet">
+
 
 <link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
@@ -152,64 +154,7 @@
       </div>
     </div>
 
-		<div class="visible-xs" style="clear: both; padding-top: 5px;">
 
-			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingOne">
-						<h4 class="panel-title">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-								Food
-							</a>
-						</h4>
-					</div>
-					<div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
-						<div class="panel-body">
-              <a href="recalls-home-b-food.html" style="font-size:20px;">< Allergens</a><br />
-              <p>_________________</p>
-							<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-
-                <label for="Item">Undeclared eggs <i>(xx)</i></label>
-								<br />
-								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-								<label for="Item">Undeclared peanuts <i>(xx)</i></label>
-								<br />
-								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-								<label for="Item">Undeclared wheat <i>(xx)</i></label>
-								<br />
-								<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-								<label for="Item">Other <i>(xx)</i></label>
-					</div>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" role="tab" id="headingFive">
-						<h4 class="panel-title">
-							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-								Year
-							</a>
-						</h4>
-					</div>
-					<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-						<div class="panel-body">
-							<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-								<label for="Item">2018 <i>(xx)</i></label>
-								<br />
-								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-								<label for="Item">2017 <i>(xx)</i></label>
-								<br />
-								<input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-								<label for="Item">2016 <i>(xx)</i></label>
-								<br />
-								<input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-								<label for="Item">2015 <i>(xx)</i></label>
-						</div>
-					</div>
-				</div>
-        <a class="btn btn-default" style="float:right;margin-top:5px; width:200px;" href="recalls-home-b.html">Clear all <strong>X</strong></a>
-			</div>
-
-		</div>
 </div>
 <script>
 /* Open when someone clicks on the span element */
@@ -222,46 +167,7 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
 </script>
-          <!--Cascading picklists - FieldFlow? -->
-          <!--<div class="wb-frmvld" style="clear:both; padding-top:10px;">
-        	 <form method="get">
 
-        		<div id="filter-1" class="wb-fieldflow" data-wb-fieldflow='{
-        			"noForm": true,
-        			"base": { "live": true },
-        			"noreqlabel": true,
-              "isoptional": true,
-              "defaultselectedlabel":"All recalls (106)",
-        			"default": { "action": "addClass", "source":"#question1,#question1button,#question2button,#question2abutton,#question3buttona,#question3buttonb,#question3buttonc,#question4buttona,#question4buttonb,#question4buttonc,#question2,#question2a,#question3,#question4,#result1,#result2,#result3,#result4,#result5,#result6", "class": "hidden" }
-        			}'>
-        			<p>See recalls and filters for:</p>
-        			<ul>
-        				<li data-wb-fieldflow='{"action": "removeClass", "source":"#food-1", "class":"hidden"}'>Food (53)</li>
-        				<li data-wb-fieldflow='{"action": "append", "source":"#vehicles-1"}'>Vehicles (n)</li>
-                <li data-wb-fieldflow='{"action": "append", "source":"#consumer-1"}'>Consumer products (n)</li>
-                <li data-wb-fieldflow='{"action": "append", "source":"#health-1"}'>Health products (n)</li>
-        			</ul>
-        		</div>
-          </form>
-        </div>
-
-      		<div id="food-1" class="hidden">
-                              <div class="form-group">
-              	<label for="expirydate">Expiry on package<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
-              	<input class="form-control" type="date" id="enddate" name="expirydate" min="2000-03-27" max="2220-05-23" />
-              </div>
-
-      		</div>-->
-
-
-
-       <!--<div id="submit-button" style="margin-bottom:20px; float:left;">
-			     <a href="findout-exempt-en.html" class="btn btn-primary">Filter results</a>
-		   </div>-->
-
-
-
-			<!--add tabs for the main categories here - how does this interact with the filters?-->
 
 
         <div class="view-content">
@@ -346,7 +252,7 @@ function closeNav() {
 
 
 <div>
-<h6 class="mrgn-tp-lg hidden-xs">&#9776; Filter by</h6>
+<h6 class="mrgn-tp-lg">&#9776; Filter by</h6>
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -361,6 +267,17 @@ function closeNav() {
       <div class="panel-body">
         <a href="recalls-home-b-food.html" style="font-size:20px;">< Allergens</a><br />
         <p>_________________</p>
+
+
+        <ul class="list-unstyled can-ca-form">
+
+                      <li class="checkbox checkbox-small">
+                        <input type="checkbox" id="undeclared-eggs">
+                        <label for="undeclared-eggs">Undeclared eggs&nbsp;&nbsp;<span class="recall-facet-count badge">111</span></label>
+                       </li>
+          </ul>
+
+
         <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
 
           <label for="Item">Undeclared eggs <i>(xx)</i></label>
@@ -414,27 +331,7 @@ function closeNav() {
 
 
 
-         <!--
 
-		  <h2>Product Category</h2>
-
-  <div class="content">
-	<ul>
-		<li>Filter here</li>
-	</ul>
-	</div>
-
-</section>
-<section id="block-facetapi-y91zi3cq9cyqzsm8mjxic2bfd1gzszvg" class="block block-facetapi clearfix">
-
-
-		<h2>Date published</h2>
-
-  <div class="content">
-    <ul>
-		<li>Filter here</li>
-	</ul>
-</div>-->
 
 </section> <!-- /.block -->
         </div>
