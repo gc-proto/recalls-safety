@@ -55,9 +55,12 @@ table td {
   padding: .625em;
   text-align: left;
 }
+thead th{
+  font-size: 16px !important;
 
+}
 table th {
-  font-size: 1em;
+  font-size: .85em;
 /*  letter-spacing: .1em; */
 }
 
@@ -116,15 +119,17 @@ table th {
 }
 
 tr.d0 th {
-  font-size: .9em;
+  font-size: .85em;
   font-weight: bold;
   background-color: #FFFFFF;
 /*  color: black; */
 }
 
-tr.active {
+tr.active, thead tr:first-child {
   background-color: #f0f0f0 !important;
 }
+
+
 
 /* tr.d1 td {
   font-size: 1em;
@@ -139,11 +144,11 @@ tr.d2 td {
 } */
 
 tr:nth-child(even) {
-  font-size: .9em;
+  font-size: .85em;
   background-color: #F5F5F5 !important;
 }
 tr:nth-child(odd) {
-  font-size: .9em;
+  font-size: .85em;
 }
 
 
