@@ -1,3 +1,161 @@
+#food-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
+}
+
+#vehicles-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
+}
+
+#medical-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
+}
+
+#products-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black;
+}
+
+.recalls-filter-label {
+	font-size:16px;
+	padding:10px;
+	font-weight:
+	bold; color:white;
+	/*var-2*/
+	/* bold; color:black;*/
+}
+
+.recalls-filter-1 {
+	display: inline-block;
+	margin-top: 5px;
+	background-color: #495f07;
+	border-radius:0.25em;
+	/*var-2*/
+	/* background-color: #495f0775;*/
+	/* border-bottom: 4px #495f07 solid;*/
+}
+
+.recalls-filter-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.25em;
+	background-color: #3a6263;
+	/*var-2*/
+	/* background-color: #495f0775; var-2*/
+	/* border-bottom: 4px #3a6263 solid; var-2*/
+}
+
+.recalls-filter-3 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.25em;
+	background-color: #843028;
+	/*var-2*/
+	/* background-color: #495f0775;*/
+	/* border-bottom: 4px #843028 solid;*/
+}
+
+.recalls-filter-4 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.25em;
+	background-color: #6e3a74;
+	/*var-2*/
+	/* background-color: #495f0775; */
+	/* border-bottom: 4px #6e3a74 solid; */
+}
+
+.recalls-filter-label-var-2 {
+	font-size:16px;
+	padding:10px;
+	font-weight:
+	bold; color:black;
+}
+
+.recalls-filter-1-var-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+	background-color: #8db12175;
+	border-bottom: 4px #495f07 solid;
+}
+
+.recalls-filter-2-var-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+	background-color: #76a9ab66;
+	border-bottom: 4px #3a6263 solid;
+}
+
+.recalls-filter-3-var-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+	background-color: #ec796e6e;
+	border-bottom: 4px #843028 solid;
+}
+
+.recalls-filter-4-var-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+	background-color: #eb88f775;
+	border-bottom: 4px #6e3a74 solid;
+}
+
+.contributors {
+ font-size: 16px !important;
+ font-weight: 600;
+}
+
+.from {
+ font-size: 17px !important;
+ margin-top: 7px;
+}
+
+.contributors ul {
+ margin-block-start: 0em;
+ margin-block-end: 0em;
+ margin-inline-start: -25px;
+ margin-inline-end: 0px;
+ padding-inline-start: 0px;
+
+}
+
+@media screen and (min-width: 992px) {
+.contributors li {
+    display: inline-block;
+    float: left;
+    margin-right: .7em;
+}
+}
+
+@media screen and (min-width: 992px) {
+.contributors li:first-child:before {
+    content: none;
+}
+.contributors li:before {
+    content: "\2022";
+    margin-right: .7em;
+}
+}
+
+@media screen and (max-width: 767px) {
+
+.contributors ul {
+	margin-inline-start: 0px !important;
+}
+
+}
+
+
 h1 span.stacked {
 		                display: flex;
 		                flex-direction: column-reverse;

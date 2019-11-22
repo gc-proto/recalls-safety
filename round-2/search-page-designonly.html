@@ -12,6 +12,8 @@
 <meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="./search-results/css/customization.css" rel="stylesheet">
+
 <link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
 <link rel="stylesheet" href="https://gc-proto.github.io/recalls-safety/scenarioH/css/autocomplete.css">
@@ -85,18 +87,65 @@
 </nav>
 </header>
 
+<style>
+.center-cropped {
+  width: 300px;
+  height: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  object-fit: none; /* Do not scale the image */
+}
+
+@media screen and (max-width: 767px) {
+
+.center-cropped  {
+  width: 200px;
+  height: 100px;
+}
+
+}
+/*https://blog.filestack.com/tutorials/how-to-automatically-resize-fit-and-align-any-image-using-only-url-parameters/ maybe an option */
+</style>
+
 <!-- class="gc-theme" is doing some weird stuff with the first h2... -->
 <main role="main" property="mainContentOfPage" class="container">
   <div class="mwstext section">
     <div class="text">
-      <div class="row profile">
+      <div class="row profile mrgn-bttm-lg">
         <div class="col-md-12">
           <h1 property="name" id="wb-cont">Recalls and safety alerts</h1>
           <p class="pagetag">Find all Government of Canada recalls, advisories, public health notices, updates and safety alerts.</p>
         </div>
       </div>
+
       <div class="row">
-  <section class="clearfix col-sm-push-4 col-sm-8">
+
+        <aside class="col-sm-12 col-md-4 row" role="complementary">
+        <div style="margin-left: 10px;!important;">
+        <h2 class="h3" style="margin-top: 0px">Current concerns</h2>
+
+        <div class="col-sm-6 col-xs-6 col-md-12 row">
+        <a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2018/66890a-eng.php"><h3 class="h6">Unauthorized products may pose serious health risks</h3>
+        </div>
+
+        <div class="col-sm-6 col-xs-6 col-md-12">
+        <img src="./search-results/images/nutrakey.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm center-cropped" data-emptytext="Image"/></a>
+        </div>
+
+        <div class="col-sm-6 col-xs-6 col-md-12 row">
+          <a href="https://www.canada.ca/en/public-health/services/public-health-notices/2018/public-health-notice-outbreak-salmonella-infections-linked-poultry-frozen-raw-breaded-chicken-products.html"><h3 class="h6">Outbreak of Salmonella infections linked to poultry – including frozen</h3>
+        </div>
+        <div class="col-sm-6 col-xs-6 col-md-12">
+          <div class="visible-xs"><br /></div> <!-- this br is a quick fix for mobile gap issue... real fix could be to add a class here to target after the first child and add spacing on mobile viewport size -->
+          <img src="./search-results/images/chicken_nuggets.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm center-cropped" data-emptytext="Image"/></a>
+        </div>
+
+        </div>
+
+        </aside>
+
+
+  <section class="clearfix col-sm-4 col-sm-8">
 
   <div class="view-filters">
        <div><div class="views-exposed-form accc-psa-search-styled-with-sort-by-overrides">
@@ -113,7 +162,7 @@
   <input type="hidden" name="start" value="1">
   </form>
 
-
+<br>
   <div id="btngrp-recalls-search-label"><label style="float: left;"><h2 style="margin-top:0px;">28,875 results</h2></label>
   <!--<div class="input-group" id="recalls-search-box" style="clear: both;height: 37px;padding: 0px 0px 0px 12px;font-size: 16px;line-height: 1.4375;color: #888;background-color: #fff;background-image: none;border: 1px solid #335075;border-radius: 4px;box-shadow: inset 0 1px 1px rgba(0,0,0,.075);margin-left: auto; width:100%;padding-top: 5px;padding-bottom: 4px;display: flex;float: left;">
 
@@ -134,12 +183,7 @@
     <div class="row">
       <p class="toc lst-spcd col-md-12 hidden-xl" style="margin-bottom:2px!important; clear:both; float:left; margin-top:3px;">Filter by:</p>
       <ul class="toc lst-spcd col-md-12 flex-container wrap" style="clear: both; display:flex; white-space: nowrap; padding-top: 5px;">
-        <!-- <li><a id="food-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Food and allergies" class="recalls-filter-1"><span class="recalls-filter-label">Food and allergies</span></a></li>
-        <li><a id="vehicles-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Vehicles" class="recalls-filter-2"><span class="recalls-filter-label">Vehicles</span></a>  </li>
-        <li><a id="medical-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Health" class="recalls-filter-3"><span class="recalls-filter-label">Health</span></a>  </li>
-        <li><a id="products-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Products" class="recalls-filter-4"><span class="recalls-filter-label">Products</span></a>  </li> -->
 
-        <!--var-2-->
         <li><a id="food-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Food and allergies" class="recalls-filter-1-var-2"><span class="recalls-filter-label-var-2">Food and allergies</span></a></li>
         <li><a id="vehicles-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Vehicles" class="recalls-filter-2-var-2"><span class="recalls-filter-label-var-2">Vehicles</span></a>  </li>
         <li><a id="medical-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Health" class="recalls-filter-3-var-2"><span class="recalls-filter-label-var-2">Health</span></a>  </li>
@@ -147,46 +191,6 @@
       </ul>
     </div>
   </div>
-        <!--Cascading picklists - FieldFlow? -->
-        <!--<div class="wb-frmvld" style="clear:both; padding-top:10px;">
-         <form method="get">
-
-          <div id="filter-1" class="wb-fieldflow" data-wb-fieldflow='{
-            "noForm": true,
-            "base": { "live": true },
-            "noreqlabel": true,
-            "isoptional": true,
-            "defaultselectedlabel":"All recalls (106)",
-            "default": { "action": "addClass", "source":"#question1,#question1button,#question2button,#question2abutton,#question3buttona,#question3buttonb,#question3buttonc,#question4buttona,#question4buttonb,#question4buttonc,#question2,#question2a,#question3,#question4,#result1,#result2,#result3,#result4,#result5,#result6", "class": "hidden" }
-            }'>
-            <p>See recalls and filters for:</p>
-            <ul>
-              <li data-wb-fieldflow='{"action": "removeClass", "source":"#food-1", "class":"hidden"}'>Food (53)</li>
-              <li data-wb-fieldflow='{"action": "append", "source":"#vehicles-1"}'>Vehicles (n)</li>
-              <li data-wb-fieldflow='{"action": "append", "source":"#consumer-1"}'>Consumer products (n)</li>
-              <li data-wb-fieldflow='{"action": "append", "source":"#health-1"}'>Health products (n)</li>
-            </ul>
-          </div>
-        </form>
-      </div>
-
-        <div id="food-1" class="hidden">
-                            <div class="form-group">
-              <label for="expirydate">Expiry on package<span class="datepicker-format"> (<abbr title="Four digits year, dash, two digits month, dash, two digits day">YYYY-MM-DD</abbr>)</span></label>
-              <input class="form-control" type="date" id="enddate" name="expirydate" min="2000-03-27" max="2220-05-23" />
-            </div>
-
-        </div>-->
-
-
-
-     <!--<div id="submit-button" style="margin-bottom:20px; float:left;">
-         <a href="findout-exempt-en.html" class="btn btn-primary">Filter results</a>
-     </div>-->
-
-
-
-    <!--add tabs for the main categories here - how does this interact with the filters?-->
 
 
       <div class="view-content">
@@ -195,7 +199,7 @@
 <div class="row">
   <div class="col-xs-12 decorated-content">
       <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;">
-        <a href="" style="font-size: 16px;">Recall title</a>
+        <a href="" style="font-size: 20px;">Recall title</a>
       </h3>
       <div class="" style="float:right; margin-top:10px;">
         <span class="field-content" style="font-size:16px;">25 Jun 2009</span>
@@ -209,7 +213,7 @@
 <div class="row">
   <div class="col-xs-12 decorated-content">
     <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;">
-      <a href="#" onclick="javascript:trackclick(this,'organic',1)" data-dtm-srchlnknm="1" style="font-size: 16px;">(Example of longer title) TIVICAY, TRIUMEQ and JULUCA (dolutegravir containing medicines) - Possible Risk of Neural Tube Defects</a>
+      <a href="#" onclick="javascript:trackclick(this,'organic',1)" data-dtm-srchlnknm="1" style="font-size: 20px;">(Example of longer title) TIVICAY, TRIUMEQ and JULUCA (dolutegravir containing medicines) - Possible Risk of Neural Tube Defects</a>
     </h3>
     <div class="" style="float:right; margin-top:10px;">
       <span class="field-content" style="font-size:16px;">27 Jun 2018</span>
@@ -223,21 +227,21 @@
 <div class="row">
   <div class="col-xs-12 decorated-content">
 
-      <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 16px;">Recall title</a></h3>
+      <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 20px;">Recall title</a></h3>
   <div class="" style="float:right; margin-top:10px;"><span class="field-content" style="font-size:16px;">25 Jun 2009</span></div>
       <div class="" style="display:block; clear:both; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1;"><span class="field-content" style="font-size: 14px;"></span></div></div>
 </div>
 <div class="row">
   <div class="col-xs-12 decorated-content">
 
-      <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 16px;">Recall title</a></h3>
+      <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 20px;">Recall title</a></h3>
   <div class="" style="float:right; margin-top:10px;"><span class="field-content" style="font-size:16px;">25 Jun 2009</span></div>
       <div class="" style="display:block; clear:both; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1;"><span class="field-content" style="font-size: 14px;"></span></div></div>
 </div>
 <div class="row">
   <div class="col-xs-12 decorated-content">
 
-      <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 16px;">Recall title</a></h3>
+      <h3 class="" style="margin-top:10px; float:left; width: calc(100% - 100px); height: auto;"><a href="" style="font-size: 20px;">Recall title</a></h3>
   <div class="" style="float:right; margin-top:10px;"><span class="field-content" style="font-size:16px;">25 Jun 2009</span></div>
       <div class="" style="display:block; clear:both; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1;"><span class="field-content" style="font-size: 14px;"></span></div></div>
 </div>
@@ -253,7 +257,7 @@
 
 
 
-       <h2>Tell us about side effects, injuries and other safety concerns</h2>
+       <h2 class="h3">Tell us about side effects, injuries and other safety concerns</h2>
        <details>
         <summary class="text-primary">Report an incident</summary>
     <div class="form-group"><label for="submitter_personName" class="required" aria-required="true"><span class="field-name">Name (first name and last name)</span> <strong class="required" aria-required="true">(required)</strong> </label>
@@ -344,8 +348,8 @@
 
      <a href="https://www.canada.ca/en/services/health/stay-connected.html" class="btn btn-lg btn-default mrgn-tp-md" style="margin-bottom: 15px">Subscribe to a recall category</a>
 
-<div class="hidden-xs hidden-sm">
-     <h2>More about recalls, food poisoning and alerts</h2>
+<div>
+     <h2 class="h3">More about recalls, food poisoning and alerts</h2>
      <ul>
        <li><a href="http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/what-quoi-eng.php">What to do when a product is recalled</a></li>
        <li><a href="https://www.canada.ca/en/services/health/food-recalls-risks-outbreaks.html">Food poisoning and outbreaks</a></li>
@@ -353,95 +357,40 @@
      </ul>
 </div>
 
-<div class="hidden-xs hidden-sm">
-
-     <h2>Contributors</h2>
-     <ul>
-       <li><a href="https://www.canada.ca/en/food-inspection-agency.html">Canadian Food Inspection Agency</a></li>
-       <li><a href="https://www.canada.ca/en/health-canada.html">Health Canada</a></li>
-       <li><a href="https://www.canada.ca/en/public-health.html">Public Health Agency of Canada</a></li>
-       <li><a href="https://www.canada.ca/en/transport-canada.html">Transport Canada</a></li>
-       <li><a href="https://www.canada.ca/en/environment-climate-change.html">Environment and Climate Change Canada</a></li>
-     </ul>
 </div>
+
   </section>
 
 
 
 
-<aside class="col-sm-4 col-sm-pull-8" role="complementary">
-<div style="margin-left: 10px;!important;">
-<h2 class="" style="margin-top: 0px">Current concerns</h2>
-
-<a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2018/66890a-eng.php"><p>Unauthorized products may pose serious health risks</p><img src="./images/nutrakey.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm" data-emptytext="Image"/></a>
-
-
-<br>
-
-<a href="https://www.canada.ca/en/public-health/services/public-health-notices/2018/public-health-notice-outbreak-salmonella-infections-linked-poultry-frozen-raw-breaded-chicken-products.html"><p>Outbreak of Salmonella infections linked to poultry – including frozen</p>
-<img src="./images/chicken_nuggets.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm" data-emptytext="Image"/></a>
-
-
-</div>
-<div>
-
-
-
-
-
-       <!--
-
-    <h2>Product Category</h2>
-
-<div class="content">
-<ul>
-  <li>Filter here</li>
-</ul>
-</div>
-
-</section>
-<section id="block-facetapi-y91zi3cq9cyqzsm8mjxic2bfd1gzszvg" class="block block-facetapi clearfix">
-
-
-  <h2>Date published</h2>
-
-<div class="content">
-  <ul>
-  <li>Filter here</li>
-</ul>
-</div>-->
-
-</section> <!-- /.block -->
-      </div>
-    </aside>
-
 
     <!-- endnoindex -->
         </div>
 
-        <div class="visible-xs visible-sm">
-               <h2>More about recalls, food poisoning and alerts</h2>
-               <ul>
-                 <li><a href="http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/what-quoi-eng.php">What to do when a product is recalled</a></li>
-                 <li><a href="https://www.canada.ca/en/services/health/food-recalls-risks-outbreaks.html">Food poisoning and outbreaks</a></li>
-                 <li><a href="http://www.healthycanadians.gc.ca/recall-alert-rappel-avis/learn-renseignez-eng.php">Types of alerts</a></li>
-               </ul>
-        </div>
+  </div>
 
-        <div class="visible-xs visible-sm">
-               <h2>Contributors</h2>
-               <ul>
-                 <li><a href="https://www.canada.ca/en/food-inspection-agency.html">Canadian Food Inspection Agency</a></li>
-                 <li><a href="https://www.canada.ca/en/health-canada.html">Health Canada</a></li>
-                 <li><a href="https://www.canada.ca/en/public-health.html">Public Health Agency of Canada</a></li>
-                 <li><a href="https://www.canada.ca/en/transport-canada.html">Transport Canada</a></li>
-                 <li><a href="https://www.canada.ca/en/environment-climate-change.html">Environment and Climate Change Canada</a></li>
-               </ul>
-        </div>
+<div class="row col-md-12 mrgn-tp-xl">
 
+          <h2 class="wb-inv">Contributors <!-- start theme contributors --></h2>
+          <div class="col-md-1 row">
+            <h3 class="from">From:
+            </h3>
+          </div>
+          <div class="col-md-11 contributors">
+            <ul style="font-size: 15px !important; margin-right: -200px;">
+              <li><a href="https://www.canada.ca/en/food-inspection-agency.html">Canadian Food Inspection Agency</a></li>
+              <li><a href="https://www.canada.ca/en/health-canada.html">Health Canada</a></li>
+              <li><a href="https://www.canada.ca/en/public-health.html">Public Health Agency of Canada</a></li>
+              <li><a href="https://www.canada.ca/en/transport-canada.html">Transport Canada</a></li>
+              <li><a href="https://www.canada.ca/en/environment-climate-change.html">Environment and Climate Change Canada</a></li>
+            </ul>
+          </div>
+          <!-- end theme contributors -->
+      </div>
 
-</p>
-</div></div></div>
+</div>
+</div>
 
 
     </div>
