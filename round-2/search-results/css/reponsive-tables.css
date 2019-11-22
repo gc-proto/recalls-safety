@@ -116,10 +116,14 @@ table th {
 }
 
 tr.d0 th {
-  font-size: 1em;
+  font-size: .9em;
   font-weight: bold;
   background-color: #FFFFFF;
 /*  color: black; */
+}
+
+tr.active {
+  background-color: #f0f0f0 !important;
 }
 
 /* tr.d1 td {
@@ -135,12 +139,11 @@ tr.d2 td {
 } */
 
 tr:nth-child(even) {
-  font-size: 1em;
+  font-size: .9em;
   background-color: #F5F5F5 !important;
 }
 tr:nth-child(odd) {
-  font-size: 1em;
-  background-color: #FFFFFF !important;
+  font-size: .9em;
 }
 
 
