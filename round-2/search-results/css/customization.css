@@ -1,6 +1,51 @@
 @import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
 
+.recall-date {
+	float:right;
+	margin-top:0px;
 
+}
+
+.recall-summary {
+	display:block;
+	clear:both;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e1e1e1;
+}
+.field-content {
+	font-size: 16px;
+}
+.recall-title {
+	font-size: 20px;
+	float: left;
+	margin-top: 0px;
+	width: calc(100% - 100px);
+	height: auto;
+}
+.panel-body {
+	padding-top: 5px !important;
+	padding-bottom: 0px !important;
+}
+
+#accordion .panel-heading { padding: 0;}
+#accordion .panel-title > a {
+	display: block;
+	padding: 0.4em 0.6em;
+    outline: none;
+    font-weight:bold;
+    text-decoration: none;
+		color: #333;
+}
+
+#accordion .panel-title > a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::before  {
+    content:"\e113";
+    float: left;
+    font-family: 'Glyphicons Halflings';
+	  margin-right:.6em;
+}
+#accordion .panel-title > a.accordion-toggle.collapsed::before, #accordion a.collapsed[data-toggle="collapse"]::before  {
+    content:"\e114";
+}
 
 #food-link {
     margin-left:2px;
