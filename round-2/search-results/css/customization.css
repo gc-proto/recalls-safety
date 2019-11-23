@@ -23,6 +23,30 @@
 	width: calc(100% - 100px);
 	height: auto;
 }
+
+dl.inline-flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  overflow: visible;
+	margin-bottom: 0px !important;
+}
+dl.inline-flex dt {
+  flex: 0 0 15%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+dl.inline-flex dd {
+  flex: 0 0 85%;
+  margin-left: auto;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+	margin-bottom: 0px !important;
+
+}
+
+
 .panel-body {
 	padding-top: 5px !important;
 	padding-bottom: 0px !important;
@@ -240,6 +264,33 @@ color: white !important;
 
 }
 
+@media (max-width:320px) {
+.recall-date {
+	float:left !important;
+	/* font-weight: bold !important; */
+}
+
+.recall-title {
+	width: 100% !important;
+}
+
+}
+
+@media (max-width: 500px) {
+	dl.inline-flex dt {
+	  flex: 0 0 100%;
+	  text-overflow: ellipsis;
+	  overflow: hidden;
+	}
+	dl.inline-flex dd {
+	  flex:0 0 100%;
+	  margin-left: auto;
+	  text-align: left;
+	  text-overflow: ellipsis;
+	  overflow: hidden;
+	}
+}
+
 .gc-stp-stp {
 	margin-bottom: 0;
 }
@@ -264,6 +315,8 @@ outline: 0!important;
   opacity: .9!important;
 }
 
+
+
 @media (min-width:768px) {
 .owl-container {
   width:50%;
@@ -286,6 +339,7 @@ background-size: 15px 15px !important;
 .twitter {
 background-size: 15px 15px !important;
 }
+}
 
 @media (max-width:440px) {
 .recall-share {
@@ -296,14 +350,5 @@ background-size: 15px 15px !important;
 background-size: 15px 15px !important;
 }
 
-}
 
-@media (max-width:440px) {
-.recall-date {
-	float:left !important;
-}
-
-.recall-title {
-	width: 100% !important;
-}
 }
