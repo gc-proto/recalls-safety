@@ -3,18 +3,19 @@
 .recall-date {
 	float:right;
 	margin-top:0px;
-
+	font-size: 16px;
 }
-
 .recall-summary {
 	display:block;
 	clear:both;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #e1e1e1;
 }
-.field-content {
+
+.recall-summary {
 	font-size: 16px;
 }
+
 .recall-title {
 	font-size: 20px;
 	float: left;
@@ -293,4 +294,16 @@ background-size: 15px 15px !important;
 }
 }.icon.twitter {
 background-size: 15px 15px !important;
+}
+
+}
+
+@media (max-width:440px) {
+.recall-date {
+	float:left !important;
+}
+
+.recall-title {
+	width: 100% !important;
+}
 }
