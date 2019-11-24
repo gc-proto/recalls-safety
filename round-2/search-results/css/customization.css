@@ -1,5 +1,350 @@
 @import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
 
+/* bigger label */
+label {
+  font-size: 20px !important; /*will not use important tags on PR, will correct source */
+}
+
+.label {
+  text-align: left!important;
+  display:inline-block!important;
+  clear: left!important;
+  white-space:normal!important;
+}
+
+.checkbox-small label {
+  font-size: 17px !important; /* important needed for now, will rmv later */
+}
+/* increase field flow sizing */
+
+legend.h5 {
+  margin-top: 0px !important; /*will not use important tags on PR, will correct source */
+  font-size: 22px !important; /*will not use important tags on PR, will correct source */
+  margin-bottom: 15px !important; /*will not use important tags on PR, will correct source */
+}
+
+.btn {
+  font-size: 20px !important; /*will not use important tags on PR, will correct source */
+  font-variant-ligatures: no-common-ligatures;
+}
+
+.pagedetails .btn  {
+  font-size: 16px !important; /*will not use important tags on PR, will correct source */
+  font-variant-ligatures: no-common-ligatures;
+}
+
+input[type="reset"], input[type="button"], input[type="submit"]
+
+{
+  height: 50px!important;
+}
+
+/* better focus on buttons */
+
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 5pt 4pt rgb(59, 153, 252);
+  outline: 2px solid white;
+}
+/* custom checkboxes */
+
+.can-ca-form input {
+  position: absolute;
+  opacity: 0;
+}
+
+
+.can-ca-form .is-disabled {
+  opacity: 0.5;
+}
+
+.can-ca-form .is-disabled label {
+  cursor: not-allowed;
+}
+
+.can-ca-form {
+    clear: both;
+    padding-top: 6px;
+}
+
+.can-ca-form .checkbox,
+.can-ca-form .radio,
+.can-ca-form .form-checkbox,
+.can-ca-form .form-radio {
+
+  position: relative;
+  cursor: pointer;
+  font-weight: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.can-ca-form .checkbox,
+.can-ca-form .radio {
+
+  padding-left: 30px;
+  margin-bottom: 32px;
+
+}
+
+.can-ca-form .checkbox-small {
+  padding-left: 16px;
+  margin-bottom: 25px;
+}
+
+.can-ca-form .form-checkbox,
+.can-ca-form .form-radio {
+
+  margin-right: 30px;
+  margin-bottom: 25px;
+  min-width: 26%; /* prevents weird overlapping */
+
+}
+
+
+.can-ca-form .form-checkbox label,
+.can-ca-form .form-radio label {
+  padding-left: 50px;
+
+}
+
+.can-ca-form .checkbox label::before,
+.can-ca-form .radio label::before,
+.can-ca-form .form-checkbox label::before,
+.can-ca-form .form-radio label::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #333;
+  margin-top: -4px;
+
+ }
+
+ .can-ca-form .checkbox-small label::before {
+   content: "";
+   box-sizing: border-box;
+   position: absolute;
+   display: inline-block;
+   top: 0;
+   left: 0;
+   width: 24px;
+   height: 24px;
+   border: 2px solid #333;
+   margin-top: 0;
+
+  }
+
+
+.can-ca-form .radio label::before,
+.can-ca-form .form-radio label::before {
+  content: "";
+  border-radius: 50%;
+}
+
+
+.can-ca-form .checkbox label::after,
+.can-ca-form .form-checkbox label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 12px;
+  top: 0px;
+  width: 13px;
+  height: 22px;
+  border: solid #333;
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+}
+
+.can-ca-form .checkbox-small label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  top: 2px;
+  width: 8px;
+  height: 14px;
+  border: solid #333;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+}
+
+.can-ca-form .radio label::after,
+.can-ca-form .form-radio label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #333;
+}
+
+/* hide the check */
+.can-ca-form .form-checkbox input[type="checkbox"] + label::after,
+.can-ca-form .form-radio input[type="radio"] + label::after,
+.can-ca-form .checkbox input[type="checkbox"] + label::after,
+.can-ca-form .radio input[type="radio"] + label::after {
+    content: none;
+}
+
+/* unhide check when checked */
+.can-ca-form .form-checkbox input[type="checkbox"]:checked + label::after,
+.can-ca-form .form-radio input[type="radio"]:checked + label::after,
+.can-ca-form .checkbox input[type="checkbox"]:checked + label::after,
+.can-ca-form .radio input[type="radio"]:checked + label::after {
+    content: "";
+}
+
+/* add focus */
+.can-ca-form .checkbox input[type="checkbox"]:focus + label::before,
+.can-ca-form .form-checkbox input[type="checkbox"]:focus + label::before,
+.can-ca-form .form-radio input[type="radio"]:focus + label::before,
+.can-ca-form .radio input[type="radio"]:focus + label::before  {
+    box-shadow: 0 0 3pt 2pt rgb(59, 153, 252);
+}
+
+
+/* for green checks */
+
+.can-ca-form .checkbox-green label::after {
+  content: "";
+  border: solid white;
+  border-width: 0 5px 5px 0;
+}
+
+/* for green checks */
+.can-ca-form .checkbox-green input[type="checkbox"]:checked + label:before {
+  background-color: #318000;
+}
+
+ @media only screen and (max-width: 1200px) {
+
+.can-ca-form .form-checkbox,
+.can-ca-form .form-radio {
+    min-width: 50%;
+  }
+
+}
+
+.recall-share {
+	float: left;
+	text-decoration:none;
+	font-size: 16px !important;
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+
+.recalls-f .checkbox-small {
+    margin-bottom: 18px !important;
+}
+
+.center-cropped {
+  width: 300px;
+  height: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  object-fit: none; /* Do not scale the image */
+}
+
+.search-facet {
+  border-bottom: solid #ccc 1px;
+  margin-bottom: 0px;
+  margin-top: 5px;"
+}
+
+
+.r-title {
+	margin-top: 15px;
+}
+.r-search {
+	border: none;
+	box-shadow: none;
+	float: left;
+	width: 100%;
+}
+
+.r-search-btn {
+	float:left;
+	background: none!important;
+	border: none!important;
+	border-left: #cbbebe 1px solid!important;
+	padding-left: 8px!important;
+	color: #333;
+}
+
+.input-recalls {
+	clear: both !important;
+	height: 37px  !important;
+	padding: 0px 0px 0px 12px !important;
+	font-size: 16px !important;
+	line-height: 1.4375;
+	color: #888;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #335075;
+	border-radius: 4px !important;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
+	margin-left: auto !important;
+	width:100% !important;
+	padding-top: 5px !important;
+	padding-bottom: 4px !important;
+	display: flex !important;
+	float: left !important;
+}
+
+.recall-categories {
+	clear: both;
+	padding-top: 5px;
+}
+
+.recall-categories .toc {
+	display:flex;
+	white-space: nowrap;
+}
+
+.recall-categories li {
+	font-size:14px;
+	margin-left:0px;
+	padding: 2px 2px 0px 2px;
+}
+
+.btn-clear {
+	background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: 'Lato';
+  color: #3f4a64;
+  font-size: 16px;
+  background: #f2f3f5;
+  padding: 2px 6px 2px 6px;
+  border: solid #dedde2 1px;
+  text-decoration: none;
+	float:right;
+	margin-top: 16px;
+}
+
 .recall-date {
 	float:right;
 	margin-top:0px;
