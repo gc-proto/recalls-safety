@@ -1,28 +1,28 @@
 
 /* style lists inside the table */
 
-td ul li {
+/* td ul li {
  margin-left: -18px !important;
  margin-top: 10px !important;
-}
+} */
 
 
-main table tbody {
+/* main table tbody {
   font-size: 19px !important;
   line-height: 1.4em !important;
-}
+} */
 
 
 
 
-.dataTables_wrapper {
+/* .dataTables_wrapper {
   margin-left: -1.1em !important;
   margin-right: -1.1em !important;
-}
-
+} */
+/*
 .dataTables_filter, .dataTables_length {
   margin-left: 1.1em !important;
-}
+} */
 
 
 body {
@@ -30,19 +30,19 @@ body {
   line-height: 1.25;
 }
 
-table {
+/* table {
   border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
   width: 100%;
   table-layout: fixed;
-}
+} */
 
-table caption {
+/* table caption {
   font-size: 1.5em;
   margin: .5em 0 .75em;
-}
+} */
 
 table tr {
   background-color: #ffffff;
@@ -50,19 +50,19 @@ table tr {
   padding: .35em;
 }
 
-table th,
+/* table th,
 table td {
   padding: .625em;
   text-align: left;
-}
-thead th{
+} */
+/* thead th{
   font-size: 16px !important;
 
-}
-table th {
+} */
+/* table th {
   font-size: .85em;
-/*  letter-spacing: .1em; */
-}
+ letter-spacing: .1em;
+} */
 
 @media screen and (max-width: 1200px) {
   table {
@@ -118,12 +118,11 @@ table th {
       }
 }
 
-tr.d0 th {
+/* tr.d0 th {
   font-size: .85em;
   font-weight: bold;
   background-color: #FFFFFF;
-/*  color: black; */
-}
+} */
 
 tr.active, thead tr:first-child {
   background-color: #f0f0f0 !important;
@@ -143,13 +142,13 @@ tr.d2 td {
  color: black;
 } */
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
   font-size: .85em;
   background-color: #F5F5F5 !important;
-}
-tr:nth-child(odd) {
+} */
+/* tr:nth-child(odd) {
   font-size: .85em;
-}
+} */
 
 
 #accordion .panel-heading { padding: 0;}

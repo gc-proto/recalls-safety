@@ -11,10 +11,10 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are source software and free for use by departments and external Web communities">
 <!-- Meta data-->
 <!--[if gte IE 9 | !IE ]><!-->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="../search-results/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
-<!-- <link rel="stylesheet" href="css/custom.css"> -->
+<!-- <link rel="stylesheet" href="../search-results/css/custom.css"> -->
 <!--<![endif]-->
 <!--[if lt IE 9]>
 <link href="../GCWeb/assets/favicon.ico" rel="shortcut icon" />
@@ -25,15 +25,15 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <![endif]-->
 
 <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
-  <script src="js/jquery.min.js"></script>
-   <!-- <link rel="stylesheet" href="css/jquery.dataTables.css"></style> -->
-   <link rel="stylesheet" href="css/customization.css"></style>
+  <script src="../search-results/js/jquery.min.js"></script>
+   <link rel="stylesheet" href="../search-results/css/jquery.dataTables.css"></style>
+   <link rel="stylesheet" href="../search-results/css/customization.css"></style>
 
-   <!-- <script type="text/javascript" src="js/jquery.dataTables.min.js"></script> -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+   <!-- <script type="text/javascript" src="../search-results/js/jquery.dataTables.min.js"></script> -->
+    <script type="text/javascript" src="../search-results/js/bootstrap.min.js"></script>
 
-   <link rel="stylesheet" href="css/owl.carousel.min.css" />
-   <link rel="stylesheet" href="css/reponsive-tables.css" />
+   <link rel="stylesheet" href="../search-results/css/owl.carousel.min.css" />
+   <link rel="stylesheet" href="../search-results/css/reponsive-tables.css" />
 
 <!-- Google Tag Manager DO NOT REMOVE OR MODIFY - NE PAS SUPPRIMER OU MODIFIER -->
 <script>dataLayer1 = [];</script>
@@ -147,13 +147,8 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
     <a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=*:*&fq_pcat=Health&dspl=scat&fq_cat=Drugs" class="cust-breadcrumb">ᐸ Undeclared egg</a>
   </div>
 
-
-
 </div>
 </ol></div></nav>
-
-
-
 
 	<div data-ajax-replace="/bin/canada/alert/messages.en.html" class="original"></div>
 
@@ -162,52 +157,28 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 
 <main role="main" property="mainContentOfPage" class="container">
-<script>
-document.addEventListener("DOMContentLoaded", function(){
- var id = getUrlParameter('id'); // (gets me URL parameters)
- var lang = getUrlParameter('lang'); // (gets me URL parameters)
- // get the URL aprameters for ID and Lang then return API JSON
- var jsonfromhc = getRecall(id, lang);
- console.log(id);
- console.log(lang);
- console.log(jsonfromhc);
-});
-function getRecall(id, lang) {
-   var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
-   var uri = base + '/api/' + id + '/' + lang;
-   $.ajax({
-       url:uri,
-       type:'GET',
-       Accept:"application/json",
-       dataType: 'json',
-       success:function(data){
-           console.log(data.title);
-     console.log(data);
-     //use ids to modify page
-     $("#toptitle").text(data.title);
-     $("#toptitle").text(data.title);
-       },
-       error:function(error){
-       },
-   });
-   return;
-};
-var getUrlParameter = function getUrlParameter(sParam) {
-   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-       sURLVariables = sPageURL.split('&'),
-       sParameterName,
-       i;
-   for (i = 0; i < sURLVariables.length; i++) {
-       sParameterName = sURLVariables[i].split('=');
-       if (sParameterName[0] === sParam) {
-           return sParameterName[1] === undefined ? true : sParameterName[1];
-       }
-   }
-};
-</script>
 
 
-<div>
+  <div class="recall-super-title" style="overflow: hidden;">
+   <div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
+     <div id="category-tag"></div>
+   </div>
+  </div>
+  <div>
+  <section>
+     <h1 property="name" id="toptitle" style="margin-top: 5px;"></h1>
+     <p><a id="brand-link" href=""></a></p>
+     <p id="recall-date"><strong></strong></p>
+
+
+   <h2 class="h3" id="descriptionheader">Description</h2>
+         <p id="description"></p>
+
+
+  </section>
+
+
+<!-- target h1 by attribute instead of class -->
 
   <h1><span class="stacked" role="text"> <span>Kirkland brand Meatloaf with Mashed Potatoes</span>: <span>Undeclared egg, undeclared mustard</span></span>
     </h1>
@@ -241,8 +212,8 @@ $('.owl-carousel').owlCarousel({
 
 <!-- No image with this recall
 <div class="owl-carousel">
-<div class="item"><img src="images/dumplings-img1.jpg" /></div>
-<div class="item"><img src="images/dumplings-img2.jpg" /></div>
+<div class="item"><img src="../search-results/images/dumplings-img1.jpg" /></div>
+<div class="item"><img src="../search-results/images/dumplings-img2.jpg" /></div>
 
 </div>
 </div>-->
@@ -252,34 +223,8 @@ $('.owl-carousel').owlCarousel({
 <div class="col-md-12 mrgn-bttm-lg">
   <section>
         <h2>Affected products</h2>
-
-        <!-- <table class="table wb-tables table-striped" id="myTable">
-        <thead>
-          <tr class="active">
-          <th scope="col">Brand name</th>
-          <th scope="col">Common name</th>
-          <th scope="col">Size</th>
-          <th scope="col">UPC</th>
-          <th scope="col">Code(s) on product</th>
-          <th scope="col">Additional information</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr class="d1">
-            <td data-label="Brand name">None – <br>Al-Ghani Halal Meat</td>
-            <td data-label="Brand name">All Beef products</td>
-            <td data-label="Common name">Variable<br>(Clerk Served)</td>
-            <td>None</td>
-            <td>All units sold from November 21, 2018 up to and including December 15, 2018 and <br>May 18, 2019 up to and including July 9, 2019</td>
-            <td>Sold at Al-Ghani Halal Meat, 125 Dundas St. E., Mississauga, ON&nbsp;</td>
-          </tr>
-        </tbody>
-      </table> -->
-
-
     <!--  <p>Check the UPC code on your product. </p> -->
-      <table class="table wb-tables table-striped" id="myTable">
+      <table id="myTable">
       <thead>
       <tr>
        <th scope="col" style="width: 150px;">Brand name</th>
@@ -290,28 +235,7 @@ $('.owl-carousel').owlCarousel({
       </tr>
       </thead>
       <tbody>
-      <tr>
-       <td data-label="Brand name">Kirkland</td>
-       <td data-label="Common name">Meatloaf with Mashed Potatoes</td>
-       <td data-label="Size">Various</td>
-       <td data-label="UPC">Various</td>
-       <td data-label="Code on product">Best Before: 19/SE/10 up to and including 19/OC/06 inclusive</td>
-      </tr>
-      <tr>
-       <td data-label="Brand name">Kirkland</td>
-       <td data-label="Common name">Meatloaf with Mashed Potatoes</td>
-       <td data-label="Size">Various</td>
-       <td data-label="UPC">Various</td>
-       <td data-label="Code on product">Best Before: 19/SE/10 up to and including 19/OC/06 inclusive</td>
-      </tr>
-      <tr>
-       <td data-label="Brand name">Kirkland</td>
-       <td data-label="Common name">Meatloaf with Mashed Potatoes</td>
-       <td data-label="Size">Various</td>
-       <td data-label="UPC">Various</td>
-       <td data-label="Code on product">Best Before: 19/SE/10 up to and including 19/OC/06 inclusive</td>
-      </tr>
-      <tr>
+      <tr class="d1">
        <td data-label="Brand name">Kirkland</td>
        <td data-label="Common name">Meatloaf with Mashed Potatoes</td>
        <td data-label="Size">Various</td>
@@ -705,7 +629,8 @@ Email: <a href="mailto:cfia.media.acia@canada.ca">cfia.media.acia@canada.ca</a><
 <!--[if gte IE 9 | !IE ]><!-->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
 <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
+<script src="../search-results/js/owl.carousel.min.js"></script>
+<script src="../search-results/js/dyn-gen.js"></script>
 <!--<![endif]-->
 <!--[if lt IE 9]>
 <script src="../wet-boew/js/ie8-wet-boew2.min.js"></script>
