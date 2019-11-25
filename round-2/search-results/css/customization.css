@@ -249,6 +249,7 @@ input[type="reset"], input[type="button"], input[type="submit"]
   padding-top: 5px;
 }
 
+
 .recall-share {
 	float: left;
 	text-decoration:none;
@@ -678,6 +679,10 @@ color: white !important;
 	  text-overflow: ellipsis;
 	  overflow: hidden;
 	}
+  #collapseOne {
+    height: 260px;
+    overflow: auto;
+  }
 }
 
 .gc-stp-stp {
