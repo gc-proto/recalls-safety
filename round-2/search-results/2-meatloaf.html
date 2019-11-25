@@ -26,10 +26,10 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
   <script src="js/jquery.min.js"></script>
-   <!-- <link rel="stylesheet" href="css/jquery.dataTables.css"></style> -->
+   <link rel="stylesheet" href="css/jquery.dataTables.css"></style>
    <link rel="stylesheet" href="css/customization.css"></style>
 
-   <!-- <script type="text/javascript" src="js/jquery.dataTables.min.js"></script> -->
+   <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
    <link rel="stylesheet" href="css/owl.carousel.min.css" />
@@ -162,82 +162,34 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 
 <main role="main" property="mainContentOfPage" class="container">
-<script>
-document.addEventListener("DOMContentLoaded", function(){
- var id = getUrlParameter('id'); // (gets me URL parameters)
- var lang = getUrlParameter('lang'); // (gets me URL parameters)
- // get the URL aprameters for ID and Lang then return API JSON
- var jsonfromhc = getRecall(id, lang);
- console.log(id);
- console.log(lang);
- console.log(jsonfromhc);
-});
-function getRecall(id, lang) {
-   var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
-   var uri = base + '/api/' + id + '/' + lang;
-   $.ajax({
-       url:uri,
-       type:'GET',
-       Accept:"application/json",
-       dataType: 'json',
-       success:function(data){
-           console.log(data.title);
-     console.log(data);
-     //use ids to modify page
-     $("#toptitle").text(data.title);
-     $("#toptitle").text(data.title);
-       },
-       error:function(error){
-       },
-   });
-   return;
-};
-var getUrlParameter = function getUrlParameter(sParam) {
-   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-       sURLVariables = sPageURL.split('&'),
-       sParameterName,
-       i;
-   for (i = 0; i < sURLVariables.length; i++) {
-       sParameterName = sURLVariables[i].split('=');
-       if (sParameterName[0] === sParam) {
-           return sParameterName[1] === undefined ? true : sParameterName[1];
-       }
-   }
-};
-</script>
-
-
-<div>
-
-  <h1><span class="stacked" role="text"> <span>Kirkland brand Meatloaf with Mashed Potatoes</span>: <span>Undeclared egg, undeclared mustard</span></span>
-    </h1>
+  <h1><span class="stacked" role="text"> <span>Kirkland brand Meatloaf with Mashed Potatoes</span>: <span>Undeclared egg, undeclared mustard</span></span></h1>
   <p><strong>Recall date:</strong> October 7, 2019</p>
-<p>Other recalls from: <a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=&fq_cat=&fq_scat=&fq_y=&fq_mk_nm=&fq_achldwmn=&dspl=&q=Liao+Bu+De">Kirkland</a></p>
-<div class="col-md-8 row">
+  <p>Other recalls from: <a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=&fq_cat=&fq_scat=&fq_y=&fq_mk_nm=&fq_achldwmn=&dspl=&q=Liao+Bu+De">Kirkland</a></p>
+  <div class="col-md-8 row">
+    <section>
+      <h2>Summary</h2>
+      <ul>
+        <li><strong>Product:</strong> Kirkland Meatloaf with Mashed Potatoes </li>
+        <li><strong>Issue:</strong> Undeclared egg and mustard</li>
+        <li><strong>What to do:</strong> Throw out the product if you are allergic to eggs</li>
+      </ul>
+    </section>
+  </div>
 
-  <h2>Summary</h2>
-<ul>
-<li><strong>Product:</strong> Kirkland Meatloaf with Mashed Potatoes </li>
-<li><strong>Issue:</strong> Undeclared egg and mustard</li>
-<li><strong>What to do:</strong> Throw out the product if you are allergic to eggs</li>
-</ul>
-</section>
-</div>
 
 
-
-<div class="clearfix"></div>
-<div class="owl-container col-md-12">
-<script>
-$(function() {
-$('.owl-carousel').owlCarousel({
-  margin: 20,
-  loop: true,
-  items: 1,
-  stagePadding: 50
-});
-});
-</script>
+  <div class="clearfix"></div>
+  <div class="owl-container col-md-12">
+  <script>
+  $(function() {
+    $('.owl-carousel').owlCarousel({
+      margin: 20,
+      loop: true,
+      items: 1,
+      stagePadding: 50
+    });
+  });
+  </script>
 
 <!-- No image with this recall
 <div class="owl-carousel">
@@ -279,7 +231,7 @@ $('.owl-carousel').owlCarousel({
 
 
     <!--  <p>Check the UPC code on your product. </p> -->
-      <table class="table wb-tables table-striped" id="myTable">
+      <table class="table table-striped" id="myTable">
       <thead>
       <tr>
        <th scope="col" style="width: 150px;">Brand name</th>

@@ -557,3 +557,9 @@ table.dataTable td {
         margin-top: 0.5em
     }
 }
+
+@media screen and (min-width: 992px) {
+  .dataTables_wrapper .dataTables_filter {
+    padding-left:20px;
+  }
+}
