@@ -242,6 +242,13 @@ input[type="reset"], input[type="button"], input[type="submit"]
 
 }
 
+.wrap {
+  clear: both;
+  display:flex;
+  white-space: nowrap;
+  padding-top: 5px;
+}
+
 .recall-share {
 	float: left;
 	text-decoration:none;
@@ -252,6 +259,10 @@ input[type="reset"], input[type="button"], input[type="submit"]
 
 .recalls-f .checkbox-small {
     margin-bottom: 18px !important;
+}
+
+.subcategories {
+   margin-left: 15px;
 }
 
 .center-cropped {
@@ -265,7 +276,7 @@ input[type="reset"], input[type="button"], input[type="submit"]
 .search-facet {
   border-bottom: solid #ccc 1px;
   margin-bottom: 0px;
-  margin-top: 5px;"
+  margin-top: -5px;
 }
 
 
@@ -445,20 +456,18 @@ dl.inline-flex dd {
 .recalls-filter-label {
 	font-size:16px;
 	padding:10px;
-	font-weight:
-	bold; color:white;
-	/*var-2*/
-	/* bold; color:black;*/
+	font-weight:bold;
+  color:white;
+
 }
+
 
 .recalls-filter-1 {
 	display: inline-block;
 	margin-top: 5px;
 	background-color: #495f07;
 	border-radius:0.25em;
-	/*var-2*/
-	/* background-color: #495f0775;*/
-	/* border-bottom: 4px #495f07 solid;*/
+
 }
 
 .recalls-filter-2 {
@@ -466,9 +475,7 @@ dl.inline-flex dd {
 	margin-top: 5px;
 	border-radius:0.25em;
 	background-color: #3a6263;
-	/*var-2*/
-	/* background-color: #495f0775; var-2*/
-	/* border-bottom: 4px #3a6263 solid; var-2*/
+
 }
 
 .recalls-filter-3 {
@@ -491,11 +498,23 @@ dl.inline-flex dd {
 	/* border-bottom: 4px #6e3a74 solid; */
 }
 
+.inactive span {
+  font-weight: 100 !important;
+}
+
 .recalls-filter-label-var-2 {
 	font-size:16px;
 	padding:10px;
-	font-weight:
-	bold; color:black;
+	font-weight: bold;
+  color:black;
+}
+
+.inactive.recalls-filter-1-var-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+  background-color: white !important;
+	border: 2px solid #8db12175;
 }
 
 .recalls-filter-1-var-2 {
@@ -506,6 +525,14 @@ dl.inline-flex dd {
 	border-bottom: 4px #495f07 solid;
 }
 
+.inactive.recalls-filter-2-var-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+  background-color: white !important;
+	border: 2px solid  #76a9ab66;
+}
+
 .recalls-filter-2-var-2 {
 	display: inline-block;
 	margin-top: 5px;
@@ -514,12 +541,28 @@ dl.inline-flex dd {
 	border-bottom: 4px #3a6263 solid;
 }
 
+.inactive.recalls-filter-3-var-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+  background-color: white !important;
+	border: 2px solid #ec796e6e;
+}
+
 .recalls-filter-3-var-2 {
 	display: inline-block;
 	margin-top: 5px;
 	border-radius:0.15em;
 	background-color: #ec796e6e;
 	border-bottom: 4px #843028 solid;
+}
+
+.inactive.recalls-filter-4-var-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+  background-color: white !important;
+	border: 2px solid #eb88f775;
 }
 
 .recalls-filter-4-var-2 {

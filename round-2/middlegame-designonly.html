@@ -19,6 +19,14 @@
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
 <link rel="stylesheet" href="https://gc-proto.github.io/recalls-safety/scenarioH/css/autocomplete.css">
 
+<script>
+$(document).ready(function(){
+  $("#allergens-click").click(function(){
+    $(".allergens").hide();
+  });
+});
+</script>
+
 <!--<![endif]-->
 <!--[if lt IE 9]>
 		<link href="./GCWeb/assets/favicon.ico" rel="shortcut icon" />
@@ -92,9 +100,22 @@
 <!-- class="gc-theme" is doing some weird stuff with the first h2... -->
 <main role="main" property="mainContentOfPage" class="container">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("#allergens").click(function(){
+      $(".allergens").toggle();
+    });
+
+  });
+  </script>
+  </head>
+  <body>
+
+
+
 	<h1 class="page-header" style="margin-bottom:0px; margin-top: 15px;">Recalls and safety alerts</h1>
 
-  <div class="content">
 
     <aside class="col-sm-12 col-md-4 row" role="complementary">
       <a class="btn-clear" href="recalls-home-b.html">Clear all filters&nbsp;&nbsp;<i class="fas fa-times"></i></a>
@@ -110,16 +131,43 @@
             </a>
           </h4>
         </div>
+
+
         <div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
 
-            <hr class="search-facet"/>
             <div class="recalls-f can-ca-form">
 
                           <div class="checkbox checkbox-small">
-                            <input type="checkbox" id="allergens">
+                            <input type="checkbox" id="allergens" checked="true">
                             <label for="allergens">Allergens</label><span class="badge pull-right">111</span>
                           </div>
+
+                          <span class="allergens">
+                          <hr class="search-facet"/>
+
+                          <div class="subcategories">
+
+                                        <div class="checkbox checkbox-small">
+                                          <input type="checkbox" id="undeclared-eggs">
+                                          <label for="undeclared-eggs">Undeclared eggs</label><span class="badge pull-right">111</span>
+                                        </div>
+                                        <div class="checkbox checkbox-small">
+                                          <input type="checkbox" id="undeclared-peanuts">
+                                          <label for="undeclared-peanuts">Undeclared peanuts</label><span class="badge pull-right">235</span>
+                                        </div>
+                                        <div class="checkbox checkbox-small">
+                                          <input type="checkbox" id="undeclared-wheat">
+                                          <label for="undeclared-wheat">Undeclared wheat</label><span class="badge pull-right">66</span>
+                                        </div>
+                                        <div class="checkbox checkbox-small">
+                                          <input type="checkbox" id="undeclared-other">
+                                          <label for="undeclared-other">Other</label><span class="badge pull-right">136</span>
+                                        </div>
+                            </div>
+
+                            <hr class="search-facet"/>
+      </span>
                           <div class="checkbox checkbox-small">
                             <input type="checkbox" id="tampering">
                             <label for="tampering">Tampering</label><span class="badge pull-right">235</span>
@@ -167,17 +215,11 @@
     </div>
 
 
-
-        </div>
-
-    </section> <!-- /.block -->
-            </div>
 </aside>
 
     <section class="col-sm-12 col-md-8 pull-right">
 
-		<div>
-		<div>
+
 
 
 	  <!-- search -->
@@ -200,7 +242,20 @@
     	<button class="r-search-btn"type="submit">Find</button>
 
     </div>
-    <div class="recall-categories">
+    <div class="" style="clear: both; padding-top: 5px;">
+      <div class="row">
+        <p class="toc lst-spcd col-md-12 wb-inv" style="margin-bottom:2px!important; clear:both; float:left; margin-top:3px;">Filter by:</p>
+        <ul class="toc lst-spcd col-md-12 flex-container wrap">
+
+          <li><a id="food-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Food and allergies" class="recalls-filter-1-var-2"><span class="recalls-filter-label-var-2">Food and allergies</span></a></li>
+          <li><a id="vehicles-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Vehicles" class="inactive recalls-filter-2-var-2"><span class="recalls-filter-label-var-2">Vehicles</span></a>  </li>
+          <li><a id="medical-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Health" class="inactive recalls-filter-3-var-2"><span class="recalls-filter-label-var-2">Health</span></a>  </li>
+          <li><a id="products-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Products" class="inactive recalls-filter-4-var-2"><span class="recalls-filter-label-var-2">Products</span></a>  </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <div class="recall-categories">
       <div class="row">
         <ul class="toc lst-spcd col-md-12">
           <li><a id="food-link" href="recalls-home-b-food.html">Food and allergies</a> |</li>
@@ -209,7 +264,7 @@
           <li stle><a id="products-link" href="https://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=Consumer+products">Products</a></li>
         </ul>
       </div>
-    </div>
+    </div> -->
 
 
 </div>
@@ -535,6 +590,7 @@ function closeNav() {
               </div>
           </div>
       </footer>
+
 
 <!--[if gte IE 9 | !IE ]><!-->
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
