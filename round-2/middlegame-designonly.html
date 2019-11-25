@@ -116,6 +116,40 @@ $(document).ready(function(){
 
 	<h1 class="page-header" style="margin-bottom:0px; margin-top: 15px;">Recalls and safety alerts</h1>
 
+<div class="pull-right col-md-8 col-sm-12 col-xs-12">
+  <!-- search -->
+  <form action="search" method="GET">
+  <input type="hidden" name="lang" value="en">
+  <input type="hidden" name="type" value="all">
+  <input type="hidden" name="year" value="0">
+  <input type="hidden" name="departmentid" value="0">
+  <input type="hidden" name="subjectid" value="0">
+  <input type="hidden" name="start" value="1">
+  </form>
+
+
+  <h2 class="r-title hidden-xs">Search</h2>
+  <div class="input-group input-recalls">
+
+
+  <input type="text" class="r-search" placeholder="Search all recalls">
+
+    <button class="r-search-btn"type="submit">Find</button>
+
+  </div>
+  <div class="" style="clear: both; padding-top: 5px;">
+    <div class="row">
+      <p class="toc lst-spcd col-md-12 wb-inv" style="margin-bottom:2px!important; clear:both; float:left; margin-top:3px;">Filter by:</p>
+      <ul class="toc lst-spcd col-md-12 flex-container wrap">
+
+        <li><a id="food-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Food and allergies" class="recalls-filter-1-var-2"><span class="recalls-filter-label-var-2">Food and allergies</span></a></li>
+        <li><a id="vehicles-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Vehicles" class="inactive recalls-filter-2-var-2"><span class="recalls-filter-label-var-2">Vehicles</span></a>  </li>
+        <li><a id="medical-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Health" class="inactive recalls-filter-3-var-2"><span class="recalls-filter-label-var-2">Health</span></a>  </li>
+        <li><a id="products-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Products" class="inactive recalls-filter-4-var-2"><span class="recalls-filter-label-var-2">Products</span></a>  </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
     <aside class="col-sm-12 col-md-4 row" role="complementary">
       <a class="btn-clear" href="recalls-home-b.html">Clear all filters&nbsp;&nbsp;<i class="fas fa-times"></i></a>
@@ -217,43 +251,11 @@ $(document).ready(function(){
 
 </aside>
 
+
     <section class="col-sm-12 col-md-8 pull-right">
 
 
 
-
-	  <!-- search -->
-	  <form action="search" method="GET">
-		<input type="hidden" name="lang" value="en">
-		<input type="hidden" name="type" value="all">
-		<input type="hidden" name="year" value="0">
-		<input type="hidden" name="departmentid" value="0">
-		<input type="hidden" name="subjectid" value="0">
-		<input type="hidden" name="start" value="1">
-	  </form>
-
-
-	 <h2 class="r-title">Search</h2>
-		<div class="input-group input-recalls">
-
-
-		<input type="text" class="r-search" placeholder="Search all recalls">
-
-    	<button class="r-search-btn"type="submit">Find</button>
-
-    </div>
-    <div class="" style="clear: both; padding-top: 5px;">
-      <div class="row">
-        <p class="toc lst-spcd col-md-12 wb-inv" style="margin-bottom:2px!important; clear:both; float:left; margin-top:3px;">Filter by:</p>
-        <ul class="toc lst-spcd col-md-12 flex-container wrap">
-
-          <li><a id="food-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Food and allergies" class="recalls-filter-1-var-2"><span class="recalls-filter-label-var-2">Food and allergies</span></a></li>
-          <li><a id="vehicles-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Vehicles" class="inactive recalls-filter-2-var-2"><span class="recalls-filter-label-var-2">Vehicles</span></a>  </li>
-          <li><a id="medical-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Health" class="inactive recalls-filter-3-var-2"><span class="recalls-filter-label-var-2">Health</span></a>  </li>
-          <li><a id="products-link" href="/rGsPreview/s_r?st=s&amp;s5bm3ts21rch=x&amp;num=10&amp;st1rt=0&amp;langs=eng&amp;cdn=rasf&amp;&amp;dspl=cat&amp;fq_pcat=Products" class="inactive recalls-filter-4-var-2"><span class="recalls-filter-label-var-2">Products</span></a>  </li>
-        </ul>
-      </div>
-    </div>
 
     <!-- <div class="recall-categories">
       <div class="row">
@@ -385,6 +387,7 @@ function closeNav() {
         </div>
 		<br />
 		<p>Add pagination bar</p>
+    <nav id="tp-pg" class="visible-sm visible-xs"><a class="btn btn-primary" href="#wb-tphp">Return to search<span class="wb-inv"> facets</a> </nav>
 
     <section class="followus btn-default mrgn-bttm-md recall-share btn">Receive email updates:</a>
 				 <ul>
