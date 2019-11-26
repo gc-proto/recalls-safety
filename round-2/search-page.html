@@ -57,8 +57,13 @@
           $("a").removeClass("active");
           // add class to the one we clicked
           $(this).addClass("active");
+       });
+       $("#searchForm").click(function() {
+          $("#currentConcerns").addClass("wb-inv");
+          $(".pagetag").addClass("wb-inv");
 
        });
+
     });
     </script>
 
@@ -126,10 +131,34 @@
 <main role="main" property="mainContentOfPage" class="container">
 
 <h1 style="margin-top: 15px;">Recalls and safety alerts</h1>
-
+<p class="pagetag">Find all Government of Canada recalls, advisories, public health notices, updates and safety alerts.</p>
 <div class="row">
 
 <div class="col-md-12 row">
+
+
+    <!-- Hide once search is activated -->
+    <aside class="col-sm-12 col-md-4" id="currentConcerns">
+    <h2 class="h3" style="margin-top: 0px">Current concerns</h2>
+
+    <div class="col-sm-6 col-xs-6 col-md-12 row">
+    <a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2018/66890a-eng.php"><h3 class="h6">Unauthorized products may pose serious health risks</h3>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 col-md-12">
+    <img src="./search-results/images/nutrakey.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm center-cropped" data-emptytext="Image"/></a>
+    </div>
+
+    <div class="col-sm-6 col-xs-6 col-md-12 row">
+      <a href="https://www.canada.ca/en/public-health/services/public-health-notices/2018/public-health-notice-outbreak-salmonella-infections-linked-poultry-frozen-raw-breaded-chicken-products.html"><h3 class="h6">Outbreak of Salmonella infections linked to poultry – including frozen</h3>
+    </div>
+    <div class="col-sm-6 col-xs-6 col-md-12">
+      <div class="visible-xs"><br /></div> <!-- this br is a quick fix for mobile gap issue... real fix could be to add a class here to target after the first child and add spacing on mobile viewport size -->
+      <img src="./search-results/images/chicken_nuggets.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm center-cropped" data-emptytext="Image"/></a>
+    </div>
+    </aside>
+
+  <!-- end open game current concerns -->
 
   <div class="pull-right col-md-8 col-sm-12 col-xs-12">
     <!-- Note: need this to actually populate with the results, need a 'recall-total' that populates on page load -->
@@ -151,7 +180,8 @@
       <div class="row">
         <h2 class="wb-inv">Filter by:</h2>
         <ul id="recall-categories-filter" class="toc lst-spcd col-md-12 wrap">
-          <li><a id="food-link"  class="active recalls-filter-1-var-2"><span class="recalls-filter-label">Food and allergies</span></a></li> <!-- Note: need these links to work and toggle the class 'active' -->
+          <!-- Note: need these links to work as filter categories, also need them to show active as needed after a search is done, ie it it's showing results from Health and Food, both should be active state -->
+          <li><a id="food-link"  class="active recalls-filter-1-var-2"><span class="recalls-filter-label">Food and allergies</span></a></li>
           <li><a id="vehicles-link"  class="active recalls-filter-2-var-2"><span class="recalls-filter-label">Vehicles</span></a></li>
           <li><a id="medical-link" class="active recalls-filter-3-var-2"><span class="recalls-filter-label">Health</span></a></li>
           <li><a id="products-link"  class="active recalls-filter-4-var-2"><span class="recalls-filter-label">Consumer products</span></a></li>
@@ -159,8 +189,6 @@
     </div>
 
   </div> <!-- p-r col-md-8 -->
-
-
 
 <!-- start facets -->
 
