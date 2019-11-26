@@ -23,14 +23,15 @@
  href="./bootstrap.css"
  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
  crossorigin="anonymous"> -->
-<link rel="stylesheet" href="https://tbs.norconex.com/testbed/css/testbed.css">
 <!-- <link rel="stylesheet" href="https://tbs.norconex.com/testbed/css/jqcloud.min.css">
 <link rel="stylesheet" href="https://tbs.norconex.com/testbed/css/jquery.typeahead.min.css"> -->
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/wet-boew.min.css"/>
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css"/>
+<link rel="stylesheet" href="./search-embed.css"/>
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
 <!--[if gte IE 9 | !IE ]><!-->
-<link href="/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon"/>
 <!--<![endif]-->
 <!-- ↓ ↓ EMBED ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -->
 
@@ -61,116 +62,87 @@
 </head>
 
 
-
-
-<header class="navbar navbar-default" id="navbar" style="background-color: white !important;">
-  <div class="container" id="wb-bnr">
-    <section class="text-right" id="wb-lng">
-      <h2 class="wb-inv">Language selection
-      </h2>
-      <div class="region region-language-toggle">
-        <section class="language-switcher-language-url block block-wxt-library block-wxt-language-blocklanguage-interface clearfix" data-block-plugin-id="wxt_language_block:language_interface" id="block-languageswitcher">
-          <h2 class="block-title">WxT Language switcher
-          </h2>
-          <div class="col-md-2 pull-right">
-            <ul class="links list-inline mrgn-bttm-none">
-              <li class="fr" data-drupal-link-system-path="&lt;front&gt;" hreflang="fr"><a class="language-link" data-drupal-link-system-path="&lt;front&gt;" href="/fr" hreflang="fr" lang="fr">Français</a></li>
-            </ul>
-          </div>
-          <div class="row">
-            <div class="region region-banner">
-              <div class="row col-md-10">
-                <div class="brand col-xs-5 col-md-4"><a href=""> <img alt="Government of Canada" id="header-logo" src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg" /> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
-  </div>
-  <div style="background-color: #26374a; height: 5px;">&nbsp;
-  </div>
+<body class="page-type-nav" vocab="http://schema.org/" typeof="WebPage">
+<ul id="wb-tphp">
+<li class="wb-slc">
+<a class="wb-sl" href="#wb-cont">Skip to main content</a>
+</li>
+<li class="wb-slc">
+<a class="wb-sl" href="#wb-info">Skip to "About government"</a>
+</li>
+</ul>
+<header>
+<div id="wb-bnr" class="container">
+<section id="wb-lng" class="text-right">
+<h2 class="wb-inv">Language selection</h2>
+<ul class="list-inline margin-bottom-none">
+<li><a lang="fr" href="theme-fr.html">Français</a></li>
+</ul>
+</section>
+<div class="row">
+<div class="brand col-xs-5 col-md-4">
+<a href="https://www.canada.ca/en.html"><img src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/sig-blk-en.svg" alt=""><span class="wb-inv"> Government of Canada / <span lang="fr">Gouvernement du Canada</span></span></a>
+</div>
+</div>
+</div>
+<nav class="gcweb-v2 gcweb-menu" typeof="SiteNavigationElement"><div class="container">
+  <h2 class="wb-inv">Menu</h2>
+  <button type="button" aria-haspopup="true" aria-expanded="false"><span class="wb-inv">Main </span>Menu <span class="expicon glyphicon glyphicon-chevron-down"></span></button>
+  <ul role="menu" aria-orientation="vertical" data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-en.html">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/jobs.html">Jobs and the workplace</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/immigration-citizenship.html">Immigration and citizenship</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://travel.gc.ca/">Travel and tourism</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/business.html">Business and industry</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/benefits.html">Benefits</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/health.html">Health</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/taxes.html">Taxes</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/environment.html">Environment and natural resources</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/defence.html">National security and defence</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/culture.html">Culture, history and sport</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/policing.html">Policing, justice and emergencies</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/transport.html">Transport and infrastructure</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="http://international.gc.ca/world-monde/index.aspx?lang=eng">Canada and the world</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/finance.html">Money and finances</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.canada.ca/en/services/science.html">Science and innovation</a></li>
+  </ul>
+</div></nav>
+<nav id="wb-bc" property="breadcrumb">
+<h2>You are here:</h2>
+<div class="container">
+<ol class="breadcrumb">
+<li class="cust-breadcrumb"><a href="https://www.canada.ca/en.html">Home</a></li>
+<li class="cust-breadcrumb"><a href="https://www.canada.ca/en/services/health.html">Health</a></li>
+</ol>
+</div>
+</nav>
 </header>
 
-<body>
 
   <main role="main" property="mainContentOfPage" class="container">
 
-<h1>Embeddable HTML search page</h1>
+<h1 style="margin-top: 15px;">Recalls and safety alerts</h1>
 
+<div class="row">
+
+  <div class="pull-right col-md-8 col-sm-12 col-xs-12">
+    <h2 class="r-title">8,875 results</h2> <!-- need this to actually populate with the results -->
+    <div class="input-group input-recalls">
+      <form id="searchForm" action="#">
+        <input id="terms" class="r-search" name="terms" type="text" placeholder="Search all recalls">
+        <button class="r-search-btn" type="submit">Find</button>
+        <div id="searchSpellCheck" style="display: none;">Did you mean: <a href="#">blah</a></div>
+        <div id="error" style="display: none;"></div>
+      </form>
+    </div> <!-- input -->
+  </div> <!-- p-r col-md-8 -->
+
+
+</div> <!-- row -->
 
 <!-- ↓ ↓ EMBED ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -->
 
-<form id="searchForm" action="#">
-  <input id="terms" name="terms" type="text" placeholder="Search for recalls...">
-  <button type="submit">Search</button>
-  <div id="searchSpellCheck" style="display: none;">Did you mean: <a href="#">blah</a></div>
-  <div id="error" style="display: none;"></div>
-</form>
 
 <hr>
-
-<style>
-
-/* controlling results */
-.recall dl {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 5em;
-}
-
-.recall dd, dt {
-    flex-basis: 70%;
-
-}
-
-.recall-summary {
-  font-size: 17px;
-  line-height: 1.5em;
-}
-
-.recall h3 {
-  font-size: 20px
-}
-
-
-/* controls facets */
-
-.card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-}
-
-.mb-3, .my-3 {
-    margin-bottom: 1rem!important;
-}
-
-.border-dark {
-    border-color: #343a40!important;
-}
-
-.card-header:first-child {
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
-}
-.card-header {
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0,0,0,.03);
-    border-bottom: 1px solid rgba(0,0,0,.125);
-}
-
-</style>
 
 <div id="noResults" style="display:none;">
   No recalls matching your search criteria were found.
@@ -199,7 +171,6 @@
     <ul class="recall-facet-type list-unstyled" style="margin-left: 15px;">
       <!-- "template-facet-entry" gets added here. -->
     </ul>
-<!-- Jennifer's comment: need a way to get the checkboxes on here -->
   </div>
   </div>
 
