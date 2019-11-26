@@ -140,8 +140,8 @@
     <!-- Hide once search is activated -->
     <aside class="col-sm-12 col-md-4" id="currentConcerns">
     <h2 class="h3" style="margin-top: 10px">Current concerns</h2>
-
-    <div class="col-sm-6 col-xs-6 col-md-12 row">
+    <div class="row">
+    <div class="col-sm-6 col-xs-6 col-md-12">
     <a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2018/66890a-eng.php"><h3 class="h6">Unauthorized products may pose serious health risks</h3>
     </div>
 
@@ -149,13 +149,14 @@
     <img src="./search-results/images/nutrakey.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm center-cropped" data-emptytext="Image"/></a>
     </div>
 
-    <div class="col-sm-6 col-xs-6 col-md-12 row">
+    <div class="col-sm-6 col-xs-6 col-md-12">
       <a href="https://www.canada.ca/en/public-health/services/public-health-notices/2018/public-health-notice-outbreak-salmonella-infections-linked-poultry-frozen-raw-breaded-chicken-products.html"><h3 class="h6">Outbreak of Salmonella infections linked to poultry – including frozen</h3>
     </div>
     <div class="col-sm-6 col-xs-6 col-md-12">
       <div class="visible-xs"><br /></div> <!-- this br is a quick fix for mobile gap issue... real fix could be to add a class here to target after the first child and add spacing on mobile viewport size -->
       <img src="./search-results/images/chicken_nuggets.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm center-cropped" data-emptytext="Image"/></a>
     </div>
+  </div>
     </aside>
 
   <!-- end open game current concerns -->
@@ -181,6 +182,7 @@
         <h2 class="wb-inv">Filter by:</h2>
         <ul id="recall-categories-filter" class="toc lst-spcd col-md-12 wrap">
           <!-- Note: need these links to work as filter categories, also need them to show active as needed after a search is done, ie it it's showing results from Health and Food, both should be active state -->
+          <!-- Note: scrolling horizontally stops working after search initiated -->
           <li><a id="food-link"  class="active recalls-filter-1-var-2"><span class="recalls-filter-label">Food and allergies</span></a></li>
           <li><a id="vehicles-link"  class="active recalls-filter-2-var-2"><span class="recalls-filter-label">Vehicles</span></a></li>
           <li><a id="medical-link" class="active recalls-filter-3-var-2"><span class="recalls-filter-label">Health</span></a></li>
@@ -191,16 +193,19 @@
   </div> <!-- p-r col-md-8 -->
 
 <!-- start facets -->
+<div class="clearfix"></div>
 
 <!-- searchResponse is part of EMBED -->
 <div id="searchResponse" style="display:none;"> <!-- move this here for now to encompass all searchy-active things -->
 
-<aside class="col-sm-12 col-md-4">
+<div class="col-sm-12 col-md-4">
   <!-- Note: clear all filters doesn't yet do anything, need to get it working -->
-  <a class="btn-clear" href="">Clear all filters&nbsp;&nbsp;<i class="fas fa-times"></i></a>
-
+  <div class="col-sm-6 row pull-right">
+    <button class="btn-clear" href="">Clear all filters&nbsp;&nbsp;<i class="fas fa-times"></i></button>
+  </div>
+  <div class="col-sm-6 row">
     <h2 class="mrgn-tp-lg h6">&#9776; Filter by</h2>
-
+  </div>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
@@ -226,7 +231,7 @@
     </div> <!-- panel-group -->
 
 
-</aside> <!-- end facets -->
+</div> <!-- end facets -->
 
 <!-- EMBED STUFFS -->
 <div id="searchResults" style="margin: 10px 0px;" class="col-md-8">
