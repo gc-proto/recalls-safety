@@ -121,6 +121,7 @@
 <div class="row">
 
 <div class="col-md-12 row">
+
   <div class="pull-right col-md-8 col-sm-12 col-xs-12">
     <h2 class="r-title">8,875 results</h2> <!-- Note: need this to actually populate with the results, can we make a 'recall-total' class Pascal? -->
     <div class="input-group input-recalls">
@@ -131,10 +132,22 @@
         <div id="error" style="display: none;"></div>
       </form>
     </div> <!-- input -->
+
+      <div class="row">
+        <h2 class="wb-inv">Filter by:</h2>
+        <ul class="toc lst-spcd col-md-12 flex-container wrap"> <!-- Note: need these links to work and toggle class 'active' -->
+          <li><a id="food-link" href="" class="active recalls-filter-1-var-2"><span class="recalls-filter-label">Food and allergies</span></a></li>
+          <li><a id="vehicles-link" href="" class="recalls-filter-2-var-2"><span class="recalls-filter-label">Vehicles</span></a></li>
+          <li><a id="medical-link" href="" class="recalls-filter-3-var-2"><span class="recalls-filter-label">Health</span></a></li>
+          <li><a id="products-link" href="" class="recalls-filter-4-var-2"><span class="recalls-filter-label">Products</span></a></li>
+        </ul>
+    </div>
+
   </div> <!-- p-r col-md-8 -->
 
-</div> <!-- col-md-12 -->
 
+
+</div> <!-- col-md-12 -->
 </div> <!-- row -->
 
 <!-- ↓ ↓ EMBED ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -->
@@ -146,7 +159,7 @@
 
 <div id="searchResponse" style="display:none;">
 
-  <div id="searchHeading">
+  <!-- <div id="searchHeading">
     <strong>
       <span class="recall-showing">
         Showing <span class="recall-from">1</span>
@@ -156,9 +169,9 @@
     </strong>
   </div>
 
-  <hr>
+  <hr> -->
 
-  <div id="searchFacets" class="col-md-3">
+  <div id="searchFacets" class="col-md-4">
     <div class="card mb-3 facet-field border-dark">
       <div class="card-header">
 
@@ -172,7 +185,7 @@
 
   <hr>
 
-  <div id="searchResults" style="margin: 10px 0px;" class="col-md-9">
+  <div id="searchResults" style="margin: 10px 0px;" class="col-md-8">
     <!-- "template-recall" gets added here. -->
   </div>
 
@@ -192,16 +205,13 @@
   <a href="#" class="recall-link">
     <h3 class="recall-title">Title</h3>
   </a>
-<!-- we could put the alert/department up here ... but
-  <label class="recall-alertType alert alert-warning">Recall</label>
-need a way to control the label warning/color -->
   <p class="recall-summary">Generated summary</p>
   <dl>
     <dt>Type</dt>
     <dd class="recall-type">Food</dd>
 
     <dt>Date</dt>
-    <dd class="recall-date">1534-05-10</dd>
+    <dd class="recall-date">1534-05-10</dd> <!-- Note: convert to plain text -->
 
     <dt>Department</dt>
     <dd class="recall-department">Canadian Food Inspection Agency</dd>
