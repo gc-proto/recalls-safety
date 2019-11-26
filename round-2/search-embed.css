@@ -1,0 +1,703 @@
+@import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
+
+
+/* bigger label */
+label {
+  font-size: 20px !important; /*will not use important tags on PR, will correct source */
+}
+
+.label {
+  text-align: left!important;
+  display:inline-block!important;
+  clear: left!important;
+  white-space:normal!important;
+}
+
+.checkbox-small label {
+  font-size: 17px !important; /* important needed for now, will rmv later */
+}
+/* increase field flow sizing */
+
+legend.h5 {
+  margin-top: 0px !important; /*will not use important tags on PR, will correct source */
+  font-size: 22px !important; /*will not use important tags on PR, will correct source */
+  margin-bottom: 15px !important; /*will not use important tags on PR, will correct source */
+}
+
+.btn {
+  font-size: 20px !important; /*will not use important tags on PR, will correct source */
+  font-variant-ligatures: no-common-ligatures;
+}
+
+.pagedetails .btn  {
+  font-size: 16px !important; /*will not use important tags on PR, will correct source */
+  font-variant-ligatures: no-common-ligatures;
+}
+
+input[type="reset"], input[type="button"], input[type="submit"]
+
+{
+  height: 50px!important;
+}
+
+/* better focus on buttons */
+
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 5pt 4pt rgb(59, 153, 252);
+  outline: 2px solid white;
+}
+/* custom checkboxes */
+
+.can-ca-form input {
+  position: absolute;
+  opacity: 0;
+}
+
+
+.can-ca-form .is-disabled {
+  opacity: 0.5;
+}
+
+.can-ca-form .is-disabled label {
+  cursor: not-allowed;
+}
+
+.can-ca-form {
+    clear: both;
+    padding-top: 6px;
+}
+
+.can-ca-form .checkbox,
+.can-ca-form .radio,
+.can-ca-form .form-checkbox,
+.can-ca-form .form-radio {
+
+  position: relative;
+  cursor: pointer;
+  font-weight: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.can-ca-form .checkbox,
+.can-ca-form .radio {
+
+  padding-left: 30px;
+  margin-bottom: 32px;
+
+}
+
+.can-ca-form .checkbox-small {
+  padding-left: 16px;
+  margin-bottom: 25px;
+}
+
+.can-ca-form .form-checkbox,
+.can-ca-form .form-radio {
+
+  margin-right: 30px;
+  margin-bottom: 25px;
+  min-width: 26%; /* prevents weird overlapping */
+
+}
+
+
+.can-ca-form .form-checkbox label,
+.can-ca-form .form-radio label {
+  padding-left: 50px;
+
+}
+
+.can-ca-form .checkbox label::before,
+.can-ca-form .radio label::before,
+.can-ca-form .form-checkbox label::before,
+.can-ca-form .form-radio label::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #333;
+  margin-top: -4px;
+
+ }
+
+ .can-ca-form .checkbox-small label::before {
+   content: "";
+   box-sizing: border-box;
+   position: absolute;
+   display: inline-block;
+   top: 0;
+   left: 0;
+   width: 24px;
+   height: 24px;
+   border: 2px solid #333;
+   margin-top: 0;
+
+  }
+
+
+.can-ca-form .radio label::before,
+.can-ca-form .form-radio label::before {
+  content: "";
+  border-radius: 50%;
+}
+
+
+.can-ca-form .checkbox label::after,
+.can-ca-form .form-checkbox label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 12px;
+  top: 0px;
+  width: 13px;
+  height: 22px;
+  border: solid #333;
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+}
+
+.can-ca-form .checkbox-small label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  top: 2px;
+  width: 8px;
+  height: 14px;
+  border: solid #333;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+
+}
+
+.can-ca-form .radio label::after,
+.can-ca-form .form-radio label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #333;
+}
+
+/* hide the check */
+.can-ca-form .form-checkbox input[type="checkbox"] + label::after,
+.can-ca-form .form-radio input[type="radio"] + label::after,
+.can-ca-form .checkbox input[type="checkbox"] + label::after,
+.can-ca-form .radio input[type="radio"] + label::after {
+    content: none;
+}
+
+/* unhide check when checked */
+.can-ca-form .form-checkbox input[type="checkbox"]:checked + label::after,
+.can-ca-form .form-radio input[type="radio"]:checked + label::after,
+.can-ca-form .checkbox input[type="checkbox"]:checked + label::after,
+.can-ca-form .radio input[type="radio"]:checked + label::after {
+    content: "";
+}
+
+/* add focus */
+.can-ca-form .checkbox input[type="checkbox"]:focus + label::before,
+.can-ca-form .form-checkbox input[type="checkbox"]:focus + label::before,
+.can-ca-form .form-radio input[type="radio"]:focus + label::before,
+.can-ca-form .radio input[type="radio"]:focus + label::before  {
+    box-shadow: 0 0 3pt 2pt rgb(59, 153, 252);
+}
+
+
+/* for green checks */
+
+.can-ca-form .checkbox-green label::after {
+  content: "";
+  border: solid white;
+  border-width: 0 5px 5px 0;
+}
+
+/* for green checks */
+.can-ca-form .checkbox-green input[type="checkbox"]:checked + label:before {
+  background-color: #318000;
+}
+
+ @media only screen and (max-width: 1200px) {
+
+.can-ca-form .form-checkbox,
+.can-ca-form .form-radio {
+    min-width: 50%;
+  }
+
+}
+
+.wrap {
+  clear: both;
+  display:flex;
+  white-space: nowrap;
+  padding-top: 5px;
+}
+
+
+.recall-share {
+	float: left;
+	text-decoration:none;
+	font-size: 16px !important;
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+
+.recalls-f .checkbox-small {
+  margin-bottom: 18px !important;
+}
+
+.subcategories {
+   margin-left: 15px;
+}
+
+.center-cropped {
+  width: 300px;
+  height: 150px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  object-fit: none; /* Do not scale the image */
+}
+
+.search-facet {
+  border-bottom: solid #ccc 1px;
+  margin-bottom: 0px;
+  margin-top: -5px;
+}
+
+
+.r-title {
+	margin-top: 15px;
+}
+
+.r-search {
+	border: none;
+	box-shadow: none;
+	float: left;
+	width: 100%;
+  font-size: 18px;
+}
+
+.r-search-btn {
+	background: none;
+	border: none;
+	border-left: #cbbebe 1px solid;
+	padding-left: 10px;
+  padding-right: 10px;
+	color: #333;
+  position: absolute;
+  right: 0;
+  font-size: 18px;
+
+}
+
+.input-recalls {
+	clear: both !important;
+	height: 40px  !important;
+	padding: 0px 0px 0px 12px !important;
+	font-size: 18px !important;
+	line-height: 1.4375;
+	color: #888;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #335075;
+	border-radius: 4px !important;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
+	margin-left: auto !important;
+	width:100% !important;
+	padding-top: 7px !important;
+	padding-bottom: 4px !important;
+	display: flex !important;
+	float: left !important;
+}
+
+.recall-categories {
+	clear: both;
+	padding-top: 5px;
+}
+
+.recall-categories .toc {
+	display:flex;
+	white-space: nowrap;
+}
+
+.recall-categories li {
+	font-size:14px;
+	margin-left:0px;
+	padding: 2px 2px 0px 2px;
+}
+
+.btn-clear {
+	background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: 'Lato';
+  color: #3f4a64;
+  font-size: 16px;
+  background: #f2f3f5;
+  padding: 2px 6px 2px 6px;
+  border: solid #dedde2 1px;
+  text-decoration: none;
+	float:right;
+	margin-top: 16px;
+  color: #333 !important;
+}
+
+.recall-date {
+	float:right;
+	margin-top:0px;
+	font-size: 16px;
+}
+.recall-summary {
+	display:block;
+	clear:both;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.recall-summary {
+	font-size: 16px;
+}
+
+
+.recall-title {
+	font-size: 20px;
+	float: left;
+	margin-top: 10px;
+	width: calc(100% - 100px);
+	height: auto;
+}
+
+dl.inline-flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  overflow: visible;
+	margin-bottom: 0px !important;
+}
+dl.inline-flex dt {
+  flex: 0 0 15%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+dl.inline-flex dd {
+  flex: 0 0 85%;
+  margin-left: auto;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+	margin-bottom: 0px !important;
+
+}
+
+
+.panel-body {
+	padding-top: 5px !important;
+	padding-bottom: 0px !important;
+}
+
+#accordion .panel-heading { padding: 0;}
+#accordion .panel-title > a {
+	display: block;
+	padding: 0.4em 0.6em;
+    outline: none;
+    font-weight:bold;
+    text-decoration: none;
+		color: #333;
+}
+
+#accordion .panel-title > a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::before  {
+    content:"\e113";
+    float: left;
+    font-family: 'Glyphicons Halflings';
+	  margin-right:.6em;
+}
+#accordion .panel-title > a.accordion-toggle.collapsed::before, #accordion a.collapsed[data-toggle="collapse"]::before  {
+    content:"\e114";
+}
+
+#food-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
+}
+
+#vehicles-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
+}
+
+#medical-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black"
+}
+
+#products-link {
+    margin-left:2px;
+		text-decoration:none;
+		color:black;
+}
+
+
+.recalls-filter-1 {
+	display: inline-block;
+	margin-top: 5px;
+	background-color: #495f07;
+	border-radius:0.25em;
+
+}
+
+.recalls-filter-2 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.25em;
+	background-color: #3a6263;
+
+}
+
+.recalls-filter-3 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.25em;
+	background-color: #843028;
+	/*var-2*/
+	/* background-color: #495f0775;*/
+	/* border-bottom: 4px #843028 solid;*/
+}
+
+.recalls-filter-4 {
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.25em;
+	background-color: #6e3a74;
+	/*var-2*/
+	/* background-color: #495f0775; */
+	/* border-bottom: 4px #6e3a74 solid; */
+}
+
+
+
+.recalls-filter-label {
+	font-size:16px;
+	padding:10px;
+  color:black;
+}
+
+.recalls-filter-1-var-2 {
+
+  text-align: center;	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+  background-color: white;
+	border: 2px solid #8db12175;
+  width: 165px;
+}
+
+.active.recalls-filter-1-var-2 {
+	background-color: #8db12175;
+	border-bottom: 4px #495f07 solid;
+}
+
+.recalls-filter-2-var-2 {
+  text-align: center;
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+  background-color: white;
+	border: 2px solid  #76a9ab66;
+  width: 96px;
+
+}
+
+.active.recalls-filter-2-var-2 {
+	background-color: #76a9ab66;
+	border-bottom: 4px #3a6263 solid;
+}
+
+.recalls-filter-3-var-2 {
+  text-align: center;
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+  background-color: white;
+	border: 2px solid #ec796e6e;
+  width: 96px;
+
+}
+
+.active.recalls-filter-3-var-2 {
+	background-color: #ec796e6e;
+	border-bottom: 4px #843028 solid;
+}
+
+.recalls-filter-4-var-2 {
+  text-align: center;
+	display: inline-block;
+	margin-top: 5px;
+	border-radius:0.15em;
+  background-color: white;
+	border: 2px solid #eb88f775;
+  width: 180px;
+}
+
+.active.recalls-filter-4-var-2 {
+	background-color: #eb88f775;
+	border-bottom: 4px #6e3a74 solid;
+}
+
+.contributors {
+ font-size: 16px !important;
+ font-weight: 600;
+}
+
+.from {
+ font-size: 17px !important;
+ margin-top: 7px;
+}
+
+.contributors ul {
+ margin-block-start: 0em;
+ margin-block-end: 0em;
+ margin-inline-start: -25px;
+ margin-inline-end: 0px;
+ padding-inline-start: 0px;
+
+}
+
+@media screen and (min-width: 992px) {
+.contributors li {
+    display: inline-block;
+    float: left;
+    margin-right: .7em;
+}
+}
+
+@media screen and (min-width: 992px) {
+.contributors li:first-child:before {
+    content: none;
+}
+.contributors li:before {
+    content: "\2022";
+    margin-right: .7em;
+}
+}
+
+@media screen and (max-width: 767px) {
+
+.contributors ul {
+	margin-inline-start: 0px !important;
+}
+
+}
+
+
+h1 span.stacked {
+		                display: flex;
+		                flex-direction: column-reverse;
+		                margin-left: -9999px;
+		}
+		h1 span.stacked span:nth-child(1), h1 span.stacked span:nth-child(2) {
+		                margin-left: 9999px;
+		}
+		h1 span.stacked span:nth-child(2) {
+		                font-size: 0.8em;
+		                color: #666;
+										font-weight: 200;
+										margin-bottom: 0.175em;
+		}
+		h1 span.stacked span:nth-child(1) {
+		                margin-top: -1.1em;
+		}
+
+
+button#wb-srch-sub a:visited {
+
+color: white !important;
+
+
+}
+
+
+button#wb-srch-sub a {
+
+color: white !important;
+
+
+}
+
+@media (max-width:320px) {
+.recall-date {
+	float:left !important;
+	/* font-weight: bold !important; */
+}
+
+.recall-title {
+	width: 100% !important;
+}
+
+}
+
+@media (max-width: 500px) {
+	dl.inline-flex dt {
+	  flex: 0 0 100%;
+	  text-overflow: ellipsis;
+	  overflow: hidden;
+	}
+	dl.inline-flex dd {
+	  flex:0 0 100%;
+	  margin-left: auto;
+	  text-align: left;
+	  text-overflow: ellipsis;
+	  overflow: hidden;
+	}
+  #collapseOne {
+    max-height: 260px;
+    overflow: auto;
+  }
+  .wrap {
+    overflow-x: scroll;
+  }
+
+}
+
+
+
+
+@media (min-width:768px) {
+
+}
+
+@media (max-width:440px) {
+.recall-share {
+    margin-top: 10px;
+    float: left!important;
+}
+}.icon.twitter {
+background-size: 15px 15px !important;
+}
+
+}
