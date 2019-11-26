@@ -48,10 +48,19 @@
   If the WET template you will be using already has JQuery loaded, you can
   ignore the following script include:
  -->
-<script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+    $(function(){
+       $("#recall-categories-filter a").click(function() {
+          // remove classes from all
+          $("a").removeClass("active");
+          // add class to the one we clicked
+          $(this).addClass("active");
+
+       });
+    });
+    </script>
 
 <!-- ↑ ↑ EMBED ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -->
 
@@ -135,11 +144,11 @@
 
       <div class="row">
         <h2 class="wb-inv">Filter by:</h2>
-        <ul class="toc lst-spcd col-md-12 wrap">
-          <li><a id="food-link" href="" class="active recalls-filter-1-var-2"><span class="recalls-filter-label">Food and allergies</span></a></li> <!-- Note: need these links to work and toggle the class 'active' -->
-          <li><a id="vehicles-link" href="" class="recalls-filter-2-var-2"><span class="recalls-filter-label">Vehicles</span></a></li>
-          <li><a id="medical-link" href="" class="recalls-filter-3-var-2"><span class="recalls-filter-label">Health</span></a></li>
-          <li><a id="products-link" href="" class="recalls-filter-4-var-2"><span class="recalls-filter-label">Products</span></a></li>
+        <ul id="recall-categories-filter" class="toc lst-spcd col-md-12 wrap">
+          <li><a id="food-link"  class="active recalls-filter-1-var-2"><span class="recalls-filter-label">Food and allergies</span></a></li> <!-- Note: need these links to work and toggle the class 'active' -->
+          <li><a id="vehicles-link"  class="active recalls-filter-2-var-2"><span class="recalls-filter-label">Vehicles</span></a></li>
+          <li><a id="medical-link" class="active recalls-filter-3-var-2"><span class="recalls-filter-label">Health</span></a></li>
+          <li><a id="products-link"  class="active recalls-filter-4-var-2"><span class="recalls-filter-label">Products</span></a></li>
         </ul>
     </div>
 
@@ -159,7 +168,7 @@
 
 <div id="searchResponse" style="display:none;">
 
-  <!-- <div id="searchHeading">
+  <!-- <div id="searchHeading"> Note: could repurpose for title showing results
     <strong>
       <span class="recall-showing">
         Showing <span class="recall-from">1</span>
