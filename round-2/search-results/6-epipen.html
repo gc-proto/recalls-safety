@@ -26,6 +26,8 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
   <script src="js/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/breadcrumb.css"></style>
+
    <link rel="stylesheet" href="css/jquery.dataTables.css"></style>
    <link rel="stylesheet" href="css/customization.css"></style>
 
@@ -140,17 +142,16 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 	</div></nav>
 
 
-		<nav id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2><div class="container"><ol class="breadcrumb">
-<!-- <li><a href='/en.html'>Home</a></li> -->
-<div class="recall-super-title row" style="overflow: hidden;">
-  <div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
-    <a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=*:*&fq_pcat=Health&dspl=scat&fq_cat=Drugs" class="cust-breadcrumb">ᐸ Drugs</a>
-  </div>
-
-
-
-</div>
-</ol></div></nav>
+  <nav id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2>
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="hidden-xs hidden-sm"><a href="">Home</a></li>
+        <li class="hidden-xs hidden-sm"><a href="">Recalls and safety alerts</a></li>
+        <li class="hidden-xs hidden-sm"><a href="">Health</a></li>
+        <li class="no-break-breadcrumb"><a href="">Drugs</a></li>
+      </ol>
+    </div>
+  </nav>
 
 
 
@@ -160,69 +161,6 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 </header>
 
 <main role="main" property="mainContentOfPage" class="container">
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-
-
-
- var id = getUrlParameter('id'); // (gets me URL parameters)
- var lang = getUrlParameter('lang'); // (gets me URL parameters)
-
-
- // get the URL aprameters for ID and Lang then return API JSON
-
- var jsonfromhc = getRecall(id, lang);
- console.log(id);
- console.log(lang);
- console.log(jsonfromhc);
-
-
-
-
-
-});
-function getRecall(id, lang) {
-   var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
-   var uri = base + '/api/' + id + '/' + lang;
-
-
-
-
-   $.ajax({
-       url:uri,
-       type:'GET',
-       Accept:"application/json",
-       dataType: 'json',
-       success:function(data){
-           console.log(data.title);
-     console.log(data);
-
-     //use ids to modify page
-     $("#toptitle").text(data.title);
-     $("#toptitle").text(data.title);
-
-       },
-       error:function(error){
-       },
-   });
-   return;
-};
-var getUrlParameter = function getUrlParameter(sParam) {
-   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-       sURLVariables = sPageURL.split('&'),
-       sParameterName,
-       i;
-   for (i = 0; i < sURLVariables.length; i++) {
-       sParameterName = sURLVariables[i].split('=');
-       if (sParameterName[0] === sParam) {
-           return sParameterName[1] === undefined ? true : sParameterName[1];
-       }
-   }
-};
-</script>
-
-
-<div>
 <section>
   <h1><span class="stacked" role="text"> <span>EpiPen and EpiPen Jr</span>: <span>Issue with carrier tubes</span></span>
     </h1>

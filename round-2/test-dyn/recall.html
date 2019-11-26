@@ -13,7 +13,9 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="../GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="../GCWeb/css/theme.min.css">
-<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" href="../search-results/css/custom.css">
+<link rel="stylesheet" href="../search-results/css/breadcrumb.css"></style>
+
 <!--<![endif]-->
 <!--[if lt IE 9]>
 <link href="../GCWeb/assets/favicon.ico" rel="shortcut icon" />
@@ -146,13 +148,15 @@ p, li {max-width: 65em;}
 </section>
 </div>
 </div>
-<nav role="navigation" id="wb-bc" property="breadcrumb">
-<h2>You are here:</h2>
-	<div style="background-color: #335075; min-height: 10px;"></div>
-<div class="container">
-<div class="row">
-</div>
-</div>
+<nav id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2>
+  <div class="container">
+    <ol class="breadcrumb">
+      <li class="hidden-xs hidden-sm"><a href="">Home</a></li>
+      <li class="hidden-xs hidden-sm"><a href="">Recalls and safety alerts</a></li>
+      <li class="hidden-xs hidden-sm"><a href="">Category</a></li>
+      <li class="no-break-breadcrumb"><a href="">Sub-category</a></li>
+    </ol>
+  </div>
 </nav>
 </header>
 
@@ -528,23 +532,10 @@ function makeTable() {
 };
 </script>
 
- <div class="recall-super-title" style="overflow: hidden;">
-   <div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
-     <div id="category-tag"></div>
-   </div>
- </div>
-<div>
-<section>
-   <h1 property="name" id="toptitle" style="margin-top: 5px;"></h1>
-   <p><a id="brand-link" href=""></a></p>
-   <p id="recall-date"><strong></strong></p>
 
 
- <h2 class="h3" id="descriptionheader">Description</h2>
-       <p id="description"></p>
 
 
-</section>
 
    </div>
 

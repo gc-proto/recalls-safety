@@ -14,6 +14,8 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon">
 <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
+<link rel="stylesheet" href="css/breadcrumb.css"></style>
+
 <!-- <link rel="stylesheet" href="css/custom.css"> -->
 <!--<![endif]-->
 <!--[if lt IE 9]>
@@ -140,17 +142,16 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 	</div></nav>
 
 
-		<nav id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2><div class="container"><ol class="breadcrumb">
-<!-- <li><a href='/en.html'>Home</a></li> -->
-<div class="recall-super-title row" style="overflow: hidden;">
-  <div class="recall-category" style="padding: 10px 0px 0px 5px; float:left; margin-top: 5px;">
-    <a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&q=*:*&fq_pcat=Health&dspl=scat&fq_cat=Drugs" class="cust-breadcrumb">ᐸ Consumer products</a>
-  </div>
-
-
-
-</div>
-</ol></div></nav>
+  <nav id="wb-bc" property="breadcrumb"><h2 class="wb-inv">You are here:</h2>
+    <div class="container">
+      <ol class="breadcrumb">
+        <li class="hidden-xs hidden-sm"><a href="">Home</a></li>
+        <li class="hidden-xs hidden-sm"><a href="">Recalls and safety alerts</a></li>
+        <li class="hidden-xs hidden-sm"><a href="">Products</a></li>
+        <li class="no-break-breadcrumb"><a href="">Electrical</a></li>
+      </ol>
+    </div>
+  </nav>
 
 
 
@@ -162,52 +163,6 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 
 <main role="main" property="mainContentOfPage" class="container">
-<script>
-document.addEventListener("DOMContentLoaded", function(){
- var id = getUrlParameter('id'); // (gets me URL parameters)
- var lang = getUrlParameter('lang'); // (gets me URL parameters)
- // get the URL aprameters for ID and Lang then return API JSON
- var jsonfromhc = getRecall(id, lang);
- console.log(id);
- console.log(lang);
- console.log(jsonfromhc);
-});
-function getRecall(id, lang) {
-   var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
-   var uri = base + '/api/' + id + '/' + lang;
-   $.ajax({
-       url:uri,
-       type:'GET',
-       Accept:"application/json",
-       dataType: 'json',
-       success:function(data){
-           console.log(data.title);
-     console.log(data);
-     //use ids to modify page
-     $("#toptitle").text(data.title);
-     $("#toptitle").text(data.title);
-       },
-       error:function(error){
-       },
-   });
-   return;
-};
-var getUrlParameter = function getUrlParameter(sParam) {
-   var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-       sURLVariables = sPageURL.split('&'),
-       sParameterName,
-       i;
-   for (i = 0; i < sURLVariables.length; i++) {
-       sParameterName = sURLVariables[i].split('=');
-       if (sParameterName[0] === sParam) {
-           return sParameterName[1] === undefined ? true : sParameterName[1];
-       }
-   }
-};
-</script>
-
-
-<div>
   <h1><span class="stacked" role="text"> <span>Brookstone Big Blue Party™ Indoor/Outdoor Wireless Speakers</span>: <span>Fire hazard</span></span>
     </h1>
   <p>Other recalls from: <a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&cdn=rasf&fq_pcat=&fq_cat=&fq_scat=&fq_y=&fq_mk_nm=&fq_achldwmn=&dspl=&q=Culinary+Creations">Brookstone</a></p>
