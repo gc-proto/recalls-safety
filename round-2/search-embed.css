@@ -362,6 +362,7 @@ input[type="reset"], input[type="button"], input[type="submit"]
   text-decoration: none;
 	float:right;
 	margin-top: 16px;
+  color: #333 !important;
 }
 
 .recall-date {

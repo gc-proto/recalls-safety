@@ -132,7 +132,8 @@
 <div class="col-md-12 row">
 
   <div class="pull-right col-md-8 col-sm-12 col-xs-12">
-    <h2 class="r-title">8,875 results</h2> <!-- Note: need this to actually populate with the results, can we make a 'recall-total' class Pascal? -->
+    <!-- Note: need this to actually populate with the results, need a 'recall-total' that populates on page load -->
+    <h2 class="r-title">8,875 results</h2>
     <div class="input-group input-recalls">
       <form id="searchForm" action="#"> <!-- searchFrom is part of EMBED -->
         <input id="terms" class="r-search" name="terms" type="text" placeholder="Search all recalls">
@@ -141,6 +142,11 @@
         <div id="error" style="display: none;"></div>
       </form>
     </div> <!-- input -->
+
+    <div id="noResults" style="display:none;">
+      No recalls matching your search criteria were found.
+    </div>
+  <hr>
 
       <div class="row">
         <h2 class="wb-inv">Filter by:</h2>
@@ -156,57 +162,64 @@
 
 
 
+<!-- start facets -->
+
+<!-- searchResponse is part of EMBED -->
+<div id="searchResponse" style="display:none;"> <!-- move this here for now to encompass all searchy-active things -->
+
+<aside class="col-sm-12 col-md-4">
+  <!-- Note: clear all filters doesn't yet do anything, need to get it working -->
+  <a class="btn-clear" href="">Clear all filters&nbsp;&nbsp;<i class="fas fa-times"></i></a>
+
+    <h2 class="mrgn-tp-lg h6">&#9776; Filter by</h2>
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingOne">
+          <!-- Note: need this to populate with Food & allergies, Vehicles, Health or Products -->
+          <h3 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Food and allergies
+            </a>
+          </h3>
+        </div>
+
+
+        <div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div id="searchFacets" class="panel-body" > <!-- searchFacets is part of EMBED -->
+            <ul class="recalls-f list-unstyled can-ca-form recall-facet-type"> <!-- recall-facet-type is part of EMBED -->
+
+              <!-- "template-facet-entry" gets added here. -->
+
+            </ul> <!-- recalls can-ca-form -->
+
+        </div> <!-- panel body -->
+      </div> <!-- collapseOne -->
+    </div> <!-- panel-default -->
+    </div> <!-- panel-group -->
+
+
+</aside> <!-- end facets -->
+
+<!-- EMBED STUFFS -->
+<div id="searchResults" style="margin: 10px 0px;" class="col-md-8">
+  <!-- "template-recall" gets added here. -->
+</div> <!-- end searchResults -->
+
+<div id="searchPagination">
+  <a href="#" class="recall-pagination-prev">Previous</a>
+  <span id="searchPageLinks">
+    <!-- "template-page-link" gets added here. -->
+  </span>
+  <a href="#" class="recall-pagination-next">Next</a>
+</div> <!-- end searchPagination -->
+
+
+
+</div> <!-- end searchResponse -->
+
 </div> <!-- col-md-12 -->
 </div> <!-- row -->
 
-<!-- ↓ ↓ EMBED ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -->
-<hr>
-
-<div id="noResults" style="display:none;">
-  No recalls matching your search criteria were found.
-</div>
-
-<div id="searchResponse" style="display:none;">
-
-  <!-- <div id="searchHeading"> Note: could repurpose for title showing results
-    <strong>
-      <span class="recall-showing">
-        Showing <span class="recall-from">1</span>
-        to <span class="recall-to">10</span> of
-      </span>
-      <span class="recall-found">66</span> recall(s) found.
-    </strong>
-  </div>
-
-  <hr> -->
-
-  <div id="searchFacets" class="col-md-4">
-    <div class="card mb-3 facet-field border-dark">
-      <div class="card-header">
-
-        <h5 class="my-0 float-left">Recall type</h5>
-  </div>
-    <ul class="recall-facet-type list-unstyled" style="margin-left: 15px;">
-      <!-- "template-facet-entry" gets added here. -->
-    </ul>
-  </div>
-  </div>
-
-  <hr>
-
-  <div id="searchResults" style="margin: 10px 0px;" class="col-md-8">
-    <!-- "template-recall" gets added here. -->
-  </div>
-
-  <div id="searchPagination">
-    <a href="#" class="recall-pagination-prev">Previous</a>
-    <span id="searchPageLinks">
-      <!-- "template-page-link" gets added here. -->
-    </span>
-    <a href="#" class="recall-pagination-next">Next</a>
-  </div>
-
-</div>
 
 <!-- TEMPLATES: -->
 
@@ -220,7 +233,7 @@
     <dd class="recall-type">Food</dd>
 
     <dt>Date</dt>
-    <dd class="recall-date">1534-05-10</dd> <!-- Note: convert to plain text -->
+    <dd class="recall-date">1534-05-10</dd> <!-- Note: convert to plain text date format, ie - November 26, 2019-->
 
     <dt>Department</dt>
     <dd class="recall-department">Canadian Food Inspection Agency</dd>
@@ -266,12 +279,19 @@
 <a id="template-pagination-link" href="#" class="recall-page-link"
    style="display: none; padding: 0px 3px;">7</a>
 
-<li id="template-facet-entry" style="display: none;">
+
+<!-- Note: checkboxes don't work yet -->
+    <li id="template-facet-entry" style="display: none;" class="checkbox checkbox-small">
+      <input class="recall-facet-link" type="checkbox" id="food"> <!-- Note: need this ID to match the label -->
+      <label for="food" class="recall-facet-label">Food</label><span class="recall-facet-count badge pull-right">111</span>  <!-- Note: need this ID to match the label -->
+    </li>
+
+<!-- <li id="template-facet-entry" style="display: none;">
   <a class="recall-facet-link" href="#">
     <span class="recall-facet-label">Honda Civic</span>
     (<span class="recall-facet-count">66</span>)
   </a>
-</li>
+</li> -->
 
 
 
