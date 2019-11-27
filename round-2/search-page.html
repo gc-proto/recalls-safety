@@ -140,8 +140,8 @@
     <!-- Hide once search is activated -->
     <aside class="col-sm-12 col-md-4" id="currentConcerns">
     <h2 class="h3" style="margin-top: 10px">Current concerns</h2>
-
-    <div class="col-sm-6 col-xs-6 col-md-12 row">
+    <div class="row">
+    <div class="col-sm-6 col-xs-6 col-md-12">
     <a href="http://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2018/66890a-eng.php"><h3 class="h6">Unauthorized products may pose serious health risks</h3>
     </div>
 
@@ -149,13 +149,14 @@
     <img src="./search-results/images/nutrakey.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm center-cropped" data-emptytext="Image"/></a>
     </div>
 
-    <div class="col-sm-6 col-xs-6 col-md-12 row">
+    <div class="col-sm-6 col-xs-6 col-md-12">
       <a href="https://www.canada.ca/en/public-health/services/public-health-notices/2018/public-health-notice-outbreak-salmonella-infections-linked-poultry-frozen-raw-breaded-chicken-products.html"><h3 class="h6">Outbreak of Salmonella infections linked to poultry – including frozen</h3>
     </div>
     <div class="col-sm-6 col-xs-6 col-md-12">
       <div class="visible-xs"><br /></div> <!-- this br is a quick fix for mobile gap issue... real fix could be to add a class here to target after the first child and add spacing on mobile viewport size -->
       <img src="./search-results/images/chicken_nuggets.jpg" alt="" class="cq-dd-image img-responsive thumbnail mrgn-bttm-sm center-cropped" data-emptytext="Image"/></a>
     </div>
+  </div>
     </aside>
 
   <!-- end open game current concerns -->
@@ -195,12 +196,14 @@
 <!-- searchResponse is part of EMBED -->
 <div id="searchResponse" style="display:none;"> <!-- move this here for now to encompass all searchy-active things -->
 
-<aside class="col-sm-12 col-md-4">
+<div class="col-sm-12 col-md-4">
   <!-- Note: clear all filters doesn't yet do anything, need to get it working -->
-  <a class="btn-clear" href="">Clear all filters&nbsp;&nbsp;<i class="fas fa-times"></i></a>
+    <button class="btn-clear pull-right" href="">Clear all filters&nbsp;&nbsp;<i class="fas fa-times"></i></button>
 
+  <div class="col-sm-6 row">
     <h2 class="mrgn-tp-lg h6">&#9776; Filter by</h2>
-
+  </div>
+  <div class="clearfix"></div>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingOne">
@@ -226,7 +229,7 @@
     </div> <!-- panel-group -->
 
 
-</aside> <!-- end facets -->
+</div> <!-- end facets -->
 
 <!-- EMBED STUFFS -->
 <div id="searchResults" style="margin: 10px 0px;" class="col-md-8">

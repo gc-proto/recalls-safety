@@ -682,6 +682,10 @@ color: white !important;
     overflow-x: scroll;
   }
 
+  #searchResponse {
+    clear: both !important;
+  }
+
 }
 
 
