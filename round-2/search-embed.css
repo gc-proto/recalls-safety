@@ -383,11 +383,14 @@ input[type="reset"], input[type="button"], input[type="submit"]
 
 
 .recall-title {
-	font-size: 20px;
+	font-size: 20px !important;
 	float: left;
-	margin-top: 10px;
+	margin-top: 0px;
+  margin-bottom: 0px;
 	width: calc(100% - 100px);
 	height: auto;
+  text-decoration: underline;
+  color: #284162;
 }
 
 dl.inline-flex {
