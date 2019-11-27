@@ -443,14 +443,14 @@
 
 
 
-<a id="template-pagination-link" href="#" class="recall-page-link"
-   style="display: none; padding: 0px 3px;">7</a>
+<a id="template-pagination-link" href="#" class="recall-page-link" style="display: none; padding: 0px 3px;">7</a>
 
+<!-- recall-type , recall-facet-label -->
 
 <!-- Note: checkboxes don't work yet -->
     <li id="template-facet-entry" style="display: none;" class="checkbox checkbox-small">
-      <input class="recall-facet-link" type="checkbox" id="food"> <!-- Note: need this ID to match the label -->
-      <label for="food" class="recall-facet-label">Food</label><span class="recall-facet-count badge pull-right">111</span>  <!-- Note: need this ID to match the label -->
+      <input class="recall-facet-link" type="checkbox" id="label-id"> <!-- Note: need this ID to match the label -->
+      <label id="label-for" for="" class="recall-facet-label">Food</label><span class="recall-facet-count badge pull-right">111</span>  <!-- Note: need this ID to match the label -->
     </li>
 
 <!-- <li id="template-facet-entry" style="display: none;">
@@ -459,7 +459,6 @@
     (<span class="recall-facet-count">66</span>)
   </a>
 </li> -->
-
 
 
 <script type="text/javascript">
@@ -490,6 +489,7 @@ function updateResponse(data) {
     updateSearchPagination(data);
     updateSearchSpellCheck(data);
     $('#searchResponse').show();
+    // jennifer(data);
 }
 
 function updateSearchResults(data) {
@@ -679,6 +679,19 @@ function search() {
     });
 }
 
+// function jennifer(data) {
+//   console.log(data);
+//   console.log(data.facets[0].values[0]);
+//
+//     // $.each(data.recalls.results, function(i, recall) {
+//     //    console.log( data.recall.type );
+//     // });
+//
+// }
+//
+
+
+
 $(document).ready(function () {
     $('#searchForm').submit(function(e) {
         e.preventDefault();
@@ -710,6 +723,23 @@ $(document).ready(function () {
 
 </script>
 <!-- <pre id="debug"></pre> -->
+
+<script>
+window.onload = function(){
+
+var checkTitle = $( '#label-for' ).first().text(); // this is working, but not populating when the label rename/populating happens
+
+ /* make this recall-facet-label , would need to be switched to the subcategories when they become available */
+
+var element = document.getElementById('label-id');
+  element.setAttribute('id', checkTitle);
+
+var element = document.getElementById('label-for');
+  element.removeAttribute('id');
+  element.setAttribute('for', checkTitle);
+
+};
+</script>
 
 <div class="global-footer">
 <footer id="wb-info">

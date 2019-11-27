@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>text demo</title>
+  <style>
+  p {
+    color: blue;
+    margin: 8px;
+  }
+  b {
+    color: red;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+
+<p><b>Test</b> Paragraph.</p>
+<p></p>
+
+<script>
+var str = $( "p" ).first().text();
+$( "p" ).last().html( str );
+
+console.log(str);
+
+</script>
+
+</body>
+</html>
