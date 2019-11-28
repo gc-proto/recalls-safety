@@ -55,85 +55,161 @@ function getRecall(id, lang) {
              descriptionText = this.text;
            }
          });
+         //get all categories
+         categoryname = data.panels[0].text.substr(data.panels[0].text.indexOf("Category")+14,data.panels[0].text.indexOf("<",data.panels[0].text.indexOf("Category")+14)-(data.panels[0].text.indexOf("Category")+14));
 
-        categoryname = data.panels[0].text.substr(data.panels[0].text.indexOf("Category")+14,data.panels[0].text.indexOf("<",data.panels[0].text.indexOf("Category")+14)-(data.panels[0].text.indexOf("Category")+14));
-        console.log(categoryname);
-
-           //if 2 category names, make 2 tags, with comma separation
+         //Remap the categories, get the number of them, get the URLs for breadcrumbs
+         //if 2 category names, make 2 tags, with comma separation
          var categories = categoryname.split(', ');
-         var categoryout = '<span style="text-decoration:none;">ᐸ </span>';
+         //var categoryout = '<span style="text-decoration:none;">ᐸ </span>';
          console.log(categoryname);
+         var pCat = [];
+         var pCatURL = [];
+         var pSCat = [];
+         var pSCatURL = [];
+         q = 0;
          $.each(categories, function() {
            if (this.substr(0, 8) === "Allergen") {
-             //Subcategory
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Undeclared+' + this.substr(11, this.length-11).toLowerCase() + '">Undeclared ' + this.substr(11, this.length-11).toLowerCase() + '</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Allergen";
+             pCatURL[q] = '';
+             pSCat[q] = 'Undeclared ' + this.substr(11, this.length-11).toLowerCase();
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Microbiological") {
              if (this.indexOf("E. coli") > 1) {
-               categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=E.%20coli">E. Coli</a><span style="text-decoration:none;">, </span>';
+               pCat[q] = "Microbiological";
+               pCatURL[q] = '';
+               pSCat[q] = 'E. Coli';
+               pSCatURL[q] = '';
              } else {
-               categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=' + this.substr(18, this.length-18) + '">' + this.substr(18, this.length-18) + '</a><span style="text-decoration:none;">, </span>';
+               pCat[q] = "Microbiological";
+               pCatURL[q] = '';
+               pSCat[q] = this.substr(18, this.length-18);
+               pSCatURL[q] = '';
              }
            } else if (this.substr(0, 3) === "Car") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Other&fq_cat=Car>Cars</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Car";
+             pCatURL[q] = '';
+             pSCat[q] = 'Other';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "3 Wheel Car") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=3+Wheel+Car"&fq_cat=Car>3 Wheel Cars</a><span style="text-decoration:none;">, </span>';
-           } else if (this.substr(0, 15) === "Minivan") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Minivan&fq_cat=Car>Minivans</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Car";
+             pCatURL[q] = '';
+             pSCat[q] = '3 Wheel Car';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "SUV") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=SUV&fq_cat=Car>SUVs</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Car";
+             pCatURL[q] = '';
+             pSCat[q] = 'SUV';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Med. & H.D.") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Med.+%26+H.D.&fq_cat=Truck>Medium and heavy duty vehicles</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Truck";
+             pCatURL[q] = '';
+             pSCat[q] = 'Medium and heavy duty vehicle';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Light Truck & Van") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Light+Truck+%26+Van&fq_cat=Truck>SUVs</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Truck";
+             pCatURL[q] = '';
+             pSCat[q] = 'Light truck or van';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "RV Chassis") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=RV+Chassis&fq_cat=Truck>RV chassis</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Truck";
+             pCatURL[q] = '';
+             pSCat[q] = 'RV chassis';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Chassis Cab") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Chassis+Cab&fq_cat=Truck>Chassis cabs</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Truck";
+             pCatURL[q] = '';
+             pSCat[q] = 'Chassis cab';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Motorhome") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Motorhome&fq_cat=Trailer%2FRV>Motorhomes</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Trailer/RV";
+             pCatURL[q] = '';
+             pSCat[q] = 'Motorhome';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Travel Trailer") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Travel+Trailer&fq_cat=Trailer%2FRV>Travel trailers</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Trailer/RV";
+             pCatURL[q] = '';
+             pSCat[q] = 'Travel trailer';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Light Trailer") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Light+Trailer&fq_cat=Trailer%2FRV>Light trailers</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Trailer/RV";
+             pCatURL[q] = '';
+             pSCat[q] = 'Light trailer';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Heavy Trailer") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Heavy+Trailer&fq_cat=Trailer%2FRV>Heavy trailers</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Trailer/RV";
+             pCatURL[q] = '';
+             pSCat[q] = 'Heavy trailer';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Bus") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Other"&fq_cat=Bus>Buses</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Bus";
+             pCatURL[q] = '';
+             pSCat[q] = 'Other';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Snowmobile") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Other"&fq_cat=Snowmobile>Snowmobiles</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Snowmobile";
+             pCatURL[q] = '';
+             pSCat[q] = 'Other';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Snowmobile Cutter") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Snowmobile+Cutter&fq_cat=Snowmobile>Snowmobile cutters</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Snowmobile";
+             pCatURL[q] = '';
+             pSCat[q] = 'Snowmobile cutter';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Child Car Seat") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Child+Car+Seat&fq_cat=Car+seats>Child car seats</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Car seat";
+             pCatURL[q] = '';
+             pSCat[q] = 'Child car seat';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Booster Seat") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Booster+Seat&fq_cat=Car+seats>Booster seats</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Car seat";
+             pCatURL[q] = '';
+             pSCat[q] = 'Booster seat';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Motorcycle") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Other"&fq_cat=Motorcycle>Motorcycles</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Motorcycle";
+             pCatURL[q] = '';
+             pSCat[q] = 'Other';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Minibike/ Moped /Scooter") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Minibike%2F+Moped%2F+Scooter&fq_cat=Motorcycle>Minibikes, mopeds and scooters</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Motorcycle";
+             pCatURL[q] = '';
+             pSCat[q] = 'Minibike, moped or scooter';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Low Speed Motorcycle") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=Low+Speed+Motorcycle&fq_cat=Motorcycle>Low speed motorcycles</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Motorcycle";
+             pCatURL[q] = '';
+             pSCat[q] = 'Low speed motorcycle';
+             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "3 Wheel Motorcycle") {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=scat&cdn=rasf&q=*&fq_scat=3+Wheel+Motorcycle&fq_cat=Motorcycle>3 wheel motorcycles</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = "Motorcycle";
+             pCatURL[q] = '';
+             pSCat[q] = '3 wheel motorcycle';
+             pSCatURL[q] = '';
            } else {
-             categoryout = categoryout + '<a href="http://search-recherche.gc.ca/rGsPreview/s_r?st=s&s5bm3ts21rch=x&num=10&st1rt=0&langs=eng&dspl=cat&cdn=rasf&q=*&fq_cat=' + categoryname + '">' + categoryname + '</a><span style="text-decoration:none;">, </span>';
+             pCat[q] = titleCase(categoryname);
+             pCatURL[q] = '';
            }
+           q++;
          });
-         categoryout = categoryout.substr(0, categoryout.length-45);
          console.log(categoryout);
          $("#category-tag").append(categoryout);
          //add the car subcategories to the if clauses...
 
 
-           //Modify metadata title
-           // console.log(data.title);
-           // $("#toptitle").append(data.title);
-           document.getElementsByTagName("title")[0].text(data.title+' - Canada.ca');
-           //Modify page title + category sub-title
-           // $("#page-title").text(data.title + " - Canada.ca");
-           document.getElementsByTagName("title")[0].text('<span class="stacked"> <span>'+data.title+'</span>: <span>'+[facets]+'</span></span>';
+         //Modify metadata title
+         // console.log(data.title);
+         // $("#toptitle").append(data.title);
+         document.getElementsByTagName("title")[0].text(data.title+' - Canada.ca');
+         //Modify page title + category sub-title
+         // $("#page-title").text(data.title + " - Canada.ca");
+         document.getElementsByTagName("h1")[0].text('<span class="stacked"> <span>'+data.title+'</span>: <span>'+[facets]+'</span></span>';
 
-
+         pCat =
+         pCatURL =
+         pSCat =
+         pSCatURL =
+         $('.breadcrumb').text('<li class="hidden-xs hidden-sm"><a href="">Home</a></li><li class="hidden-xs hidden-sm"><a href="">Recalls and safety alerts</a></li><li class="hidden-xs hidden-sm"><a href="'+pCatURL+'">'+pCat+'</a></li><li class="no-break-breadcrumb"><a href="'+pSCatURL+'">'+pSCat+'</a></li>');
 
 
            //if "brand name" section in product array, use threatening
@@ -317,6 +393,16 @@ UPC:</b> 85886000170<BR/>"
    });
    return;
 };
+
+function titleCase(string) {
+  var sentence = string.toLowerCase().split(" ");
+  for(var i = 0; i< sentence.length; i++){
+     sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
+  }
+document.write(sentence.join(" "));
+return sentence;
+};
+
 var getUrlParameter = function getUrlParameter(sParam) {
    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
        sURLVariables = sPageURL.split('&'),
