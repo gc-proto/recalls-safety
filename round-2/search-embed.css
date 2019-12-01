@@ -295,12 +295,18 @@ input[type="reset"], input[type="button"], input[type="submit"]
 }
 
 .r-search-btn {
-	background: none;
+  background-color: #26374a;
+  border: 1px solid #26374a;
+	/* background: none;
 	border: none;
-	border-left: #cbbebe 1px solid;
+	border-left: #cbbebe 1px solid; */
+  /* border-radius: 4px !important; */
 	padding-left: 10px;
   padding-right: 10px;
-	color: #333;
+  padding-bottom: 6px;
+  padding-top: 7px;
+  margin-top: -7px;
+	color: white;
   position: absolute;
   right: 0;
   font-size: 18px;
