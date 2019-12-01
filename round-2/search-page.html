@@ -240,21 +240,6 @@
 
 <div class="col-md-8 pull-right">
 
-<!-- <div class="bottom">
-  <div class="dataTables_paginate paging_simple_numbers" id="wb-auto-5_paginate">
-    <ol class="pagination mrgn-tp-0 mrgn-bttm-0">
-      <li><a class="paginate_button previous disabled" aria-controls="wb-auto-5" data-dt-idx="0" tabindex="0" id="wb-auto-5_previous" href="#wb-auto-5">Previous</a></li>
-      <li><a class="paginate_button current" aria-controls="wb-auto-5" data-dt-idx="1" tabindex="0" href="#wb-auto-5" aria-pressed="true"><span class="wb-inv">Jump to: Page </span>1</a></li>
-      <li><a class="paginate_button " aria-controls="wb-auto-5" data-dt-idx="2" tabindex="0" href="#wb-auto-5" aria-pressed="false"><span class="wb-inv">Jump to: Page </span>2</a></li>
-      <li><a class="paginate_button " aria-controls="wb-auto-5" data-dt-idx="3" tabindex="0" href="#wb-auto-5" aria-pressed="false"><span class="wb-inv">Jump to: Page </span>3</a></li>
-      <li><a class="paginate_button " aria-controls="wb-auto-5" data-dt-idx="4" tabindex="0" href="#wb-auto-5" aria-pressed="false"><span class="wb-inv">Jump to: Page </span>4</a></li>
-      <li><a class="paginate_button " aria-controls="wb-auto-5" data-dt-idx="5" tabindex="0" href="#wb-auto-5" aria-pressed="false"><span class="wb-inv">Jump to: Page </span>5</a></li>
-      <li><a class="paginate_button " aria-controls="wb-auto-5" data-dt-idx="6" tabindex="0" href="#wb-auto-5" aria-pressed="false"><span class="wb-inv">Jump to: Page </span>20</a></li>
-      <li><a class="paginate_button next" aria-controls="wb-auto-5" data-dt-idx="7" tabindex="0" id="wb-auto-5_next" href="#wb-auto-5">Next</a></li>
-    </ol>
-    </div>
-  </div> -->
-
 <div id="searchPagination" class="mrgn-bttm-lg bottom">
   <div class="dataTables_paginate paging_simple_numbers">
     <ol class="pagination mrgn-tp-0 mrgn-bttm-0">
@@ -489,8 +474,11 @@
 
 </div>
 
+<!-- Note: this template won't populate anything but the first tag, so I can't put an <a> inside a <li>... so pagination won't work
 
-<a id="template-pagination-link" href="#" class="recall-page-link paginate_button" style="display: none; padding: 0px 3px;">7</a>
+Needs to be: <li id="template-pagination-link"><a href="#" class="recall-page-link paginate_button" style="display: none; padding: 0px 3px;">7</a></li> -->
+
+<a id="template-pagination-link" class="recall-page-link paginate_button" style="display: none; padding: 0px 3px;">7</a></li> 
 
 <!-- recall-type , recall-facet-label -->
 
