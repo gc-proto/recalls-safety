@@ -240,7 +240,7 @@
 
 <div class="col-md-8 pull-right">
 
-<div class="bottom">
+<!-- <div class="bottom">
   <div class="dataTables_paginate paging_simple_numbers" id="wb-auto-5_paginate">
     <ol class="pagination mrgn-tp-0 mrgn-bttm-0">
       <li><a class="paginate_button previous disabled" aria-controls="wb-auto-5" data-dt-idx="0" tabindex="0" id="wb-auto-5_previous" href="#wb-auto-5">Previous</a></li>
@@ -253,14 +253,20 @@
       <li><a class="paginate_button next" aria-controls="wb-auto-5" data-dt-idx="7" tabindex="0" id="wb-auto-5_next" href="#wb-auto-5">Next</a></li>
     </ol>
     </div>
-  </div>
+  </div> -->
 
-<div id="searchPagination" class="mrgn-bttm-lg">
-  <a href="#" class="recall-pagination-prev">Previous</a>
-  <span id="searchPageLinks">
-    <!-- "template-page-link" gets added here. -->
-  </span>
-  <a href="#" class="recall-pagination-next">Next</a>
+<div id="searchPagination" class="mrgn-bttm-lg bottom">
+  <div class="dataTables_paginate paging_simple_numbers">
+    <ol class="pagination mrgn-tp-0 mrgn-bttm-0">
+
+      <a href="#" class="recall-pagination-prev">Previous</a>
+      <span id="searchPageLinks">
+        <!-- "template-page-link" gets added here. -->
+      </span>
+      <a href="#" class="recall-pagination-next">Next</a>
+
+    </ol>
+  </div> <!-- end dataTables -->
 </div> <!-- end searchPagination -->
 
 
@@ -484,9 +490,7 @@
 </div>
 
 
-
-
-<a id="template-pagination-link" href="#" class="recall-page-link" style="display: none; padding: 0px 3px;">7</a>
+<a id="template-pagination-link" href="#" class="recall-page-link paginate_button" style="display: none; padding: 0px 3px;">7</a>
 
 <!-- recall-type , recall-facet-label -->
 
