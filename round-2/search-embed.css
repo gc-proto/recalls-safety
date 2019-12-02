@@ -523,7 +523,7 @@ dl.inline-flex dd {
 	border-radius:0.15em;
   background-color: white;
 	border: 2px solid #8db12175;
-  width: 165px;
+  min-width: 165px;
 }
 
 .active.recalls-filter-1-var-2 {
@@ -538,7 +538,7 @@ dl.inline-flex dd {
 	border-radius:0.15em;
   background-color: white;
 	border: 2px solid  #76a9ab66;
-  width: 96px;
+  min-width: 96px;
 
 }
 
@@ -554,7 +554,7 @@ dl.inline-flex dd {
 	border-radius:0.15em;
   background-color: white;
 	border: 2px solid #ec796e6e;
-  width: 96px;
+  min-width: 96px;
 
 }
 
@@ -570,7 +570,7 @@ dl.inline-flex dd {
 	border-radius:0.15em;
   background-color: white;
 	border: 2px solid #eb88f775;
-  width: 180px;
+  min-width: 180px;
 }
 
 .active.recalls-filter-4-var-2 {
