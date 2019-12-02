@@ -41,6 +41,8 @@ $( document ).on( "wb-ready.wb", function( event ) {
     $(".pagetag").removeClass("wb-inv");
     $("#recall-facets").addClass("wb-inv");
 
+
+
     function debug(json) {
         $('#debug').text(JSON.stringify(json, null, 4));
     }
@@ -50,6 +52,10 @@ $( document ).on( "wb-ready.wb", function( event ) {
         RECALL_TYPES.length = 0;
         RECALL_TYPES.push("food");
         search();
+        // function updateCount(data) {
+        //     $foodLink = $('#food-link');
+        //     $foodLink.find('.recall-found-2').text(data.recalls.numFound);
+        // } not working :(
     });
 
     $('#vehicles-link').click(function() {
@@ -86,8 +92,9 @@ $( document ).on( "wb-ready.wb", function( event ) {
         updateSearchFacets(data);
         updateSearchPagination(data);
         updateSearchSpellCheck(data);
+        // updateCount(data); doesn't work :(
         $('#searchResponse').show();
-        // jennifer(data);
+
     }
 
     function updateSearchResults(data) {
