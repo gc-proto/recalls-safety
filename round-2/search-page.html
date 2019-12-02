@@ -29,6 +29,30 @@
 <!--[if gte IE 9 | !IE ]><!-->
 <link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon"/>
 <!--<![endif]-->
+<!-- ↓ ↓ EMBED ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -->
+
+<!--
+  NOTE: Ideally you would want the API_URL variable to be configurable
+  in Drupal, but for now it does not matter much if it is hard-coded here.
+  Just update them to use appropriate values if need be.
+  -->
+<script type="text/javascript">
+  const API_URL = 'https://tbs.norconex.com/api';
+  //const API_URL = 'http://localhost:9191/api';
+  const MAX_DOCS_PER_PAGE = 10;
+  const MAX_PAGINATION_LINKS = 7;
+  var CURRENT_PAGE = 1;
+  var RECALL_TYPES = [];
+</script>
+<!--
+  If the WET template you will be using already has JQuery loaded, you can
+  ignore the following script include:
+ -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+<!-- ↑ ↑ EMBED ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -->
+
 </head>
 
 <body class="page-type-nav" vocab="http://schema.org/" typeof="WebPage">
@@ -197,33 +221,17 @@
   <!-- "template-recall" gets added here. -->
 </div> <!-- end searchResults -->
 
-<<<<<<< HEAD:round-2/search-page-ryan.html
-<div id="searchPagination" class="bottom">
-  <div class="dataTables_paginate paging_simple_numbers">
-  <ol id="searchPageLinks" class="pagination">
-    <li><a href="#" class="recall-pagination-prev">Previous</a></li>
-
-    <!-- "template-page-link" gets added here. -->
-    <li><a href="#" class="recall-pagination-next">Next</a></li>
-  </ol>
-
-  </div>
-=======
 <div class="col-md-8 pull-right">
 
 <div id="searchPagination" class="mrgn-bttm-lg bottom">
   <div class="dataTables_paginate paging_simple_numbers">
-    <ol class="pagination mrgn-tp-0 mrgn-bttm-0">
+      <ol id="searchPageLinks" class="pagination  mrgn-tp-0 mrgn-bttm-0">
+        <li><a href="#" class="recall-pagination-prev">Previous</a></li>
 
-      <a href="#" class="recall-pagination-prev">Previous</a>
-      <span id="searchPageLinks">
         <!-- "template-page-link" gets added here. -->
-      </span>
-      <a href="#" class="recall-pagination-next">Next</a>
-
-    </ol>
+        <li><a href="#" class="recall-pagination-next">Next</a></li>
+      </ol>
   </div> <!-- end dataTables -->
->>>>>>> 0a15c544385fe53680a43dc3964c15a77f2f41b7:round-2/search-page.html
 </div> <!-- end searchPagination -->
 
 
@@ -446,20 +454,12 @@
 
 </div>
 
-<!-- Note: this template won't populate anything but the first tag, so I can't put an <a> inside a <li>... so pagination won't work
 
-Needs to be: <li id="template-pagination-link"><a href="#" class="recall-page-link paginate_button" style="display: none; padding: 0px 3px;">7</a></li> -->
-
-<<<<<<< HEAD:round-2/search-page-ryan.html
 
 <li id="template-pagination-li" style="display: none; padding: 0px 3px;"><a href="#" class="recall-page-link paginate-button">7</a></li>
-=======
-<a id="template-pagination-link" class="recall-page-link paginate_button" style="display: none; padding: 0px 3px;">7</a></li> 
->>>>>>> 0a15c544385fe53680a43dc3964c15a77f2f41b7:round-2/search-page.html
 
-<!-- recall-type , recall-facet-label -->
 
-<!-- Note: checkboxes don't work yet -->
+<!-- Note: checkboxes may not work with new subcategories -->
     <li id="template-facet-entry" style="display: none;" class="checkbox checkbox-small">
       <input class="recall-facet-link" type="checkbox" id="label-id"> <!-- Note: need this ID to match the label -->
       <label id="label-for" for="" class="recall-facet-label">Food</label><span class="recall-facet-count badge pull-right">111</span>  <!-- Note: need this ID to match the label -->
@@ -471,6 +471,7 @@ Needs to be: <li id="template-pagination-link"><a href="#" class="recall-page-li
     (<span class="recall-facet-count">66</span>)
   </a>
 </li> -->
+
 
 <div class="global-footer">
 <footer id="wb-info">
@@ -516,7 +517,7 @@ Needs to be: <li id="template-pagination-link"><a href="#" class="recall-page-li
 </div>
 
 <!--[if gte IE 9 | !IE ]><!-->
--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>-->
 <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js"></script>
 <!--<![endif]-->
 <!--[if lt IE 9]>
