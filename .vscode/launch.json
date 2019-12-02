@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chromium against localhost",
+            "file": "${workspaceFolder}/round-2/search-page.html",
+            "webRoot": "${workspaceFolder}/index.html",
+            "runtimeExecutable": "/snap/bin/chromium",
+            "runtimeArgs": [
+              "--new-window",
+              "-user-data-dir=\"/${workspaceFolder}/DevProfile\"",
+              "--remote-debugging-port=9222",
+              "--disable-background-networking"
+            ]
+        }
+    ]
+}
