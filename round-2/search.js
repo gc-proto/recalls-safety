@@ -6,7 +6,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
     var CURRENT_PAGE = 1;
     var RECALL_TYPES = [];
 
-    
+
     var params = new window.URLSearchParams(window.location.search);
     // When debugging, below allows to pass the search term to the URL
     // and submit the form.  Useful for refreshing the page without
@@ -44,8 +44,8 @@ $( document ).on( "wb-ready.wb", function( event ) {
     function debug(json) {
         $('#debug').text(JSON.stringify(json, null, 4));
     }
-  
-    
+
+
     $('#food-link').click(function() {
         RECALL_TYPES.length = 0;
         RECALL_TYPES.push("food");
@@ -55,6 +55,18 @@ $( document ).on( "wb-ready.wb", function( event ) {
     $('#vehicles-link').click(function() {
         RECALL_TYPES.length = 0;
         RECALL_TYPES.push("vehicles");
+        search();
+    });
+
+    $('#medical-link').click(function() {
+        RECALL_TYPES.length = 0;
+        RECALL_TYPES.push("health");
+        search();
+    });
+
+    $('#products-link').click(function() {
+        RECALL_TYPES.length = 0;
+        RECALL_TYPES.push("consumer");
         search();
     });
 
@@ -77,7 +89,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
         $('#searchResponse').show();
         // jennifer(data);
     }
-    
+
     function updateSearchResults(data) {
         $searchResults = $('#searchResults');
         $searchResults.empty();
@@ -93,7 +105,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
             setHtml($el, '.recall-id', recall.id);
             setHtml($el, '.recall-recallNo', recall.recallNo);
             setHtml($el, '.recall-alertType', recall.alertType);
-    
+
             if ('vehicles' === recall.type) {
                 setHtml($el, '.recall-make', recall.make);
                 setHtml($el, '.recall-model', recall.model);
@@ -105,12 +117,12 @@ $( document ).on( "wb-ready.wb", function( event ) {
             } else {
                 $searchResults.find('.recall-vehicle').hide();
             }
-    
+
             $searchResults.append($el);
             $el.show();
         });
     }
-    
+
     function updateSearchHeading(data) {
         $searchHeading = $('#searchHeading');
         if (data.recalls.numFound > MAX_DOCS_PER_PAGE) {
@@ -124,7 +136,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
         }
         $searchHeading.find('.recall-found').text(data.recalls.numFound);
     }
-    
+
     function updateSearchSpellCheck(data) {
         $('#searchSpellCheck').hide();
         if (!data.spellCheck.empty) {
@@ -145,7 +157,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
         RECALL_TYPES.length = 0;
         search();
     });
-    
+
     function updateSearchFacets(data) {
         //TODO Will need to be updated if we return more facets
         $searchFacetType =  $('#searchFacets .recall-facet-type');
@@ -168,7 +180,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
                 if (RECALL_TYPES.includes(value.name)) {
                     $facetEntry.find('.recall-facet-link').attr('checked',true);
                 }
-                
+
 
                 $link = $facetEntry.find('.recall-facet-link');
                 if (RECALL_TYPES.includes(value.name)) {
@@ -185,38 +197,38 @@ $( document ).on( "wb-ready.wb", function( event ) {
                     search();
                     return false;
                 });
-    
+
                 $searchFacetType.append($facetEntry);
                 $facetEntry.show();
             }
             });
         }
     }
-    
+
     function updateSearchPagination(data) {
         $searchPageLinks =  $('#searchPageLinks');
-        
+
         var numOfPageLinks = Math.min(Math.ceil(
                 data.recalls.numFound / MAX_DOCS_PER_PAGE), MAX_PAGINATION_LINKS);
         var first = Math.max(1, CURRENT_PAGE - Math.floor(numOfPageLinks / 2));
         var last = Math.min(numOfPageLinks, first + numOfPageLinks - 1);
-    
+
         var prev = Math.max(1, CURRENT_PAGE - 1);
         var $prevLink = $('.recall-pagination-prev');
         updateSearchPaginationLink($prevLink, prev);
-    
+
         var next = Math.min(numOfPageLinks, CURRENT_PAGE + 1);
         var $nextLink = $('.recall-pagination-next');
         updateSearchPaginationLink($nextLink.first(), next);
-    
+
         $searchPageLinks.empty();
-        $searchPageLinks.append($prevLink.parent()); 
+        $searchPageLinks.append($prevLink.parent());
 
 
         if (CURRENT_PAGE === 1) {
-            $prevLink.parent().attr('style','display:none;'); 
+            $prevLink.parent().attr('style','display:none;');
         } else {
-            $prevLink.parent().removeAttr('style'); 
+            $prevLink.parent().removeAttr('style');
         }
 
         for (var i = first; i <= last; i++) {
@@ -249,7 +261,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
             });
         }
     }
-    
+
     function setHtml($parent, childSelector, html) {
         var $child = $parent.find(childSelector);
         if ($child.length != 0) {
@@ -267,13 +279,13 @@ $( document ).on( "wb-ready.wb", function( event ) {
             }
         }
     }
-    
+
     function clone(selector) {
         var $el = $(selector).clone();
         $el.removeAttr('id');
         return $el;
     }
-    
+
     function clearAjaxError() {
         $("#error").empty();
         $("#error").hide();
@@ -287,7 +299,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
         );
         $('#error').show();
     }
-       
+
     function updateSearchResults(data) {
         $searchResults = $('#searchResults');
         $searchResults.empty();
@@ -303,7 +315,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
             setHtml($el, '.recall-id', recall.id);
             setHtml($el, '.recall-recallNo', recall.recallNo);
             setHtml($el, '.recall-alertType', recall.alertType);
-    
+
             if ('vehicles' === recall.type) {
                 setHtml($el, '.recall-make', recall.make);
                 setHtml($el, '.recall-model', recall.model);
@@ -315,12 +327,12 @@ $( document ).on( "wb-ready.wb", function( event ) {
             } else {
                 $searchResults.find('.recall-vehicle').hide();
             }
-    
+
             $searchResults.append($el);
             $el.show();
         });
     }
-    
+
     function updateSearchHeading(data) {
         $searchHeading = $('#searchHeading');
         if (data.recalls.numFound > MAX_DOCS_PER_PAGE) {
@@ -334,7 +346,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
         }
         $searchHeading.find('.recall-found').text(data.recalls.numFound);
     }
-    
+
     function updateSearchSpellCheck(data) {
         $('#searchSpellCheck').hide();
         if (!data.spellCheck.empty) {
@@ -350,13 +362,13 @@ $( document ).on( "wb-ready.wb", function( event ) {
             $('#searchSpellCheck').show();
         }
     }
-    
-       
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     function search() {
         $("#currentConcerns").addClass("wb-inv");
         $(".opening-game").addClass("wb-inv");
@@ -387,8 +399,8 @@ $( document ).on( "wb-ready.wb", function( event ) {
             error: showAjaxError
         });
     }
-    
-    
+
+
     $('#searchForm').submit(function(e) {
         e.preventDefault();
         CURRENT_PAGE = 1;
@@ -396,7 +408,7 @@ $( document ).on( "wb-ready.wb", function( event ) {
         return false;
     });
 
-  
-    
-   
+
+
+
 });
