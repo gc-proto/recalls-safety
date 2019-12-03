@@ -33,6 +33,14 @@ function formatNumber(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function formatDate(date) {
+  var parts = date.split('-');
+  var newDate = new Date(parts[0], parts[1] - 1, parts[2]); 
+  var options = { day: 'numeric',  month: 'short', year: 'numeric' };
+  date = newDate.toLocaleDateString("en-CA",options);
+  return date;
+}
+
 /**
  * Hides results and show a "no results" message.
  * @param data JSON search response
@@ -71,7 +79,7 @@ function updateSearchResults(data) {
         setHtml($el, '.recall-title', recall.title);
         setHtml($el, '.recall-summary', recall.description);
         setHtml($el, '.recall-type', recall.type);
-        setHtml($el, '.recall-date', recall.date);
+        setHtml($el, '.recall-date', formatDate(recall.date));
         setHtml($el, '.recall-department', recall.department);
         setHtml($el, '.recall-url', recall.url);
         setHtml($el, '.recall-id', recall.id);
