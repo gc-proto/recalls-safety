@@ -447,30 +447,11 @@ dl.inline-flex dd {
     content:"\e114";
 }
 
-#food-link {
+#recall-types-filter a {
     margin-left:2px;
-		text-decoration:none;
-		color:black"
+    text-decoration:none;
+    color:black"
 }
-
-#vehicles-link {
-    margin-left:2px;
-		text-decoration:none;
-		color:black"
-}
-
-#medical-link {
-    margin-left:2px;
-		text-decoration:none;
-		color:black"
-}
-
-#products-link {
-    margin-left:2px;
-		text-decoration:none;
-		color:black;
-}
-
 
 .recalls-filter-1 {
 	display: inline-block;
@@ -599,7 +580,6 @@ dl.inline-flex dd {
 
 @media screen and (min-width: 992px) {
 .contributors li {
-    display: inline-block;
     float: left;
     margin-right: .7em;
 }
@@ -705,12 +685,11 @@ color: white !important;
 }
 
 @media (max-width:440px) {
-.recall-share {
-    margin-top: 10px;
-    float: left!important;
-}
+    .recall-share {
+        margin-top: 10px;
+        float: left!important;
+    }
 }.icon.twitter {
-background-size: 15px 15px !important;
+    background-size: 15px 15px !important;
 }
 
-}
