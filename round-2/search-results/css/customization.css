@@ -275,6 +275,14 @@ input[type="reset"], input[type="button"], input[type="submit"]
   object-fit: none; /* Do not scale the image */
 }
 
+.item {
+ /* max-width: 300px; */
+ max-height: 425px;
+ background-position: center center;
+ background-repeat: no-repeat;
+ object-fit: none; /* Do not scale the image */
+}
+
 .search-facet {
   border-bottom: solid #ccc 1px;
   margin-bottom: 0px;
