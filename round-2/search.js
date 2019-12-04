@@ -3,8 +3,8 @@
  * (as opposed to hard-coded). For now though, it does not matter much.
  * Just update them to use appropriate values if need be.
  */
-//const API_URL = 'https://tbs.norconex.com/api';
-const API_URL = 'http://localhost:9191/api';
+const API_URL = 'https://tbs.norconex.com/api';
+//const API_URL = 'http://localhost:9191/api';
 const MAX_DOCS_PER_PAGE = 10;
 const MAX_PAGINATION_LINKS = 7;
 var currentPage = 1;
