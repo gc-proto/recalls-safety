@@ -8,6 +8,7 @@ const API_URL = 'https://tbs.norconex.com/api';
 //const API_URL = 'http://localhost:9191/api';
 const MAX_DOCS_PER_PAGE = 10;
 const MAX_PAGINATION_LINKS = 7;
+var firstSearch = true;
 var currentPage = 1;
 var activeFacets = {
     recallTypes: [],
@@ -172,7 +173,9 @@ function updateSearchFacets(data) {
 
 function updateSearchFacetRecallTypes(facetData) {
     var $container = $('#recall-types-filter');
-    $('#recall-types-filter a').removeClass("active");
+    if (firstSearch !== true) {
+        $('#recall-types-filter a').removeClass("active");
+    }
     $.each(facetData.values, function(index, entry) {
         var $link = $container.find("a[data-type='" + entry.value + "']");
         $link.find('.facet-count').text('(' + formatNumber(entry.count) + ')');
@@ -390,6 +393,7 @@ function search() {
             } else {
                 updateResponse(data);
             }
+            firstSearch = false;
 //            debug(data);
         },
         error: showAjaxError
@@ -424,6 +428,7 @@ $( document ).on( "wb-ready.wb", function() {
      * and submit the form.  Useful for refreshing the page without
      * re-entering the value and pressing search over and over.
      */
+    
     var params = new window.URLSearchParams(window.location.search);
     var terms = params.get('terms');
     if (terms) {
@@ -444,9 +449,11 @@ $( document ).on( "wb-ready.wb", function() {
     // Recall type tabs clicks
     $('#recall-types-filter a').click(function(e) {
         e.preventDefault();
-        activeFacets.recallTypes.length = 0;
-        if (!$(this).hasClass('active')) {
+        if (!activeFacets.recallTypes.includes($(this).data('type'))) {
+            activeFacets.recallTypes.length = 0;
             activeFacets.recallTypes.push($(this).data('type'));
+        } else {
+            activeFacets.recallTypes.length = 0;
         }
         search();
         $(".facet-count").removeClass("wb-inv"); // jennifer - reveals the count on search
@@ -473,6 +480,7 @@ $( document ).on( "wb-ready.wb", function() {
         activeFacets[name] = $("input[name='" + name + "']:checkbox:checked")
                 .map(function() { return $(this).val(); }).get();
         search();
+
     });
 
     $('#searchForm').submit(function(e) {
@@ -481,4 +489,5 @@ $( document ).on( "wb-ready.wb", function() {
         search();
         return false;
     });
+    
 });
