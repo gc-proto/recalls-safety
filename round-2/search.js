@@ -236,7 +236,8 @@ function updateSearchFacetGeneric($container, facetData) {
         $label.attr('id', labelId);
         $label.attr('for', inputId);
 
-        $facetListItem.find('.recall-facet-count').text(facetEntry.count);
+        $facetListItem.find('.recall-facet-count').text(
+                formatNumber(facetEntry.count));
 
         if (activeFacets[facetName].includes(facetEntry.value)) {
             $input.attr('checked', true);
