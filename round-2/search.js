@@ -441,12 +441,6 @@ $( document ).on( "wb-ready.wb", function() {
     $(".facet-count").addClass("wb-inv");  // jennifer - hides the count on opening game
     $("#recall-facets").addClass("wb-inv");
 
-        // jennifer - having trouble here, these activate then get overridden :(
-            $(".recalls-filter-1-var-2").addClass("active");
-            $(".recalls-filter-2-var-2").addClass("active");
-            $(".recalls-filter-3-var-2").addClass("active");
-            $(".recalls-filter-4-var-2").addClass("active");
-
     // Recall type tabs clicks
     $('#recall-types-filter a').click(function(e) {
         e.preventDefault();
