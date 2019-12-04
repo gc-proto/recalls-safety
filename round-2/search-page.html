@@ -136,15 +136,13 @@
           No recalls matching your search criteria were found.
         </div>
   
-        
-  
         <div class="row">
           <h2 class="wb-inv">Filter by:</h2>
           <ul id="recall-types-filter" class="toc lst-spcd col-md-12 wrap">
-            <li><a href="#" data-type="food"     class="recalls-filter-1-var-2"><span class="recalls-filter-label">Food and allergies <span class="facet-count"></span></span></a></li>
-            <li><a href="#" data-type="vehicles" class="recalls-filter-2-var-2"><span class="recalls-filter-label">Vehicles <span class="facet-count"></span></span></a></li>
-            <li><a href="#" data-type="health"   class="recalls-filter-3-var-2"><span class="recalls-filter-label">Health <span class="facet-count"></span></span></a></li>
-            <li><a href="#" data-type="consumer" class="recalls-filter-4-var-2"><span class="recalls-filter-label">Consumer products <span class="facet-count"></span></span></a></li>
+            <li><a href="#" data-type="food"     class="recalls-filter-1-var-2"><span><span class="recalls-filter-label">Food and allergies</span> <span class="facet-count"></span></span></a></li>
+            <li><a href="#" data-type="vehicles" class="recalls-filter-2-var-2"><span><span class="recalls-filter-label">Vehicles</span> <span class="facet-count"></span></span></a></li>
+            <li><a href="#" data-type="health"   class="recalls-filter-3-var-2"><span><span class="recalls-filter-label">Health</span> <span class="facet-count"></span></span></a></li>
+            <li><a href="#" data-type="consumer" class="recalls-filter-4-var-2"><span><span class="recalls-filter-label">Consumer products</span> <span class="facet-count"></span></span></a></li>
           </ul>
         </div>
     
@@ -163,40 +161,18 @@
         <h2 class="mrgn-tp-lg h6">&#9776; Filter by</h2>
       </div>
       <div class="clearfix"></div>
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-              <!-- Note: need this to populate with Food & allergies, Vehicles, Health or Products -->
-              <h3 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">**need to populate panel title**
-                </a>
-              </h3>
-            </div>
-    
-    
-            <div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
-              <div id="searchFacets" class="panel-body" > <!-- searchFacets is part of EMBED -->
-                <ul class="recalls-f list-unstyled can-ca-form recall-facet-type"> <!-- recall-facet-type is part of EMBED -->
-    
-                  <!-- "template-facet-entry" gets added here. -->
-    
-                </ul> <!-- recalls can-ca-form -->
+      
+      <!-- FACETS PANELS:
+         - "data-facetname" is a predefined facet name the REST API supports.
+         - "data-facetlabel" is optional (only if you want to overwrite default.
+         - Empty facet blocks will not show.
+         -->
+      <div class="facet-panel" data-facetname="categories"></div>
+      <div class="facet-panel" data-facetname="audiences"></div>
+      <div class="facet-panel" data-facetname="vehicleMakes" data-facetlabel="Make"></div>
+      <div class="facet-panel" data-facetname="vehicleModels" data-facetlabel="Model"></div>
+      <div class="facet-panel" data-facetname="vehicleYears" data-facetlabel="Year"></div>
 
-todo<br>
-todo<br>
-todo<br>
-todo<br>
-todo<br>
-todo<br>
-todo<br>
-todo<br>
-todo<br>
-    
-            </div> <!-- panel body -->
-          </div> <!-- collapseOne -->
-        </div> <!-- panel-default -->
-        </div> <!-- panel-group -->
-    
     
     </div> <!-- end facets -->
     
@@ -425,9 +401,7 @@ todo<br>
   
   </main>
   
-  <!-- TEMPLATES: -->
-  
-  
+  <!-- === TEMPLATES: ====================================================== -->
   
   <div id="template-recall" style="display: none;" class="row recall col-xs-12">
         <h3 class="recall-title"><a href="#" class="recall-link">Recall title</a></h3>
@@ -436,33 +410,38 @@ todo<br>
     <hr>
           <!-- <div class="recall-summary">
           </div> -->
-  
   </div>
   
-  
-  
   <li id="template-pagination-li" style="display: none; padding: 0px 3px;"><a href="#" class="recall-page-link paginate-button">7</a></li>
+
+  <div id="template-facet-panel" style="display: none;" class="panel-group accordion"
+      role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab">
+        <h3 class="panel-title">
+          <a role="button" data-toggle="collapse" 
+              href="#" aria-expanded="true">
+            Panel Title
+          </a>
+        </h3>
+      </div>
+      <div class="panel-collapse collapse show" role="tabpanel">
+        <div class="panel-body" >
+          <ul class="facet-entries recalls-f list-unstyled can-ca-form">
+
+            <!-- "template-facet-entry" gets added here. -->
+
+          </ul>
+    
+        </div>
+      </div>
+    </div>
+  </div>
   
   <li id="template-facet-entry" style="display: none;" class="checkbox checkbox-small">
     <input class="recall-facet-input" type="checkbox">
     <label class="recall-facet-label">Food</label><span class="recall-facet-count badge pull-right">111</span>
   </li>
-  
-  <!-- Note: checkboxes may not work with new subcategories 
-  
-      <li id="template-facet-entry" style="display: none;" class="checkbox checkbox-small">
-        <input class="recall-facet-link" type="checkbox" id="label-id">
-        <label id="label-for" for="" class="recall-facet-label">Food</label><span class="recall-facet-count badge pull-right">111</span> 
-      </li>
-  -->
-  
-  <!-- <li id="template-facet-entry" style="display: none;">
-    <a class="recall-facet-link" href="#">
-      <span class="recall-facet-label">Honda Civic</span>
-      (<span class="recall-facet-count">66</span>)
-    </a>
-  </li> -->
-  
   
   <div class="global-footer">
     <footer id="wb-info">

@@ -427,8 +427,8 @@ dl.inline-flex dd {
 	padding-bottom: 0px !important;
 }
 
-#accordion .panel-heading { padding: 0;}
-#accordion .panel-title > a {
+.accordion .panel-heading { padding: 0;}
+.accordion .panel-title > a {
 	display: block;
 	padding: 0.4em 0.6em;
     outline: none;
@@ -437,13 +437,13 @@ dl.inline-flex dd {
 		color: #333;
 }
 
-#accordion .panel-title > a.accordion-toggle::before, #accordion a[data-toggle="collapse"]::before  {
+.accordion .panel-title > a.accordion-toggle::before, .accordion a[data-toggle="collapse"]::before  {
     content:"\e113";
     float: left;
     font-family: 'Glyphicons Halflings';
-	  margin-right:.6em;
+    margin-right:.6em;
 }
-#accordion .panel-title > a.accordion-toggle.collapsed::before, #accordion a.collapsed[data-toggle="collapse"]::before  {
+.accordion .panel-title > a.accordion-toggle.collapsed::before, .accordion a.collapsed[data-toggle="collapse"]::before  {
     content:"\e114";
 }
 
@@ -491,10 +491,10 @@ dl.inline-flex dd {
 
 
 
-.recalls-filter-label {
-	font-size:16px;
-	padding:10px;
-  color:black;
+#recall-types-filter li a > span {
+    font-size:16px;
+    padding:10px;
+    color:black;
 }
 
 .recalls-filter-1-var-2 {

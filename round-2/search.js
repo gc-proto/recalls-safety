@@ -3,12 +3,19 @@
  * (as opposed to hard-coded). For now though, it does not matter much.
  * Just update them to use appropriate values if need be.
  */
-const API_URL = 'https://tbs.norconex.com/api';
-//const API_URL = 'http://localhost:9191/api';
+//const API_URL = 'https://tbs.norconex.com/api';
+const API_URL = 'http://localhost:9191/api';
 const MAX_DOCS_PER_PAGE = 10;
 const MAX_PAGINATION_LINKS = 7;
 var currentPage = 1;
-var recallTypes = [];
+var activeFacets = {
+    recallTypes: [],
+    categories: [],
+    audiences: [],
+    vehicleMakes: [],
+    vehicleModels: [],
+    vehicleYears: [],
+};
 
 function clearAjaxError() {
     $("#error").empty();
@@ -35,7 +42,7 @@ function formatNumber(x) {
 
 function formatDate(date) {
   var parts = date.split('-');
-  var newDate = new Date(parts[0], parts[1] - 1, parts[2]); 
+  var newDate = new Date(parts[0], parts[1] - 1, parts[2]);
   var options = { day: 'numeric',  month: 'short', year: 'numeric' };
   date = newDate.toLocaleDateString("en-CA",options);
   return date;
@@ -146,20 +153,19 @@ function updateSearchSpellCheck(data) {
  * @param data JSON search response
  */
 function updateSearchFacets(data) {
-    //TODO Will need to be updated if we return more facets
-//    var $searchFacetType =  $('#searchFacets .recall-facet-type');
-//    $searchFacetType.empty();
-    if (!data.facets.empty) {
-        updateSearchFacetRecallTypes(data.facets.recallTypes);
-/*        updateSearchFacet(
-                data.facets.recallTypes,
-                '#template-facet-entry-recallTypes',
-                '#recall-types-filter',
-                function($facetListItem, facetEntry, i) {
-            $facetListItem.find('label').addClass(
-                    'recalls-filter-' + (i + 1) + '-var-2');
-        });
-*/
+
+    updateSearchFacetRecallTypes(data.facets.recallTypes);
+
+    $('#recall-facets .facet-panel').each(function(index) {
+        var facetName = $(this).data('facetname');
+        var facetData = data.facets[facetName];
+        updateSearchFacetGeneric($(this), facetData);
+    });
+
+    // Adjust category title to match recall type.
+    var $activeType = $('#recall-types-filter .active .recalls-filter-label');
+    if ($activeType.length > 0) {
+        $("#recall-facets .facet-panel[data-facetname='categories'] .panel-title a").text($activeType.text());
     }
 }
 
@@ -169,68 +175,80 @@ function updateSearchFacetRecallTypes(facetData) {
     $.each(facetData.values, function(index, entry) {
         var $link = $container.find("a[data-type='" + entry.value + "']");
         $link.find('.facet-count').text('(' + formatNumber(entry.count) + ')');
-        if (recallTypes.includes(entry.value)) {
+        if (activeFacets.recallTypes.includes(entry.value)) {
             $link.addClass("active");
         }
     });
 }
 
-
-
 /**
  * Update a single facet.
  * @param facetData data for a facet
  */
-function updateSearchFacetGeneric(
-        facetData, templateSelector, containerSelector, callback) {
-    var $container = $(containerSelector);
+function updateSearchFacetGeneric($container, facetData) {
     $container.empty();
+    $container.hide();
+    // do nothing if no facet
+    if (!facetData || facetData.empty) {
+        return;
+    }
+
+    var facetName = facetData.name;
+    var facetLabel = $container.data('facetlabel');
+    if (!facetLabel || facetLabel === 'undefined') {
+        facetLabel = facetData.label;
+    }
+
+    //--- Render facet panel ---
+    var $facetPanel = clone('#template-facet-panel');
+    var panelId = 'facet-panel-' + facetName;
+    $facetPanel.attr('id', panelId);
+    $facetPanel.find('.panel-title a').text(facetLabel);
+
+    var $facetPanelHeading = $facetPanel.find('.panel-heading');
+    var headingId = 'facet-heading-' + facetName;
+    $facetPanelHeading.attr('id', headingId);
+
+    var $facetEntriesPanel = $facetPanel.find('.panel-collapse');
+    var facetEntriesId = 'facet-entries-' + facetName;
+    $facetEntriesPanel.attr('id', facetEntriesId);
+    $facetEntriesPanel.attr('aria-labelledby', headingId);
+
+    var $facetPanelLink = $facetPanel.find('.panel-title a');
+    $facetPanelLink.attr('href', '#' + facetEntriesId);
+    $facetPanelLink.attr('aria-controls', facetEntriesId);
+
+    //--- Render facet items ---
     $.each(facetData.values, function(i, facetEntry) {
-        var $facetListItem = clone(templateSelector);
+        var $facetListItem = clone('#template-facet-entry');
         var $input = $facetListItem.find('.recall-facet-input');
         var $label = $facetListItem.find('.recall-facet-label');
 
-        var inputId = 'facet-input-' + facetEntry.field + '-' + i;
-        var labelId = 'facet-label-' + facetEntry.field + '-' + i;
+        var inputId = 'facet-input-' + facetName + '-' + i;
+        var labelId = 'facet-label-' + facetName + '-' + i;
 
         $input.attr('id', inputId);
         $input.val(facetEntry.value);
+        $input.attr('name', facetName);
         $label.text(facetEntry.label);
         $label.attr('id', labelId);
         $label.attr('for', inputId);
 
         $facetListItem.find('.recall-facet-count').text(facetEntry.count);
-        if (recallTypes.includes(facetEntry.value)) {
+
+        if (activeFacets[facetName].includes(facetEntry.value)) {
             $input.attr('checked', true);
             $label.addClass('active');
         }
 
-        if (callback !== 'undefined') {
-            callback($facetListItem, facetEntry, i);
-        }
-
-        $container.append($facetListItem);
+        $facetPanel.find('.facet-entries').append($facetListItem);
         $facetListItem.show();
     });
+
+    $container.append($facetPanel);
+    $facetPanel.show();
+    $container.show();
 }
-/*
-    var $link = $facetListItem.find('.recall-facet-link');
-    if (recallTypes.includes(facetEntry.name)) {
-        $link.addClass('active');
-    }
-    $link.click(function(e) {
-        e.preventDefault();
-        currentPage = 1;
-        if (recallTypes.includes(facetEntry.name)) {
-            recallTypes.splice(recallTypes.indexOf(facetEntry.name), 1);
-        } else {
-            recallTypes.push(facetEntry.name);
-        }
-        search();
-        return false;
-    });
-*/
-//}
 
 /**
  * Update search pagination.
@@ -342,7 +360,12 @@ function search() {
             'terms': $("#terms").val(),
             'pageIndex': currentPage,
             'docsPerPage': MAX_DOCS_PER_PAGE,
-            'recallTypes': recallTypes
+            'recallTypes': activeFacets.recallTypes,
+            'audiences' : activeFacets.audiences,
+            'categories' : activeFacets.categories,
+            'vehicleMakes' : activeFacets.vehicleMakes,
+            'vehicleModels' : activeFacets.vehicleModels,
+            'vehicleYears' : activeFacets.vehicleYears
         }),
         dataType: "json",
         contentType: "application/json; charset=utf-8",
@@ -408,6 +431,7 @@ $( document ).on( "wb-ready.wb", function() {
 
     // run the initial search
     search();
+
     $("#currentConcerns").removeClass("wb-inv");
     $(".opening-game").removeClass("wb-inv");
     $(".pagetag").removeClass("wb-inv");
@@ -417,16 +441,23 @@ $( document ).on( "wb-ready.wb", function() {
     // Recall type tabs clicks
     $('#recall-types-filter a').click(function(e) {
         e.preventDefault();
-        recallTypes.length = 0;
+        activeFacets.recallTypes.length = 0;
         if (!$(this).hasClass('active')) {
-            recallTypes.push($(this).data('type'));
+            activeFacets.recallTypes.push($(this).data('type'));
         }
         search();
         return false;
     });
 
     $(".btn-clear").click(function(e) {
-        recallTypes.length = 0;
+        activeFacets.recallTypes.length = 0;
+        search();
+    });
+
+    $(document).on('change', '#recall-facets .recall-facet-input', function() {
+        var name = $(this).attr('name');
+        activeFacets[name] = $("input[name='" + name + "']:checkbox:checked")
+                .map(function() { return $(this).val(); }).get();
         search();
     });
 
