@@ -264,7 +264,9 @@ input[type="reset"], input[type="button"], input[type="submit"]
 }
 
 .subcategories {
-   margin-left: 15px;
+   padding-left: 15px;
+   border-top: 1px solid #ccc;
+   border-bottom: 1px solid #ccc;
 }
 
 .center-cropped {

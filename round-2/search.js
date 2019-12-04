@@ -3,6 +3,7 @@
  * (as opposed to hard-coded). For now though, it does not matter much.
  * Just update them to use appropriate values if need be.
  */
+
 const API_URL = 'https://tbs.norconex.com/api';
 //const API_URL = 'http://localhost:9191/api';
 const MAX_DOCS_PER_PAGE = 10;
@@ -219,13 +220,14 @@ function updateSearchFacetGeneric($container, facetData) {
     $facetPanelLink.attr('aria-controls', facetEntriesId);
 
     //--- Render facet items ---
-    $.each(facetData.values, function(i, facetEntry) {
+    var $facetEntryList = $facetPanel.find('.facet-entries');
+    $.each(facetData.values, function(index, facetEntry) {
         var $facetListItem = clone('#template-facet-entry');
         var $input = $facetListItem.find('.recall-facet-input');
         var $label = $facetListItem.find('.recall-facet-label');
 
-        var inputId = 'facet-input-' + facetName + '-' + i;
-        var labelId = 'facet-label-' + facetName + '-' + i;
+        var inputId = 'facet-input-' + facetName + '-' + index;
+        var labelId = 'facet-label-' + facetName + '-' + index;
 
         $input.attr('id', inputId);
         $input.val(facetEntry.value);
@@ -240,10 +242,19 @@ function updateSearchFacetGeneric($container, facetData) {
             $input.attr('checked', true);
             $label.addClass('active');
         }
+        $facetListItem.addClass('lvl-' + facetEntry.level);
 
-        $facetPanel.find('.facet-entries').append($facetListItem);
+        $facetEntryList.append($facetListItem);
         $facetListItem.show();
     });
+
+    // Indent second levels only and add label
+    $facetEntryList.find('.lvl-1').not('.lvl-1+.lvl-1').each(function(){
+        $(this).nextUntil(':not(.lvl-1)').addBack().wrapAll(
+                '<ul class="subcategories list-unstyled" />');
+    });
+    $facetEntryList.find('.subcategories').prepend(
+            '<li><label>Refine by:</label></li>');
 
     $container.append($facetPanel);
     $facetPanel.show();
@@ -455,6 +466,15 @@ $( document ).on( "wb-ready.wb", function() {
     });
 
     $(document).on('change', '#recall-facets .recall-facet-input', function() {
+        if ($(this).is(':checked')) {
+            if ($(this).closest('ul').hasClass('subcategories')) {
+                // subcategory checked, clear parent.
+                $(this).closest('ul').prev('li').find('input').attr('checked', false);
+            } else {
+                // parent checked, clear children.
+                $(this).closest('li').next('ul').find('input').attr('checked', false);
+            }
+        }
         var name = $(this).attr('name');
         activeFacets[name] = $("input[name='" + name + "']:checkbox:checked")
                 .map(function() { return $(this).val(); }).get();
