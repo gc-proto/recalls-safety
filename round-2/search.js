@@ -84,13 +84,12 @@ function updateSearchResults(data) {
     $searchResults.empty();
     $.each(data.recalls.results, function(i, recall) {
         var $el = clone('#template-recall');
-        $el.find('.recall-link').attr('href', recall.url);
-        setHtml($el, '.recall-title', recall.title);
+        $el.find('.recall-url').attr('href', recall.url);
+        setHtml($el, '.recall-url', recall.title);
         setHtml($el, '.recall-summary', recall.description);
         setHtml($el, '.recall-type', recall.type);
         setHtml($el, '.recall-date', formatDate(recall.date));
         setHtml($el, '.recall-department', recall.department);
-        setHtml($el, '.recall-url', recall.url);
         setHtml($el, '.recall-id', recall.id);
         setHtml($el, '.recall-recallNo', recall.recallNo);
         setHtml($el, '.recall-alertType', recall.alertType);
