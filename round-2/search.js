@@ -275,18 +275,15 @@ function updateSearchPagination(data) {
             data.recalls.numFound / MAX_DOCS_PER_PAGE), MAX_PAGINATION_LINKS);
     var first = Math.max(1, currentPage - Math.floor(numOfPageLinks / 2));
     var last = Math.min(numOfPageLinks, first + numOfPageLinks - 1);
-
     var prev = Math.max(1, currentPage - 1);
     var $prevLink = $('.recall-pagination-prev');
-    updateSearchPaginationLink($prevLink, prev);
-
     var next = Math.min(numOfPageLinks, currentPage + 1);
     var $nextLink = $('.recall-pagination-next');
-    updateSearchPaginationLink($nextLink.first(), next);
+
 
     $searchPageLinks.empty();
     $searchPageLinks.append($prevLink.parent());
-
+    updateSearchPaginationLink($prevLink, prev);
 
     if (currentPage === 1) {
         $prevLink.parent().attr('style','display:none;');
@@ -304,7 +301,7 @@ function updateSearchPagination(data) {
     }
 
     $searchPageLinks.append($nextLink.parent());
-
+    updateSearchPaginationLink($nextLink, next);
 }
 /**
  * Update an individual search pagination link.
@@ -321,7 +318,7 @@ function updateSearchPaginationLink($link, pageNumber) {
         $link.off('click');
         $link.attr('href', '#');
         $link.removeClass('disabled');
-        $link.click(function() {
+        $link.click(function(e) {
             currentPage = pageNumber;
             search();
             return false;
