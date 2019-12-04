@@ -71,7 +71,7 @@ function updateResponse(data) {
     updateSearchPagination(data);
     updateSearchSpellCheck(data);
     $('#searchResponse').show();
-    // jennifer(data);
+
 }
 
 /**
@@ -418,7 +418,7 @@ function debug(json) {
  * ON DOM READY
  *----------------------------------------------------------------------------*/
 $( document ).on( "wb-ready.wb", function() {
-
+    
     /*
      * When developing, below allows to pass the search term to the URL
      * and submit the form.  Useful for refreshing the page without
@@ -432,23 +432,20 @@ $( document ).on( "wb-ready.wb", function() {
     }
 
 
-    //var checkTitle = "needs-to-pickup-right-value";
-    // var checkTitle = $( '#label-for' ).first().text(); //  not populating when the label rename/populating happens
-    /* make this recall-facet-label , would need to be switched to the subcategories when they become available */
-    //var element = document.getElementById('label-id');
-    //element.setAttribute('id', checkTitle);
-    //var element = document.getElementById('label-for');
-    //element.removeAttribute('id');
-    //element.setAttribute('for', checkTitle);
-
     // run the initial search
     search();
 
     $("#currentConcerns").removeClass("wb-inv");
     $(".opening-game").removeClass("wb-inv");
     $(".pagetag").removeClass("wb-inv");
+    $(".facet-count").addClass("wb-inv");  // jennifer - hides the count on opening game
     $("#recall-facets").addClass("wb-inv");
 
+        // jennifer - having trouble here, these activate then get overridden :(
+            $(".recalls-filter-1-var-2").addClass("active");
+            $(".recalls-filter-2-var-2").addClass("active");
+            $(".recalls-filter-3-var-2").addClass("active");
+            $(".recalls-filter-4-var-2").addClass("active");
 
     // Recall type tabs clicks
     $('#recall-types-filter a').click(function(e) {
@@ -458,7 +455,9 @@ $( document ).on( "wb-ready.wb", function() {
             activeFacets.recallTypes.push($(this).data('type'));
         }
         search();
+        $(".facet-count").removeClass("wb-inv"); // jennifer - reveals the count on search
         return false;
+        
     });
 
     $(".btn-clear").click(function(e) {
