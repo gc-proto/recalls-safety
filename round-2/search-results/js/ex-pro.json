@@ -1,0 +1,53 @@
+{
+   "url":"https:\/\/healthycanadians.gc.ca\/recall-alert-rappel-avis\/hc-sc\/2019\/71660r-eng.php",
+   "recallId":"RA-71660",
+   "title":"\n Cutek Extreme recalled due to incorrect labelling and hazard information",
+   "start_date":1574726400,
+   "date_published":1574726400,
+   "category":[
+      "4"
+   ],
+   "panels":[
+      {
+         "panelName":"basic_details",
+         "title":"Summary",
+         "text":"<b>Issue:<\/b> Chemical Hazard<BR\/><b>Audience:<\/b> General Public<BR\/><b>Category:<\/b> Chemicals<BR\/><b>Alert type:<\/b> Consumer Product Recall<BR\/><b>Department:<\/b> Health Canada<BR\/>"
+      },
+      {
+         "panelName":"summary",
+         "title":"Summary",
+         "text":"<b>Product: <\/b>Cutek Extreme.<BR\/><b>Issue: <\/b>The product lacks the correct labelling and hazard information.<BR\/><b>What to do: <\/b>Immediately stop using the products and safely dispose of them in accordance with municipal waste requirements or return the product to place of purchase to obtain a correct label.<BR\/>"
+      },
+      {
+         "panelName":"cms_who_what_consumer",
+         "title":"What you should do",
+         "text":"\n <strong>Consumers should immediately stop using the products and safely dispose of them in accordance with municipal waste requirements or return the product to place of purchase to obtain a correct label.<\/strong>\n\n For more information, consumers may contact Deck Source Inc. at 1-844-442-8835 Monday to Friday, from 9:00 a.m. to 4:00 p.m. EST, by <a href=\"mailto:jessica@cutekstain.com\">email<\/a> or by visiting the <a href=\"http:\/\/cutekstain.com\/contact-us\">company's website<\/a>.\n\n Please note that the Canada Consumer Product Safety Act prohibits recalled products from being redistributed, sold or even given away in Canada.\n\n Health Canada would like to remind Canadians to report any health or safety incidents related to the use of this product or any other consumer product or cosmetic by filling out the Consumer Product Incident Report Form.\n\n This recall is also posted on the OECD Global Portal on Product Recalls website. You can visit this site for more information on other international consumer product recalls."
+      },
+      {
+         "panelName":"product_1",
+         "title":"Cutek Extreme 3.6L and 18.9L",
+         "text":"<b>Common name:<\/b> Cutek Extreme 3.6L and 18.9L<br\/><b>Product description:<\/b> \n This recall involves Cutek Extreme high performance wood oil, a wood protection oil sold in a 3.6 litre (1 Gallon) metal paint can or 18.9 litre (5 Gallon) black plastic pail. The product has a black, orange and green outer label. The model number and UPC can be found above or below a Canadian or Quebec flag on the outer label.\n<table>\n <caption>\n  This recall involves:<\/caption>\n <thead>\n  <tr>\n   <th scope=\"col\">\n    Product<\/th>\n   <th scope=\"col\">\n    UPC<\/th>\n   <th scope=\"col\">\n    Model Number<\/th>\n  <\/tr>\n <\/thead>\n \n  <tr>\n   <td rowspan=\"2\">\n    Cutek Extreme 3.6L\u00a0<\/td>\n   <td rowspan=\"2\">\n    8 57558 00600 4<\/td>\n   <td>\n    DS-3.6L-CAN<\/td>\n  <\/tr>\n  <tr>\n   <td>\n    DS-3.6LFR<\/td>\n  <\/tr>\n  <tr>\n   <td rowspan=\"2\">\n    Cutek Extreme 18.9L<\/td>\n   <td rowspan=\"2\">\n    8 57558 00626 4<\/td>\n   <td>\n    DS-18.9-CAN<\/td>\n  <\/tr>\n  <tr>\n   <td>\n    DS-18.9FR<\/td>\n  <\/tr>\n \n<\/table>\n\n \u00a0<BR\/><b>Hazard identified:<\/b> \n The recalled products do not meet the labelling requirements for consumer chemical products required by the Consumer Chemicals and Containers Regulations, 2001 under the Canada Consumer Product Safety Act.\n\n This lack of labelling information could result in unintentional exposure to the product and lead to serious illness, injury or death.\n\n As of November 26, 2019 the company has received no reports of incidents or injuries in Canada.<BR\/><b>Number sold:<\/b> \n Approximately 29,631 units of the affected product were sold in Canada.<BR\/><b>Time period sold:<\/b> \n The affected products were sold from February 2014 to November 2019.<BR\/><b>Place of origin:<\/b> \n Manufactured in Australia.<BR\/><b>Companies:<\/b><br\/><dl><dt>Distributor<\/dt><dd>Deck Source Inc. <\/dd><dd>Barrie<\/dd><dd>Ontario<\/dd><dd>CANADA<\/dd><\/dl><dl><dt>Manufacturer<\/dt><dd>Chemisys Group<\/dd><dd>Loganholme<\/dd><dd>AUSTRALIA<\/dd><\/dl>"
+      },
+      {
+         "panelName":"images",
+         "title":"Images",
+         "data":[
+            {
+               "title":"Cutek Extreme \u2013 High performance wood oil 3.6L",
+               "fullUrl":"\/recall-alert-rappel-avis\/hc-sc\/2019\/assets\/ra-71660-01_s_fs_3_20191121-153738_11_en.jpg",
+               "thumbUrl":"\/recall-alert-rappel-avis\/hc-sc\/2019\/assets\/ra-71660-01_s_m_3_20191121-153738_11_en.jpg"
+            },
+            {
+               "title":"Cutek Extreme \u2013 High performance wood oil 3.6L",
+               "fullUrl":"\/recall-alert-rappel-avis\/hc-sc\/2019\/assets\/ra-71660-02_s_fs_3_20191121-153842_12_en.jpg",
+               "thumbUrl":"\/recall-alert-rappel-avis\/hc-sc\/2019\/assets\/ra-71660-02_s_m_3_20191121-153842_12_en.jpg"
+            }
+         ]
+      },
+      {
+         "panelName":"id_numbers",
+         "title":"Identification number",
+         "text":"<b>Identification number:<\/b> RA-71660<BR\/>"
+      }
+   ]
+}
