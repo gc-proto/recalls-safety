@@ -263,11 +263,7 @@ function updateSearchFacetGeneric($container, facetData) {
     
     // look at the subcategory and see if it is checked then display
     $(".subcategories").each(function(index) {
-        if ($(this).find("input").attr("checked") === 'checked') {
-            $(this).removeClass("wb-inv");
-        }
-        var inputChecked = $(this).prev().find("input").attr("checked");
-        if (inputChecked === 'checked') {
+        if ($(this).find("input:checked").length || $(this).prev().find("input:checked").length) {
             $(this).removeClass("wb-inv");
         }
     });
