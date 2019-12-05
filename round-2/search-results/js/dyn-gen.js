@@ -68,7 +68,6 @@ function getRecall(id, lang) {
              console.log(this.panelName);
            }
          });
-         console.log(productsCount);
 
          //get all categories
          categoryname = data.panels[0].text.substr(data.panels[0].text.indexOf("Category")+14,data.panels[0].text.indexOf("<",data.panels[0].text.indexOf("Category")+14)-(data.panels[0].text.indexOf("Category")+14));
@@ -77,9 +76,10 @@ function getRecall(id, lang) {
          //if 2 category names, make 2 tags, with comma separation
          var categories = categoryname.split(', ');
          //var categoryout = '<span style="text-decoration:none;">ᐸ </span>';
-         // console.log(categoryname);
          // console.log(categories[0]);
 
+         var pPCat = [];
+         var pPCatURL = [];
          var pCat = [];
          var pCatURL = [];
          var pSCat = [];
@@ -87,134 +87,45 @@ function getRecall(id, lang) {
          q = 0;
          $.each(categories, function() {
            if (this.substr(0, 8) === "Allergen") {
+             pPCat[q] = "Food";
+             pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Food';
              pCat[q] = "Allergen";
-             pCatURL[q] = '';
              pSCat[q] = 'Undeclared ' + this.substr(11, this.length-11).toLowerCase();
-             pSCatURL[q] = '';
            } else if (this.substr(0, 15) === "Microbiological") {
              if (this.indexOf("E. coli") > 1) {
+               pPCat[q] = "Food";
+               pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Food';
                pCat[q] = "Microbiological";
-               pCatURL[q] = '';
                pSCat[q] = 'E. Coli';
-               pSCatURL[q] = '';
              } else {
+               pPCat[q] = "Food";
+               pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Food';
                pCat[q] = "Microbiological";
-               pCatURL[q] = '';
                pSCat[q] = this.substr(18, this.length-18);
-               pSCatURL[q] = '';
              }
-           } else if (this.substr(0, 3) === "Car") {
-             pCat[q] = "Car";
-             pCatURL[q] = '';
-             pSCat[q] = 'Other';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "3 Wheel Car") {
-             pCat[q] = "Car";
-             pCatURL[q] = '';
-             pSCat[q] = '3 Wheel Car';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "SUV") {
-             pCat[q] = "Car";
-             pCatURL[q] = '';
-             pSCat[q] = 'SUV';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Med. & H.D.") {
-             pCat[q] = "Truck";
-             pCatURL[q] = '';
-             pSCat[q] = 'Medium and heavy duty vehicle';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Light Truck & Van") {
-             pCat[q] = "Truck";
-             pCatURL[q] = '';
-             pSCat[q] = 'Light truck or van';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "RV Chassis") {
-             pCat[q] = "Truck";
-             pCatURL[q] = '';
-             pSCat[q] = 'RV chassis';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Chassis Cab") {
-             pCat[q] = "Truck";
-             pCatURL[q] = '';
-             pSCat[q] = 'Chassis cab';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Motorhome") {
-             pCat[q] = "Trailer/RV";
-             pCatURL[q] = '';
-             pSCat[q] = 'Motorhome';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Travel Trailer") {
-             pCat[q] = "Trailer/RV";
-             pCatURL[q] = '';
-             pSCat[q] = 'Travel trailer';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Light Trailer") {
-             pCat[q] = "Trailer/RV";
-             pCatURL[q] = '';
-             pSCat[q] = 'Light trailer';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Heavy Trailer") {
-             pCat[q] = "Trailer/RV";
-             pCatURL[q] = '';
-             pSCat[q] = 'Heavy trailer';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Bus") {
-             pCat[q] = "Bus";
-             pCatURL[q] = '';
-             pSCat[q] = 'Other';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Snowmobile") {
-             pCat[q] = "Snowmobile";
-             pCatURL[q] = '';
-             pSCat[q] = 'Other';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Snowmobile Cutter") {
-             pCat[q] = "Snowmobile";
-             pCatURL[q] = '';
-             pSCat[q] = 'Snowmobile cutter';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Child Car Seat") {
-             pCat[q] = "Car seat";
-             pCatURL[q] = '';
-             pSCat[q] = 'Child car seat';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Booster Seat") {
-             pCat[q] = "Car seat";
-             pCatURL[q] = '';
-             pSCat[q] = 'Booster seat';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Motorcycle") {
-             pCat[q] = "Motorcycle";
-             pCatURL[q] = '';
-             pSCat[q] = 'Other';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Minibike/ Moped /Scooter") {
-             pCat[q] = "Motorcycle";
-             pCatURL[q] = '';
-             pSCat[q] = 'Minibike, moped or scooter';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "Low Speed Motorcycle") {
-             pCat[q] = "Motorcycle";
-             pCatURL[q] = '';
-             pSCat[q] = 'Low speed motorcycle';
-             pSCatURL[q] = '';
-           } else if (this.substr(0, 15) === "3 Wheel Motorcycle") {
-             pCat[q] = "Motorcycle";
-             pCatURL[q] = '';
-             pSCat[q] = '3 wheel motorcycle';
-             pSCatURL[q] = '';
            } else {
-             pCat[q] = titleCase(categoryname);
-             pCatURL[q] = '';
+             if (data.category = "1") {
+               pPCat[q] = "Food";
+               pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Food';
+             } else if (data.category = "3") {
+               pPCat[q] = "Health";
+               pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Health';
+             } else if (data.category = "4") {
+               pPCat[q] = "Consumer products";
+               pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Consumer%20products';
+             }
+             pCat[q] = sentenceCase(categoryname);
+           }
+           pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'&r='+encodeURI(pCat[q]);
+           if (typeof(pSCat) !== "undefined") {
+             pSCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'&r='+encodeURI(pSCat[q]);
            }
            q++;
          });
-         // console.log(pCat[0]);
-
          //String together
          sAllCats = "";
          for (i = 0; i < q; i++) {
-           if (pSCat[i] !== null) {
+           if (typeof(pSCat[i]) !== "undefined") {
              sAllCats += pSCat[i] + ', ';
            } else {
              sAllCats += pCat[i] + ', ';
@@ -231,30 +142,29 @@ function getRecall(id, lang) {
          //Make the breadcrumb based on the first category
 
          if (pSCat[0] == null) {
-           $('.breadcrumb')[0].innerHTML = '<li class="hidden-xs hidden-sm"><a href="">Home</a></li><li class="hidden-xs hidden-sm"><a href="">Recalls and safety alerts</a></li><li class="no-break-breadcrumb"><a href="'+pCatURL[0]+'">'+pCat[0]+'</a></li>';
+           $('.breadcrumb')[0].innerHTML = '<li class="hidden-xs hidden-sm"><a href="">Home</a></li><li class="hidden-xs hidden-sm"><a href="http://test.canada.ca/recalls-safety/round-2/search-page.html">Recalls and safety alerts</a></li><li class="hidden-xs hidden-sm"><a href="'+pPCatURL[0]+'">'+pPCat[0]+'</a></li><li class="no-break-breadcrumb"><a href="'+pCatURL[0]+'">'+pCat[0]+'</a></li>';
          } else {
-           $('.breadcrumb')[0].innerHTML = '<li class="hidden-xs hidden-sm"><a href="">Home</a></li><li class="hidden-xs hidden-sm"><a href="">Recalls and safety alerts</a></li><li class="hidden-xs hidden-sm"><a href="'+pCatURL[0]+'">'+pCat[0]+'</a></li><li class="no-break-breadcrumb"><a href="'+pSCatURL[0]+'">'+pSCat[0]+'</a></li>';
+           $('.breadcrumb')[0].innerHTML = '<li class="hidden-xs hidden-sm"><a href="">Home</a></li><li class="hidden-xs hidden-sm"><a href="http://test.canada.ca/recalls-safety/round-2/search-page.html">Recalls and safety alerts</a></li><li class="hidden-xs hidden-sm"><a href="'+pPCatURL[0]+'">'+pPCat[0]+'</a></li><li class="hidden-xs hidden-sm"><a href="'+pCatURL[0]+'">'+pCat[0]+'</a></li><li class="no-break-breadcrumb"><a href="'+pSCatURL[0]+'">'+pSCat[0]+'</a></li>';
          }
 
          //Getting the recall date under title
          const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Dececember"];
          var startdate = new Date(data.start_date * 1000);
-         console.log(startdate.getFullYear());
-         console.log(monthNames[startdate.getMonth()]);
          displaydate = monthNames[startdate.getMonth()] + " " + startdate.getDate() + ", " + startdate.getFullYear();
          $("#recall-date").html('<strong>Recall date:</strong> '+ displaydate);
 
-         console.log(descriptionText);
          if (descriptionText !== "noneatall") {
            if ($.trim(descriptionText.substring(0, 1)) === "<") {
              s3Point = $.trim(descriptionText.substring(descriptionText.indexOf(">", descriptionText.indexOf(">") + 1) + 1, descriptionText.length - descriptionText.indexOf(">", descriptionText.indexOf(">") + 1)));
            } else {
              s3Point = $.trim(descriptionText);
            }
-           if (s3Point.indexOf(" - ") < 30) {
+           if (s3Point.indexOf(" - ") < 30 && s3Point.indexOf(" - ") > -1) {
               s3Point = $.trim(s3Point.substring(s3Point.indexOf(" - ") + 2), s3Point.length);
            }
+
          }
+
 
          console.log(products);
 
@@ -310,7 +220,7 @@ function getRecall(id, lang) {
            outputText += '<section><h2>Affected products</h2>'+ productTable +'</section></div><div class="clearfix"></div>';
          }
 
-         if (whatToDo !== null) {
+         if (typeof(whatToDo) !== "undefined") {
            outputText += '<section class="col-md-8 row"><h2>What to do</h2>'+whatToDo+'</section><div class="clearfix"></div>'
          }
 
@@ -341,6 +251,11 @@ function titleCase(string) {
      sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
   }
   var newSentence = sentence.join(" ");
+  return newSentence;
+};
+
+function sentenceCase(string) {
+  newSentence = string[0].toUpperCase() + string.slice(1).toLowerCase();
   return newSentence;
 };
 
