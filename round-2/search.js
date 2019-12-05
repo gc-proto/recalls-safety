@@ -254,12 +254,24 @@ function updateSearchFacetGeneric($container, facetData) {
     // Indent second levels only and add label
     $facetEntryList.find('.lvl-1').not('.lvl-1+.lvl-1').each(function(){
         $(this).nextUntil(':not(.lvl-1)').addBack().wrapAll(
-                '<ul class="subcategories list-unstyled" />');
+            '<ul class="subcategories list-unstyled wb-inv" />');
     });
     $facetEntryList.find('.subcategories').prepend(
             '<li><label>Refine by:</label></li>');
 
     $container.append($facetPanel);
+    
+    // look at the subcategory and see if it is checked then display
+    $(".subcategories").each(function(index) {
+        if ($(this).find("input").attr("checked") === 'checked') {
+            $(this).removeClass("wb-inv");
+        }
+        var inputChecked = $(this).prev().find("input").attr("checked");
+        if (inputChecked === 'checked') {
+            $(this).removeClass("wb-inv");
+        }
+    });
+
     $facetPanel.show();
     $container.show();
 }
@@ -427,10 +439,17 @@ $( document ).on( "wb-ready.wb", function() {
     
     var params = new window.URLSearchParams(window.location.search);
     var terms = params.get('terms');
+    //var category = params.get('c');
+    //var recallType = params.get('r');
     if (terms) {
         $('#terms').val(terms);
         $('#searchForm').submit();
     }
+    //if (category) {
+    //    activeFacets.categories.push(category);
+    //}
+
+
 
 
     // run the initial search
@@ -476,7 +495,6 @@ $( document ).on( "wb-ready.wb", function() {
         activeFacets[name] = $("input[name='" + name + "']:checkbox:checked")
                 .map(function() { return $(this).val(); }).get();
         search();
-
     });
 
     $('#searchForm').submit(function(e) {
