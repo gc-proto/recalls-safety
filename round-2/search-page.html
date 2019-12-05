@@ -126,10 +126,6 @@
           </form>
         </div> <!-- input -->
 
-        <div id="noResults" style="display:none;">
-          No recalls matching your search criteria were found.
-        </div>
-
         <div class="row">
           <h2 class="wb-inv">Filter by:</h2>
           <ul id="recall-types-filter" class="toc lst-spcd col-md-12 wrap">
@@ -138,6 +134,11 @@
             <li><a href="#" data-type="health"   class="recalls-filter-3-var-2 active"><span><span class="recalls-filter-label">Health</span> <span class="facet-count"></span></span></a></li>
             <li><a href="#" data-type="consumer" class="recalls-filter-4-var-2 active"><span><span class="recalls-filter-label">Consumer products</span> <span class="facet-count"></span></span></a></li>
           </ul>
+        </div>
+
+        <div id="noResults" style="display:none;">
+          <h2>No recalls were found</h2>
+          <p>Consider clearing all filters and trying your search again in a different category.</p>
         </div>
 
       </div> <!-- p-r col-md-8 -->

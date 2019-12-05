@@ -55,7 +55,8 @@ function getRecall(id, lang) {
                console.log(this.text);
                console.log(this.text.indexOf("<table"))
                if (this.text.indexOf("<table") > -1) {
-                 descriptionText = this.text.substr(0, this.text.indexOf("<table")).replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(/[\r\n|\r|\n]+/g, "<br /><br />") + this.text.substr(this.text.indexOf("<table"), this.text.length);
+                 descriptionText = this.text.substr(0, this.text.indexOf("<table")).replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
+                 descriptionTextTable = this.text.substr(this.text.indexOf("<table"), this.text.length);
                } else {
                  descriptionText = this.text.replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
                }
@@ -214,13 +215,16 @@ function getRecall(id, lang) {
 
          outputText = '<div class="row"><section class="col-md-8"><h2>Summary</h2>'+s3Point+'</section>';
 
+         if (typeof(descriptionTextTable) !== "undefined") {
+           outputText = '<div class="row"><section class="col-md-12">'+descriptionTextTable+'</section>';
+         }
 
          if (imagePan.length != 0) {
            outputText += '<div class="col-md-12"><img src="http://healthycanadians.gc.ca'+imagePan["0"].fullUrl+ '" class="img-responsive"></div>';
          }
 
          if (productsCount > 1) {
-           outputText += '<section class="col-md-8"><h2>Affected products</h2>'+ productTable +'</section>';
+           outputText += '<section class="col-md-12"><h2>Affected products</h2>'+ productTable +'</section>';
          } else if (productsCount == 1) {
            outputText += '<section class="col-md-8"><h2>Affected products</h2>'+ productTable +'</section>';
          }

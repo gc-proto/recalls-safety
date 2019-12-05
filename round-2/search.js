@@ -84,8 +84,39 @@ function updateSearchResults(data) {
     $searchResults.empty();
     $.each(data.recalls.results, function(i, recall) {
         var $el = clone('#template-recall');
-        $el.find('.recall-url').attr('href', recall.url);
-        setHtml($el, '.recall-url', recall.title);
+
+        if (recall.id == "71029") {
+          $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/1-ranitidine.html');
+          setHtml($el, '.recall-url', 'Ranbaxy Pharmaceuticals Canada Inc. prescription ranitidine - Precautionary recall');
+        } else if (recall.id == "71263") {
+          $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/2-meatloaf.html');
+          setHtml($el, '.recall-url', 'Kirkland brand Meatloaf with Mashed Potatoes: undeclared egg, mustard');
+        } else if (recall.id == "71293") {
+          $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/3-pastrami.html');
+          setHtml($el, '.recall-url', "Butcher's Pride Corned Beef and Pastrami - Listeria");
+        } else if (recall.id == "vehicles-2016010-2") {
+          $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/5-car-seat-responsive.html');
+          setHtml($el, '.recall-url', 'BRITAX B-SAFE 35 - Issue with the handle');
+        } else if (recall.id == "67860") {
+          $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/6-epipen.html');
+          setHtml($el, '.recall-url', 'EpiPen and EpiPen Jr - Shortage');
+        } else if (recall.id == "vehicles-2014567-2") {
+          $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/7-honda-pilot.html');
+          setHtml($el, '.recall-url', "Honda Pilot 2003 - Driver's airbag");
+        } else if (recall.id == "66316") {
+          $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/8-ubs-charger.html');
+          setHtml($el, '.recall-url', "USB chargers - Risk of electric shock and fire");
+        } else if (recall.id == "69158") {
+          $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/12-wireless-speaker.html');
+          setHtml($el, '.recall-url', 'Brookstone Big Blue Party™ Indoor/Outdoor Wireless Speakers - Fire hazard');
+        } else if (recall.type === 'vehicles' || recall.url.indexOf("test.canada.ca") > -1) {
+          $el.find('.recall-url').attr('href', recall.url);
+          setHtml($el, '.recall-url', recall.title);
+        } else {
+          $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/test-dyn/recall.html?id='+recall.id+'&lang=en');
+          setHtml($el, '.recall-url', recall.title);
+        }
+
         setHtml($el, '.recall-summary', recall.description);
         setHtml($el, '.recall-type', recall.type);
         setHtml($el, '.recall-date', formatDate(recall.date));
@@ -160,6 +191,7 @@ function updateSearchFacets(data) {
     $('#recall-facets .facet-panel').each(function(index) {
         var facetName = $(this).data('facetname');
         var facetData = data.facets[facetName];
+        console.log(facetData);
         updateSearchFacetGeneric($(this), facetData);
     });
 
@@ -260,7 +292,7 @@ function updateSearchFacetGeneric($container, facetData) {
             '<li><label>Refine by:</label></li>');
 
     $container.append($facetPanel);
-    
+
     // look at the subcategory and see if it is checked then display
     $(".subcategories").each(function(index) {
         if ($(this).find("input:checked").length || $(this).prev().find("input:checked").length) {
@@ -428,13 +460,13 @@ function debug(json) {
  * ON DOM READY
  *----------------------------------------------------------------------------*/
 $( document ).on( "wb-ready.wb", function() {
-    
+
     /*
      * When developing, below allows to pass the search term to the URL
      * and submit the form.  Useful for refreshing the page without
      * re-entering the value and pressing search over and over.
      */
-    
+
     var params = new window.URLSearchParams(window.location.search);
     var terms = params.get('terms');
     var category = params.get('c');
@@ -443,7 +475,7 @@ $( document ).on( "wb-ready.wb", function() {
         $('#terms').val(terms);
         $('#searchForm').submit();
     }
-    
+
     if (recallType) {
         activeFacets.recallTypes.push(recallType);
         firstSearch = false;
@@ -461,7 +493,7 @@ $( document ).on( "wb-ready.wb", function() {
     // run the initial search
     search();
 
-    
+
 
     // Recall type tabs clicks
     $('#recall-types-filter a').click(function(e) {
@@ -475,7 +507,7 @@ $( document ).on( "wb-ready.wb", function() {
         search();
         $(".facet-count").removeClass("wb-inv"); // jennifer - reveals the count on search
         return false;
-        
+
     });
 
     $(".btn-clear").click(function(e) {
@@ -505,5 +537,5 @@ $( document ).on( "wb-ready.wb", function() {
         search();
         return false;
     });
-    
+
 });
