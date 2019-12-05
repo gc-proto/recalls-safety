@@ -214,7 +214,7 @@ function getRecall(id, lang) {
          //String together
          sAllCats = "";
          for (i = 0; i < q; i++) {
-           if (pSCat[i] != null) {
+           if (pSCat[i] !== null) {
              sAllCats += pSCat[i] + ', ';
            } else {
              sAllCats += pCat[i] + ', ';
@@ -245,7 +245,7 @@ function getRecall(id, lang) {
          $("#recall-date").html('<strong>Recall date:</strong> '+ displaydate);
 
          console.log(descriptionText);
-         if (descriptionText != "noneatall") {
+         if (descriptionText !== "noneatall") {
            if ($.trim(descriptionText.substring(0, 1)) === "<") {
              s3Point = $.trim(descriptionText.substring(descriptionText.indexOf(">", descriptionText.indexOf(">") + 1) + 1, descriptionText.length - descriptionText.indexOf(">", descriptionText.indexOf(">") + 1)));
            } else {
@@ -297,11 +297,11 @@ function getRecall(id, lang) {
            productTable = products[0].text;
          }
 
-         outputText = '<section class="col-md-8 row"><h2>Summary</h2>'+s3Point+'</section><div class="clearfix"></div>';
+         outputText = '<div class="row"><section class="col-md-8"><h2>Summary</h2>'+s3Point+'</section></div>';
 
 
          if (imagePan.length != 0) {
-           outputText += '<div class="col-md-12"><img src="http://healthycanadians.gc.ca'+imagePan["0"].fullUrl+ '" class="img-responsive"></div>';
+           outputText += '<div class="row"><div class="col-md-12"><img src="http://healthycanadians.gc.ca'+imagePan["0"].fullUrl+ '" class="img-responsive"></div>';
          }
 
          if (productsCount > 1) {
@@ -310,7 +310,7 @@ function getRecall(id, lang) {
            outputText += '<section><h2>Affected products</h2>'+ productTable +'</section></div><div class="clearfix"></div>';
          }
 
-         if (whatToDo != null) {
+         if (whatToDo !== null) {
            outputText += '<section class="col-md-8 row"><h2>What to do</h2>'+whatToDo+'</section><div class="clearfix"></div>'
          }
 
