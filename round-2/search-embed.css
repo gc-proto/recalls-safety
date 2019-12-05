@@ -693,7 +693,14 @@ color: white !important;
 
 
 
-@media (min-width:768px) {
+@media (max-width:1024px) {
+
+    .recall-facet-label {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 175px;
+    }
 
 }
 
@@ -702,6 +709,35 @@ color: white !important;
         margin-top: 10px;
         float: left!important;
     }
+    @media (max-width:320px) {
+      .recall-facet-label {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 275px;
+      }
+    }
+
+
 }.icon.twitter {
     background-size: 15px 15px !important;
+}
+
+
+@media (max-width:375px) {
+  .recall-facet-label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 220px;
+  }
+}
+
+@media (max-width:320px) {
+  .recall-facet-label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 175px;
+  }
 }
