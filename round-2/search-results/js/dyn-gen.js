@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function getRecall(id, lang) {
-   var base = 'http://healthycanadians.gc.ca/recall-alert-rappel-avis';
+   var base = 'https://cors-anywhere.herokuapp.com/http://healthycanadians.gc.ca/recall-alert-rappel-avis';
    var uri = base + '/api/' + id + '/' + lang;
 
    $.ajax({
