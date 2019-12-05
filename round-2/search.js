@@ -410,6 +410,7 @@ function search() {
     $.ajax({
         url: API_URL + '/search',
         data: JSON.stringify({
+            'sort' : 'recall_date',
             'terms': $("#terms").val(),
             'pageIndex': currentPage,
             'docsPerPage': MAX_DOCS_PER_PAGE,
