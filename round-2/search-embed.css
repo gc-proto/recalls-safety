@@ -1,5 +1,16 @@
 @import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
 
+.recall-facet-label {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 225px;
+
+}
+
+.subcategories label {
+  font-size: 17px !important;
+}
 
 /* bigger label */
 label {
@@ -694,4 +705,3 @@ color: white !important;
 }.icon.twitter {
     background-size: 15px 15px !important;
 }
-
