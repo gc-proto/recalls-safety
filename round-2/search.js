@@ -368,10 +368,12 @@ function clone(selector) {
  * the page with the obtained response.
  */
 function search() {
-    $("#currentConcerns").addClass("wb-inv");
-    $(".opening-game").addClass("wb-inv");
-    $(".pagetag").addClass("wb-inv");
-    $("#recall-facets").removeClass("wb-inv");
+    if (!firstSearch) {
+        $("#currentConcerns").addClass("wb-inv");
+        $(".opening-game").addClass("wb-inv");
+        $(".pagetag").addClass("wb-inv");
+        $("#recall-facets").removeClass("wb-inv");
+    }
 
     $.ajax({
         url: API_URL + '/search',
@@ -435,27 +437,31 @@ $( document ).on( "wb-ready.wb", function() {
     
     var params = new window.URLSearchParams(window.location.search);
     var terms = params.get('terms');
-    //var category = params.get('c');
-    //var recallType = params.get('r');
+    var category = params.get('c');
+    var recallType = params.get('r');
     if (terms) {
         $('#terms').val(terms);
         $('#searchForm').submit();
     }
-    //if (category) {
-    //    activeFacets.categories.push(category);
-    //}
+    
+    if (recallType) {
+        activeFacets.recallTypes.push(recallType);
+        firstSearch = false;
+    } else {
+        $("#currentConcerns").removeClass("wb-inv");
+        $(".opening-game").removeClass("wb-inv");
+        $(".pagetag").removeClass("wb-inv");
+        $(".facet-count").addClass("wb-inv");  // jennifer - hides the count on opening game
+        $("#recall-facets").addClass("wb-inv");
+    }
 
-
-
-
+    if (category) {
+        activeFacets.categories.push(category);
+    }
     // run the initial search
     search();
 
-    $("#currentConcerns").removeClass("wb-inv");
-    $(".opening-game").removeClass("wb-inv");
-    $(".pagetag").removeClass("wb-inv");
-    $(".facet-count").addClass("wb-inv");  // jennifer - hides the count on opening game
-    $("#recall-facets").addClass("wb-inv");
+    
 
     // Recall type tabs clicks
     $('#recall-types-filter a').click(function(e) {
