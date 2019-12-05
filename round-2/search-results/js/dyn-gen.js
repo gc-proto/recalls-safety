@@ -91,34 +91,39 @@ function getRecall(id, lang) {
              pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Food';
              pCat[q] = "Allergen";
              pSCat[q] = 'Undeclared ' + this.substr(11, this.length-11).toLowerCase();
+             pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q]);
+             pSCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q])+'|'+encodeURI(this.substr(11, this.length-11).toLowerCase());
            } else if (this.substr(0, 15) === "Microbiological") {
              if (this.indexOf("E. coli") > 1) {
                pPCat[q] = "Food";
                pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Food';
                pCat[q] = "Microbiological";
                pSCat[q] = 'E. Coli';
+               pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q]);
+               pSCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q])+'|'+encodeURI(pSCat[q]);
              } else {
                pPCat[q] = "Food";
                pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Food';
                pCat[q] = "Microbiological";
                pSCat[q] = this.substr(18, this.length-18);
+               pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q]);
+               pSCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q])+'|'+encodeURI(pSCat[q]);
              }
            } else {
              if (data.category = "1") {
                pPCat[q] = "Food";
                pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Food';
+               pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q]);
              } else if (data.category = "3") {
                pPCat[q] = "Health";
                pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Health';
+               pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q]);
              } else if (data.category = "4") {
                pPCat[q] = "Consumer products";
                pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c=Consumer%20products';
+               pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q]);
              }
              pCat[q] = sentenceCase(categoryname);
-           }
-           pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'&r='+encodeURI(pCat[q]);
-           if (typeof(pSCat) !== "undefined") {
-             pSCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?c='+encodeURI(pPCat[q])+'&r='+encodeURI(pSCat[q]);
            }
            q++;
          });
