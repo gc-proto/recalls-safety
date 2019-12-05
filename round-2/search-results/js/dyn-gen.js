@@ -207,22 +207,28 @@ function getRecall(id, lang) {
            productTable = products[0].text;
          }
 
-         outputText = '<div class="row"><section class="col-md-8"><h2>Summary</h2>'+s3Point+'</section></div>';
+         outputText = '<div class="row"><section class="col-md-8"><h2>Summary</h2>'+s3Point+'</section>';
 
 
          if (imagePan.length != 0) {
-           outputText += '<div class="row"><div class="col-md-12"><img src="http://healthycanadians.gc.ca'+imagePan["0"].fullUrl+ '" class="img-responsive"></div>';
+           outputText += '<div class="col-md-12"><img src="http://healthycanadians.gc.ca'+imagePan["0"].fullUrl+ '" class="img-responsive"></div>';
          }
 
          if (productsCount > 1) {
-           outputText += '<section><h2>Affected products</h2>'+ productTable +'</section></div><div class="clearfix"></div>';
+           outputText += '<section class="col-md-8"><h2>Affected products</h2>'+ productTable +'</section>';
          } else if (productsCount == 1) {
-           outputText += '<section><h2>Affected products</h2>'+ productTable +'</section></div><div class="clearfix"></div>';
+           outputText += '<section class="col-md-8"><h2>Affected products</h2>'+ productTable +'</section>';
          }
 
          if (typeof(whatToDo) !== "undefined") {
-           outputText += '<section class="col-md-8 row"><h2>What to do</h2>'+whatToDo+'</section><div class="clearfix"></div>'
+           outputText += '<section class="col-md-8"><h2>What to do</h2>'+whatToDo+'</section>';
          }
+
+         if (typeof(whoWasAffected) !== "undefined") {
+           outputText += '<section class="col-md-8"><h2>Who was affected</h2>'+whoWasAffected+'</section>';
+         }
+
+         outputText += '</div>';
 
 
          $("#recall-content").append(outputText);
