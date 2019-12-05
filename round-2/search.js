@@ -479,7 +479,7 @@ $( document ).on( "wb-ready.wb", function() {
     });
 
     $(".btn-clear").click(function(e) {
-        activeFacets.recallTypes.length = 0;
+        activeFacets.categories.length = 0;
         search();
     });
 
