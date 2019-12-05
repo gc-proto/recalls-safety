@@ -148,9 +148,9 @@ function getRecall(id, lang) {
          //Make the breadcrumb based on the first category
 
          if (pSCat[0] == null) {
-           $('.breadcrumb')[0].innerHTML = '<li class="hidden-xs hidden-sm"><a href="">Home</a></li><li class="hidden-xs hidden-sm"><a href="http://test.canada.ca/recalls-safety/round-2/search-page.html">Recalls and safety alerts</a></li><li class="hidden-xs hidden-sm"><a href="'+pPCatURL[0]+'">'+pPCat[0]+'</a></li><li class="no-break-breadcrumb"><a href="'+pCatURL[0]+'">'+pCat[0]+'</a></li>';
+           $('.breadcrumb')[0].innerHTML = '<li class="hidden-xs hidden-sm"><a href="https://tbs-proto1.openplus.ca/en">Home</a></li><li class="hidden-xs hidden-sm"><a href="http://test.canada.ca/recalls-safety/round-2/search-page.html">Recalls and safety alerts</a></li><li class="hidden-xs hidden-sm"><a href="'+pPCatURL[0]+'">'+pPCat[0]+'</a></li><li class="no-break-breadcrumb"><a href="'+pCatURL[0]+'">'+pCat[0]+'</a></li>';
          } else {
-           $('.breadcrumb')[0].innerHTML = '<li class="hidden-xs hidden-sm"><a href="">Home</a></li><li class="hidden-xs hidden-sm"><a href="http://test.canada.ca/recalls-safety/round-2/search-page.html">Recalls and safety alerts</a></li><li class="hidden-xs hidden-sm"><a href="'+pPCatURL[0]+'">'+pPCat[0]+'</a></li><li class="hidden-xs hidden-sm"><a href="'+pCatURL[0]+'">'+pCat[0]+'</a></li><li class="no-break-breadcrumb"><a href="'+pSCatURL[0]+'">'+pSCat[0]+'</a></li>';
+           $('.breadcrumb')[0].innerHTML = '<li class="hidden-xs hidden-sm"><a href="https://tbs-proto1.openplus.ca/en">Home</a></li><li class="hidden-xs hidden-sm"><a href="http://test.canada.ca/recalls-safety/round-2/search-page.html">Recalls and safety alerts</a></li><li class="hidden-xs hidden-sm"><a href="'+pPCatURL[0]+'">'+pPCat[0]+'</a></li><li class="hidden-xs hidden-sm"><a href="'+pCatURL[0]+'">'+pCat[0]+'</a></li><li class="no-break-breadcrumb"><a href="'+pSCatURL[0]+'">'+pSCat[0]+'</a></li>';
          }
 
          //Getting the recall date under title
