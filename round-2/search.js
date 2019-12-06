@@ -306,7 +306,9 @@ function updateSearchFacetGeneric($container, facetData) {
         $input.attr('id', inputId);
         $input.val(facetEntry.value);
         $input.attr('name', facetName);
-        $label.text(facetEntry.label);
+        var labelHTML = $label.html();
+        labelHTML = labelHTML.replace("Food",facetEntry.label)
+        $label.html(labelHTML);
         $label.attr('id', labelId);
         $label.attr('for', inputId);
 
