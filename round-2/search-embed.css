@@ -682,6 +682,8 @@ color: white !important;
   }
   .wrap {
     overflow-x: scroll;
+    overflow-y: none !important;
+    height: 70px;
   }
 
   #searchResponse {
