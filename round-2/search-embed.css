@@ -316,9 +316,9 @@ input[type="reset"], input[type="button"], input[type="submit"]
   /* border-radius: 4px !important; */
 	padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 10px;
-  padding-top: 8px;
-  margin-top: -10px;
+  padding-bottom: 6px;
+  padding-top: 7px;
+  margin-top: -7px;
 	color: white;
   position: absolute;
   right: 0;
@@ -328,7 +328,7 @@ input[type="reset"], input[type="button"], input[type="submit"]
 
 .input-recalls {
 	clear: both !important;
-	height: 45px  !important;
+	height: 40px  !important;
 	padding: 0px 0px 0px 12px !important;
 	font-size: 18px !important;
 	line-height: 1.4375;
@@ -340,7 +340,7 @@ input[type="reset"], input[type="button"], input[type="submit"]
 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075) !important;
 	margin-left: auto !important;
 	width:100% !important;
-	padding-top: 10px !important;
+	padding-top: 7px !important;
 	padding-bottom: 4px !important;
 	display: flex !important;
 	float: left !important;
@@ -682,8 +682,6 @@ color: white !important;
   }
   .wrap {
     overflow-x: scroll;
-    overflow-y: none !important;
-    height: 70px;
   }
 
   #searchResponse {
