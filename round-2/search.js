@@ -271,7 +271,9 @@ function sortFacetData(facetData) {
  */
 function updateSearchFacetGeneric($container, facetData) {
     
-    facetData.values = sortFacetData(facetData);
+    if (facetData.label !== "Vehicle Make" && facetData.label != "Vehicle Model" && facetData.label != "Vehicle Year") {
+        facetData.values = sortFacetData(facetData);
+    }
     $container.empty();
     $container.hide();
     // do nothing if no facet
