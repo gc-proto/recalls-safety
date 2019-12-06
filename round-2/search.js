@@ -185,21 +185,32 @@ function updateSearchSpellCheck(data) {
  * @param data JSON search response
  */
 function updateSearchFacets(data) {
-
     updateSearchFacetRecallTypes(data.facets.recallTypes);
+    var $activeType = $('#recall-types-filter .active .recalls-filter-label');
+    var activeType = $activeType.text();
+    var skipVehicles = false;
+    if ($activeType.text() === "Vehicles") {
+        skipVehicles = true;
+    }  
 
     $('#recall-facets .facet-panel').each(function(index) {
-        var facetName = $(this).data('facetname');
-        var facetData = data.facets[facetName];
-        console.log(facetData);
-        updateSearchFacetGeneric($(this), facetData);
+        if (!skipVehicles) {
+            var facetName = $(this).data('facetname');
+            var facetData = data.facets[facetName];
+            console.log(facetData);
+            updateSearchFacetGeneric($(this), facetData);
+        } else {
+            skipVehicles = false;
+            $(this).empty();
+            $(this).hide();
+        }
     });
 
     // Adjust category title to match recall type.
-    var $activeType = $('#recall-types-filter .active .recalls-filter-label');
     if ($activeType.length > 0) {
         $("#recall-facets .facet-panel[data-facetname='categories'] .panel-title a").text($activeType.text());
     }
+    
 }
 
 function updateSearchFacetRecallTypes(facetData) {
