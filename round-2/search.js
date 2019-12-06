@@ -180,6 +180,49 @@ function updateSearchSpellCheck(data) {
     }
 }
 
+function removeUnrelatedFacets(facetData) {
+    if (facetData.values[0]){
+      var foodLabelsDel = ["Uncategorized"];
+      var consumerLabelsDel = ["Child car seats", "Uncategorized", "Consumer products", "Drugs", "Health products", "Natural health products", "Vehicles", "Equipment", "Medical Device","Microbiological - Salmonella","Microbiological - E. coli O157:H7","Allergen - Gluten","Allergen - Milk","Allergen - Peanut","Microbiological - E. coli O103","Microbiological - Other"];
+      var healthLabelsDel = ["Uncategorized", "Outdoor Living", "Children's Products", "Household Items", "Chemicals", "Specialized Products", "Miscellaneous", "Food", "Other", "Consumer products", "Cosmetics", "Electronics", "Hobby/Craft Items", "Medical Cannabis", "Cannabis", "Chemical", "Clothing and Accessories", "Cyanide Poisoning", "Toys","Allergen - Egg","Allergen - Coconut","Allergen - Milk","Allergen - Peanut","Allergen - Tree Nut"];
+      var recallType = facetData.values[0].value.substr(0,facetData.values[0].value.indexOf("|"));
+      switch(recallType) {
+        case "food":
+          facetData = removeUnrelatedFacetsTwo(facetData, foodLabelsDel);
+          break;
+        case "consumer":
+          facetData = removeUnrelatedFacetsTwo(facetData, consumerLabelsDel);
+          break;
+        case "health":
+          facetData = removeUnrelatedFacetsTwo(facetData, healthLabelsDel);
+          break;
+        default:
+          // code block
+      }
+      // console.log(facetData.values);
+    }
+    return facetData;
+  }
+  
+  function removeUnrelatedFacetsTwo(facetData, labelsDel){
+    let i,parentIndex=-1,childIndex=0;
+    bDelChildren = false;
+    for (i = 0; i < facetData.values.length; i++) {
+      if (facetData.values[i].level === 0) {
+        bDelChildren = false;      
+        if (labelsDel.includes(facetData.values[i].label) === true) {
+          facetData.values.splice(i,1);
+          i--;
+          bDelChildren = true;
+        }
+      } else if (bDelChildren == true){
+        facetData.values.splice(i,1);
+        i--;
+      }
+    }
+    return facetData
+  }
+
 /**
  * Update search facets
  * @param data JSON search response
@@ -270,9 +313,11 @@ function sortFacetData(facetData) {
  * @param facetData data for a facet
  */
 function updateSearchFacetGeneric($container, facetData) {
-    
     if (facetData.label !== "Vehicle Make" && facetData.label != "Vehicle Model" && facetData.label != "Vehicle Year") {
         facetData.values = sortFacetData(facetData);
+    }
+    if (facetData.name == "categories"){
+        facetData = removeUnrelatedFacets(facetData);
     }
     $container.empty();
     $container.hide();
