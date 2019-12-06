@@ -216,11 +216,51 @@ function updateSearchFacetRecallTypes(facetData) {
     });
 }
 
+function sortFacetData(facetData) {
+    let nodes = [];
+    let i,parentIndex=-1,childIndex=0;
+    for (i = 0; i < facetData.values.length; i++) {
+        if (facetData.values[i].level === 1) {
+            nodes[parentIndex].children[childIndex] = facetData.values[i];
+            childIndex++;
+        } else {
+            parentIndex++;
+            childIndex = 0;
+            nodes[parentIndex] = {
+                'parent' : facetData.values[i],
+                'children' : []
+            };
+        }
+    }
+    // sort parents
+    nodes.sort(function(a, b){
+        return b.parent.count - a.parent.count;
+    });
+    // sort the children
+    for (i = 0; i < nodes.length; i++) {
+        nodes[i].children.sort(function(a,b) {
+            return b.count - a.count;
+        });
+    }
+    // rebuild the old flat structure
+    let returnData = [];
+    let j = 0;
+    for (i = 0; i < nodes.length; i++) {
+        returnData.push(nodes[i].parent);
+        for (j = 0; j < nodes[i].children.length; j++) {
+            returnData.push(nodes[i].children[j]);
+        }
+    }
+    return returnData;
+}
+
 /**
  * Update a single facet.
  * @param facetData data for a facet
  */
 function updateSearchFacetGeneric($container, facetData) {
+    
+    facetData.values = sortFacetData(facetData);
     $container.empty();
     $container.hide();
     // do nothing if no facet
