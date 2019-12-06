@@ -1,72 +1,73 @@
 
-/* style lists inside the table */
-
-/* td ul li {
- margin-left: -18px !important;
- margin-top: 10px !important;
-} */
-
-
-/* main table tbody {
-  font-size: 19px !important;
-  line-height: 1.4em !important;
-} */
-
-
-
-
-/* .dataTables_wrapper {
-  margin-left: -1.1em !important;
-  margin-right: -1.1em !important;
-} */
-/*
-.dataTables_filter, .dataTables_length {
-  margin-left: 1.1em !important;
-} */
-
-
-body {
-/*  font-family: "Open Sans", sans-serif; */
-  line-height: 1.25;
-}
-
-/* table {
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  table-layout: fixed;
-} */
-
-/* table caption {
-  font-size: 1.5em;
-  margin: .5em 0 .75em;
-} */
+/* table patterns should include
+- regular/default pattern
+- small text variant
+- content floating right or left in cards view (see CRA contact us page)
+- Jennifer will bring together all the css for the various options for the Design system
+*/
 
 table tr {
   background-color: #ffffff;
   border: 1px solid #ddd;
   padding: .35em;
-  font-size: .85em;
-
 }
 
-/* table th,
-table td {
-  padding: .625em;
-  text-align: left;
-} */
-/* thead th{
-  font-size: 16px !important;
+/* color swap - white should follow the grey heading */
 
-} */
-/* table th {
-  font-size: .85em;
- letter-spacing: .1em;
+.table-striped>tbody>tr:nth-child(odd)>td {
+  background-color: white !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: white !important;
+}
+
+.table-striped>tbody>tr:nth-child(even)>td {
+  background-color: #F5F5F5 !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: #F5F5F5 !important;
+}
+
+
+
+/* small table text for content with long entries */
+.tbl-sm-txt tr {
+  font-size: .85em !important;
+}
+
+.tbl-sm-txt thead {
+  font-size: .95em !important;
+}
+
+/* makes thead grey */
+tr.active, thead tr:first-child {
+  background-color: #f0f0f0 !important;
+}
+
+/* darker lines for better visibility ? still tweaking */
+
+/* .table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+    border-top: 1px solid #B8B8B8 !important;
 } */
 
 @media screen and (max-width: 1200px) {
+
+/* removes the first line, so we don't have a double line in the card on mobile */
+  .table > tbody > tr > td:first-child {
+    border-top: none !important;
+}
+
+/* bumps font back up in cards view */
+.tbl-sm-txt tr {
+  font-size: 1em !important;
+}
+
+.tbl-sm-txt thead {
+  font-size: 1em !important;
+}
+
   table {
     border: 0;
   }
@@ -87,13 +88,13 @@ table td {
   }
 
   table tr {
-    border-bottom: 3px solid #ddd;
+    /* border-bottom: 3px solid #ddd; */
     display: block;
     margin-bottom: .625em;
   }
 
   table td {
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     display: block;
     font-size: 1em;
     text-align: right;
@@ -120,15 +121,71 @@ table td {
       }
 }
 
+
+/* old stuff - keeping in case we need */
+
+/* style lists inside the table */
+
+/* td ul li {
+ margin-left: -18px !important;
+ margin-top: 10px !important;
+} */
+
+
+/* main table tbody {
+  font-size: 19px !important;
+  line-height: 1.4em !important;
+} */
+
+
+
+
+/* .dataTables_wrapper {
+  margin-left: -1.1em !important;
+  margin-right: -1.1em !important;
+} */
+/*
+.dataTables_filter, .dataTables_length {
+  margin-left: 1.1em !important;
+} */
+
+
+
+
+/* table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+} */
+
+/* table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+} */
+
+
+/* table th,
+table td {
+  padding: .625em;
+  text-align: left;
+} */
+/* thead th{
+  font-size: 16px !important;
+
+} */
+/* table th {
+  font-size: .85em;
+ letter-spacing: .1em;
+} */
+
 /* tr.d0 th {
   font-size: .85em;
   font-weight: bold;
   background-color: #FFFFFF;
 } */
-
-tr.active, thead tr:first-child {
-  background-color: #f0f0f0 !important;
-}
 
 
 
@@ -153,70 +210,3 @@ tr.d2 td {
   background-color: white !important;
 
 } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.overlay {
-    height: 0%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(253,253,253);
-    background-color: rgba(253,253,253);
-    overflow-y: hidden;
-    transition: 0.3s;
-}
-
-.overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #4c4c4c;
-    display: block;
-    transition: 0.3s;
-}
-
-.overlay a:hover, .overlay a:focus {
-    color: #282323;
-}
-
-.overlay .closebtn {
-    position: absolute;
-    top: -12px;
-    right: 10px;
-    font-size: 40px;
-}
-
-@media screen and (max-height: 450px) {
-  .overlay {overflow-y: auto;}
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
