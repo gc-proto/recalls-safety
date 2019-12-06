@@ -9,15 +9,32 @@
 		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
     <title>USB chargers: risk of electric shock and fire - Canada.ca</title>
 
-<meta content="width=device-width,initial-scale=1" name="viewport">
-<meta name="description" content="Web Experience Toolkit (WET) includes reusable components for building and maintaining innovative Web sites that are accessible, usable, and interoperable. These reusable components are open source software and free for use by departments and external Web communities">
-<!--[if gte IE 9 | !IE ]><!-->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
-<link rel="stylesheet" href="css/breadcrumb.css"></style>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css">
+    <!-- <link rel="stylesheet" href="css/custom.css"> -->
+    <!--<![endif]-->
+    <!--[if lt IE 9]>
+    <link href="../GCWeb/assets/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="../GCWeb/css/ie8-theme.min.css" />
+    <script src="../wet-boew/js/ie8-wet-boew.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+    <![endif]-->
 
-<link rel="stylesheet" href="https://hc-sc.github.io/rsa-renewal/examples/css/dataTables.css">
+    <noscript><link rel="stylesheet" href="../wet-boew/css/noscript.min.css" /></noscript>
+      <script src="js/jquery.min.js"></script>
+      <link rel="stylesheet" href="css/breadcrumb.css"></style>
+
+
+       <link rel="stylesheet" href="css/jquery.dataTables.css"></style>
+       <link rel="stylesheet" href="css/customization.css"></style>
+
+       <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+       <link rel="stylesheet" href="css/owl.carousel.min.css" />
+       <link rel="stylesheet" href="css/reponsive-tables.css" />
 
 <noscript><link rel="stylesheet" href="./wet-boew/css/noscript.min.css" /></noscript>
 </head>
@@ -83,7 +100,7 @@
 <!-- Content goes here -->
 <h1><span class="stacked" role="text"> <span>USB chargers</span>: <span>Risk of electric shock and fire</span></span>
   </h1>
-<p>Last updated: May 28, 2018 <a href="">view history</a></p>
+     <p><strong>Last updated: May 28, 2018</strong>&nbsp;&nbsp;&nbsp;<a href="#history" class="badge" style="color: white !important; font-size: 14px !important; padding:5px !important; margin-top: -5px !important;">view history</a></p>
 <div class="col-md-8">
 <h2>Summary</h2>
 <ul>
@@ -96,102 +113,1199 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
-<script src="https://hc-sc.github.io/rsa-renewal/examples/js/dataTables.js"></script>
-<script src="https://hc-sc.github.io/rsa-renewal/examples/js/pageLoadMore.js"></script>
-
-<style>
-.dt-more-container {
-   text-align:center;
-   margin:2em 0;
-}
-
-table img {
-  max-width: 150px;
-  min-width: 100%;
-}
-
-.dt-more-container {
-    text-align: center;
-    margin: 2em 0;
-}
-
-@media screen and (max-width: 600px) {
-  td:first-child {
-    vertical-align: top;
-  }
-  table img {
-    padding-top: 40px;
-  }
-}
-</style>
-<!--
-<table id="myTable">
-    <thead>
-       <tr class="d2">
-         <th scope="col">Product</th>
-         <th scope="col">Strength</th>
-         <th scope="col">DIN</th>
-         <th scope="col">Dosage form</th>
-         <th scope="col">Expected shortage date</th>
-       </tr>
-     </thead>
-     <tbody>
-       <tr class="d1">
-         <td data-label="Product">EpiPen</td>
-         <td data-label="Strength">0.3 mg</td>
-         <td data-label="DIN">00509558</td>
-         <td data-label="Dosage form">Solution</td>
-         <td data-label="Expected shortage date">April 13, 2018</td>
-       </tr>
--->
 
 
-<table id="recalls-with-images" class="display load-more-table" cellspacing="0" width="100%">
-    <thead class="hidden">
-        <tr>
-            <th class="col-sm-3">Image</th>
-            <th class="col-sm-9">Name</th>
-        </tr>
-    </thead>
-</table>
-
-<p style="float:right;"><a href="#affected">^ back to top</a></p>
-
-<div class="dt-more-container">
-   <button id="btn-load-more-recalls" class="btn btn-default">Show next 5 results</button>
-</div>
 
 
-<script>
-   $(document).ready(function (){
-   // $.noConflict();
-   var table = $('#recalls-with-images').DataTable({
-      searching: false,
-      dom: 't<"bottom"i>',
-      ordering: false,
-      ajax: 'https://hc-sc.github.io/rsa-renewal/examples/load-more-recalls.json',
-      drawCallback: function(){
-         // If there is some more data
-         if($('#btn-load-more-recalls').is(':visible')){
-            // Scroll to the "Load more" button
-            $('html, body').animate({
-               scrollTop: $('#btn-load-more-recalls').offset().top
-            }, 1000);
-         }
+<div class="col-md-12 row">
 
-         // Show or hide "Load more" button based on whether there is more data available
-         $('#btn-load-more-recalls').toggle(this.api().page.hasMore());
-      }
-   });
+  <table class="table table-striped tbl-sm-txt" id="myTable">
+  	<thead>
+  		<tr class="d2">
+        <th scope="col">Image</th>
+  			<th scope="col">Product description</th>
+  			<th scope="col">Importer</th>
+  			<th scope="col">Retailer</th>
+  			<th scope="col">Number of units</th>
+        <th scope="col">Date of recall</th>
 
-   // Handle click on "Load more" button
-   $('#btn-load-more-recalls').on('click', function(){
-      // Load more data
-      table.page.loadMore();
-   });
-});
-</script>
+  		</tr>
+  	</thead>
+    <tbody>
 
+    <tr>
+      <td data-label="Image">
+       <img alt="4 in 1 Charger" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/ra-66316-39_s_fs_4_20180525-174024_12_en.jpg" /></td>
+    <td data-label="Product description">
+        4 in 1 Charger</td>
+       <td data-label="Importer">
+        Longtech Computer Distribution, Markham, Ontario</td>
+        <td data-label="Retailer">	CDC Computers, Winnipeg, Manitoba</td>
+       <td data-label="Number of units">
+        53</td>
+       <td data-label="Date of recall">
+        May 28, 2018</td>
+      </tr>
+      <tr>
+        <td data-label="Product description">
+         <img alt="Desktop Charger 6-ports" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/ra-66316-40_s_fs_4_20180525-174406_19_en.jpg" /></td>
+       <td data-label="Product description">
+        Desktop Charger 6-ports</td>
+       <td data-label="Importer">
+        ComGears Canada, Markham, Ontario</td>
+        <td data-label="Retailer">	CDC Computers, Winnipeg, Manitoba</td>
+
+       <td data-label="Number of units">
+        100</td>
+       <td data-label="Date of recall">
+        May 28, 2018</td>
+
+      </tr>
+
+      <tr>
+        <td data-label="Image">
+         <img alt="Iconnek by Lifestyle Double Port USB Charger - Model Number 310573" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/ra-66316-41_s_fs_3_20180525-174811_17_en.jpg" /></td>
+       <td data-label="Product description" >
+        <p >
+         Iconnek by Lifestyle Double Port USB Charger</p>
+        <p>
+         Model No.: 310573</p>
+        <p>
+         UPC: 627997105732</p>
+        <p>
+         Colors : white with an orange, blue, red or grey band</p>
+       </td>
+       <td data-label="Importer">
+        Les Variétés P. Prud'Homme inc., St-Jérôme, Quebec</td>
+       <td data-label="Retailer">
+        Les Variétés P. Prud'Homme inc., St-Jérôme, Quebec</td>
+       <td data-label="Number of units">
+        4,341</td>
+       <td data-label="Date of recall">
+        May 28, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="Iconnek by Lifestyle Deluxe Double Port USB Home Adaptor - Model Number: 310445" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/ra-66316-42_s_fs_4_20180525-175111_18_en.jpg" /></td>
+       <td data-label="Product description">
+        <p>
+         Iconnek by Lifestyle Deluxe Double Port USB Home Adaptor</p>
+        <p>
+         Model No.: 310445</p>
+        <p>
+         UPC : 627997104452</p>
+       </td>
+       <td data-label="Importer">
+        Les Variétés P. Prud'Homme inc., St-Jérôme, Quebec</td>
+       <td data-label="Retailer">
+        Les Variétés P. Prud'Homme inc., St-Jérôme, Quebec</td>
+       <td data-label="Number of units">
+        5,529</td>
+       <td data-label="Date of recall">
+        May 28, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="Iconnek by Lifestyle Double Port USB Charger in clear plastic - Model number: 310433" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/ra-66316-43_s_fs_4_20180525-175402_13_en.jpg" /></td>
+       <td data-label="Product description">
+        <p>
+         Iconnek by Lifestyle Double Port USB Charger in clear plastic</p>
+        <p>
+         Model No.: 310433</p>
+        <p>
+         UPC : 627997104339</p>
+        <p>
+         Colors : blue, orange, purple, green</p>
+       </td>
+       <td data-label="Importer">
+        Les Variétés P. Prud'Homme inc., St-Jérôme, Quebec</td>
+       <td data-label="Retailer">
+        Les Variétés P. Prud'Homme inc., St-Jérôme, Quebec</td>
+       <td data-label="Number of units">
+        2,880</td>
+       <td data-label="Date of recall">
+        May 28, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="Double Port USB Charger - Model number: ZH-2100" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/ra-66316-44_s_fs_4_20180525-175644_12_en.jpg" /></td>
+       <td data-label="Product description">
+        <p>
+         Double Port USB Charger</p>
+        <p>
+         Model No. : ZH-2100</p>
+        <p>
+         Colors : blue and pink</p>
+       </td>
+       <td data-label="Importer">
+        A1 Imports Distribution, Bois-Des-Filions, Quebec</td>
+       <td data-label="Retailer">
+        A1 Imports Distribution, Bois-Des-Filions, Quebec</td>
+       <td data-label="Number of units">
+        6,681</td>
+       <td data-label="Date of recall">
+        May 28, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="Double Port USB Charger - Model number: SM451" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/ra-66316-45_s_fs_4_20180525-180023_15_en.jpg" /></td>
+       <td data-label="Product description">
+        <p>
+         Double Port USB Charger</p>
+        <p>
+         Model No. : SM451</p>
+        <p>
+         Colors: black, blue, red, pink and white</p>
+       </td>
+       <td data-label="Importer">
+        A1 Imports Distribution, Bois-Des-Filions, Quebec</td>
+       <td data-label="Retailer">
+        A1 Imports Distribution, Bois-Des-Filions, Quebec</td>
+       <td data-label="Number of units">
+        2,634</td>
+       <td data-label="Date of recall">
+        May 28, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-tranco-11A_s_t_null_20180509-140416_20_en.jpg" /></td>
+       <td data-label="Product description">
+        Tranco Smart 1.1A Charger</td>
+       <td data-label="Importer">
+        <p>
+         Fields Mission, British Columbia</p>
+       </td>
+       <td data-label="Retailer">
+        <p>
+         Fields / FHC Enterprises Ltd., Delta, British Columbia</p>
+       </td>
+       <td data-label="Number of units">
+        242</td>
+       <td data-label="Date of recall">
+        May 10, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-single-port-unique_s_t_3_20180509-140546_17_en.jpg" /></td>
+       <td data-label="Product description">
+        <p>
+         Single port USB charger</p>
+        <p>
+         Colour: white</p>
+       </td>
+       <td data-label="Importer">
+        <p>
+         Lee's Electronic,Vancouver, British Columbia</p>
+       </td>
+       <td data-label="Retailer">
+        <p>
+         VJ Supplies, Richmond, British Columbia</p>
+       </td>
+       <td data-label="Number of units">
+        20</td>
+       <td data-label="Date of recall">
+        May 10, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-double-ar18_s_t_3_20180509-140719_19_en.jpg" /></td>
+       <td  data-label="Product description">
+        <p>
+         Double port USB Charger</p>
+        <p>
+         Model No.: AR-18</p>
+       </td>
+       <td data-label="Importer">
+        <p>
+         ESSO - 4800, Ponoka, Alberta</p>
+       </td>
+       <td  data-label="Retailer">
+        <p>
+         Elnour Investments, Ponoka, Alberta</p>
+       </td>
+       <td data-label="Number of units">
+        Unknown</td>
+       <td data-label="Date of recall">
+        May 10, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-06-BAC1_s_t_3_20180509-140852_13_en.jpg" /></td>
+       <td data-label="Product description">
+        <p>
+         Power Adapter</p>
+        <p>
+         Item No.: 06-BAC1</p>
+        <p>
+         Model No.: ABC-HM-068</p>
+        <p>
+         UPC: 684917614910</p>
+       </td>
+       <td data-label="Importer">
+        <p>
+         ESSO - 4800, Ponoka, Alberta</p>
+       </td>
+       <td data-label="Retailer">
+        Core-Mark Holding Company, Calgary, Alberta</td>
+       <td data-label="Number of units">
+        5,382</td>
+       <td data-label="Date of recall">
+        May 10, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-1114-K-021_s_t_3_20180509-141041_11_en.jpg" /></td>
+       <td data-label="Product description">
+        <p>
+         Xtreme 1 AMP xtra power USB Home Charger</p>
+        <p>
+         Serial No.: 1114 K-021</p>
+        <p>
+         UPC: 805106885441</p>
+       </td>
+       <td data-label="Importer">
+        <p>
+         CMS Famous Toys, Edmonton, Alberta</p>
+       </td>
+       <td  data-label="Retailer">
+        CMS Famous Toys, Edmonton, Alberta</td>
+       <td data-label="Number of units">
+        413</td>
+       <td data-label="Date of recall">
+        May 10, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-N110_s_t_2_20180509-141202_12_en.jpg" /></td>
+       <td data-label="Product description">
+        <p>
+         AC Wall USB Plug 1A</p>
+        <p>
+         Model No.: MFG#N110</p>
+        <p>
+         Serial No.: 1x043KKF100D</p>
+        <p>
+         SKU: 1064613-0</p>
+       </td>
+       <td data-label="Importer">
+        <p>
+         Red Apple, Ponoka, Alberta</p>
+       </td>
+       <td data-label="Retailer">
+        Red Apple Stores Incorporated, Mississauga, Ontario</td>
+       <td data-label="Number of units">
+        723</td>
+       <td data-label="Date of recall">
+        May 10, 2018</td>
+
+      </tr>
+      <tr>
+        <td data-label="Image">
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-DEL-VS1668_s_t_3_20180509-141359_19_en.jpg" /></td>
+       <td data-label="Product description" >
+        <p>
+         LED single USB wall charger</p>
+        <p>
+         Model No.: VS1668</p>
+        <p>
+         SKU: 628055490302</p>
+        <p>
+         Colour: white, blue, green or red cracked patterns</p>
+       </td>
+       <td data-label="Importer">
+        Red Apple, Pokono, Alberta</td>
+       <td data-label="Retailer">
+        Groupe KSD, Vaudreuil-Dorion, Québec</td>
+       <td data-label="Number of units">
+        6,000</td>
+       <td data-label="Date of recall">
+        May 10, 2018</td>
+
+      </tr>
+      <tr>
+        <td  data-label="Image">
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-Bright_s_t_3_20180405-133007_20_en.jpg" /></td>
+       <td data-label="Product description">
+        <p>
+         Bright accessories, USB Home Adapter (10-pack, multi-colour)</p>
+        <p>
+         UPC (10-pack): 643462869466</p>
+        UPC (individual charger): 643462869459</td>
+       <td data-label="Importer">
+        S.G. Impex Inc., Etobicoke, Ontario</td>
+       <td data-label="Retailer">
+        VanPak Ltd, Etobicoke, Ontario</td>
+       <td data-label="Number of units">
+        450 (10-pack)</td>
+       <td data-label="Date of recall">
+        April 5, 2018</td>
+
+      </tr>
+      <tr>
+        <td>
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-VIVO_s_t_3_20180405-131415_16_en.jpg" /></td>
+       <td>
+        <p>
+         Single Port USB charger</p>
+        <p>
+         Model No.: SZW-2</p>
+        Colours: Pink, purple, black top with white casing</td>
+       <td>
+        Amazon</td>
+       <td>
+        VIVO Tech, China</td>
+       <td>
+        406</td>
+       <td>
+        April 5, 2018</td>
+
+      </tr>
+      <tr>
+        <td>
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-IETGZ_s_t_3_20180405-131707_18_en.jpg" /></td>
+       <td>
+        <p>
+         IETGZ, 2 port USB charger</p>
+        <p>
+         Colour: white</p>
+       </td>
+       <td>
+        Amazon.ca</td>
+       <td>
+        IETGZ, China</td>
+       <td>
+        156</td>
+       <td>
+        April 5, 2018</td>
+
+      </tr>
+      <tr>
+        <td>
+         <img alt="" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/image-ABCsell_s_t_3_20180405-131917_16_en.jpg" /></td>
+       <td>
+        <p>
+         2-port purple USB charger</p>
+        Model No.: YD-12</td>
+       <td>
+        Amazon</td>
+       <td>
+        ABCsell, China</td>
+       <td>
+        163</td>
+       <td>
+        April 5, 2018</td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-01_s_fs_4_20180326-200107_11_en.jpg" /></td>
+       <td>
+        <p>
+         ROX USB Wall Charger - SM081</p>
+        <p>
+         UPC: 200100100819</p>
+       </td>
+       <td>
+        <p>
+         Bargain Basket, Dartmouth, Nova Scotia</p>
+       </td>
+       <td>
+        <p>
+         Anex Select Imports,<br />
+         Richmond,<br />
+         British Columbia</p>
+       </td>
+       <td>
+        <p>
+         349,501</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-02_s_fs_4_20180326-200211_17_en.jpg" /></td>
+       <td>
+        <p>
+         ROX Single USB Wall Charger - SM1672</p>
+        <p>
+         UPC: 812398013186</p>
+       </td>
+       <td>
+        <p>
+         Deals for Dollars, Winnipeg, Manitoba</p>
+       </td>
+       <td>
+        <p>
+         Anex Select Imports,<br />
+         Richmond,<br />
+         British Columbia</p>
+       </td>
+       <td>
+        <p>
+         2,304</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-03_s_fs_4_20180326-200310_17_en.jpg" /></td>
+       <td>
+        <p>
+         Mini Adapter for 4/4S/5/5C/5S/6&6plug;</p>
+        <p>
+         Item No. :91-235</p>
+        <p>
+         Model No.: A1285</p>
+        <p>
+         Serial No.: 1X043KKF100D</p>
+        <p>
+         UPC: 776622912358</p>
+       </td>
+       <td>
+        <p>
+         CanPro Gas and Propane<br />
+         Calgary, Alberta</p>
+       </td>
+       <td>
+        <p>
+         Northeast Wholesale Inc.<br />
+         Calgary, Alberta</p>
+       </td>
+       <td>
+        <p>
+         444</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-04_s_fs_4_20180326-160016_13_en.jpg" /></td>
+       <td>
+        <p>
+         "Charger" - Unbranded Single Port USB Charger</p>
+        <p>
+         Item No.:91-232</p>
+        <p>
+         Model No.: ETA-U90EWE</p>
+        <p>
+         Barcode/UPC: 776622912327</p>
+       </td>
+       <td>
+        <p>
+         Harvest Hills Dollar Plus<br />
+         Calgary, Alberta</p>
+       </td>
+       <td>
+        <p>
+         Northeast Wholesale Inc.<br />
+         Calgary, Alberta</p>
+       </td>
+       <td>
+        <p>
+         180</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+
+          <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-05_s_fs_4_20180326-200529_19_en.jpg" />
+        </td>
+       <td>
+        <p>
+         SMART 1A AC Wall Charger<br />
+         Model No.: 1402102<br />
+         UPC: 774175021022</p>
+       </td>
+       <td>
+        <p>
+         Chevron Town Pantry, British Columbia</p>
+       </td>
+       <td>
+        <p>
+         Creative Planogram Company (SRP) Markham, Ontario</p>
+       </td>
+       <td>
+        <p>
+         1,102,731</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-06_s_fs_4_20180326-200639_19_en.jpg" /></td>
+       <td>
+        <p>
+         Red Coloured Double USB Wall Charger (no brand name)</p>
+        <p>
+         Model No.: SU100</p>
+       </td>
+       <td>
+        <p>
+         Deals for Dollars, Winnipeg, Manitoba</p>
+       </td>
+       <td>
+        <p>
+         Deals for Dollars, Winnipeg, Manitoba</p>
+       </td>
+       <td>
+        <p>
+         192</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-07_s_fs_4_20180326-200749_16_en.jpg" /></td>
+       <td>
+        <p>
+         Double USB charger cube of clear plastic</p>
+        <p>
+         Model No.: JBL1309 / SU100</p>
+        <p>
+         Colours: green, yellow, turquoise, rose, orange, colourless</p>
+       </td>
+       <td>
+        <p>
+         Zonetronik, Quebec, Quebec</p>
+       </td>
+       <td>
+        <p>
+         Zonetronik, Quebec, Quebec</p>
+       </td>
+       <td>
+        <p>
+         43</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+
+          <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-08_s_fs_4_20180326-200859_20_en.jpg" />
+        </td>
+       <td>
+        <p>
+         Profil USB charger, dual port, white</p>
+        <p>
+         Model No.: FRC5804</p>
+        <p>
+         UPC: 873191007215</p>
+       </td>
+       <td>
+        <p>
+         Distribution Franco, Quebec, Quebec</p>
+       </td>
+       <td>
+        <p>
+         Distribution Franco, Quebec, Quebec</p>
+       </td>
+       <td>
+        <p>
+         23,855</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-09_s_fs_4_20180326-201001_20_en.jpg" /></td>
+       <td>
+        <p>
+         Profil USB charger, single port</p>
+        <p>
+         Model No.: FRC4903A</p>
+        <p>
+         UPC: 873191007369</p>
+        <p>
+         Colours: white, black, blue, red</p>
+       </td>
+       <td>
+        <p>
+         Distribution Franco, Quebec, Quebec</p>
+       </td>
+       <td>
+        <p>
+         Distribution Franco, Quebec, Quebec</p>
+       </td>
+       <td>
+        <p>
+         101,528</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-10_s_fs_4_20180326-201053_13_en.jpg" /></td>
+       <td>
+        <p>
+         Single USB Charger</p>
+        <p>
+         Model No.: ETA-U90JWS</p>
+        <p>
+         Serial No.: DW1C920DS/B-Z</p>
+       </td>
+       <td>
+        <p>
+         Tan Star Trade/ Tan Xing, Brossard, Quebec</p>
+       </td>
+       <td>
+        <p>
+         Tan Star Trade/ Tan Xing, Brossard, Quebec</p>
+       </td>
+       <td>
+        <p>
+         200</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-11_s_fs_4_20180326-201215_12_en.jpg" /></td>
+       <td>
+        <p>
+         USB Charger by Happy in trauel</p>
+        <p>
+         Model No.: A1265</p>
+        <p>
+         Serial No.: 1X91029YP3-1000</p>
+       </td>
+       <td>
+        <p>
+         Tan Star Trade/ Tan Xing, Brossard, Quebec</p>
+       </td>
+       <td>
+        <p>
+         Tan Star Trade/ Tan Xing, Brossard, Quebec</p>
+       </td>
+       <td>
+        <p>
+         200</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-12_s_fs_4_20180326-201358_12_en.jpg" /></td>
+       <td>
+        <p>
+         Platinum USB Adapter</p>
+        <p>
+         Model No.: 2255</p>
+       </td>
+       <td>
+        <p>
+         Tan Star Trade/ Tan Xing, Brossard, Quebec</p>
+       </td>
+       <td>
+        <p>
+         Tan Star Trade/ Tan Xing, Brossard, Quebec</p>
+       </td>
+       <td>
+        <p>
+         200</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-13_s_fs_4_20180326-201503_16_en.jpg" /></td>
+       <td>
+        <p>
+         YJ US TEO Power Supply</p>
+        <p>
+         Model No.: AS951</p>
+        <p>
+         Serial No.: 2x043KKF100A</p>
+       </td>
+       <td>
+        <p>
+         Plaza Dollar, Pointe-Claire,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         Davcan Imports & Exports, Kirkland,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         218</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-14_s_fs_4_20180326-201555_16_en.jpg" /></td>
+       <td>
+        <p>
+         USB Charger</p>
+        <p>
+         Model No.: A1265</p>
+        <p>
+         Serial No.: 1XQ125EZ1AX6</p>
+       </td>
+       <td>
+        <p>
+         Plaza Dollar, Pointe-Claire,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         Davcan Imports & Exports, Kirkland,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         156</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img alt="Capture d'écran" src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-15_s_fs_null_20180326-201639_13_en.jpg" /></td>
+       <td>
+        <p>
+         USB Charger</p>
+        <p>
+         Model No.: A1265</p>
+        <p>
+         Serial No.: 1X043KKF200D</p>
+       </td>
+       <td>
+        <p>
+         Compagnie M. Herman In., Montréal,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         Compagnie M. Herman In., Montréal,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         833</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-16_s_fs_4_20180326-201803_14_en.jpg" /></td>
+       <td>
+        <p>
+         WK US TEO Power Supply</p>
+        <p>
+         Model No.: A5951</p>
+        <p>
+         Serial No.: 2x043KKF001B</p>
+       </td>
+       <td>
+        <p>
+         Compagnie M. Herman In., Montréal,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         Compagnie M. Herman In., Montréal,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         833</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-17_s_fs_4_20180326-201903_13_en.jpg" /></td>
+       <td>
+        <p>
+         USB Charger</p>
+        <p>
+         Model No.: A1285</p>
+        <p>
+         Serial No.: 1Xq043KKF100D</p>
+       </td>
+       <td>
+        <p>
+         Compagnie M. Herman In., Montréal,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         Compagnie M. Herman In., Montréal,<br />
+         Quebec</p>
+       </td>
+       <td>
+        <p>
+         834</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-18_s_fs_4_20180326-202001_14_en.jpg" /></td>
+       <td>
+        <p>
+         Single port USB Charger</p>
+        <p>
+         Model No.: A1265</p>
+        <p>
+         Serial No.: 1X04KKFLG100D</p>
+       </td>
+       <td>
+        <p>
+         London Itech, Manitoba</p>
+       </td>
+       <td>
+        <p>
+         Budget Electronics, Toronto, Ontario</p>
+       </td>
+       <td>
+        <p>
+         456</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-19_s_fs_4_20180326-202107_18_en.jpg" /></td>
+       <td>
+        <p>
+         Mini For Your Power Supply USB Adapter</p>
+        <p>
+         Item ID: MOB-CHARGER-USB-HOME-WHITE</p>
+        <p>
+         Model No.: A1265</p>
+        <p>
+         UPC: 726881615024</p>
+       </td>
+       <td>
+        <p>
+         London Itech,<br />
+         Winnipeg, Manitoba</p>
+       </td>
+       <td>
+        <p>
+         Longtech Distribution, Inc. Markham, Ontario</p>
+       </td>
+       <td>
+        <p>
+         114</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-20_s_fs_4_20180326-202216_15_en.jpg" /></td>
+       <td>
+        <p>
+         Eclipse Power Adapter</p>
+        <p>
+         Model No.: ADC-S01</p>
+        <p>
+         Serial No.: 700112548901</p>
+       </td>
+       <td>
+        <p>
+         Golden Gate Inc., Niagara Falls, Ontario</p>
+       </td>
+       <td>
+        <p>
+         Golden Gate Inc., Niagara Falls, Ontario</p>
+       </td>
+       <td>
+        <p>
+         2,472</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-21_s_fs_4_20180326-202318_11_en.jpg" /></td>
+       <td>
+        <p>
+         Single port USB charger</p>
+        <p>
+         Model No.: YTH-0001</p>
+       </td>
+       <td>
+        <p>
+         HQ technology Inc., Scarborough, Ontario</p>
+       </td>
+       <td>
+        <p>
+         HQ technology Inc., Scarborough, Ontario</p>
+       </td>
+       <td>
+        <p>
+         55</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-22_s_fs_4_20180326-202419_11_en.jpg" /></td>
+       <td>
+        <p>
+         Mini USB Charger<br />
+         <br />
+         Model No.: JC-2000</p>
+        <p>
+         Item No.: E-31190070</p>
+        <p>
+         UPC: 69893900706</p>
+       </td>
+       <td>
+        <p>
+         SMAA Corporation, Scarborough, Ontario</p>
+       </td>
+       <td>
+        <p>
+         SMAA Corporation, Scarborough, Ontario</p>
+       </td>
+       <td>
+        <p>
+         126</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-23_s_fs_4_20180326-202517_15_en.jpg" /></td>
+       <td>
+        <p>
+         Original USB Travel Charger 2 in 1</p>
+        <p>
+         Model No.: XHM-1310</p>
+        <p>
+         UPC: 769981020147</p>
+       </td>
+       <td>
+        <p>
+         S.G. Impex Inc., Etobicoke, Ontario</p>
+       </td>
+       <td>
+        <p>
+         S.G. Impex Inc., Etobicoke, Ontario</p>
+       </td>
+       <td>
+        <p>
+         33</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-24_s_fs_4_20180326-202614_13_en.jpg" /></td>
+       <td>
+        <p>
+         GEMS Wall Charger</p>
+        <p>
+         USB Mobile Device Charger</p>
+        <p>
+         UPC: 813125025502</p>
+        <p>
+         SKU: 640789</p>
+       </td>
+       <td>
+        <p>
+         Peavey Mart & MainStreet Hardware locations across western Canada</p>
+       </td>
+       <td>
+        <p>
+         Peavey Industries LP</p>
+        <p>
+         Red Deer, AB</p>
+       </td>
+       <td>
+        <p>
+         64</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-25_s_fs_4_20180326-202659_20_en.jpg" /></td>
+       <td>
+        <p>
+         GEMS Wall Charger<br />
+         USB Mobile Device Charger<br />
+         UPC: 813125023799<br />
+         Model No.: TC012<br />
+         SKU: 640780</p>
+       </td>
+       <td>
+        <p>
+         Peavey Mart & MainStreet Hardware locations across western Canada</p>
+       </td>
+       <td>
+        <p>
+         Peavey Industries LP<br />
+         Red Deer, AB</p>
+       </td>
+       <td>
+        <p>
+         183</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+      <tr>
+        <td>
+         <img src="https://www.healthycanadians.gc.ca//recall-alert-rappel-avis/hc-sc/2018//assets/66302a-26_s_fs_4_20180326-203435_19_en.jpg" /></td>
+       <td>
+        <p>
+         GEMS Wall Charger</p>
+        <p>
+         USB Mobile Device Charger</p>
+        <p>
+         UPC: 851807005596</p>
+        <p>
+         SKU: 640779</p>
+       </td>
+       <td>
+        <p>
+         Peavey Mart & MainStreet Hardware locations across western Canada</p>
+       </td>
+       <td>
+        <p>
+         Peavey Industries LP<br />
+         Red Deer, AB</p>
+       </td>
+       <td>
+        <p>
+         85</p>
+       </td>
+       <td>
+        <p>
+         March 26, 2018</p>
+       </td>
+
+      </tr>
+
+
+    </tbody>
+  </table>
+
+   <script>
+     $.noConflict();
+      $('#myTable').dataTable( {
+      "dom": '<"wrapper"fitlp>',
+      "ordering": false,
+      "paging": true
+      });
+   </script>
+
+ </div>
 <div class="col-md-8 row">
 <h2>Issue</h2>
 <p>The recalled products were tested and found to pose an unacceptable risk of electric shock and/or fire. The products are uncertified, which means they do not meet the Canadian electrical safety standards and have not been approved for sale in Canada.</p>
@@ -274,7 +1388,6 @@ table img {
 </div>
 
 <div class="clearfix"></div>
-
 
 
 
