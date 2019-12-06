@@ -221,35 +221,74 @@ $(document).ready(function(){
                           </div>
               </div>
 
+<style>
+select {
+  width: 100% !important;
+}
 
+.vehicle-pickers label {
+  font-size: 16px !important;
+}
+
+</style>
 
         </div>
         </div>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingFive">
-          <h4 class="panel-title">
-            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-              (Additional facets, like Year for Vehicles?)
-            </a>
-          </h4>
-        </div>
-        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-          <div class="panel-body">
-            <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-              <label for="Item">2018 <i>(xx)</i></label>
-              <br />
-              <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-              <label for="Item">2017 <i>(xx)</i></label>
-              <br />
-              <input id="Item" type="checkbox" name="subcategory[]" value="Item" />
-              <label for="Item">2016 <i>(xx)</i></label>
-              <br />
-              <input id="Item" type="checkbox" name="subcategory[]" value="Item"/>
-              <label for="Item">2015 <i>(xx)</i></label>
+
+      <br>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">Vehicles
+              </a>
+            </h4>
+          </div>
+
+
+          <div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
+<div class="panel-body">
+
+<!-- vehicles pickers -->
+
+<div class="form-group vehicle-pickers">
+
+<label for="BodyContent_DDL_Make" id="BodyContent_LB_Make" class="control-label">Make</label>
+<select id="BodyContent_DDL_Make" class="form-control w60">
+	<option selected="selected" value="-1">Select a make</option>
+	<option value="0">All makes</option>
+	<option value="1">4-STAR</option>
+	<option value="2">Etc.</option>
+</select>
+
+<label for="BodyContent_DDL_Model" id="BodyContent_LB_Model" class="control-label">Model</label> <!-- model should only appear after Make has been selected -->
+<select id="BodyContent_DDL_Model" class="form-control w60">
+	<option selected="selected" value="-1">Select a model</option>
+	<option value="0">All models</option>
+	<option value="1">Accord</option>
+	<option value="2">Etc.</option>
+</select>
+
+<label for="BodyContent_DDL_Year" id="BodyContent_LB_Year" class="control-label">Year</label>
+<select id="BodyContent_DDL_Year" class="form-control w60">
+	<option selected="selected" value="-1">Select a year</option>
+	<option value="0">All years</option>
+	<option value="1">2019</option>
+	<option value="2">2018, etc.</option>
+</select>
+
+
+</div> <!-- end vehicle pickers --->
+
+</div>
+
+
+
+          </div>
           </div>
         </div>
-      </div>
       <!-- <a class="btn btn-default" style="float:right;margin-top:5px; width:200px;" href="recalls-home-b.html">Clear all <strong>X</strong></a> -->
     </div>
 
