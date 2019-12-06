@@ -120,7 +120,7 @@ function getRecall(id, lang) {
                pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?r=Health';
                pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?r='+encodeURI(pPCat[q])+'&c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q]);
              } else if (data.category = "4") {
-               pPCat[q] = "consumer products";
+               pPCat[q] = "consumer";
                pPCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?r=Consumer%20products';
                pCatURL[q] = 'http://test.canada.ca/recalls-safety/round-2/search-page.html?r='+encodeURI(pPCat[q])+'&c='+encodeURI(pPCat[q])+'|'+encodeURI(pCat[q]);
              }
