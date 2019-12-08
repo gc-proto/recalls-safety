@@ -519,8 +519,9 @@ function search() {
     $.ajax({
         url: API_URL + '/search',
         data: JSON.stringify({
-            'sort' : 'recall_date',
+            'sort' : $("#sort").val(),
             'terms': $("#terms").val(),
+            'includeArchived': $('#includeArchived').is(':checked'),
             'pageIndex': currentPage,
             'docsPerPage': MAX_DOCS_PER_PAGE,
             'recallTypes': activeFacets.recallTypes,
@@ -622,6 +623,14 @@ $( document ).on( "wb-ready.wb", function() {
 
     $(".btn-clear").click(function(e) {
         activeFacets.categories.length = 0;
+        search();
+    });
+
+    $("#sort").click(function(e) {
+        search();
+    });
+
+    $(document).on('change', '#includeArchived', function() {
         search();
     });
 
