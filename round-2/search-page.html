@@ -15,6 +15,7 @@
 
   <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/wet-boew.min.css"/>
   <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/wet-boew/css/theme.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-typeahead@2.11.0/dist/jquery.typeahead.min.css">
   <link rel="stylesheet" href="./search-embed.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -119,14 +120,36 @@
       <div class="pull-right col-md-8 col-sm-12 col-xs-12">
 
         <h2 id="searchHeading" class="r-title"><span class="recall-found">0</span> results</h2>
-        <div class="input-group input-recalls">
-          <form id="searchForm" action="#">
-            <input id="terms" class="r-search" name="terms" type="text" placeholder="Search all recalls">
-            <button class="r-search-btn" type="submit">Find</button>
-            <div id="searchSpellCheck" style="display: none;">Did you mean: <a href="#">blah</a></div>
-            <div id="error" style="display: none;"></div>
-          </form>
-        </div> <!-- input -->
+
+        <!-- Search Form -->
+
+        <form id="searchForm" action="#">
+          <div class="input-group input-recalls">
+            <div class="typeahead__container">
+                <div class="typeahead__field">
+                    <div class="typeahead__query">
+                        <input id="terms"
+                               class="js-typeahead form-control r-search"
+                               name="terms"
+                               placeholder="Search all recalls" 
+                               autocomplete="off">
+                    </div>
+                    <!-- 
+                    <div class="typeahead__button">
+                        <button type="submit">
+                            <span class="typeahead__search-icon"></span>
+                        </button>
+                    </div>
+                     -->
+                </div>
+            </div>          
+            <span class="input-group-btn">
+              <button class="btn btn-info r-search-btn" type="submit">Find</button>
+            </span>
+          </div> <!-- input -->
+          <div id="searchSpellCheck" style="display: none;">Did you mean: <a href="#">blah</a></div>
+          <div id="error" style="display: none;"></div>
+        </form>
 
         <div class="row">
           <h2 class="wb-inv">Filter by:</h2>
@@ -498,6 +521,10 @@
   <script src="../wet-boew/js/ie8-wet-boew2.min.js"></script>
   <![endif]-->
   <script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js"></script>
+  <script 
+    src="https://cdn.jsdelivr.net/npm/jquery-typeahead@2.11.0/dist/jquery.typeahead.min.js" 
+    integrity="sha256-q6QA5qUPfpeuxzP5D/wCMcvsYDsV6kQi5/tti+lcmlk=" 
+    crossorigin="anonymous"></script>
   <script src="search.js"></script>
 </body>
 </html>

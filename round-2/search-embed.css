@@ -299,6 +299,7 @@ input[type="reset"], input[type="button"], input[type="submit"]
 	margin-top: 15px;
 }
 
+/*
 .r-search {
 	border: none;
 	box-shadow: none;
@@ -306,26 +307,30 @@ input[type="reset"], input[type="button"], input[type="submit"]
 	width: 100%;
   font-size: 18px;
 }
+*/
+
 
 .r-search-btn {
-  background-color: #26374a;
-  border: 1px solid #26374a;
-	/* background: none;
-	border: none;
-	border-left: #cbbebe 1px solid; */
-  /* border-radius: 4px !important; */
-	padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 6px;
-  padding-top: 7px;
-  margin-top: -7px;
-	color: white;
-  position: absolute;
-  right: 0;
-  font-size: 18px;
-
+/*   background-color: #26374a; */
+/*   border: 1px solid #26374a; */
+        /* background: none;
+        border: none;
+        border-left: #cbbebe 1px solid; */
+        /* border-radius: 4px !important; */
+/*   padding-left: 10px; */
+/*   padding-right: 10px; */
+/*   padding-bottom: 6px; */
+/*   padding-top: 7px; */
+/*   margin-top: -7px; */
+/* 	color: white; */
+/*   position: absolute; */
+/*   right: 0; */
+/*   font-size: 18px; */
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
+/*
 .input-recalls {
 	clear: both !important;
 	height: 40px  !important;
@@ -344,6 +349,11 @@ input[type="reset"], input[type="button"], input[type="submit"]
 	padding-bottom: 4px !important;
 	display: flex !important;
 	float: left !important;
+}
+*/
+
+#searchForm .tt-menu {
+    z-index: 2000;
 }
 
 .recall-categories {
@@ -741,3 +751,70 @@ color: white !important;
     max-width: 175px;
   }
 }
+
+/* --- Suggestions --- */
+
+#searchForm .typeahead__list>.typeahead__group {
+    border: 0px;
+}
+#searchForm .typeahead__list>li.typeahead__group+li.typeahead__item {
+    border-color: #fff #ccc #ccc #ccc;
+}
+#searchForm .typeahead__list>.typeahead__group[data-search-group="vehicles"]>a {
+    color: #3a6263;
+    background-color: #76a9ab66;
+    border-top: 1px #3a6263 solid;
+    border-bottom: 2px #3a6263 solid;
+}
+#searchForm .typeahead__list>.typeahead__group[data-search-group="health"]>a {
+    color: #843028;
+    background-color: #ec796e6e;
+    border-top: 1px #843028 solid;
+    border-bottom: 2px #843028 solid;
+}
+#searchForm .typeahead__list>.typeahead__group[data-search-group="consumer"]>a {
+    color: #6e3a74;
+    background-color: #eb88f775;
+    border-top: 1px #6e3a74 solid;
+    border-bottom: 2px #6e3a74 solid;
+}
+#searchForm .typeahead__list>.typeahead__group[data-search-group="food"]>a {
+    color: #495f07;
+    background-color: #8db12175;
+    border-top: 1px #495f07 solid;
+    border-bottom: 2px #495f07 solid;
+}
+#searchForm .typeahead__list>.typeahead__group[data-search-group="any"]>a {
+    display: none;
+}
+
+#searchForm .typeahead__field .typeahead__hint,
+#searchForm .typeahead__field [contenteditable],
+#searchForm .typeahead__field input,
+#searchForm .typeahead__field textarea {
+    display: block;
+    width: 100%;
+    line-height: 1.4375;
+    min-height: 37px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#searchForm .form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+}
+#searchForm  .typeahead__container {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+}
+
+
+

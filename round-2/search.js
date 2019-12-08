@@ -8,6 +8,15 @@ const API_URL = 'https://tbs.norconex.com/api';
 //const API_URL = 'http://localhost:9191/api';
 const MAX_DOCS_PER_PAGE = 10;
 const MAX_PAGINATION_LINKS = 7;
+const TYPE_META = {
+        'vehicles'       : { label: 'Vehicles' },
+        'food'           : { label: 'Food and allergies' },
+        'consumer'       : { label: 'Consumer products' },
+        'health'         : { label: 'Health' },
+        'any'            : { label: 'Any' },
+};
+
+
 var firstSearch = true;
 var currentPage = 1;
 var activeFacets = {
@@ -203,13 +212,13 @@ function removeUnrelatedFacets(facetData) {
     }
     return facetData;
   }
-  
+
   function removeUnrelatedFacetsTwo(facetData, labelsDel){
     let i,parentIndex=-1,childIndex=0;
     bDelChildren = false;
     for (i = 0; i < facetData.values.length; i++) {
       if (facetData.values[i].level === 0) {
-        bDelChildren = false;      
+        bDelChildren = false;
         if (labelsDel.includes(facetData.values[i].label) === true) {
           facetData.values.splice(i,1);
           i--;
@@ -234,13 +243,13 @@ function updateSearchFacets(data) {
     var skipVehicles = false;
     if ($activeType.text() === "Vehicles") {
         skipVehicles = true;
-    }  
+    }
 
     $('#recall-facets .facet-panel').each(function(index) {
         if (!skipVehicles) {
             var facetName = $(this).data('facetname');
             var facetData = data.facets[facetName];
-            console.log(facetData);
+            //console.log(toString(facetData));
             updateSearchFacetGeneric($(this), facetData);
         } else {
             skipVehicles = false;
@@ -253,7 +262,7 @@ function updateSearchFacets(data) {
     if ($activeType.length > 0) {
         $("#recall-facets .facet-panel[data-facetname='categories'] .panel-title a").text($activeType.text());
     }
-    
+
 }
 
 function updateSearchFacetRecallTypes(facetData) {
@@ -637,6 +646,83 @@ $( document ).on( "wb-ready.wb", function() {
         currentPage = 1;
         search();
         return false;
+    });
+
+    typeof $.typeahead === 'function' && $.typeahead({
+        input: "#terms",
+        dynamic: true,
+        accent: true,
+        minLength: 2,
+        maxItem: 0,
+        highlight: false,
+        filter: false,
+        //order: "asc",
+        hint: true,
+        cache: false,
+        blurOnTab: false,
+        maxItemPerGroup: 5,
+        backdrop: {
+            "background-color": "#fff"
+        },
+        emptyTemplate: 'No suggestion for "{{query}}"',
+        group: {
+            key: 'recallType',
+            template: function (item) {
+                return TYPE_META[item.recallType].label;
+            }
+        },
+        display: ['value'],
+        template: '{{markup}}',
+        source: {
+            "suggestions": {
+                ajax: function (query) {
+                    return {
+                        url: API_URL + '/suggest',
+                        dataType: "json",
+                        type: "POST",
+                        contentType: "application/json; charset=utf-8",
+                        crossDomain: true,
+                        data: JSON.stringify({
+                            'terms': query,
+                            'maxPerType': 4,
+                            'maxTotal': 10
+//                          'recallType': 'food'
+                        })
+                        // WHILE DEVELOPING:
+                        /*
+                        , callback: {
+                            done: function (data) {
+                                console.log(JSON.stringify(data, null, 4));
+                                return data;
+                            }
+                        }
+                        */
+                    }
+                }
+            }
+        },
+        callback: {
+            onClickAfter: function (node, a, item, event) {
+                if (item.recallType !== 'any') {
+                    // since we allow only one recall type at a time,
+                    // if we are changing recall types, clear others.
+                    if (activeFacets.recallTypes.length > 0
+                            && activeFacets.recallTypes[0]
+                                !== item.recallType) {
+                        $.each(activeFacets, function(facet, value) {
+                            activeFacets[facet].length = 0;
+                        });
+                    }
+                    $.each(item.facetFilters, function(facet, value) {
+                        if (!activeFacets[facet].includes(value)) {
+                            activeFacets[facet].push(value);
+                        }
+                    });
+                    $('#terms').val('');
+                    search();
+                }
+            }
+        }
     });
 
 });
