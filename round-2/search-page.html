@@ -117,7 +117,7 @@
 
       <div class="pull-right col-md-8 col-sm-12 col-xs-12">
 
-        <h2 id="searchHeading" class="r-title"><span class="recall-found">0</span> results</h2>
+        <!-- <h2 id="searchHeading" class="r-title"><span class="recall-found">0</span> results</h2> -->
 
         <!-- Search Form -->
 
@@ -176,7 +176,7 @@
              - "data-facetname" is a predefined facet name the REST API supports.
              - "data-facetlabel" is optional (only if you want to overwrite default.
              - Empty facet blocks will not show.
-             -->
+          -->
           <div class="facet-panel" data-facetname="categories"></div>
           <div class="facet-panel" data-facetname="audiences"></div>
           <div class="facet-panel" data-facetname="vehicleMakes" data-facetlabel="Make"></div>
@@ -194,15 +194,25 @@
         </div> <!-- end facets -->
 
 
-        <div style="margin: 10px 0px;" class="row col-md-8 pull-right">
-          <div class="form-inline d-inline-block text-right row">
-            <span class="small"><span class="fas fa-sort-amount-down"></span> Sort by:</span>
-            <select id="sort" name="sort" class="form-control form-control-sm">
-              <option value="relevance">Relevance</option>
-              <option value="date">Date</option>
-            </select>
+        <div style="margin: 10px 0px;" class="row col-md-8">
+          <div class="col-md-3 pull-right">
+            <!-- <div class="form-inline d-inline-block text-right row"> -->
+              <span class="small"><span class="fas fa-sort-amount-down"></span> Sort by:</span>
+              <select id="sort" name="sort" class="form-control form-control-sm">
+                <option value="relevance">Relevance</option>
+                <option value="date">Date</option>
+              </select>
+            <!-- </div> -->
           </div>
+          <div class="col-md-4 pull-left">
+            <p id="searchHeading" class="r-title"><span class="recall-found">0</span> results</p>
+          </div>
+
         </div>
+
+
+
+
 
         <!-- EMBED STUFFS -->
         <div id="searchResults" style="margin: 10px 0px;" class="row col-md-8 pull-right">
