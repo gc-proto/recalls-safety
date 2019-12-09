@@ -93,8 +93,6 @@ function updateSearchResults(data) {
     $searchResults.empty();
     $.each(data.recalls.results, function(i, recall) {
         var $el = clone('#template-recall');
-        console.log(recall.id.substr(0,8));
-
         if (recall.id == "71029") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/1-ranitidine.html');
           setHtml($el, '.recall-url', 'Ranbaxy Pharmaceuticals Canada Inc. prescription ranitidine - Precautionary recall');
