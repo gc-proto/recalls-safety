@@ -510,7 +510,7 @@ function clone(selector) {
 function search() {
     if (!firstSearch) {
         $("#currentConcerns").addClass("wb-inv");
-        $(".opening-game").addClass("wb-inv");
+        // $(".opening-game").addClass("wb-inv");
         $(".pagetag").addClass("wb-inv");
         $("#recall-facets").removeClass("wb-inv");
     }
