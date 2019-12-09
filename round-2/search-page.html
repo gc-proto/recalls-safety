@@ -220,45 +220,46 @@
         </div> <!-- end searchResults -->
 
         <div class="col-md-8 pull-right">
+          <div style="margin-right:-10px;">
 
-          <div id="searchPagination" class="mrgn-bttm-lg bottom">
-            <div class="dataTables_paginate paging_simple_numbers">
-              <ol id="searchPageLinks" class="pagination  mrgn-tp-0 mrgn-bttm-0">
-                <li><a href="#" class="recall-pagination-prev">Previous</a></li>
+            <div id="searchPagination" class="mrgn-bttm-lg bottom">
+              <div class="dataTables_paginate paging_simple_numbers  pagination-parent">
+                <ol id="searchPageLinks" class="pagination  mrgn-tp-0 mrgn-bttm-0">
+                  <li><a href="#" class="recall-pagination-prev">Previous</a></li>
 
-                <!-- "template-page-link" gets added here. -->
-                <li><a href="#" class="recall-pagination-next">Next</a></li>
-              </ol>
-            </div> <!-- end dataTables -->
-          </div> <!-- end searchPagination -->
+                  <!-- "template-page-link" gets added here. -->
+                  <li><a href="#" class="recall-pagination-next">Next</a></li>
+                </ol>
+              </div> <!-- end dataTables -->
+            </div> <!-- end searchPagination -->
 
-          <!-- start back to filters/updates/FB -->
-          <nav id="recall-facets" class="visible-sm visible-xs mrgn-bttm-md"><a class="btn btn-primary" href="#wb-tphp"><i class="fas fa-long-arrow-alt-up"></i><span class="wb-inv">Return to</span>&nbsp;&nbsp;Filters</a> </nav>
+            <!-- start back to filters/updates/FB -->
+            <nav id="recall-facets" class="visible-sm visible-xs mrgn-bttm-md"><a class="btn btn-primary" href="#wb-tphp"><i class="fas fa-long-arrow-alt-up"></i><span class="wb-inv">Return to</span>&nbsp;&nbsp;Filters</a> </nav>
 
-          <section class="followus btn-default mrgn-bttm-md recall-share btn col-md-4 col-sm-12 col-xs-12">Receive email updates:</a>
-            <ul>
-              <li style="margin-top: 0px; margin-bottom: 0px;">
-               <img src="http://backgroundcheckall.com/wp-content/uploads/2017/12/white-email-icon-transparent-background-3.png" style="max-width:20px; padding-bottom: 5px;">
-              </li>
-            </ul>
-          </section>
+            <section class="followus btn-default mrgn-bttm-md recall-share btn col-md-4 col-sm-12 col-xs-12">Receive email updates:</a>
+              <ul>
+                <li style="margin-top: 0px; margin-bottom: 0px;">
+                 <img src="http://backgroundcheckall.com/wp-content/uploads/2017/12/white-email-icon-transparent-background-3.png" style="max-width:20px; padding-bottom: 5px;">
+                </li>
+              </ul>
+            </section>
 
-          <section class="followus btn-default mrgn-bttm-md recall-share pull-right btn col-md-6 col-sm-12 col-xs-12">
-            <a href="" style="text-decoration:none;">Follow recalls on social media:</a>
-            <ul>
-              <li style="margin-top: 0px; margin-bottom: 0px;">
-                <a rel="external" class="facebook gl-follow" href="#">
-                  <span class="wb-inv">Facebook</span>
-                </a>
-              </li>
-              <li style="margin-top: 0px; margin-bottom: 0px;">
-                <a rel="external" class="twitter gl-follow" href="#">
-              <span class="wb-inv">Twitter</span></a></li>
-            </ul>
-          </section>
+            <section class="followus btn-default mrgn-bttm-md recall-share pull-right btn col-md-6 col-sm-12 col-xs-12">
+              <a href="" style="text-decoration:none;">Follow recalls on social media:</a>
+              <ul>
+                <li style="margin-top: 0px; margin-bottom: 0px;">
+                  <a rel="external" class="facebook gl-follow" href="#">
+                    <span class="wb-inv">Facebook</span>
+                  </a>
+                </li>
+                <li style="margin-top: 0px; margin-bottom: 0px;">
+                  <a rel="external" class="twitter gl-follow" href="#">
+                <span class="wb-inv">Twitter</span></a></li>
+              </ul>
+            </section>
 
-        </div> <!-- end col-md-8 -->
-
+          </div> <!-- end col-md-8 -->
+        </div>
       </div> <!-- end searchResponse -->
 
       <div>
@@ -479,6 +480,17 @@
   form {
     width:90% !important;
     }
+  .pagination {
+    /* display: flex; */
+    white-space: nowrap;
+    font-size: 0;
+  }
+  .pagination li {
+    display: inline-block;
+    font-size: 16px; // restore font-size to whatever you are using for button text.
+    float: none;
+    clear: none;
+  }
   </style>
 
   <li id="template-facet-entry" style="display: none;" class="checkbox checkbox-small">
