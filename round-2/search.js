@@ -93,6 +93,7 @@ function updateSearchResults(data) {
     $searchResults.empty();
     $.each(data.recalls.results, function(i, recall) {
         var $el = clone('#template-recall');
+        console.log(recall.id.substr(0,8));
 
         if (recall.id == "71029") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/1-ranitidine.html');
@@ -118,7 +119,7 @@ function updateSearchResults(data) {
         } else if (recall.id == "69158") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/12-wireless-speaker.html');
           setHtml($el, '.recall-url', 'Brookstone Big Blue Party™ Indoor/Outdoor Wireless Speakers - Fire hazard');
-        } else if (recall.type === 'vehicles' || recall.url.indexOf("test.canada.ca") > -1) {
+        } else if (recall.id.substr(0,8) === 'vehicles' || recall.url.indexOf("test.canada.ca") > -1) {
           $el.find('.recall-url').attr('href', recall.url);
           setHtml($el, '.recall-url', recall.title);
         } else {
