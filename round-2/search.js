@@ -80,8 +80,48 @@ function updateResponse(data) {
     updateSearchFacets(data);
     updateSearchPagination(data);
     updateSearchSpellCheck(data);
+    updatePostSearchSuggestions(data);
+    updatePostSearchTips(data);
     $('#searchResponse').show();
+}
 
+/**
+ * Update post-search suggestions (if any).
+ * @param data JSON search response
+ */
+function updatePostSearchSuggestions(data) {
+    var $postsuggest = $('#postsuggest');
+    $postsuggest.empty();
+
+    if (data.suggestions.length > 0) {
+        var $sugEl = $('<small><span class="fas fa-question-circle"></span> '
+                + 'Are you looking for </small>');
+        var cnt = 0;
+        $.each(data.suggestions, function(i, sug) {
+            if (cnt++ > 0) {
+                $sugEl.append(' or ');
+            }
+            var $link = $('<a class="postsuggest-item" href="#">'
+                    + sug.value.trim() + '</a>');
+            $link.data('facets', sug.facetFilters);
+            $sugEl.append($link);
+            $sugEl.append('?');
+        });
+        $postsuggest.append($sugEl);
+    }
+}
+
+function updatePostSearchTips(data) {
+    var $posttips = $('#posttips');
+    $posttips.empty();
+    if (data.tips.length > 0) {
+        var html = '';
+        $.each(data.tips, function(i, tip) {
+            html += '<div class="alert alert-info" style="line-height: 1.2;">'
+                  + '<small><b>Did you know?</b> ' + tip + '</small></div>';
+        });
+        $posttips.html(html);
+    }
 }
 
 /**
@@ -536,6 +576,7 @@ function search() {
         crossDomain: true,
         type: "POST",
         success: function (data) {
+            //console.log(toString(data));
             clearAjaxError();
             if (!data.recalls || data.recalls.length == 0 || data.recalls.numFound == 0) {
                 noResults(data);
@@ -631,6 +672,15 @@ $( document ).on( "wb-ready.wb", function() {
     });
 
     $(document).on('change', '#includeArchived', function() {
+        search();
+    });
+
+    $(document).on('click', '.postsuggest-item', function() {
+        $.each($(this).data('facets'), function(facet, value) {
+            if (!activeFacets[facet].includes(value)) {
+                activeFacets[facet].push(value);
+            }
+        });
         search();
     });
 
