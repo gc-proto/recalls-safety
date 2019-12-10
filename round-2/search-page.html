@@ -87,7 +87,7 @@
   <main role="main" property="mainContentOfPage" class="container">
 
   <h1 style="margin-top: 15px;">Recalls and safety alerts</h1>
-  <p class="pagetag">Find all Government of Canada recalls, advisories, public health notices, updates and safety alerts.</p>
+  <p class="pagetag">Find all Government of Canada recalls, advisories, updates and safety alerts.</p>
 
   <div class="row">
 
@@ -117,7 +117,7 @@
 
       <div class="pull-right col-md-8 col-sm-12 col-xs-12">
 
-        <h2 id="searchHeading" class="r-title"><span class="recall-found">0</span> results</h2>
+        <!-- <h2 id="searchHeading" class="r-title"><span class="recall-found">0</span> results</h2> -->
 
         <!-- Search Form -->
 
@@ -193,20 +193,29 @@
 
         </div> <!-- end facets -->
 
+        <div style="margin: 10px 0px;" class="row col-md-8">
 
-        <div style="margin: 10px 0px;" class="row col-md-8 pull-right">
           <div id="postsuggest" class="pull-left"><!-- Dynamically generated --></div>        
-          <div id="posttips" class="pull-left"><!-- Dynamically generated --></div>        
-          <div class="pull-right">
-            <div class="form-inline d-inline-block text-right row">
+          <div id="posttips" class="pull-left"><!-- Dynamically generated --></div>    
+
+          <div class="col-md-3 pull-right">
+            <!-- <div class="form-inline d-inline-block text-right row"> -->
               <span class="small"><span class="fas fa-sort-amount-down"></span> Sort by:</span>
               <select id="sort" name="sort" class="form-control form-control-sm">
                 <option value="relevance">Relevance</option>
                 <option value="date">Date</option>
               </select>
-            </div>
-          </div>        
+            <!-- </div> -->
+          </div>
+          <div class="col-md-4 pull-left">
+            <p id="searchHeading" class="r-title"><span class="recall-found">0</span> results</p>
+          </div>
+
         </div>
+
+
+
+
 
         <!-- EMBED STUFFS -->
         <div id="searchResults" style="margin: 10px 0px;" class="row col-md-8 pull-right">
@@ -214,9 +223,10 @@
         </div> <!-- end searchResults -->
 
         <div class="col-md-8 pull-right">
+          <div style="margin-right:-10px;">
 
           <div id="searchPagination" class="mrgn-bttm-lg bottom">
-            <div class="dataTables_paginate paging_simple_numbers">
+              <div class="dataTables_paginate paging_simple_numbers  pagination-parent">
               <ol id="searchPageLinks" class="pagination  mrgn-tp-0 mrgn-bttm-0">
                 <li><a href="#" class="recall-pagination-prev">Previous</a></li>
     
@@ -252,10 +262,10 @@
           </section>
 
         </div> <!-- end col-md-8 -->
-
+        </div>
       </div> <!-- end searchResponse -->
 
-      <div class="opening-game">
+      <div>
         <section class="col-md-8 pull-right">
           <h2 class="h3">Tell us about side effects, injuries and other safety concerns</h2>
           <details>
@@ -473,6 +483,17 @@
   form {
     width:90% !important;
     }
+  .pagination {
+    /* display: flex; */
+    white-space: nowrap;
+    font-size: 0;
+  }
+  .pagination li {
+    display: inline-block;
+    font-size: 16px; /* restore font-size to whatever you are using for button text. */
+    float: none;
+    clear: none;
+  }
   </style>
 
   <li id="template-facet-entry" style="display: none;" class="checkbox checkbox-small">
