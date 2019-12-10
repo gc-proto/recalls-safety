@@ -151,7 +151,7 @@ function updateSearchResults(data) {
           setHtml($el, '.recall-url', 'BRITAX B-SAFE 35 - Issue with the handle');
         } else if (recall.id == "70495") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/6-epipen.html');
-          setHtml($el, '.recall-url', 'EpiPen and EpiPen Jr - Shortage');
+          setHtml($el, '.recall-url', 'EpiPen - Shortage');
         } else if (recall.id == "vehicles-2014567-2") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/7-honda-pilot.html');
           setHtml($el, '.recall-url', "Honda Pilot 2003 - Driver's airbag");
