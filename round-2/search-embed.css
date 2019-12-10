@@ -816,5 +816,29 @@ color: white !important;
     font-size: 16px;
 }
 
+.color-vehicles {
+    color: #3a6263;
+}
+.color-health {
+    color: #843028;
+}
+.color-consumer {
+    color: #6e3a74;
+}
+.color-food {
+    color: #495f07;
+}
 
+.bg-color-vehicles {
+    background-color: #76a9ab66;
+}
+.bg-color-health {
+    background-color: #ec796e6e;
+}
+.bg-color-consumer {
+    background-color: #eb88f775;
+}
+.bg-color-food {
+    background-color: #8db12175;
+}
 

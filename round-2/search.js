@@ -8,12 +8,16 @@ const API_URL = 'https://tbs.norconex.com/api';
 //const API_URL = 'http://localhost:9191/api';
 const MAX_DOCS_PER_PAGE = 10;
 const MAX_PAGINATION_LINKS = 7;
-const TYPE_META = {
-        'vehicles'       : { label: 'Vehicles' },
-        'food'           : { label: 'Food and allergies' },
-        'consumer'       : { label: 'Consumer products' },
-        'health'         : { label: 'Health' },
-        'any'            : { label: 'Any' },
+const LABELS = {
+        'vehicles'      : 'Vehicles',
+        'food'          : 'Food and allergies',
+        'consumer'      : 'Consumer products',
+        'health'        : 'Health',
+        'any'           : 'Any',
+        'categories'    : 'Category',
+        'vehicleMakes'  : 'Make',
+        'vehicleModels' : 'Model',
+        'vehicleYears'  : 'Year'
 };
 
 
@@ -726,11 +730,22 @@ $( document ).on( "wb-ready.wb", function() {
         group: {
             key: 'recallType',
             template: function (item) {
-                return TYPE_META[item.recallType].label;
+                return LABELS[item.recallType];
             }
         },
         display: ['value'],
-        template: '{{markup}}',
+        template: function (query, item) {
+            var facetName = '';
+            $.each(item.facetFilters, function(facet, value) {
+                facetName = facet;
+            });
+            var context = LABELS[facetName];
+            if (!context) {
+                context = facetName;
+            }
+            return item.markup + ' <small class="color-' + item.recallType + '">'
+            + '<span class="fas fa-chevron-left"></span> ' + context + '</small>';
+        },
         source: {
             "suggestions": {
                 ajax: function (query) {
