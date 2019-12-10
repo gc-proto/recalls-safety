@@ -234,7 +234,7 @@ function updateSearchSpellCheck(data) {
 
 function removeUnrelatedFacets(facetData) {
     if (facetData.values[0]){
-      var foodLabelsDel = ["Uncategorized"];
+      var foodLabelsDel = ["Uncategorized","--","Microbiological - E. coli O26:H11","Microbiological - E. coli O157:H7"];
       var consumerLabelsDel = ["Child car seats", "Uncategorized", "Consumer products", "Drugs", "Health products", "Natural health products", "Vehicles", "Equipment", "Medical Device","Microbiological - Salmonella","Microbiological - E. coli O157:H7","Allergen - Gluten","Allergen - Milk","Allergen - Peanut","Microbiological - E. coli O103","Microbiological - Other"];
       var healthLabelsDel = ["Uncategorized", "Outdoor Living", "Children's Products", "Household Items", "Chemicals", "Specialized Products", "Miscellaneous", "Food", "Other", "Consumer products", "Cosmetics", "Electronics", "Hobby/Craft Items", "Medical Cannabis", "Cannabis", "Chemical", "Clothing and Accessories", "Cyanide Poisoning", "Toys","Allergen - Egg","Allergen - Coconut","Allergen - Milk","Allergen - Peanut","Allergen - Tree Nut"];
       var recallType = facetData.values[0].value.substr(0,facetData.values[0].value.indexOf("|"));
