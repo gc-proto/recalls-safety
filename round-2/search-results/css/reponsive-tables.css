@@ -1,9 +1,9 @@
 
 /* table patterns should include
-- regular/default pattern
-- small text variant
+- filter version or no filter
+- default or small text variant
 - content floating right or left in cards view (see CRA contact us page)
-- Jennifer will bring together all the css for the various options for the Design system
+- Jennifer will bring together all the css for the various options for the design system
 */
 
 table tr {
