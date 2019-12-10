@@ -142,7 +142,7 @@ function updateSearchResults(data) {
           setHtml($el, '.recall-url', 'Ranbaxy Pharmaceuticals Canada Inc. prescription ranitidine - Precautionary recall');
         } else if (recall.id == "71263") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/2-meatloaf.html');
-          setHtml($el, '.recall-url', 'Kirkland brand Meatloaf with Mashed Potatoes: undeclared egg, mustard');
+          setHtml($el, '.recall-url', 'Kirkland brand Meatloaf with Mashed Potatoes - undeclared egg, mustard');
         } else if (recall.id == "71293") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/3-pastrami.html');
           setHtml($el, '.recall-url', "Butcher's Pride Corned Beef and Pastrami - Listeria");
