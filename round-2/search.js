@@ -149,7 +149,7 @@ function updateSearchResults(data) {
         } else if (recall.id == "vehicles-2016010-2") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/5-car-seat-responsive.html');
           setHtml($el, '.recall-url', 'BRITAX B-SAFE 35 - Issue with the handle');
-        } else if (recall.id == "67860") {
+        } else if (recall.id == "70495") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/6-epipen.html');
           setHtml($el, '.recall-url', 'EpiPen and EpiPen Jr - Shortage');
         } else if (recall.id == "vehicles-2014567-2") {
