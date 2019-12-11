@@ -442,6 +442,7 @@
   </main>
 
   <!-- === TEMPLATES: ====================================================== -->
+<<<<<<< HEAD
   <div id="template-vehicles" style="display: none;" class="panel-group accordion" role="tablist" aria-multiselectable="true">
     <div class="panel panel-default">
       <div class="panel-heading" role="tab">
@@ -482,6 +483,25 @@
   
   
   
+=======
+  <div id="template-vehicles" style="display:none;" class="form-group vehicle-pickers">
+
+    <label for="BodyContent_DDL_Make" id="BodyContent_LB_Make" class="control-label">Make</label>
+    <select id="BodyContent_DDL_Make" class="form-control w60">
+      <option value="0">All makes</option>
+    </select>
+
+    <label for="BodyContent_DDL_Model" id="BodyContent_LB_Model" class="control-label">Model</label> <!-- model should only appear after Make has been selected -->
+    <select id="BodyContent_DDL_Model" class="form-control w60">
+      <option value="0">All models</option>
+    </select>
+
+    <label for="BodyContent_DDL_Year" id="BodyContent_LB_Year" class="control-label">Year</label>
+    <select id="BodyContent_DDL_Year" class="form-control w60">
+      <option value="0">All years</option>
+    </select>
+    </div>
+>>>>>>> cdb99bd36002b3e5377a481218c42eb60720b77b
 
 
   <div id="template-recall" style="display: none;" class="row recall col-xs-12">
@@ -522,9 +542,9 @@
     position: absolute;
     right: 0;
   }
-  form {
+  /* form {
     width:90% !important;
-    }
+    } */
   .pagination {
     /* display: flex; */
     white-space: nowrap;
