@@ -143,16 +143,16 @@ function updateSearchResults(data) {
           setHtml($el, '.recall-url', 'Ranbaxy Pharmaceuticals Canada Inc. prescription ranitidine - Precautionary recall');
         } else if (recall.id == "71263") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/2-meatloaf.html');
-          setHtml($el, '.recall-url', 'Kirkland brand Meatloaf with Mashed Potatoes: undeclared egg, mustard');
+          setHtml($el, '.recall-url', 'Kirkland brand Meatloaf with Mashed Potatoes - undeclared egg, mustard');
         } else if (recall.id == "71293") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/3-pastrami.html');
           setHtml($el, '.recall-url', "Butcher's Pride Corned Beef and Pastrami - Listeria");
         } else if (recall.id == "vehicles-2016010-2") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/5-car-seat-responsive.html');
           setHtml($el, '.recall-url', 'BRITAX B-SAFE 35 - Issue with the handle');
-        } else if (recall.id == "67860") {
+        } else if (recall.id == "70495") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/6-epipen.html');
-          setHtml($el, '.recall-url', 'EpiPen and EpiPen Jr - Shortage');
+          setHtml($el, '.recall-url', 'EpiPen - Shortage');
         } else if (recall.id == "vehicles-2014567-2") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/7-honda-pilot.html');
           setHtml($el, '.recall-url', "Honda Pilot 2003 - Driver's airbag");
@@ -234,7 +234,7 @@ function updateSearchSpellCheck(data) {
 
 function removeUnrelatedFacets(facetData) {
     if (facetData.values[0]){
-      var foodLabelsDel = ["Uncategorized"];
+      var foodLabelsDel = ["Uncategorized","--","Microbiological - E. coli O26:H11","Microbiological - E. coli O157:H7"];
       var consumerLabelsDel = ["Child car seats", "Uncategorized", "Consumer products", "Drugs", "Health products", "Natural health products", "Vehicles", "Equipment", "Medical Device","Microbiological - Salmonella","Microbiological - E. coli O157:H7","Allergen - Gluten","Allergen - Milk","Allergen - Peanut","Microbiological - E. coli O103","Microbiological - Other"];
       var healthLabelsDel = ["Uncategorized", "Outdoor Living", "Children's Products", "Household Items", "Chemicals", "Specialized Products", "Miscellaneous", "Food", "Other", "Consumer products", "Cosmetics", "Electronics", "Hobby/Craft Items", "Medical Cannabis", "Cannabis", "Chemical", "Clothing and Accessories", "Cyanide Poisoning", "Toys","Allergen - Egg","Allergen - Coconut","Allergen - Milk","Allergen - Peanut","Allergen - Tree Nut"];
       var recallType = facetData.values[0].value.substr(0,facetData.values[0].value.indexOf("|"));
