@@ -686,7 +686,7 @@ color: white !important;
 	  text-overflow: ellipsis;
 	  overflow: hidden;
 	}
-  #collapseOne {
+  .panel-collapse {
     max-height: 260px;
     overflow: auto;
   }
@@ -841,4 +841,3 @@ color: white !important;
 .bg-color-food {
     background-color: #8db12175;
 }
-
