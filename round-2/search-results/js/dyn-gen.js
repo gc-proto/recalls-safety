@@ -218,11 +218,11 @@ function getRecall(id, lang) {
          outputText = '<div class="row"><section class="col-md-8"><h2>Summary</h2>'+s3Point+'</section></div>';
 
          if (typeof(issueOutOfSummary) !== "undefined") {
-           outputText = '<div class="row"><section class="col-md-8">'+issueOutOfSummary+'</section></div>';
+           outputText += '<div class="row"><section class="col-md-8">'+issueOutOfSummary+'</section></div>';
          }
 
          if (typeof(descriptionTextTable) !== "undefined") {
-           outputText = '<div class="row"><section class="col-md-12">'+descriptionTextTable+'</section></div>';
+           outputText += '<div class="row"><section class="col-md-12">'+descriptionTextTable+'</section></div>';
          }
 
          if (imagePan.length != 0) {
