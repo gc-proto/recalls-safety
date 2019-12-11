@@ -442,23 +442,46 @@
   </main>
 
   <!-- === TEMPLATES: ====================================================== -->
-  <div id="template-vehicles" style="display:none;" class="form-group vehicle-pickers">
+  <div id="template-vehicles" style="display: none;" class="panel-group accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab">
+        <h3 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#facets-vehicles"></a>
+            Vehicles
+          </a>
+        </h3>
+      </div>
+      <div id="facets-vehicles" class="panel-collapse collapse in" role="tabpanel">
+        <div class="panel-body" >
+          <ul class="facet-entries recalls-f list-unstyled can-ca-form">
+            
+            <div class="form-group vehicle-pickers">
 
-    <label for="BodyContent_DDL_Make" id="BodyContent_LB_Make" class="control-label">Make</label>
-    <select id="BodyContent_DDL_Make" class="form-control w60">
-      <option value="0">All makes</option>
-    </select>
-    
-    <label for="BodyContent_DDL_Model" id="BodyContent_LB_Model" class="control-label">Model</label> <!-- model should only appear after Make has been selected -->
-    <select id="BodyContent_DDL_Model" class="form-control w60">
-      <option value="0">All models</option>
-    </select>
-    
-    <label for="BodyContent_DDL_Year" id="BodyContent_LB_Year" class="control-label">Year</label>
-    <select id="BodyContent_DDL_Year" class="form-control w60">
-      <option value="0">All years</option>
-    </select>
-    </div> 
+              <label for="BodyContent_DDL_Make" id="BodyContent_LB_Make" class="control-label">Make</label>
+              <select id="BodyContent_DDL_Make" class="form-control w60">
+                <option value="0">All makes</option>
+              </select>
+            </div>
+            <div id="BodyContent_DDL_Model_DIV">
+              <label for="BodyContent_DDL_Model" id="BodyContent_LB_Model" class="control-label">Model</label> <!-- model should only appear after Make has been selected -->
+              <select id="BodyContent_DDL_Model" class="form-control w60">
+                <option value="0">All models</option>
+              </select>
+            </div>
+            <div id="BodyContent_DDL_Year_DIV">
+              <label for="BodyContent_DDL_Year" id="BodyContent_LB_Year" class="control-label">Year</label>
+              <select id="BodyContent_DDL_Year" class="form-control w60">
+                <option value="0">All years</option>
+              </select>
+              </div> 
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
 
 
   <div id="template-recall" style="display: none;" class="row recall col-xs-12">

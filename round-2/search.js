@@ -297,6 +297,7 @@ function updateSearchFacets(data) {
         if ($activeType.length > 0) {
             $("#recall-facets .facet-panel[data-facetname='categories'] .panel-title a").text($activeType.text());
         }
+        $("#includeArchivedContainer").show();
     }
 }
 
@@ -344,26 +345,30 @@ function updateVehiclePickers(facets) {
             } 
         });
     } else {
-        $modelPicker.hide();
+        $("#BodyContent_DDL_Model_DIV",$facetPanel).remove();
     }
 
     var $yearPicker = $("#BodyContent_DDL_Year",$facetPanel);
-    $.each(facets.vehicleYears.values, function(index,entry) {
-        if (entry.value != "-9999") {
-            if (activeFacets.vehicleYears.includes(entry.value) || facets.vehicleYears.values.length === 1) {
-                $yearPicker.append($("<option>",{
-                    value: entry.value,
-                    text: entry.value,
-                    selected: "selected"
-                }));   
-            } else {
-                $yearPicker.append($("<option>",{
-                    value: entry.value,
-                    text: entry.value
-                }));
-            }
-        }    
-    });
+    if (activeFacets.vehicleModels.length > 0) {
+        $.each(facets.vehicleYears.values, function(index,entry) {
+            if (entry.value != "-9999") {
+                if (activeFacets.vehicleYears.includes(entry.value) || facets.vehicleYears.values.length === 1) {
+                    $yearPicker.append($("<option>",{
+                        value: entry.value,
+                        text: entry.value,
+                        selected: "selected"
+                    }));   
+                } else {
+                    $yearPicker.append($("<option>",{
+                        value: entry.value,
+                        text: entry.value
+                    }));
+                }
+            }    
+        });
+    } else {
+        $("#BodyContent_DDL_Year_DIV",$facetPanel).remove();
+    }
 
     $container.append($facetPanel);
 
