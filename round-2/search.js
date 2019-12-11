@@ -149,7 +149,7 @@ function updateSearchResults(data) {
           setHtml($el, '.recall-url', "Butcher's Pride Corned Beef and Pastrami - Listeria");
         } else if (recall.id == "vehicles-2016010-2") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/5-car-seat-responsive.html');
-          setHtml($el, '.recall-url', 'BRITAX B-SAFE 35 - Issue with the handle');
+          setHtml($el, '.recall-url', 'Britax B-SAFE 35 2015 - Issue with the handle');
         } else if (recall.id == "70495") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/6-epipen.html');
           setHtml($el, '.recall-url', 'EpiPen - Shortage');
