@@ -185,7 +185,7 @@
           <div class="facet-panel" data-facetname="vehicleModels" data-facetlabel="Model"></div>
           <div class="facet-panel" data-facetname="vehicleYears" data-facetlabel="Year"></div>
 
-          <div class="can-ca-form">
+          <div id="includeArchivedContainer" class="can-ca-form">
             <div class="checkbox checkbox-small">
               <input type="checkbox" id="includeArchived" value="true" name="includeArchived">
               <label id="label-includeArchived" for="includeArchived">Show recalls 2017 and older</label>
@@ -442,6 +442,24 @@
   </main>
 
   <!-- === TEMPLATES: ====================================================== -->
+  <div id="template-vehicles" style="display:none;" class="form-group vehicle-pickers">
+
+    <label for="BodyContent_DDL_Make" id="BodyContent_LB_Make" class="control-label">Make</label>
+    <select id="BodyContent_DDL_Make" class="form-control w60">
+      <option value="0">All makes</option>
+    </select>
+    
+    <label for="BodyContent_DDL_Model" id="BodyContent_LB_Model" class="control-label">Model</label> <!-- model should only appear after Make has been selected -->
+    <select id="BodyContent_DDL_Model" class="form-control w60">
+      <option value="0">All models</option>
+    </select>
+    
+    <label for="BodyContent_DDL_Year" id="BodyContent_LB_Year" class="control-label">Year</label>
+    <select id="BodyContent_DDL_Year" class="form-control w60">
+      <option value="0">All years</option>
+    </select>
+    </div> 
+
 
   <div id="template-recall" style="display: none;" class="row recall col-xs-12">
     <h3 class="recall-title"><a href="#" class="recall-url">Recall title</a></h3>
