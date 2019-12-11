@@ -4,8 +4,8 @@
  * Just update them to use appropriate values if need be.
  */
 
-const API_URL = 'https://tbs.norconex.com/api';
-//const API_URL = 'http://localhost:9191/api';
+//const API_URL = 'https://tbs.norconex.com/api';
+const API_URL = 'http://localhost:9191/api';
 const MAX_DOCS_PER_PAGE = 10;
 const MAX_PAGINATION_LINKS = 7;
 const LABELS = {
@@ -71,6 +71,7 @@ function noResults(data) {
     $('#noResults').show();
     $('#searchResponse').hide();
     updateSearchSpellCheck(data);
+    updateSearchFacets(data);
 }
 
 /**
@@ -168,7 +169,6 @@ function updateSearchResults(data) {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/test-dyn/recall.html?id='+recall.id+'&lang=en');
           setHtml($el, '.recall-url', recall.title);
         }
-
         setHtml($el, '.recall-summary', recall.description);
         setHtml($el, '.recall-type', recall.type);
         setHtml($el, '.recall-date', formatDate(recall.date));
@@ -739,12 +739,20 @@ $( document ).on( "wb-ready.wb", function() {
             $.each(item.facetFilters, function(facet, value) {
                 facetName = facet;
             });
-            var context = LABELS[facetName];
-            if (!context) {
-                context = facetName;
+            var context = '';
+            if (facetName !== 'recallTypes') {
+                var context = LABELS[facetName];
+                if (!context) {
+                    context = facetName;
+                }
             }
-            return item.markup + ' <small class="color-' + item.recallType + '">'
-            + '<span class="fas fa-chevron-left"></span> ' + context + '</small>';
+            var html = item.markup;
+            if (context && context !== '') {
+                html += ' <small class="color-' + item.recallType + '">'
+                + '<span class="fas fa-chevron-left"></span> '
+                + context + '</small>';
+            }
+            return html
         },
         source: {
             "suggestions": {
@@ -791,7 +799,9 @@ $( document ).on( "wb-ready.wb", function() {
                             activeFacets[facet].push(value);
                         }
                     });
-                    $('#terms').val('');
+                    if (item.filterOnly) {
+                        $('#terms').val('');
+                    }
                     search();
                 }
             }
