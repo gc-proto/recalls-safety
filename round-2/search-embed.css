@@ -8,6 +8,14 @@
 
 }
 
+select {
+  width: 100% !important;
+}
+
+#facets-vehicles label {
+  font-size: 16px !important;
+}
+
 .subcategories label {
   font-size: 17px !important;
 }
