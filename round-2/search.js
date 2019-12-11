@@ -316,13 +316,13 @@ function updateVehiclePickers(facets) {
              if (activeFacets.vehicleMakes.includes(entry.value) || facets.vehicleMakes.values.length === 1) {
                 $makePicker.append($("<option>",{
                     value: entry.value,
-                    text: entry.value,
+                    text: entry.value.toUpperCase(),
                     selected: "selected"
                  }));   
              } else {
                 $makePicker.append($("<option>",{
                     value: entry.value,
-                    text: entry.value
+                    text: entry.value.toUpperCase()
                 }));
              }
          }   
@@ -334,13 +334,13 @@ function updateVehiclePickers(facets) {
             if (activeFacets.vehicleModels.includes(entry.value) || facets.vehicleModels.values.length === 1) {
                 $modelPicker.append($("<option>",{
                     value: entry.value,
-                    text: entry.value,
+                    text: entry.value.toUpperCase(),
                     selected: "selected"
                 }));   
             } else {
                 $modelPicker.append($("<option>",{
                     value: entry.value,
-                    text: entry.value
+                    text: entry.value.toUpperCase()
                 }));
             } 
         });
