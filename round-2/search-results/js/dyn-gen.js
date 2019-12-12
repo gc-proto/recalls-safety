@@ -40,13 +40,13 @@ function getRecall(id, lang) {
              products[productsCount] = (this);
              productsCount = productsCount + 1;
            } else if (this.panelName === "cms_who_what_consumer") {
-             whatToDo = $.trim(this.text.substring(0, this.text.length - 2)).replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(new RegExp("<\/li>\n", 'g'), "<\/li>").replace(new RegExp("<li>\n", 'g'), "<li>").replace(new RegExp("<ul>\n", 'g'), "<ul>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
+             whatToDo = $.trim(this.text.substring(0, this.text.length - 2)).replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(new RegExp("</p>\n", 'g'), "</p>").replace(new RegExp("<p>\n", 'g'), "<p>").replace(new RegExp("<li>\n", 'g'), "<li>").replace(new RegExp("<\/li>\n", 'g'), "<\/li>").replace(new RegExp("<li>\n", 'g'), "<li>").replace(new RegExp("<ul>\n", 'g'), "<ul>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
              // whatToDo = whatToDo.replace(/[\r\n|\r|\n]+/g, "<br /><br />");
              // whatToDo = $.trim(this.text.substring(0, this.text.length - 2)).replace(/[\r\n|\r|\n]+/g, "<br /><br />");
            } else if (this.panelName === "cms_who_what_affected") {
-             whoWasAfected = $.trim(this.text.substring(0, this.text.length - 2)).replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(new RegExp("<\/li>\n", 'g'), "<\/li>").replace(new RegExp("<ul>\n", 'g'), "<ul>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
+             whoWasAfected = $.trim(this.text.substring(0, this.text.length - 2)).replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(new RegExp("</p>\n", 'g'), "</p>").replace(new RegExp("<p>\n", 'g'), "<p>").replace(new RegExp("<li>\n", 'g'), "<li>").replace(new RegExp("<\/li>\n", 'g'), "<\/li>").replace(new RegExp("<ul>\n", 'g'), "<ul>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
            } else if (this.panelName === "cms_reason_reason_recall") {
-             issueOutOfSummary = descriptionText = this.text.replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
+             issueOutOfSummary = descriptionText = this.text.replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(new RegExp("<li>\n", 'g'), "<li>").replace(new RegExp("</p>\n", 'g'), "</p>").replace(new RegExp("<p>\n", 'g'), "<p>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
            } else if (this.panelName === "summary") {
              s3Point = this.text;
              console.log(s3Point);
@@ -57,10 +57,10 @@ function getRecall(id, lang) {
                console.log(this.text);
                console.log(this.text.indexOf("<table"))
                if (this.text.indexOf("<table") > -1) {
-                 descriptionText = this.text.substr(0, this.text.indexOf("<table")).replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
+                 descriptionText = this.text.substr(0, this.text.indexOf("<table")).replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(new RegExp("</p>\n", 'g'), "</p>").replace(new RegExp("<li>\n", 'g'), "<li>").replace(new RegExp("<p>\n", 'g'), "<p>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
                  descriptionTextTable = this.text.substr(this.text.indexOf("<table"), this.text.length);
                } else {
-                 descriptionText = this.text.replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
+                 descriptionText = this.text.replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(new RegExp("<p>\n", 'g'), "<p>").replace(new RegExp("</p>\n", 'g'), "</p>").replace(new RegExp("<li>\n", 'g'), "<li>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
                }
 
 
