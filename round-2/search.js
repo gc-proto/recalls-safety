@@ -4,8 +4,8 @@
  * Just update them to use appropriate values if need be.
  */
 
-//const API_URL = 'https://tbs.norconex.com/api';
-const API_URL = 'http://localhost:9191/api';
+const API_URL = 'https://tbs.norconex.com/api';
+//const API_URL = 'http://localhost:9191/api';
 const MAX_DOCS_PER_PAGE = 10;
 const MAX_PAGINATION_LINKS = 7;
 const LABELS = {
@@ -331,7 +331,7 @@ function removeUnrelatedFacets(facetData) {
 function updateSearchFacets(data) {
     updateSearchFacetRecallTypes(data.facets.recallTypes);
 
-    if (activeRecallType === "Vehicles") {
+    if (activeRecallType === "vehicles") {
         updateVehiclePickers(data.facets);
     } else {
         $('#recall-facets .facet-panel').each(function(index) {
@@ -981,7 +981,9 @@ $( document ).on( "wb-ready.wb", function() {
                         activeFacets[facet].push(value);
                     }
                 });
-                $('#terms').val('');
+                if (item.filterOnly) {
+                    $('#terms').val('');
+                }
                 search();
             }
         }
