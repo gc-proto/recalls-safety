@@ -62,8 +62,10 @@ function getRecall(id, lang) {
                } else {
                  descriptionText = this.text.replace(new RegExp("\n<h2>", 'g'), "<h2>").replace(new RegExp("<\/h2>\n", 'g'), "<\/h2>").replace(new RegExp("<\/h3>\n", 'g'), "<\/h3>").replace(new RegExp("<p>\n", 'g'), "<p>").replace(new RegExp("</p>\n", 'g'), "</p>").replace(new RegExp("<li>\n", 'g'), "<li>").replace(/[\r\n|\r|\n]+/g, "<br /><br />");
                }
-
-
+               console.log(descriptionText);
+               if (descriptionText.length < 15){
+                 descriptionText = "";
+               }
                // console.log(this.text);
                // descriptionText = this.text;
              }
