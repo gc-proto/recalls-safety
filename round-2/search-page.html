@@ -77,8 +77,8 @@
       <h2>You are here:</h2>
       <div class="container">
         <ol class="breadcrumb">
-          <li class="cust-breadcrumb"><a href="https://www.canada.ca/en.html">Home</a></li>
-          <li class="cust-breadcrumb"><a href="https://www.canada.ca/en/services/health.html">Health</a></li>
+          <li class="cust-breadcrumb"><a href="https://tbs-proto1.openplus.ca/">Home</a></li>
+          <li class="cust-breadcrumb"><a href="https://tbs-proto1.openplus.ca/en/landing/health">Health</a></li>
         </ol>
       </div>
     </nav>
@@ -163,7 +163,13 @@
 
         <div id="noResults" style="display:none;">
           <h2>No recalls were found</h2>
-          <p>Consider clearing all filters and trying your search again in a different category.</p>
+          <p>Before you go!</p>
+          <ul>
+            <li>Try just a few keywords – questions and sentences won’t work well</li>
+            <li>Check your spelling – this does not correct spelling</li>
+            <li>Remove years or dates from your search – companies use many formats</li>
+            <li>Try the Clear all button and search again with different filters</li>
+          </ul>
         </div>
 
       </div> <!-- p-r col-md-8 -->
@@ -194,7 +200,7 @@
           <div class="facet-panel" data-facetname="vehicleModels" data-facetlabel="Model"></div>
           <div class="facet-panel" data-facetname="vehicleYears" data-facetlabel="Year"></div>
 
-          <div class="can-ca-form">
+          <div id="includeArchivedContainer" class="can-ca-form">
             <div class="checkbox checkbox-small">
               <input type="checkbox" id="includeArchived" value="true" name="includeArchived">
               <label id="label-includeArchived" for="includeArchived">Show recalls 2017 and older</label>
@@ -451,6 +457,64 @@
   </main>
 
   <!-- === TEMPLATES: ====================================================== -->
+  <div id="template-vehicles" style="display: none;" class="panel-group accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab">
+        <h3 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#facets-vehicles"></a>
+            Vehicles
+          </a>
+        </h3>
+      </div>
+      <div id="facets-vehicles" class="panel-collapse collapse in" role="tabpanel">
+        <div class="panel-body" >
+          <ul class="facet-entries recalls-f list-unstyled can-ca-form">
+
+            <div class="form-group vehicle-pickers">
+
+              <label for="BodyContent_DDL_Make" id="BodyContent_LB_Make" class="control-label">Make</label>
+              <select id="BodyContent_DDL_Make" class="form-control w60">
+                <option value="0">All makes</option>
+              </select>
+            </div>
+            <div id="BodyContent_DDL_Model_DIV">
+              <label for="BodyContent_DDL_Model" id="BodyContent_LB_Model" class="control-label">Model</label> <!-- model should only appear after Make has been selected -->
+              <select id="BodyContent_DDL_Model" class="form-control w60">
+                <option value="0">All models</option>
+              </select>
+            </div>
+            <div id="BodyContent_DDL_Year_DIV">
+              <label for="BodyContent_DDL_Year" id="BodyContent_LB_Year" class="control-label">Year</label>
+              <select id="BodyContent_DDL_Year" class="form-control w60">
+                <option value="0">All years</option>
+              </select>
+              </div>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <div id="XXXtemplate-vehicles" style="display:none;" class="form-group vehicle-pickers">
+
+    <label for="BodyContent_DDL_Make" id="BodyContent_LB_Make" class="control-label">Make</label>
+    <select id="BodyContent_DDL_Make" class="form-control w60">
+      <option value="0">All makes</option>
+    </select>
+
+    <label for="BodyContent_DDL_Model" id="BodyContent_LB_Model" class="control-label">Model</label> <!-- model should only appear after Make has been selected -->
+    <select id="BodyContent_DDL_Model" class="form-control w60">
+      <option value="0">All models</option>
+    </select>
+
+    <label for="BodyContent_DDL_Year" id="BodyContent_LB_Year" class="control-label">Year</label>
+    <select id="BodyContent_DDL_Year" class="form-control w60">
+      <option value="0">All years</option>
+    </select>
+    </div>
+
 
   <div id="template-recall" style="display: none;" class="row recall col-xs-12">
     <h3 class="recall-title"><a href="#" class="recall-url">Recall title</a></h3>
@@ -497,26 +561,6 @@
     </button>
   </div>
 
-  <style>
-  .badge {
-    position: absolute;
-    right: 0;
-  }
-  form {
-    width:90% !important;
-    }
-  .pagination {
-    /* display: flex; */
-    white-space: nowrap;
-    font-size: 0;
-  }
-  .pagination li {
-    display: inline-block;
-    font-size: 16px; /* restore font-size to whatever you are using for button text. */
-    float: none;
-    clear: none;
-  }
-  </style>
 
   <li id="template-facet-entry" style="display: none;" class="checkbox checkbox-small">
     <input class="recall-facet-input" type="checkbox">

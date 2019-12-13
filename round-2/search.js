@@ -4,8 +4,8 @@
  * Just update them to use appropriate values if need be.
  */
 
-const API_URL = 'https://tbs.norconex.com/api';
-//const API_URL = 'http://localhost:9191/api';
+//const API_URL = 'https://tbs.norconex.com/api';
+const API_URL = 'http://localhost:9191/api';
 const MAX_DOCS_PER_PAGE = 10;
 const MAX_PAGINATION_LINKS = 7;
 const LABELS = {
@@ -70,11 +70,11 @@ function formatDate(date) {
  * @param data JSON search response
  */
 function noResults(data) {
+    $('#noResults').show();
     $('#searchResponse').hide();
     updateSearchSpellCheck(data);
     updateSearchFacets(data);
     updateFilterTokens(data);
-    $('#noResults').show();
 }
 
 /**
@@ -198,7 +198,7 @@ function updateSearchResults(data) {
           setHtml($el, '.recall-url', "Butcher's Pride Corned Beef and Pastrami - Listeria");
         } else if (recall.id == "vehicles-2016010-2") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/5-car-seat-responsive.html');
-          setHtml($el, '.recall-url', 'BRITAX B-SAFE 35 - Issue with the handle');
+          setHtml($el, '.recall-url', 'Britax B-SAFE 35 2015 - Issue with the handle');
         } else if (recall.id == "70495") {
           $el.find('.recall-url').attr('href', 'http://test.canada.ca/recalls-safety/round-2/search-results/6-epipen.html');
           setHtml($el, '.recall-url', 'EpiPen - Shortage');
@@ -330,28 +330,126 @@ function removeUnrelatedFacets(facetData) {
  */
 function updateSearchFacets(data) {
     updateSearchFacetRecallTypes(data.facets.recallTypes);
-    var skipVehicles = false;
-    if (activeRecallType === "Vehicles") {
-        skipVehicles = true;
-    }
 
-    $('#recall-facets .facet-panel').each(function(index) {
-        if (!skipVehicles) {
+    if (activeRecallType === "Vehicles") {
+        updateVehiclePickers(data.facets);
+    } else {
+        $('#recall-facets .facet-panel').each(function(index) {
             var facetName = $(this).data('facetname');
             var facetData = data.facets[facetName];
             //console.log(toString(facetData));
             updateSearchFacetGeneric($(this), facetData);
-        } else {
-            skipVehicles = false;
-            $(this).empty();
-            $(this).hide();
+        });
+
+        // Adjust category title to match recall type.
+        if (activeRecallType !== '') {
+            $("#recall-facets .facet-panel[data-facetname='categories'] .panel-title a").text(LABELS[activeRecallType]);
         }
+        $("#includeArchivedContainer").show();
+    }
+}
+
+function updateVehiclePickers(facets) {
+    var $container = $('#recall-facets .facet-panel');
+    var $facetPanel = clone('#template-vehicles');
+
+    $("#includeArchivedContainer").hide();
+    $container.hide();
+    $container.empty();
+
+    // populate pickers
+    var $makePicker = $("#BodyContent_DDL_Make",$facetPanel);
+    $.each(facets.vehicleMakes.values, function(index,entry) {
+         if (entry.level === 0) {
+             if (activeFacets.vehicleMakes.includes(entry.value) || facets.vehicleMakes.values.length === 1) {
+                $makePicker.append($("<option>",{
+                    value: entry.value,
+                    text: entry.value.toUpperCase(),
+                    selected: "selected"
+                 }));
+             } else {
+                $makePicker.append($("<option>",{
+                    value: entry.value,
+                    text: entry.value.toUpperCase()
+                }));
+             }
+         }
     });
 
-    // Adjust category title to match recall type.
-    if (activeRecallType !== '') {
-        $("#recall-facets .facet-panel[data-facetname='categories'] .panel-title a").text(LABELS[activeRecallType]);
+    var $modelPicker = $("#BodyContent_DDL_Model",$facetPanel);
+    if (activeFacets.vehicleMakes.length > 0) {
+        $.each(facets.vehicleModels.values, function(index,entry) {
+            if (activeFacets.vehicleModels.includes(entry.value) || facets.vehicleModels.values.length === 1) {
+                $modelPicker.append($("<option>",{
+                    value: entry.value,
+                    text: entry.value.toUpperCase(),
+                    selected: "selected"
+                }));
+            } else {
+                $modelPicker.append($("<option>",{
+                    value: entry.value,
+                    text: entry.value.toUpperCase()
+                }));
+            }
+        });
+    } else {
+        $("#BodyContent_DDL_Model_DIV",$facetPanel).remove();
     }
+
+    var $yearPicker = $("#BodyContent_DDL_Year",$facetPanel);
+    if (activeFacets.vehicleModels.length > 0) {
+        $.each(facets.vehicleYears.values, function(index,entry) {
+            if (entry.value != "-9999") {
+                if (activeFacets.vehicleYears.includes(entry.value) || facets.vehicleYears.values.length === 1) {
+                    $yearPicker.append($("<option>",{
+                        value: entry.value,
+                        text: entry.value,
+                        selected: "selected"
+                    }));
+                } else {
+                    $yearPicker.append($("<option>",{
+                        value: entry.value,
+                        text: entry.value
+                    }));
+                }
+            }
+        });
+    } else {
+        $("#BodyContent_DDL_Year_DIV",$facetPanel).remove();
+    }
+
+    $container.append($facetPanel);
+
+    // assign events
+    $modelPicker.change(function(e) {
+        let valueSelected = this.value;
+        activeFacets.vehicleModels.length = 0;
+        if (valueSelected !== "0" && valueSelected !== "-1") {
+            activeFacets.vehicleModels.push(valueSelected);
+        }
+        search();
+    });
+    $makePicker.change(function(e) {
+        let valueSelected = this.value;
+        activeFacets.vehicleMakes.length = 0;
+        if (valueSelected !== "0" && valueSelected !== "-1") {
+            activeFacets.vehicleMakes.push(valueSelected);
+        } else {
+            activeFacets.vehicleModels.length = 0;
+        }
+        search();
+    });
+    $yearPicker.change(function(e) {
+        let valueSelected = this.value;
+        activeFacets.vehicleYears.length = 0;
+        if (valueSelected !== "0" && valueSelected !== "-1") {
+            activeFacets.vehicleYears.push(valueSelected);
+        }
+        search();
+    });
+
+    $facetPanel.show()
+    $container.show();
 
 }
 

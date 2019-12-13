@@ -1,11 +1,39 @@
 @import url(https://use.fontawesome.com/releases/v5.6.3/css/all.css);
 
+
+.badge {
+  position: absolute;
+  right: 0;
+}
+/* form {
+  width:90% !important;
+  } */
+.pagination {
+  /* display: flex; */
+  white-space: nowrap;
+  font-size: 0;
+}
+.pagination li {
+  display: inline-block;
+  font-size: 16px; /* restore font-size to whatever you are using for button text. */
+  float: none;
+  clear: none;
+}
+
 .recall-facet-label {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   max-width: 225px;
 
+}
+
+select {
+  width: 100% !important;
+}
+
+#facets-vehicles label {
+  font-size: 16px !important;
 }
 
 .subcategories label {
@@ -686,7 +714,7 @@ color: white !important;
 	  text-overflow: ellipsis;
 	  overflow: hidden;
 	}
-  #collapseOne {
+  .panel-collapse {
     max-height: 260px;
     overflow: auto;
   }
@@ -907,4 +935,3 @@ color: white !important;
 .bg-color-food {
     background-color: #8db12175;
 }
-
