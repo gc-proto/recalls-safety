@@ -152,6 +152,15 @@
           </ul>
         </div>
 
+        <div id="activeFilterTokensContainer" class="row mrgn-bttm-0" style="display:none;">
+          <div class="col-md-12">
+            <h2 class="mrgn-tp-0 mrgn-bttm-0 h6">Active filters:</h2>
+            <div id="activeFilterTokens">
+          
+            </div>
+          </div>
+        </div>
+
         <div id="noResults" style="display:none;">
           <h2>No recalls were found</h2>
           <p>Consider clearing all filters and trying your search again in a different category.</p>
@@ -474,6 +483,18 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div id="template-token" class="token" style="display: none;">
+    <div class="token-context">
+      Context
+    </div>
+    <div class="token-value">
+      Value
+    </div>
+    <button type="button" class="token-close close" aria-label="Remove">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
 
   <style>

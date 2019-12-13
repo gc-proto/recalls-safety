@@ -816,6 +816,59 @@ color: white !important;
     font-size: 16px;
 }
 
+
+.token {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.3;
+    display: inline-block;
+    border-radius: 3px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+}
+.token.token-vehicles {
+    background-color: #76a9ab66;
+    border: 1px solid #3a6263;
+}
+.token.token-health {
+    background-color: #ec796e6e;
+    border: 1px solid #843028;
+}
+.token.token-consumer {
+    background-color: #eb88f775;
+    border: 1px solid #6e3a74;
+}
+.token.token-food {
+    background-color: #8db12175;
+    border: 1px solid #495f07;
+}
+
+
+.token .token-context {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 3px;
+    padding-left: 6px
+}
+.token .token-value {
+    display: inline-block;
+    padding: 3px 3px 3px 3px;
+}
+.token .token-close {
+    padding: 6px 9px 6px 9px;
+    font-size: 14px;
+/*     border-left-width: 1px; */
+/*     border-left-style: solid; */
+/*     border-left-color: inherit; */
+    height: 100%;
+    text-shadow: none;
+}
+.token button.close:hover,
+.token .token-close:hover {
+    opacity: 1.0;
+}
+
 .color-vehicles {
     color: #3a6263;
 }
@@ -827,6 +880,19 @@ color: white !important;
 }
 .color-food {
     color: #495f07;
+}
+
+.border-color-vehicles {
+    border-color: #3a6263;
+}
+.border-color-health {
+    border-color: #843028;
+}
+.border-color-consumer {
+    border-color: #6e3a74;
+}
+.border-color-food {
+    border-color: #495f07;
 }
 
 .bg-color-vehicles {

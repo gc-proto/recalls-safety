@@ -15,6 +15,7 @@ const LABELS = {
         'health'        : 'Health',
         'any'           : 'Any',
         'categories'    : 'Category',
+        'audiences'     : 'Audience',
         'vehicleMakes'  : 'Make',
         'vehicleModels' : 'Model',
         'vehicleYears'  : 'Year'
@@ -23,8 +24,9 @@ const LABELS = {
 
 var firstSearch = true;
 var currentPage = 1;
+// Only 1 recall at a time
+var activeRecallType = '';
 var activeFacets = {
-    recallTypes: [],
     categories: [],
     audiences: [],
     vehicleMakes: [],
@@ -68,10 +70,11 @@ function formatDate(date) {
  * @param data JSON search response
  */
 function noResults(data) {
-    $('#noResults').show();
     $('#searchResponse').hide();
     updateSearchSpellCheck(data);
     updateSearchFacets(data);
+    updateFilterTokens(data);
+    $('#noResults').show();
 }
 
 /**
@@ -83,11 +86,57 @@ function updateResponse(data) {
     updateSearchHeading(data);
     updateSearchResults(data);
     updateSearchFacets(data);
+    updateFilterTokens(data);
     updateSearchPagination(data);
     updateSearchSpellCheck(data);
     updatePostSearchSuggestions(data);
     updatePostSearchTips(data);
     $('#searchResponse').show();
+}
+
+/**
+ * Update the "token" representation of facet selections.
+ * @param data JSON search response
+ */
+function updateFilterTokens(data) {
+    var $container = $('#activeFilterTokensContainer');
+    var $tokenList = $('#activeFilterTokens');
+    $tokenList.empty();
+    var hasTokens = false;
+    $.each(activeFacets, function(facetName, values) {
+        for (var i = 0; i < values.length; i++) {
+            var value = values[i];
+            var context = facetName;
+            var label = value;
+            if (facetName === 'categories') {
+                context = value.replace(/^(.*?)\|.*$/, '$1');
+                label = value.replace(/^.*\|(.*)$/, '$1');
+            }
+            var $token = clone('#template-token');
+            $token.addClass('token-' + activeRecallType);
+
+            var $context = $token.find('.token-context');
+            $context.text(LABELS[context] + ':');
+            $context.addClass('color-' + activeRecallType);
+
+            var $value = $token.find('.token-value')
+            $value.text(label);
+
+            var $close = $token.find('.token-close')
+
+            $close.data('facetname', facetName);
+            $close.data('facetvalue', value);
+
+            $tokenList.append($token);
+            $token.show();
+            hasTokens = true;
+        }
+    });
+    if (hasTokens) {
+        $container.show();
+    } else {
+        $container.hide();
+    }
 }
 
 /**
@@ -281,10 +330,8 @@ function removeUnrelatedFacets(facetData) {
  */
 function updateSearchFacets(data) {
     updateSearchFacetRecallTypes(data.facets.recallTypes);
-    var $activeType = $('#recall-types-filter .active .recalls-filter-label');
-    var activeType = $activeType.text();
     var skipVehicles = false;
-    if ($activeType.text() === "Vehicles") {
+    if (activeRecallType === "Vehicles") {
         skipVehicles = true;
     }
 
@@ -302,8 +349,8 @@ function updateSearchFacets(data) {
     });
 
     // Adjust category title to match recall type.
-    if ($activeType.length > 0) {
-        $("#recall-facets .facet-panel[data-facetname='categories'] .panel-title a").text($activeType.text());
+    if (activeRecallType !== '') {
+        $("#recall-facets .facet-panel[data-facetname='categories'] .panel-title a").text(LABELS[activeRecallType]);
     }
 
 }
@@ -316,7 +363,7 @@ function updateSearchFacetRecallTypes(facetData) {
     $.each(facetData.values, function(index, entry) {
         var $link = $container.find("a[data-type='" + entry.value + "']");
         $link.find('.facet-count').text('(' + formatNumber(entry.count) + ')');
-        if (activeFacets.recallTypes.includes(entry.value)) {
+        if (activeRecallType === entry.value) {
             $link.addClass("active");
         }
     });
@@ -547,6 +594,49 @@ function clone(selector) {
     return $el;
 }
 
+function getSuggestionContext(sugObj, hideRecallType) {
+    var facetName = '';
+    var facetValue = '';
+    // get name of last facet
+    $.each(sugObj.facetFilters, function(facet, value) {
+        facetName = facet;
+        facetValue = value;
+    });
+
+    if (hideRecallType && facetName === 'recallTypes') {
+        return '';
+    }
+
+    var lookupKey = facetName;
+    if (facetName === 'recallTypes') {
+        lookupKey = facetValue;
+    }
+
+    var context = '';
+    context = LABELS[lookupKey];
+    if (!context) {
+        context = facetName;
+    }
+    if (!context) {
+        context = '';
+    }
+    return context;
+}
+
+/**
+ * Since we allow only 1 recall type active at a time and facets are
+ * tied to the recall type, clear facet filters if we are changing
+ * recall types (or disabling currently active one).
+ */
+function switchRecallType(recallType) {
+    if (activeRecallType !== recallType) {
+        $.each(activeFacets, function(facet, value) {
+            activeFacets[facet].length = 0;
+        });
+    }
+    activeRecallType = recallType;
+}
+
 /**
  * Performs a new search by invoking the search REST API and updating
  * the page with the obtained response.
@@ -559,6 +649,10 @@ function search() {
         $("#recall-facets").removeClass("wb-inv");
     }
 
+    var recallTypeAsArray = [];
+    if (activeRecallType !== '') {
+        recallTypeAsArray.push(activeRecallType);
+    }
     $.ajax({
         url: API_URL + '/search',
         data: JSON.stringify({
@@ -567,7 +661,7 @@ function search() {
             'includeArchived': $('#includeArchived').is(':checked'),
             'pageIndex': currentPage,
             'docsPerPage': MAX_DOCS_PER_PAGE,
-            'recallTypes': activeFacets.recallTypes,
+            'recallTypes': recallTypeAsArray,
             'audiences' : activeFacets.audiences,
             'categories' : activeFacets.categories,
             'vehicleMakes' : activeFacets.vehicleMakes,
@@ -632,7 +726,7 @@ $( document ).on( "wb-ready.wb", function() {
     }
 
     if (recallType) {
-        activeFacets.recallTypes.push(recallType);
+        activeRecallType = recallType;
         firstSearch = false;
     } else {
         $("#currentConcerns").removeClass("wb-inv");
@@ -653,11 +747,10 @@ $( document ).on( "wb-ready.wb", function() {
     // Recall type tabs clicks
     $('#recall-types-filter a').click(function(e) {
         e.preventDefault();
-        if (!activeFacets.recallTypes.includes($(this).data('type'))) {
-            activeFacets.recallTypes.length = 0;
-            activeFacets.recallTypes.push($(this).data('type'));
+        if (activeRecallType !== $(this).data('type')) {
+            switchRecallType($(this).data('type'));
         } else {
-            activeFacets.recallTypes.length = 0;
+            switchRecallType('');
         }
         search();
         $(".facet-count").removeClass("wb-inv"); // jennifer - reveals the count on search
@@ -684,6 +777,16 @@ $( document ).on( "wb-ready.wb", function() {
                 activeFacets[facet].push(value);
             }
         });
+        search();
+    });
+
+    $(document).on('click', '.token-close', function() {
+        var name = $(this).data('facetname');
+        var value = $(this).data('facetvalue');
+        var index = activeFacets[name].indexOf(value);
+        if (index > -1) {
+            activeFacets[name].splice(index, 1);
+        }
         search();
     });
 
@@ -735,19 +838,9 @@ $( document ).on( "wb-ready.wb", function() {
         },
         display: ['value'],
         template: function (query, item) {
-            var facetName = '';
-            $.each(item.facetFilters, function(facet, value) {
-                facetName = facet;
-            });
-            var context = '';
-            if (facetName !== 'recallTypes') {
-                var context = LABELS[facetName];
-                if (!context) {
-                    context = facetName;
-                }
-            }
+            var context = getSuggestionContext(item, true);
             var html = item.markup;
-            if (context && context !== '') {
+            if (context !== '') {
                 html += ' <small class="color-' + item.recallType + '">'
                 + '<span class="fas fa-chevron-left"></span> '
                 + context + '</small>';
@@ -784,26 +877,14 @@ $( document ).on( "wb-ready.wb", function() {
         },
         callback: {
             onClickAfter: function (node, a, item, event) {
-                if (item.recallType !== 'any') {
-                    // since we allow only one recall type at a time,
-                    // if we are changing recall types, clear others.
-                    if (activeFacets.recallTypes.length > 0
-                            && activeFacets.recallTypes[0]
-                                !== item.recallType) {
-                        $.each(activeFacets, function(facet, value) {
-                            activeFacets[facet].length = 0;
-                        });
+                switchRecallType(item.recallType);
+                $.each(item.facetFilters, function(facet, value) {
+                    if (!activeFacets[facet].includes(value)) {
+                        activeFacets[facet].push(value);
                     }
-                    $.each(item.facetFilters, function(facet, value) {
-                        if (!activeFacets[facet].includes(value)) {
-                            activeFacets[facet].push(value);
-                        }
-                    });
-                    if (item.filterOnly) {
-                        $('#terms').val('');
-                    }
-                    search();
-                }
+                });
+                $('#terms').val('');
+                search();
             }
         }
     });
