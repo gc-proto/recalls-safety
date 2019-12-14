@@ -724,13 +724,25 @@ function getSuggestionContext(sugObj, hideRecallType) {
 /**
  * Since we allow only 1 recall type active at a time and facets are
  * tied to the recall type, clear facet filters if we are changing
- * recall types (or disabling currently active one).
+ * recall types (or disabling currently active one).  Also resets the default
+ * sort when the recall type changes.  Typically invoked before search().
  */
 function switchRecallType(recallType) {
     if (activeRecallType !== recallType) {
         $.each(activeFacets, function(facet, value) {
             activeFacets[facet].length = 0;
         });
+
+        // When switching recall type, reset sorting to default sorting
+        // for said recall type. Default sort logic based on recall types:
+        //   - "food" or "health"          --> date
+        //   - "consumer" or "vehicles"    --> relevance
+        //   - No recall type (search all) --> relevance
+        if (['food', 'health'].indexOf(activeRecallType) > -1) {
+            $('#sort').val('date');
+        } else {
+            $('#sort').val('relevance');
+        }
     }
     activeRecallType = recallType;
 }
